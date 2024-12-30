@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>商业模式变革造就未来车联网——《车联网技术解构与商业模式分析》笔记 - 罗孚</title><meta name="author" content="RoverTang">
+<meta name="description" content="这是车联网领域少有的深度课程，近些年从未有人从如此前瞻眼光和深度思考层面分享过。课程分为两个环节，在技术解构环节，讲了车联网的分层、历史、分类及架构等，然后介绍了手机车联网的思路，在商业模式分析环节讲了一些思考和想法。希望透过这些思考，能看到未来车联网的样子。"><meta name="keywords" content='商业模式, 车联网, 变革'>
+  <meta itemprop="name" content="商业模式变革造就未来车联网——《车联网技术解构与商业模式分析》笔记">
+  <meta itemprop="description" content="这是车联网领域少有的深度课程，近些年从未有人从如此前瞻眼光和深度思考层面分享过。课程分为两个环节，在技术解构环节，讲了车联网的分层、历史、分类及架构等，然后介绍了手机车联网的思路，在商业模式分析环节讲了一些思考和想法。希望透过这些思考，能看到未来车联网的样子。">
+  <meta itemprop="datePublished" content="2020-03-15T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2020-03-15T00:00:00+08:00">
+  <meta itemprop="wordCount" content="1525">
+  <meta itemprop="image" content="https://blog.rovertang.com/posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/cover.jpg">
+  <meta itemprop="keywords" content="商业模式,车联网,变革"><meta property="og:url" content="https://blog.rovertang.com/posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/">
+  <meta property="og:site_name" content="罗孚">
+  <meta property="og:title" content="商业模式变革造就未来车联网——《车联网技术解构与商业模式分析》笔记">
+  <meta property="og:description" content="这是车联网领域少有的深度课程，近些年从未有人从如此前瞻眼光和深度思考层面分享过。课程分为两个环节，在技术解构环节，讲了车联网的分层、历史、分类及架构等，然后介绍了手机车联网的思路，在商业模式分析环节讲了一些思考和想法。希望透过这些思考，能看到未来车联网的样子。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-03-15T00:00:00+08:00">
+    <meta property="article:modified_time" content="2020-03-15T00:00:00+08:00">
+    <meta property="article:tag" content="商业模式">
+    <meta property="article:tag" content="车联网">
+    <meta property="article:tag" content="变革">
+    <meta property="og:image" content="https://blog.rovertang.com/posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/cover.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://blog.rovertang.com/posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/cover.jpg">
+  <meta name="twitter:title" content="商业模式变革造就未来车联网——《车联网技术解构与商业模式分析》笔记">
+  <meta name="twitter:description" content="这是车联网领域少有的深度课程，近些年从未有人从如此前瞻眼光和深度思考层面分享过。课程分为两个环节，在技术解构环节，讲了车联网的分层、历史、分类及架构等，然后介绍了手机车联网的思路，在商业模式分析环节讲了一些思考和想法。希望透过这些思考，能看到未来车联网的样子。">
+<meta name="application-name" content="罗孚传说">
+<meta name="apple-mobile-web-app-title" content="罗孚传说"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://blog.rovertang.com/posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/" title="商业模式变革造就未来车联网——《车联网技术解构与商业模式分析》笔记 - 罗孚" /><link rel="prev" type="text/html" href="https://blog.rovertang.com/posts/car/20200307-portable-internet-of-vehicles-new-ecological-species-of-internet-of-vehicles/" title="随身车联网——车联网生态新物种(附发布会视频)" /><link rel="next" type="text/html" href="https://blog.rovertang.com/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/" title="手把手教你快速构建一份全国疫情分布地图" /><link rel="alternate" type="text/markdown" href="https://blog.rovertang.com/posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/index.md" title="商业模式变革造就未来车联网——《车联网技术解构与商业模式分析》笔记 - 罗孚"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="apxz4dWbUQ2bsnGFk6SmRK4gNZ7tlT21KgMZ1t9hqdk" /><meta name="msvalidate.01" content="5282002B82D61AD2D097F2F6419C1E4A" /><meta name="baidu-site-verification" content="codeva-RiIZqiHrvQ" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "商业模式变革造就未来车联网——《车联网技术解构与商业模式分析》笔记",
+    "inLanguage": "zh-cn",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.rovertang.com\/posts\/car\/20200315-business-model-transformation-creates-the-future-internet-of-vehicles\/"
+    },"genre": "posts","keywords": "商业模式, 车联网, 变革","wordcount":  1525 ,
+    "url": "https:\/\/blog.rovertang.com\/posts\/car\/20200315-business-model-transformation-creates-the-future-internet-of-vehicles\/","datePublished": "2020-03-15T00:00:00+08:00","dateModified": "2020-03-15T00:00:00+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "RoverTang"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item has-children">
+              <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/" title="文章">文章</a></li><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/car/" title="汽车">汽车</a></li><li class="breadcrumb-item active" data-separator="&gt;" aria-current="page">商业模式变革造就未来车联网——《车联网技术解构与商业模式分析》笔记</li>
+    </ol>
+  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div style="width: 350px; margin: 0 auto; display: flex; justify-content: space-between; text-align: center;">
+  <img src="/images/wxmp-blog.jpg" alt="wxmp-blog" style="width: 115px; height: 153px;">
+  <img src="/images/wxmp-shanghai.jpg" alt="wxmp-shanghai" style="width: 115px; height: 153px;">
+  <img src="/images/zsxq-fromblog.jpg" alt="zsxq-fromblog" style="width: 115px; height: 153px;">
+</div></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>商业模式变革造就未来车联网——《车联网技术解构与商业模式分析》笔记</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://rovertang.com" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    RoverTang</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E6%B1%BD%E8%BD%A6/" class="post-category" title="分类 - 汽车"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 汽车</a></span></div><div class="post-meta-line"><span title="发布于 2020-03-15 00:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2020-03-15">2020-03-15</time></span>&nbsp;<span title="1525 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1600 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 4 分钟</span>&nbsp;</div>
+    </div><div class="content" id="content"><p>本文是罗孚听完<a href="https://www.pateo.com.cn/zh/news_detail.html?id=1093"target="_blank" rel="external nofollow noopener noreferrer">《应宜伦：车联网技术解构与商业模式分析》</a>课程后的笔记，并基于个人理解制作了简要PPT(非官方讲稿)。课程完整视频如下：</p>
+<p>应宜伦：车联网技术解构与商业模式分析_腾讯视频：<a href="https://v.qq.com/x/page/t0933cz9yyq.html"target="_blank" rel="external nofollow noopener noreferrer">v.qq.com/x/page/t0933cz9yyq.html</a></p>
+<p>罗孚今天又要写一篇关于博泰的文章了，上次发表了<a href="/posts/smartcar/20200307-portable-internet-of-vehicles-new-ecological-species-of-internet-of-vehicles/">《随身车联网——车联网生态新物种(附发布会视频)》</a>一文后，就有人在后台问我博泰给了我多少钱？呃，非常诚实的说：0元。那我为什么要写？我不想为稿费写，也不想为了赞美而写，我只想从我内心写点东西，一些值得我们认同、点赞的东西，愿个人的分享能影响更多的人。</p>
+<p>全程听完该课程，罗孚认为可以用酣畅淋漓来形容。为什么？因为眼光和思考不同。去年，晚点团队发表了<a href="https://mp.weixin.qq.com/s/GEJjJVSv6fAxtfyJE0GIeQ"target="_blank" rel="external nofollow noopener noreferrer">《对话陆奇：做一件长期有价值的事，不被人理解是必然的》</a>一文，就有人评价说，这是近几年少有的深度对话，特别是一些观点，让人耳目一新，比如“车未必是人类最有效的交通工具，像蛇一样的新的物，也许才是新一代的运物工具。”。</p>
+<p>那么，对于车联网技术解构与商业模式分析这一课程，可以认为是车联网领域少有的深度课程，至少从眼光高度、思考深度，近些年未有人分享过。佩服博泰开放的心态，也许正是“开放永生、封闭必死”理念的践行吧。</p>
+<p>整个课程分为两大部分，就是标题中的技术解构和商业模式分析，在技术解构环节，讲了车联网分层、车联网的发展、车联网的分类等，然后介绍了博泰的手机车联网，再后面商业模式分析环节讲了一些思考和想法。下面是罗孚的整理，不细说展开，因为课程的讲解比我作的图要精彩很多。</p>
+<p>车联网的分层</p>
+<p><img loading="lazy" src="/posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/assets/boxcnwPgzHQnjxgYtCVlg79kxIe.jpg" alt="/posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/assets/boxcnwPgzHQnjxgYtCVlg79kxIe.jpg" srcset="/posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/assets/boxcnwPgzHQnjxgYtCVlg79kxIe.jpg?size=small, /posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/assets/boxcnwPgzHQnjxgYtCVlg79kxIe.jpg?size=medium 1.5x, /posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/assets/boxcnwPgzHQnjxgYtCVlg79kxIe.jpg?size=large 2x" data-title="/posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/assets/boxcnwPgzHQnjxgYtCVlg79kxIe.jpg" style="--width: 800px;--aspect-ratio: 800 / 450;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>车联网发展史</p>
+<p><img loading="lazy" src="/posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/assets/boxcnvXYpkawIPM6uw0o4tkdNIc.jpg" alt="/posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/assets/boxcnvXYpkawIPM6uw0o4tkdNIc.jpg" srcset="/posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/assets/boxcnvXYpkawIPM6uw0o4tkdNIc.jpg?size=small, /posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/assets/boxcnvXYpkawIPM6uw0o4tkdNIc.jpg?size=medium 1.5x, /posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/assets/boxcnvXYpkawIPM6uw0o4tkdNIc.jpg?size=large 2x" data-title="/posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/assets/boxcnvXYpkawIPM6uw0o4tkdNIc.jpg" style="--width: 800px;--aspect-ratio: 800 / 450;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>车联网的分类和技术架构</p>
+<p><img loading="lazy" src="/posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/assets/boxcnLVnUhUy45K87iSLUnTNx10.jpg" alt="/posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/assets/boxcnLVnUhUy45K87iSLUnTNx10.jpg" srcset="/posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/assets/boxcnLVnUhUy45K87iSLUnTNx10.jpg?size=small, /posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/assets/boxcnLVnUhUy45K87iSLUnTNx10.jpg?size=medium 1.5x, /posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/assets/boxcnLVnUhUy45K87iSLUnTNx10.jpg?size=large 2x" data-title="/posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/assets/boxcnLVnUhUy45K87iSLUnTNx10.jpg" style="--width: 800px;--aspect-ratio: 800 / 450;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>手机车联网介绍</p>
+<p><img loading="lazy" src="/posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/assets/boxcnPfmac5UL8HZLVfdV40SwMg.jpg" alt="/posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/assets/boxcnPfmac5UL8HZLVfdV40SwMg.jpg" srcset="/posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/assets/boxcnPfmac5UL8HZLVfdV40SwMg.jpg?size=small, /posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/assets/boxcnPfmac5UL8HZLVfdV40SwMg.jpg?size=medium 1.5x, /posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/assets/boxcnPfmac5UL8HZLVfdV40SwMg.jpg?size=large 2x" data-title="/posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/assets/boxcnPfmac5UL8HZLVfdV40SwMg.jpg" style="--width: 800px;--aspect-ratio: 800 / 450;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>上图关于手机车联网的介绍，更具系统性和前瞻性，但若想要详细了解手机车联网(博泰官网称之为擎mobile随身车联网)，建议参看罗孚的<a href="/posts/smartcar/20200307-portable-internet-of-vehicles-new-ecological-species-of-internet-of-vehicles/">《随身车联网——车联网生态新物种(附发布会视频)》</a>一文。</p>
+<p>车联网的商业变革</p>
+<p><img loading="lazy" src="/posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/assets/boxcnZdXVWBiKXgOoXoc5oANR7c.jpeg" alt="/posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/assets/boxcnZdXVWBiKXgOoXoc5oANR7c.jpeg" srcset="/posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/assets/boxcnZdXVWBiKXgOoXoc5oANR7c.jpeg?size=small, /posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/assets/boxcnZdXVWBiKXgOoXoc5oANR7c.jpeg?size=medium 1.5x, /posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/assets/boxcnZdXVWBiKXgOoXoc5oANR7c.jpeg?size=large 2x" data-title="/posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/assets/boxcnZdXVWBiKXgOoXoc5oANR7c.jpeg" style="--width: 800px;--aspect-ratio: 800 / 450;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>上图虽然画的很简单，但道理非常的深远，所以课程的后半段基本就是围绕上图来讲的。简单的来说，就是要车企自身或车联网公司帮助车企打通上述链路，从开发优秀产品，到创建有竞争力的平台，再部署健壮的中台，最终介入到商业变更中。谁先做，谁能做成，谁就赢了。</p>
+<p>商业模式分析部分未能有详细的要点罗列，罗孚仅汇总一下个人理解的部分观点：</p>
+<p>1、车联网很大，不是一家公司所能做完做全，更不可能谁把谁干掉，车联网行业更需要的是合作，开放的合作，不同业态公司互相找到战略合作点，才能合作共赢。</p>
+<p>2、关于车联网和新出行的关系：车企从汽车制造转向出行服务，不一定要成立出行公司，更应该借助车联网，基于车联网越来越丰富和强大的能力，逐步进入到新出行市场。</p>
+<p>3、关于新零售的思考：汽车自身是否可以成为销售工具？车主是否可以比销售人员更专业卖车？如何通过车联网去抢存量市场？</p>
+<p>4、将汽车理解为移动的商业地产，那么商业模式将会彻底改变：1)城市的商业空间无限放大；2)服务成本急剧降低；3)多方获益，包括车企、零部件公司、街道居委会、社区物业等；</p>
+<p>5、具有3P(极致的Product、自主的Platform、便宜的Price)属性的产品，非常重要。</p>
+<p>6、要用跨界思维重新思考商业模式和盈利模式，当移动的汽车和城市的智能结合，在不动基建、不动概念、不动投资的情况下，做到各方都能受益，那么商业模式就发生了改变，所以商业模式的机会在城市里，一个不用很大投资就能一步一步实现的城市里。</p>
+<p>好了，上述就是罗孚个人思考后的笔记，如有错误的地方，欢迎指正。最后，一点小福利：在“罗孚传说”公众号后台回复“未来车联网”，即可下载本文完整PPT和国家的《智能汽车创新发展战略》文件。</p>
+<p>本文飞书文档：<a href="https://rovertang.feishu.cn/docx/doxcntqPkJM5Ypu2NPT58pVexwc"target="_blank" rel="external nofollow noopener noreferrer">商业模式变革造就未来车联网——《车联网技术解构与商业模式分析》笔记</a></p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2020-03-15 00:00:00">更新于 2020-03-15&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/%E5%95%86%E4%B8%9A%E6%A8%A1%E5%BC%8F/" class="post-tag" title="标签 - 商业模式">商业模式</a><a href="/tags/%E8%BD%A6%E8%81%94%E7%BD%91/" class="post-tag" title="标签 - 车联网">车联网</a><a href="/tags/%E5%8F%98%E9%9D%A9/" class="post-tag" title="标签 - 变革">变革</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/car/20200307-portable-internet-of-vehicles-new-ecological-species-of-internet-of-vehicles/" class="post-nav-item" rel="prev" title="随身车联网——车联网生态新物种(附发布会视频)"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>随身车联网——车联网生态新物种(附发布会视频)</a><a href="/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/" class="post-nav-item" rel="next" title="手把手教你快速构建一份全国疫情分布地图">手把手教你快速构建一份全国疫情分布地图<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment"></div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward"><i class="fa-solid fa-qrcode fa-fw" aria-hidden="true"></i>赞赏</label>
+    <div class="reward-ways" data-mode="static"><div><img loading="lazy" src="/images/alipay.png" alt="RoverTang 支付宝" data-title="RoverTang 支付宝" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>支付宝</span>
+          </div><div><img loading="lazy" src="/images/wechatpay.png" alt="RoverTang 微信" data-title="RoverTang 微信" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>微信</span>
+          </div></div>
+  </div></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.139.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.16">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2005 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://rovertang.com"target="_blank" rel="external nofollow noopener noreferrer">RoverTang</a></span></div><div class="footer-line beian"><span class="icp footer-divider">沪ICP备2020036772号-1</span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;bottom: 0;"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.16"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

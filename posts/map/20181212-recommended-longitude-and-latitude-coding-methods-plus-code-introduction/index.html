@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>经纬度编码方法推荐-Plus Code简介 - 罗孚</title><meta name="author" content="RoverTang">
+<meta name="description" content="今天罗孚为大家推荐一种经纬度编码的方法——plus code，原名open location code，是Google于2014年发明的，旨在将表示地理位置的经纬度通过算法推导成一个字符串。
+"><meta name="keywords" content='经纬度编码, plus code'>
+  <meta itemprop="name" content="经纬度编码方法推荐-plus code简介">
+  <meta itemprop="description" content="今天罗孚为大家推荐一种经纬度编码的方法——plus code，原名open location code，是Google于2014年发明的，旨在将表示地理位置的经纬度通过算法推导成一个字符串。">
+  <meta itemprop="datePublished" content="2018-12-12T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2018-12-12T00:00:00+08:00">
+  <meta itemprop="wordCount" content="3478">
+  <meta itemprop="image" content="https://blog.rovertang.com/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/cover.jpg">
+  <meta itemprop="keywords" content="经纬度编码,Plus Code"><meta property="og:url" content="https://blog.rovertang.com/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/">
+  <meta property="og:site_name" content="罗孚">
+  <meta property="og:title" content="经纬度编码方法推荐-plus code简介">
+  <meta property="og:description" content="今天罗孚为大家推荐一种经纬度编码的方法——plus code，原名open location code，是Google于2014年发明的，旨在将表示地理位置的经纬度通过算法推导成一个字符串。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2018-12-12T00:00:00+08:00">
+    <meta property="article:modified_time" content="2018-12-12T00:00:00+08:00">
+    <meta property="article:tag" content="经纬度编码">
+    <meta property="article:tag" content="Plus Code">
+    <meta property="og:image" content="https://blog.rovertang.com/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/cover.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://blog.rovertang.com/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/cover.jpg">
+  <meta name="twitter:title" content="经纬度编码方法推荐-plus code简介">
+  <meta name="twitter:description" content="今天罗孚为大家推荐一种经纬度编码的方法——plus code，原名open location code，是Google于2014年发明的，旨在将表示地理位置的经纬度通过算法推导成一个字符串。">
+<meta name="application-name" content="罗孚传说">
+<meta name="apple-mobile-web-app-title" content="罗孚传说"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://blog.rovertang.com/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/" title="经纬度编码方法推荐-plus code简介 - 罗孚" /><link rel="prev" type="text/html" href="https://blog.rovertang.com/posts/car/20181130-thoughts-on-the-realization-and-problems-of-express-arrival-service/" title="快递到车服务的实现思路和问题思考" /><link rel="next" type="text/html" href="https://blog.rovertang.com/posts/soul/20190105-10-life-insights-from-my-wifes-ferocity/" title="从老婆凶我一事获得的10条人生感悟（家庭篇）" /><link rel="alternate" type="text/markdown" href="https://blog.rovertang.com/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/index.md" title="经纬度编码方法推荐-plus code简介 - 罗孚"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="apxz4dWbUQ2bsnGFk6SmRK4gNZ7tlT21KgMZ1t9hqdk" /><meta name="msvalidate.01" content="5282002B82D61AD2D097F2F6419C1E4A" /><meta name="baidu-site-verification" content="codeva-RiIZqiHrvQ" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "经纬度编码方法推荐-plus code简介",
+    "inLanguage": "zh-cn",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.rovertang.com\/posts\/map\/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction\/"
+    },"genre": "posts","keywords": "经纬度编码, plus code","wordcount":  3478 ,
+    "url": "https:\/\/blog.rovertang.com\/posts\/map\/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction\/","datePublished": "2018-12-12T00:00:00+08:00","dateModified": "2018-12-12T00:00:00+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "RoverTang"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item has-children">
+              <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/" title="文章">文章</a></li><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/map/" title="地图">地图</a></li><li class="breadcrumb-item active" data-separator="&gt;" aria-current="page">经纬度编码方法推荐-plus code简介</li>
+    </ol>
+  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div style="width: 350px; margin: 0 auto; display: flex; justify-content: space-between; text-align: center;">
+  <img src="/images/wxmp-blog.jpg" alt="wxmp-blog" style="width: 115px; height: 153px;">
+  <img src="/images/wxmp-shanghai.jpg" alt="wxmp-shanghai" style="width: 115px; height: 153px;">
+  <img src="/images/zsxq-fromblog.jpg" alt="zsxq-fromblog" style="width: 115px; height: 153px;">
+</div></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>经纬度编码方法推荐-Plus Code简介</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://rovertang.com" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    RoverTang</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E5%9C%B0%E5%9B%BE/" class="post-category" title="分类 - 地图"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 地图</a></span></div><div class="post-meta-line"><span title="发布于 2018-12-12 00:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2018-12-12">2018-12-12</time></span>&nbsp;<span title="3478 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 3500 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 7 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#plus-code的用途">plus code的用途</a>
+      <ul>
+        <li><a href="#用一串字符表示地球上的任一位置">用一串字符表示地球上的任一位置</a></li>
+        <li><a href="#基于位置范围的检索">基于位置范围的检索</a></li>
+      </ul>
+    </li>
+    <li><a href="#什么是plus-code">什么是plus code</a></li>
+    <li><a href="#plus-code的优点">plus code的优点</a>
+      <ul>
+        <li><a href="#方便存储">方便存储</a></li>
+        <li><a href="#方便比较">方便比较</a></li>
+        <li><a href="#其他优势">其他优势</a></li>
+      </ul>
+    </li>
+    <li><a href="#同其他编码方法的比较">同其他编码方法的比较</a>
+      <ul>
+        <li><a href="#geohash">geohash</a></li>
+        <li><a href="#what3words">what3words</a></li>
+      </ul>
+    </li>
+    <li><a href="#附上资料">附上资料：</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p>今天罗孚为大家推荐一种经纬度编码的方法——plus code，原名open location code，是Google于2014年发明的，旨在将表示地理位置的经纬度通过算法推导成一个字符串。</p>
+<p><img loading="lazy" src="/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/assets/boxcnWCbaEqmpYKnVzR3q9lmGTb.jpg" alt="/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/assets/boxcnWCbaEqmpYKnVzR3q9lmGTb.jpg" srcset="/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/assets/boxcnWCbaEqmpYKnVzR3q9lmGTb.jpg?size=small, /posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/assets/boxcnWCbaEqmpYKnVzR3q9lmGTb.jpg?size=medium 1.5x, /posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/assets/boxcnWCbaEqmpYKnVzR3q9lmGTb.jpg?size=large 2x" data-title="/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/assets/boxcnWCbaEqmpYKnVzR3q9lmGTb.jpg" style="--width: 400px;--aspect-ratio: 400 / 171;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<h2 id="plus-code的用途" class="heading-element"><span>plus code的用途</span>
+  <a href="#plus-code%e7%9a%84%e7%94%a8%e9%80%94" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="用一串字符表示地球上的任一位置" class="heading-element"><span>用一串字符表示地球上的任一位置</span>
+  <a href="#%e7%94%a8%e4%b8%80%e4%b8%b2%e5%ad%97%e7%ac%a6%e8%a1%a8%e7%a4%ba%e5%9c%b0%e7%90%83%e4%b8%8a%e7%9a%84%e4%bb%bb%e4%b8%80%e4%bd%8d%e7%bd%ae" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>发明plus code的初衷，就是希望能够通过一个编码标识地球的任何一个地方。</p>
+<p>我们最常用的位置编码是地址编码，通过行政区划、道路和门牌号等信息找到具体的位置信息，这在日常生活中非常常见，比如送快递。</p>
+<p>但若你在京东或天猫上买东西，直接送回乡下老家，怎么办？还能记得门址信息吗？一方面城市化进程变迁，也许门址早已不是当初的门址，另一方面即便有门牌号，一个陌生人能否顺利找到，也是未知问题。</p>
+<p>门址无法找到，那我们用经纬度，经纬度是一个非常精确的位置信息。没错，但除了电影中会有通过十几个数字(即经纬度)来寻找目标的场景，我们在日常生活中有用到吗？加上国家的法律因素，连通过经纬度导航都不是一个可行的方法。</p>
+<p>世界上确实有无法使用门址表示的地方，而经纬度的数值也超出了常人的可记忆范畴，所以Google希望通过一种编码方法，简单明了地表示世界上任一位置。</p>
+<p>使用字符串编码来表示经纬度，其实有多种编码方案，但plus code有什么优势？我们后面再讲。只是，罗孚使用plus code并不仅仅为了表示地球上的位置这么简单。</p>
+<h3 id="基于位置范围的检索" class="heading-element"><span>基于位置范围的检索</span>
+  <a href="#%e5%9f%ba%e4%ba%8e%e4%bd%8d%e7%bd%ae%e8%8c%83%e5%9b%b4%e7%9a%84%e6%a3%80%e7%b4%a2" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>在电子地图的使用过程中，我们可能经常需要查询酒店、餐饮、景点等数据，也就是我们常说的POI检索。其检索方式，除了名称查询外，可能会有周边查询或沿途搜索，比如“徐家汇周围10公里范围内的奥迪4S店”。</p>
+<p><img loading="lazy" src="/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/assets/boxcnSCr9A9xEsrvKb0c8iLdg1b.jpg" alt="/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/assets/boxcnSCr9A9xEsrvKb0c8iLdg1b.jpg" srcset="/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/assets/boxcnSCr9A9xEsrvKb0c8iLdg1b.jpg?size=small, /posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/assets/boxcnSCr9A9xEsrvKb0c8iLdg1b.jpg?size=medium 1.5x, /posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/assets/boxcnSCr9A9xEsrvKb0c8iLdg1b.jpg?size=large 2x" data-title="/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/assets/boxcnSCr9A9xEsrvKb0c8iLdg1b.jpg" style="--width: 800px;--aspect-ratio: 800 / 645;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>周边查询和沿途搜索，都是一种基于经纬度范围的检索，最常规的检索方法，就是一条sql语句，限定一下范围即可，比如： <code>where lat &gt; 31 and lat &lt;32 and lon &gt;121 and lon &lt;121</code> 。</p>
+<p>直接拿经纬度进行比较，一定不是一个好的方法，当数据量达到千万级，其检索效率低下到无法直视。如何提高检索效率？首先想到的，一定是分块检索，比如将数据进行四叉树切分，根据当前位置找到附近的数据块，然后再在数据块中检索。</p>
+<p>数据分幅分块是数据处理中最基本的内容，数据量大了以后必定要做分幅分块处理，比如全国的POI数据。数据分幅有很多种方法，比如上述的四叉树方法，或者直接按固定经纬度间隔进行分幅(类似印刷纸质地图所用的分幅)，当然按省名称区分也可以算是分幅，只是形状不规则罢了。</p>
+<p>罗孚推荐plus code，一定在分幅上有它的优势，待我慢慢道来，我们先来了解一下plus code。</p>
+<h2 id="什么是plus-code" class="heading-element"><span>什么是plus code</span>
+  <a href="#%e4%bb%80%e4%b9%88%e6%98%afplus-code" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>plus code是一种经纬度编码方法，它能表示地球上的任何一个地方。</p>
+<p>plus code将经纬度编码后，一般为十位字符(如果含+号的话，就是11位)。plus code去除了容易混淆的字母以及一些令人不愉快的字符，只取用了20个字符(含部分数字)，这20个字符是：2、3、4、5、6、7、8、9、C、F、G、H、J、M、P、Q、R、V、W、X。</p>
+<p><img loading="lazy" src="/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/assets/boxcnrVPTSkYk1cJ4vB22mDgQ6o.jpg" alt="/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/assets/boxcnrVPTSkYk1cJ4vB22mDgQ6o.jpg" srcset="/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/assets/boxcnrVPTSkYk1cJ4vB22mDgQ6o.jpg?size=small, /posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/assets/boxcnrVPTSkYk1cJ4vB22mDgQ6o.jpg?size=medium 1.5x, /posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/assets/boxcnrVPTSkYk1cJ4vB22mDgQ6o.jpg?size=large 2x" data-title="/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/assets/boxcnrVPTSkYk1cJ4vB22mDgQ6o.jpg" style="--width: 800px;--aspect-ratio: 800 / 484;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>plus code的前四个字符是区域代码，基本是1经纬度的范围，也就是约100<em>100公里的范围，后六位是本地代码，用来描述一个建筑物，面积约为14</em>14米，差不多是半个篮球场的大小。</p>
+<p>但如果觉得十位编码精度不够，是否可以继续拓展呢？当然可以，plus code定义了一个附加规则，可以将代码拓展到11位或12位，其中11位编码差不多代表了3米的范围，应该可以描述一个建筑物的前门或后门，或者是一辆车的大小，定位颗粒更细。需要注意，10位以后的代码不再使用两位编码表示区域，而仅使用了一位，编码方式有所不同。</p>
+<table>
+  <thead>
+      <tr>
+          <th>层级</th>
+          <th>字符数</th>
+          <th>经纬度范围</th>
+          <th>长度范围</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0</td>
+          <td>2</td>
+          <td>20x20</td>
+          <td>2200km</td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>4</td>
+          <td>1x1</td>
+          <td>110km</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>6</td>
+          <td>0.05x0.05</td>
+          <td>5.5km</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>8</td>
+          <td>0.0025x0.0025</td>
+          <td>275m</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>10</td>
+          <td>0.000125x0.000125</td>
+          <td>14m</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>11</td>
+          <td>0.000025x0.00003125</td>
+          <td>3.5m</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>12</td>
+          <td>0.000005x0.0000078125</td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<p>上表为plus code的层级表，既然plus code具有层级，那pluse code就可以改变长度，越短的长度表示的区域范围越大，越长的长度表示的区域范围越小。同时也说明，plus code所表示的经纬度，是一个经纬度范围(是一个面)，而不是一个经纬度值(一个点)。按理，面是无法用来导航的，当然，我们变通一下，可以取面的中心点。</p>
+<h2 id="plus-code的优点" class="heading-element"><span>plus code的优点</span>
+  <a href="#plus-code%e7%9a%84%e4%bc%98%e7%82%b9" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>plus code介绍完了，我们来总结一下plus code的优点。</p>
+<h3 id="方便存储" class="heading-element"><span>方便存储</span>
+  <a href="#%e6%96%b9%e4%be%bf%e5%ad%98%e5%82%a8" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>经纬度经过编码，由经度和纬度两个字段，变更为一个字段，减少了一个字段，而且不再使用float型，可以直接使用固定长度的string。</p>
+<h3 id="方便比较" class="heading-element"><span>方便比较</span>
+  <a href="#%e6%96%b9%e4%be%bf%e6%af%94%e8%be%83" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>罗孚认为，方便比较是plus code的核心优势，也是解决上述“基于位置范围检索”问题的核心。</p>
+<p>方便比较主要体现在两个方面，一个是按层级分幅，另一个是幅和幅之间具有连续性。</p>
+<p><img loading="lazy" src="/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/assets/boxcn1aXBWCZj5ukpHT0tg7ICne.jpg" alt="/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/assets/boxcn1aXBWCZj5ukpHT0tg7ICne.jpg" srcset="/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/assets/boxcn1aXBWCZj5ukpHT0tg7ICne.jpg?size=small, /posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/assets/boxcn1aXBWCZj5ukpHT0tg7ICne.jpg?size=medium 1.5x, /posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/assets/boxcn1aXBWCZj5ukpHT0tg7ICne.jpg?size=large 2x" data-title="/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/assets/boxcn1aXBWCZj5ukpHT0tg7ICne.jpg" style="--width: 800px;--aspect-ratio: 800 / 723;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>仍然举例来说，如何检索徐家汇附近10公里范围的奥迪4S店？主要解决范围的问题。</p>
+<p>徐家汇的plus code是8Q335CVQ+，根据plus code层级中的长度范围，约取6位编码(对应长度范围是5.5km)比较合适，即8Q335C，再将该图幅附近一圈的8个图幅选取出来，8Q3349、8Q334C、8Q334F、8Q3359、8Q335F、8Q3369、8Q336C、8Q336F，最终形成一个九宫格状的图幅。</p>
+<p><img loading="lazy" src="/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/assets/boxcnK5w6Hsqitdwr89bKtJQHWL.jpeg" alt="/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/assets/boxcnK5w6Hsqitdwr89bKtJQHWL.jpeg" srcset="/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/assets/boxcnK5w6Hsqitdwr89bKtJQHWL.jpeg?size=small, /posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/assets/boxcnK5w6Hsqitdwr89bKtJQHWL.jpeg?size=medium 1.5x, /posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/assets/boxcnK5w6Hsqitdwr89bKtJQHWL.jpeg?size=large 2x" data-title="/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/assets/boxcnK5w6Hsqitdwr89bKtJQHWL.jpeg" style="--width: 800px;--aspect-ratio: 800 / 585;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>通过plus code的层级可以基本限定搜索的范围，通过目标位置的图幅扩展选择周边的图幅，而图幅之间的连续性让图幅号的获取变得极其简单。</p>
+<p>反之，若使用plus code的规则进行数据分块，将数据密集区域，分块到level2，比如上海市区，对于数据稀疏区域，则可以分块到level1，比如西部地区。数据块的总量得到了控制，同时每个数据块的数据量也比较均匀，没有过密或过疏的情况。</p>
+<h3 id="其他优势" class="heading-element"><span>其他优势</span>
+  <a href="#%e5%85%b6%e4%bb%96%e4%bc%98%e5%8a%bf" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>代码足够短，方便记忆。代码本身是支持全世界的，不需要国别等附加信息。</p>
+<p>代码是通过算法生成的，可以离线使用，并且不需要任何设置或程序，代码不依赖于任何第三方。</p>
+<p>特别需要说明的，这个算法是开源的，可以自由使用，包括商业用途。</p>
+<h2 id="同其他编码方法的比较" class="heading-element"><span>同其他编码方法的比较</span>
+  <a href="#%e5%90%8c%e5%85%b6%e4%bb%96%e7%bc%96%e7%a0%81%e6%96%b9%e6%b3%95%e7%9a%84%e6%af%94%e8%be%83" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="geohash" class="heading-element"><span>geohash</span>
+  <a href="#geohash" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>geohash是比较早期的经纬度编码方法，也是使用较广的编码方法。geohash选用了32个符号作为其字符集，其字符长度也是可变的，缩短字符串的长度会影响位置的精度，实际上geohash代码也是表示了经纬度范围，而不是经纬度位置。</p>
+<p>当然，geohash也是开源的，也仅仅是一个算法，应该说，后来的geohash-36以及plus code编码，都受到了geohash编码算法的较大启发。</p>
+<p>geohash也有不少的弊端，除了精度问题，根据当前分幅号获取周围分幅号码有较多的不确定性，这应该是最大的弊端，原因在于数据切分方法和命名规则。比如0纬度地区，即赤道附近，两个相邻的图幅，其图幅编号可能会大相径庭，geohash的切分方法导致图幅号的首字母也存在不同，这样就无法通过缩短代码的长度来快速获取图幅号，也就是无法快速确定范围。</p>
+<h3 id="what3words" class="heading-element"><span>what3words</span>
+  <a href="#what3words" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>what3words据说已经在Benz上获得了使用，当然，原因是Benz是what3words的投资方。</p>
+<p>what3words吸引我的地方有两个方面，一是将世界分成了3m<em>3m的网格，类似于预先进行了一个固定长度和比例尺的分幅，另一是每一个3</em>3的网格都可以使用3个单词来表示，即全世界每一个3*3的地方都可以用3个单词找到。</p>
+<p>举个例子：用“香蕉.兔子.猴子”可以表示A地址，用“兔子.猴子.香蕉”来表示B地址。这种方法，类似于建立了一个全世界的门址编码系统，而覆盖全世界3*3的位置，要装下全世界，那将是一个多大的数据库呢。这种编码方法让我首先想到的就是，做关键字竞价排名应该是一个不错的生意，该机构还真的做了这件事情。</p>
+<p>我喜欢这种表示形式，但弊端确实太大了，本身需要通过API访问才能定位，虽然也提供了离线SDK，但据说关键字竞价排名不可以离线使用。需要网络，并且无编码算法可言，完全依赖于该机构对位置的定义，这是我最不能接受地方。</p>
+<p>经纬度编码的方法其实还有很多，今年也冒出了很多编码方法，罗孚无法一一列举和分析，如有更好的编码方法推荐，也欢迎交流。</p>
+<p>总的来说，罗孚认为，plus code非常适用于位置交换、定位以及基于位置范围的搜索等，如果你的项目中正好有经纬度转码或经纬度范围检索，不妨试试plus code。</p>
+<h2 id="附上资料" class="heading-element"><span>附上资料：</span>
+  <a href="#%e9%99%84%e4%b8%8a%e8%b5%84%e6%96%99" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p><a href="https://plus.codes/"target="_blank" rel="external nofollow noopener noreferrer">plus code 官网</a>，除了了解plus code外，还可以在Google地图上直接查看任何位置的plus code代码。</p>
+<p>罗孚的<a href="http://rovertang.com/labs/pluscode/"target="_blank" rel="external nofollow noopener noreferrer">plus code演示页面</a>，可以直接查看图幅编号，基于leftlet+天地图+plus code grid，不过Google的grid瓦片服务器不稳定，你懂的。</p>
+<p><a href="https://github.com/google/open-location-code/wiki/Evaluation-of-Location-Encoding-Systems"target="_blank" rel="external nofollow noopener noreferrer">Evaluation of Location Encoding Systems</a>，关于地理位置编码的分析比较，Google官方文档，内容较多，英文原版，但非常值得一看。</p>
+<p><a href="https://github.com/google/open-location-code"target="_blank" rel="external nofollow noopener noreferrer">plus code/open location code github</a></p>
+<p>本文飞书文档：<a href="https://rovertang.feishu.cn/docx/doxcnDUiZlh95kN4LUe0Dn86fLb"target="_blank" rel="external nofollow noopener noreferrer">经纬度编码方法推荐-pluscode简介</a></p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2018-12-12 00:00:00">更新于 2018-12-12&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/%E7%BB%8F%E7%BA%AC%E5%BA%A6%E7%BC%96%E7%A0%81/" class="post-tag" title="标签 - 经纬度编码">经纬度编码</a><a href="/tags/plus-code/" class="post-tag" title="标签 - Plus Code">Plus Code</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/car/20181130-thoughts-on-the-realization-and-problems-of-express-arrival-service/" class="post-nav-item" rel="prev" title="快递到车服务的实现思路和问题思考"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>快递到车服务的实现思路和问题思考</a><a href="/posts/soul/20190105-10-life-insights-from-my-wifes-ferocity/" class="post-nav-item" rel="next" title="从老婆凶我一事获得的10条人生感悟（家庭篇）">从老婆凶我一事获得的10条人生感悟（家庭篇）<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment"></div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward"><i class="fa-solid fa-qrcode fa-fw" aria-hidden="true"></i>赞赏</label>
+    <div class="reward-ways" data-mode="static"><div><img loading="lazy" src="/images/alipay.png" alt="RoverTang 支付宝" data-title="RoverTang 支付宝" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>支付宝</span>
+          </div><div><img loading="lazy" src="/images/wechatpay.png" alt="RoverTang 微信" data-title="RoverTang 微信" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>微信</span>
+          </div></div>
+  </div></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.139.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.16">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2005 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://rovertang.com"target="_blank" rel="external nofollow noopener noreferrer">RoverTang</a></span></div><div class="footer-line beian"><span class="icp footer-divider">沪ICP备2020036772号-1</span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;bottom: 0;"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.16"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

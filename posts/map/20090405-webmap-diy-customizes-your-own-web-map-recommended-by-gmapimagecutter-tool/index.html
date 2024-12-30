@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>WebMap DIY(定制你自己的网络地图，GMapImageCutter工具推荐) - 罗孚</title><meta name="author" content="RoverTang">
+<meta name="description" content="自从上次发布了Google Maps API离线开发包以后，就有人来问我，为什么离线状态下不能显示地图，能否显示自己的DIY地图。严格来说，这是两个问题，为什么不能显示地图是因为Google的地图图片本身就不在本地，所以离线状态下是肯定不能显示地图的，不过能够标点画线等动作下有没有地图图片并不重要，而能否显示自己的DIY地图，其实Gmaps API本身就带了，GOverlay/GTileLayer等函数就是能够添加自己的图片，只是我不喜欢只添加一张图片到Gmap上，觉得意义不大，但又没有找到好的tile的切割工具，所以这个功能我一直没有尝试。今天，我向大家推荐GMapImageCutter工具，一个能够将图片切割成tile的工具，并且还帮你生成了HTML文件，直接就能够浏览，厉害。
+"><meta name="keywords" content='DIY地图, GMapImageCutter, WebMap'>
+  <meta itemprop="name" content="WebMap DIY(定制你自己的网络地图，GMapImageCutter工具推荐)">
+  <meta itemprop="description" content="自从上次发布了Google Maps API离线开发包以后，就有人来问我，为什么离线状态下不能显示地图，能否显示自己的DIY地图。严格来说，这是两个问题，为什么不能显示地图是因为Google的地图图片本身就不在本地，所以离线状态下是肯定不能显示地图的，不过能够标点画线等动作下有没有地图图片并不重要，而能否显示自己的DIY地图，其实Gmaps API本身就带了，GOverlay/GTileLayer等函数就是能够添加自己的图片，只是我不喜欢只添加一张图片到Gmap上，觉得意义不大，但又没有找到好的tile的切割工具，所以这个功能我一直没有尝试。今天，我向大家推荐GMapImageCutter工具，一个能够将图片切割成tile的工具，并且还帮你生成了HTML文件，直接就能够浏览，厉害。">
+  <meta itemprop="datePublished" content="2009-04-05T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2009-04-05T00:00:00+08:00">
+  <meta itemprop="wordCount" content="2228">
+  <meta itemprop="keywords" content="DIY地图,GMapImageCutter,WebMap"><meta property="og:url" content="https://blog.rovertang.com/posts/map/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool/">
+  <meta property="og:site_name" content="罗孚">
+  <meta property="og:title" content="WebMap DIY(定制你自己的网络地图，GMapImageCutter工具推荐)">
+  <meta property="og:description" content="自从上次发布了Google Maps API离线开发包以后，就有人来问我，为什么离线状态下不能显示地图，能否显示自己的DIY地图。严格来说，这是两个问题，为什么不能显示地图是因为Google的地图图片本身就不在本地，所以离线状态下是肯定不能显示地图的，不过能够标点画线等动作下有没有地图图片并不重要，而能否显示自己的DIY地图，其实Gmaps API本身就带了，GOverlay/GTileLayer等函数就是能够添加自己的图片，只是我不喜欢只添加一张图片到Gmap上，觉得意义不大，但又没有找到好的tile的切割工具，所以这个功能我一直没有尝试。今天，我向大家推荐GMapImageCutter工具，一个能够将图片切割成tile的工具，并且还帮你生成了HTML文件，直接就能够浏览，厉害。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2009-04-05T00:00:00+08:00">
+    <meta property="article:modified_time" content="2009-04-05T00:00:00+08:00">
+    <meta property="article:tag" content="DIY地图">
+    <meta property="article:tag" content="GMapImageCutter">
+    <meta property="article:tag" content="WebMap">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="WebMap DIY(定制你自己的网络地图，GMapImageCutter工具推荐)">
+  <meta name="twitter:description" content="自从上次发布了Google Maps API离线开发包以后，就有人来问我，为什么离线状态下不能显示地图，能否显示自己的DIY地图。严格来说，这是两个问题，为什么不能显示地图是因为Google的地图图片本身就不在本地，所以离线状态下是肯定不能显示地图的，不过能够标点画线等动作下有没有地图图片并不重要，而能否显示自己的DIY地图，其实Gmaps API本身就带了，GOverlay/GTileLayer等函数就是能够添加自己的图片，只是我不喜欢只添加一张图片到Gmap上，觉得意义不大，但又没有找到好的tile的切割工具，所以这个功能我一直没有尝试。今天，我向大家推荐GMapImageCutter工具，一个能够将图片切割成tile的工具，并且还帮你生成了HTML文件，直接就能够浏览，厉害。">
+<meta name="application-name" content="罗孚传说">
+<meta name="apple-mobile-web-app-title" content="罗孚传说"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://blog.rovertang.com/posts/map/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool/" title="WebMap DIY(定制你自己的网络地图，GMapImageCutter工具推荐) - 罗孚" /><link rel="prev" type="text/html" href="https://blog.rovertang.com/posts/map/20090316-mobile-navigation-service-not-software/" title="手机导航：是服务，不是软件！" /><link rel="next" type="text/html" href="https://blog.rovertang.com/posts/map/20090822-on-the-composition-and-production-process-of-navigation-electronic-map/" title="浅谈导航电子地图的组成和制作流程" /><link rel="alternate" type="text/markdown" href="https://blog.rovertang.com/posts/map/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool/index.md" title="WebMap DIY(定制你自己的网络地图，GMapImageCutter工具推荐) - 罗孚"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="apxz4dWbUQ2bsnGFk6SmRK4gNZ7tlT21KgMZ1t9hqdk" /><meta name="msvalidate.01" content="5282002B82D61AD2D097F2F6419C1E4A" /><meta name="baidu-site-verification" content="codeva-RiIZqiHrvQ" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "WebMap DIY(定制你自己的网络地图，GMapImageCutter工具推荐)",
+    "inLanguage": "zh-cn",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.rovertang.com\/posts\/map\/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool\/"
+    },"genre": "posts","keywords": "DIY地图, GMapImageCutter, WebMap","wordcount":  2228 ,
+    "url": "https:\/\/blog.rovertang.com\/posts\/map\/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool\/","datePublished": "2009-04-05T00:00:00+08:00","dateModified": "2009-04-05T00:00:00+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "RoverTang"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item has-children">
+              <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/" title="文章">文章</a></li><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/map/" title="地图">地图</a></li><li class="breadcrumb-item active" data-separator="&gt;" aria-current="page">WebMap DIY(定制你自己的网络地图，GMapImageCutter工具推荐)</li>
+    </ol>
+  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div style="width: 350px; margin: 0 auto; display: flex; justify-content: space-between; text-align: center;">
+  <img src="/images/wxmp-blog.jpg" alt="wxmp-blog" style="width: 115px; height: 153px;">
+  <img src="/images/wxmp-shanghai.jpg" alt="wxmp-shanghai" style="width: 115px; height: 153px;">
+  <img src="/images/zsxq-fromblog.jpg" alt="zsxq-fromblog" style="width: 115px; height: 153px;">
+</div></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>WebMap DIY(定制你自己的网络地图，GMapImageCutter工具推荐)</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://rovertang.com" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    RoverTang</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E5%9C%B0%E5%9B%BE/" class="post-category" title="分类 - 地图"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 地图</a></span></div><div class="post-meta-line"><span title="发布于 2009-04-05 00:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2009-04-05">2009-04-05</time></span>&nbsp;<span title="2228 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 2300 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 5 分钟</span>&nbsp;</div>
+    </div><div class="content" id="content"><p>自从上次发布了<a href="https://www.cnblogs.com/Tangf/archive/2009/02/20/1394511.html"target="_blank" rel="external nofollow noopener noreferrer">Google Maps API离线开发包</a>以后，就有人来问我，为什么离线状态下不能显示地图，能否显示自己的DIY地图。严格来说，这是两个问题，为什么不能显示地图是因为Google的地图图片本身就不在本地，所以离线状态下是肯定不能显示地图的，不过能够标点画线等动作下有没有地图图片并不重要，而能否显示自己的DIY地图，其实Gmaps API本身就带了，GOverlay/GTileLayer等函数就是能够添加自己的图片，只是我不喜欢只添加一张图片到Gmap上，觉得意义不大，但又没有找到好的tile的切割工具，所以这个功能我一直没有尝试。今天，我向大家推荐GMapImageCutter工具，一个能够将图片切割成tile的工具，并且还帮你生成了HTML文件，直接就能够浏览，厉害。</p>
+<p>其实这个工具最早是在IT168上看到的，我就下载了下来，但一直没有安装java环境，所以一直没有怎么用，IT168的文章我也没有怎么看，但大致知道怎么一回事，今天安装了java环境所以就可以跑起来试试看了，用下来感觉非常的好。所以就打包上来和大家分享，除了工具，还带了我的Google Maps API的离线开发包，还带了北京师范大学和北京动物园两个地图的DEMO，这两个DEMO只要部署到IIS或者Apache上就可以使用，即使是在离线状态下。</p>
+<p><img loading="lazy" src="/posts/map/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool/assets/boxcngI5oTj7nKCPNccY7IZkpie.png" alt="/posts/map/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool/assets/boxcngI5oTj7nKCPNccY7IZkpie.png" srcset="/posts/map/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool/assets/boxcngI5oTj7nKCPNccY7IZkpie.png?size=small, /posts/map/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool/assets/boxcngI5oTj7nKCPNccY7IZkpie.png?size=medium 1.5x, /posts/map/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool/assets/boxcngI5oTj7nKCPNccY7IZkpie.png?size=large 2x" data-title="/posts/map/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool/assets/boxcngI5oTj7nKCPNccY7IZkpie.png" style="--width: 604px;--aspect-ratio: 604 / 412;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><img loading="lazy" src="/posts/map/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool/assets/boxcnW7TNx1AaI4eyqwXjUEb2Jg.png" alt="/posts/map/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool/assets/boxcnW7TNx1AaI4eyqwXjUEb2Jg.png" srcset="/posts/map/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool/assets/boxcnW7TNx1AaI4eyqwXjUEb2Jg.png?size=small, /posts/map/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool/assets/boxcnW7TNx1AaI4eyqwXjUEb2Jg.png?size=medium 1.5x, /posts/map/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool/assets/boxcnW7TNx1AaI4eyqwXjUEb2Jg.png?size=large 2x" data-title="/posts/map/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool/assets/boxcnW7TNx1AaI4eyqwXjUEb2Jg.png" style="--width: 604px;--aspect-ratio: 604 / 367;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>OK，下面我们就来讲讲这个工具的使用吧。GMapImageCutter.jar这是该工具，是java的程序，通过命令行方式就能使用：javaw -Xms512M -Xmx1024M -jar gmapimagecutter.jar。当然我们只要运行GMapImageCutter.bat就可以(这里首先要保证的是你有java的环境，安装个J2SE)。运行后可以看到如下图所示的界面(这里我已经打开了北京动物园的图片了)：</p>
+<p><img loading="lazy" src="/posts/map/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool/assets/boxcnTNw4VE25peHiGn1hbcf9Af.png" alt="/posts/map/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool/assets/boxcnTNw4VE25peHiGn1hbcf9Af.png" srcset="/posts/map/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool/assets/boxcnTNw4VE25peHiGn1hbcf9Af.png?size=small, /posts/map/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool/assets/boxcnTNw4VE25peHiGn1hbcf9Af.png?size=medium 1.5x, /posts/map/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool/assets/boxcnTNw4VE25peHiGn1hbcf9Af.png?size=large 2x" data-title="/posts/map/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool/assets/boxcnTNw4VE25peHiGn1hbcf9Af.png" style="--width: 500px;--aspect-ratio: 500 / 357;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>该工具自动判断图片大小，然后选择一个缩放级别，当然你也可以自己调节缩放级别，只是对于图片来说，调高缩放级别，那么你的图片就被拉升了，这样就模糊了，具体看你自己的需求，你也可以把图片做的非常大然后缩放级别就可以调到非常高。按照这样的理论，你甚至可以生成Google Map的全部图片，17个层级的所有图片，呵呵，这里当然是玩笑了，虽然工具上可以调到17级别，一是你做不出这么大的图片，二是即使做出来切割也不知道要经过多少时间，三是切割出来的文件会非常的大，存放都是一个问题。OK，说多了。下面你点击create按钮，开始就可以切割了，等待完成你会看到在图片的相同目录下生成了一个html文件和一个图片目录，调整一下html中Google Map Key为你自己的key，你就可以发布你自己的地图了，简单吧，一个DIY的WEBMAP就此诞生了。</p>
+<p>只是我调整了一下html中的代码，让其运行在我的离线开发包上，结果也能显示没有任何问题，这样的话你甚至可以脱离在线的Gmaps API，使用我的离线开发包发布你自己的地图在你自己的服务器上，所有的一切都是你自己的，并且重要的是还能够用Gmaps API来开发，比如我在BNE demo map中加入了一个marker点，后面你想做什么就完全由你自己去想了，画线画面添加点位等等等，你都可以自己完成，俨然就是一个自己的比较强大的WEBGIS(强大之处就是支持Gmaps API开发，呵呵)。</p>
+<p>压缩包内文件说明：
+GMapImageCutter1.4：GMapImageCutter工具
+DemoPicture：样例图片，北京师范大学平面图和北京动物园平面图
+gmap：Google Maps API离线开发包，内附北京师范大学和北京动物园地图demo</p>
+<p>预览效果：
+将gmap目录拷贝到IIS的主目录下，在IE或者FireFox浏览器地址栏输入：
+<a href="http://127.0.0.1/gmap/BNUmap.html"target="_blank" rel="external nofollow noopener noreferrer">http://127.0.0.1/gmap/BNUmap.html</a>
+<a href="http://127.0.0.1/gmap/BeijingZoo.html"target="_blank" rel="external nofollow noopener noreferrer">http://127.0.0.1/gmap/BeijingZoo.html</a>
+即可浏览北京师范大学和北京动物园的demo地图效果
+其中北京师范大学demo地图进行了简单的修改，取消了地图自适应长宽的内容，并增加了一个marker
+如果你不想使用Google Maps API离线开发包，只需要将html文件中调用的maps_my.js替换成你申请的Google Maps API的地址即可</p>
+<p>你也可以使用GMapImageCutter切割一下两张样例图片试试看效果。</p>
+<p>当然，该工具也是有些弊端的，或者说是需要考虑改进的地方的。</p>
+<p>首先，有一个层级是图片的原始大小，而小于该层级则是对图片的缩小，大于该层级是对图片的放大，这样的情况下除了图片原始大小状态下保证图片质量最好外，其余层级都可能对图片造成模糊甚至看不清，如何保证每一层级下都是清晰的图片，这一点需要进一步的考虑，不会做一些不同比例尺的图片然后再进行切割吧，也许这也算是一种方法吧。</p>
+<p>其次，图片都是从Google Map的最小层级开始的，也就是说这个图片的坐标范围是纬度方面是南极到北极，经度方面是东经到西经，那如果该图片本身就是某一经纬度的范围，比如是30-31/120-121，那么如果将该图片贴图到该经纬度范围这才是最完美的也是大部分人所需要的，这个问题该如何解决，可能需要进一步的思考。</p>
+<p>总的来说GMapImageCutter确实是非常不错的tile生成工具。</p>
+<p>下载地址：<a href="https://files.cnblogs.com/Tangf/GMapImageCutter_WebMapDemo.rar"target="_blank" rel="external nofollow noopener noreferrer">https://files.cnblogs.com/Tangf/GMapImageCutter_WebMapDemo.rar</a>  (GMapImageCutter工具+样例图片+DEMO地图+Google maps API离线开发包)</p>
+<p>本文飞书文档：<a href="https://rovertang.feishu.cn/docx/doxcn2I5Tvgidy4SbjftNb5KFAf"target="_blank" rel="external nofollow noopener noreferrer">WebMapDIY定制你自己的网络地图，GMapImageCutter工具推荐</a></p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2009-04-05 00:00:00">更新于 2009-04-05&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/diy%E5%9C%B0%E5%9B%BE/" class="post-tag" title="标签 - DIY地图">DIY地图</a><a href="/tags/gmapimagecutter/" class="post-tag" title="标签 - GMapImageCutter">GMapImageCutter</a><a href="/tags/webmap/" class="post-tag" title="标签 - WebMap">WebMap</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/map/20090316-mobile-navigation-service-not-software/" class="post-nav-item" rel="prev" title="手机导航：是服务，不是软件！"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>手机导航：是服务，不是软件！</a><a href="/posts/map/20090822-on-the-composition-and-production-process-of-navigation-electronic-map/" class="post-nav-item" rel="next" title="浅谈导航电子地图的组成和制作流程">浅谈导航电子地图的组成和制作流程<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment"></div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward"><i class="fa-solid fa-qrcode fa-fw" aria-hidden="true"></i>赞赏</label>
+    <div class="reward-ways" data-mode="static"><div><img loading="lazy" src="/images/alipay.png" alt="RoverTang 支付宝" data-title="RoverTang 支付宝" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>支付宝</span>
+          </div><div><img loading="lazy" src="/images/wechatpay.png" alt="RoverTang 微信" data-title="RoverTang 微信" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>微信</span>
+          </div></div>
+  </div></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.139.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.16">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2005 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://rovertang.com"target="_blank" rel="external nofollow noopener noreferrer">RoverTang</a></span></div><div class="footer-line beian"><span class="icp footer-divider">沪ICP备2020036772号-1</span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;bottom: 0;"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.16"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

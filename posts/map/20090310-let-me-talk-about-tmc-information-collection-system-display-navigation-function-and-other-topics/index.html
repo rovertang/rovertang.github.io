@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>我来说说TMC(信息采集、系统展示、导航作用等杂谈) - 罗孚</title><meta name="author" content="RoverTang">
+<meta name="description" content="TMC介绍 TMC(Traffic Message Channel,交通信息频道)就是我们常说的实时交通路况，如果从狭义的来看，可能就是欧洲的RDS-TMC，一种基于FM广播的实时交通路况发送和接收系统，广义的理解已经完全超出了欧洲标准的限制，数据传输不仅仅可以使用FM发射，也可以使用GPRS或者DAB等方式进行传输，并且TMC已经不仅仅是交通路况信息，甚至可以传输天气信息，而最终的发展演变可能可以传送停车场车位、电影院入座、餐馆就餐等许多即时资讯，俨然是一个LBS的系统了。
+"><meta name="keywords" content='TMC, 实时路况'>
+  <meta itemprop="name" content="我来说说TMC(信息采集、系统展示、导航作用等杂谈)">
+  <meta itemprop="description" content="TMC介绍 TMC(Traffic Message Channel,交通信息频道)就是我们常说的实时交通路况，如果从狭义的来看，可能就是欧洲的RDS-TMC，一种基于FM广播的实时交通路况发送和接收系统，广义的理解已经完全超出了欧洲标准的限制，数据传输不仅仅可以使用FM发射，也可以使用GPRS或者DAB等方式进行传输，并且TMC已经不仅仅是交通路况信息，甚至可以传输天气信息，而最终的发展演变可能可以传送停车场车位、电影院入座、餐馆就餐等许多即时资讯，俨然是一个LBS的系统了。">
+  <meta itemprop="datePublished" content="2009-03-10T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2009-03-10T00:00:00+08:00">
+  <meta itemprop="wordCount" content="4426">
+  <meta itemprop="keywords" content="TMC,实时路况"><meta property="og:url" content="https://blog.rovertang.com/posts/map/20090310-let-me-talk-about-tmc-information-collection-system-display-navigation-function-and-other-topics/">
+  <meta property="og:site_name" content="罗孚">
+  <meta property="og:title" content="我来说说TMC(信息采集、系统展示、导航作用等杂谈)">
+  <meta property="og:description" content="TMC介绍 TMC(Traffic Message Channel,交通信息频道)就是我们常说的实时交通路况，如果从狭义的来看，可能就是欧洲的RDS-TMC，一种基于FM广播的实时交通路况发送和接收系统，广义的理解已经完全超出了欧洲标准的限制，数据传输不仅仅可以使用FM发射，也可以使用GPRS或者DAB等方式进行传输，并且TMC已经不仅仅是交通路况信息，甚至可以传输天气信息，而最终的发展演变可能可以传送停车场车位、电影院入座、餐馆就餐等许多即时资讯，俨然是一个LBS的系统了。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2009-03-10T00:00:00+08:00">
+    <meta property="article:modified_time" content="2009-03-10T00:00:00+08:00">
+    <meta property="article:tag" content="TMC">
+    <meta property="article:tag" content="实时路况">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="我来说说TMC(信息采集、系统展示、导航作用等杂谈)">
+  <meta name="twitter:description" content="TMC介绍 TMC(Traffic Message Channel,交通信息频道)就是我们常说的实时交通路况，如果从狭义的来看，可能就是欧洲的RDS-TMC，一种基于FM广播的实时交通路况发送和接收系统，广义的理解已经完全超出了欧洲标准的限制，数据传输不仅仅可以使用FM发射，也可以使用GPRS或者DAB等方式进行传输，并且TMC已经不仅仅是交通路况信息，甚至可以传输天气信息，而最终的发展演变可能可以传送停车场车位、电影院入座、餐馆就餐等许多即时资讯，俨然是一个LBS的系统了。">
+<meta name="application-name" content="罗孚传说">
+<meta name="apple-mobile-web-app-title" content="罗孚传说"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://blog.rovertang.com/posts/map/20090310-let-me-talk-about-tmc-information-collection-system-display-navigation-function-and-other-topics/" title="我来说说TMC(信息采集、系统展示、导航作用等杂谈) - 罗孚" /><link rel="next" type="text/html" href="https://blog.rovertang.com/posts/map/20090316-mobile-navigation-service-not-software/" title="手机导航：是服务，不是软件！" /><link rel="alternate" type="text/markdown" href="https://blog.rovertang.com/posts/map/20090310-let-me-talk-about-tmc-information-collection-system-display-navigation-function-and-other-topics/index.md" title="我来说说TMC(信息采集、系统展示、导航作用等杂谈) - 罗孚"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="apxz4dWbUQ2bsnGFk6SmRK4gNZ7tlT21KgMZ1t9hqdk" /><meta name="msvalidate.01" content="5282002B82D61AD2D097F2F6419C1E4A" /><meta name="baidu-site-verification" content="codeva-RiIZqiHrvQ" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "我来说说TMC(信息采集、系统展示、导航作用等杂谈)",
+    "inLanguage": "zh-cn",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.rovertang.com\/posts\/map\/20090310-let-me-talk-about-tmc-information-collection-system-display-navigation-function-and-other-topics\/"
+    },"genre": "posts","keywords": "TMC, 实时路况","wordcount":  4426 ,
+    "url": "https:\/\/blog.rovertang.com\/posts\/map\/20090310-let-me-talk-about-tmc-information-collection-system-display-navigation-function-and-other-topics\/","datePublished": "2009-03-10T00:00:00+08:00","dateModified": "2009-03-10T00:00:00+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "RoverTang"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item has-children">
+              <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/" title="文章">文章</a></li><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/map/" title="地图">地图</a></li><li class="breadcrumb-item active" data-separator="&gt;" aria-current="page">我来说说TMC(信息采集、系统展示、导航作用等杂谈)</li>
+    </ol>
+  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div style="width: 350px; margin: 0 auto; display: flex; justify-content: space-between; text-align: center;">
+  <img src="/images/wxmp-blog.jpg" alt="wxmp-blog" style="width: 115px; height: 153px;">
+  <img src="/images/wxmp-shanghai.jpg" alt="wxmp-shanghai" style="width: 115px; height: 153px;">
+  <img src="/images/zsxq-fromblog.jpg" alt="zsxq-fromblog" style="width: 115px; height: 153px;">
+</div></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>我来说说TMC(信息采集、系统展示、导航作用等杂谈)</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://rovertang.com" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    RoverTang</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E5%9C%B0%E5%9B%BE/" class="post-category" title="分类 - 地图"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 地图</a></span></div><div class="post-meta-line"><span title="发布于 2009-03-10 00:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2009-03-10">2009-03-10</time></span>&nbsp;<span title="4426 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 4500 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 9 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#tmc介绍">TMC介绍</a></li>
+    <li><a href="#tmc数据收集">TMC数据收集</a></li>
+    <li><a href="#tmc数据处理">TMC数据处理</a></li>
+    <li><a href="#tmc信息展示">TMC信息展示</a></li>
+    <li><a href="#tmc对导航的作用">TMC对导航的作用</a></li>
+    <li><a href="#tmc技术展望">TMC技术展望</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h2 id="tmc介绍" class="heading-element"><span>TMC介绍</span>
+  <a href="#tmc%e4%bb%8b%e7%bb%8d" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>TMC(Traffic Message Channel,交通信息频道)就是我们常说的实时交通路况，如果从狭义的来看，可能就是欧洲的RDS-TMC，一种基于FM广播的实时交通路况发送和接收系统，广义的理解已经完全超出了欧洲标准的限制，数据传输不仅仅可以使用FM发射，也可以使用GPRS或者DAB等方式进行传输，并且TMC已经不仅仅是交通路况信息，甚至可以传输天气信息，而最终的发展演变可能可以传送停车场车位、电影院入座、餐馆就餐等许多即时资讯，俨然是一个LBS的系统了。</p>
+<p>那么现阶段TMC的作用是什么呢？从提供的信息来看，就是告知驾驶员道路拥堵程度、突发交通事件、交通管制等交通信息，和交通广播台主持人不断播报即时路况信息类似，只不过电台是人工的语音的方式罢了。而TMC最最重要的功能是不仅仅告知用户交通信息，而是在GPS导航设备中提供导航建议，合理避开拥堵管制等交通路段，以让用户最快时间到达目的地。TMC大概就是这个样子吧，下面就细说一下个人对TMC的理解吧。</p>
+<h2 id="tmc数据收集" class="heading-element"><span>TMC数据收集</span>
+  <a href="#tmc%e6%95%b0%e6%8d%ae%e6%94%b6%e9%9b%86" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>至今为止我依然不明白TMC是如何获得交通信息的，对于交警部门可能有交警值岗所以很容易得到交通信息，当然，我认为这么多的交通探头也是帮助交警获得交通信息的重要途径，而对于交通管制信息来说本身就是他们发起的自然是首先知道的，所以对于交警部门可能获得交通信息的方式非常多，但电子化的技术相对较少，可能更多需要人为判断(可能这也是最有效的办法)。</p>
+<p>而对于TMC的公司来说，当然不可能直接从交警部门获得信息(当然也有可能可以通过其他途径获得交通部门的交通信息)，那么有可能和交通部门一样，采用路况信息员的方式，定点定人完成实时路况信息的收集，交通广播台就是通过各个地方的司机朋友不断的向电台发送短信或拨打电话告知他们所遇到的路况，也算是比较有效的方式。</p>
+<p>而据说TMC公司最多的可能是采用浮动车的形式，方式也许是这样，比如与某出租车公司合作，在车上安装一个获得当前速度并不断将信息返回公司的装置，通过实时获得各个路段的车速(当然是多辆车权值后的车速)来判断道路的拥堵程度，对于交通路况来说车速就是最重要的道路拥堵与否的标准。</p>
+<p>当然在此情况下的弊端也是非常的明显，如果浮动车数量不够多，或者浮动车分布不均匀等都是影响数据质量的问题。我就在想，每个路段安装一定数量的雷达或者红外车速等，是否同样也可以达到路况监测的目的呢，不过这样的工作可能只能交通部门来做吧，一般人或公司可能做不了。</p>
+<h2 id="tmc数据处理" class="heading-element"><span>TMC数据处理</span>
+  <a href="#tmc%e6%95%b0%e6%8d%ae%e5%a4%84%e7%90%86" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>说完了数据的收集，下面就是处理，数据的处理也是一个非常关键的部分，数据的解算算法同样会影响最终数据，毕竟这么多笔数据并发反馈给服务端，如何计算如何权值都是一套科学的算法，不过个人不理解此部分，所以也说不出个所以然。</p>
+<p>另外，对于网路传输也是一个值得考虑的地方，最快的速度获得数据并以最快的速度发送到客户端，此点也很关键，如果网路慢、解算慢，最后发送的数据是半个多小时前的数据，那还算是实时路况吗，准确性也就更不用说了。一个公司对实时路况的响应时间间隔同样也是实力的体现。</p>
+<h2 id="tmc信息展示" class="heading-element"><span>TMC信息展示</span>
+  <a href="#tmc%e4%bf%a1%e6%81%af%e5%b1%95%e7%a4%ba" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>信息采集并解算完成后则需要将此信息发布，发布的是电子信号，看不见听不到摸不着，非图形非语音信号对于用户来说是没有任何意义的，那么如何表现？其实方法很多，比如电台播音员的告知、拨打10086语音咨询、环路上的道路拥堵信息指示牌等等都是表现形式，只是比较简单的表现。而最多的应该是发布在WEB端或者手机端的实时路况信息，如何实现？</p>
+<p>在此之前先说一下简单的TMC表现，一般以线性表示为主，红色表示拥堵，黄色表示缓慢，绿色表示畅通，一般是这三种情况，而对于交通事故等，除了影响到线的颜色意外，严重的需要在此位置用一交通事故的符号表示出来，其实也就是一个Point罢了。</p>
+<p>说完表现我们可以讲实现方法了：</p>
+<ol>
+<li>最简单的办法：即时的绘制出线段的颜色和标示出交通事故点位。快速路上的道路信息拥堵指示牌就是一个最简单的绘制，已经固定的线型(LCD灯已经根据道路形态固定好形状了)，发出不同的颜色表示拥堵信息，仍然是红色黄色和绿色，最最简单的方式了。而如果基于WEB来做的话，甚至可以用SVG或者VML来绘制，而基于手机端的话，只需要带有图形引擎的绘制软件就可以了。实时路况的更新就是不断刷新图形的绘制。但这些都是比较初级的形态，但也是非常有效的形态。</li>
+<li>基于WebMap的方法(个人思路)：在现有WebMap之上再绘制一层线或者点，只是WebMap自带的底图算是基础数据了。可以使用比如MapBar的引擎，或者Google Maps API，个人比较推荐Gmap API，因为如果你在浏览器上绘制非常多的Line和Point，除了内存消耗大以外，引擎也需要有这样的承受能力，比较Google的优化应该做的不错的，引擎承受能力也可以吧。而且最最重要的一点，Gmap API支持kml，你甚至只需要不断的更新你的kml数据就能表现出实时路况的效果，感觉非常的方便，但我也没有做过这样的测试，更不用说对于WebMap引擎的压力测试了。不过这种方法也是比较糟糕的，因为在大数据量的情况下，浏览器崩溃的几率较大(个人愚见)。</li>
+<li>在WebMap之上叠加图片：WebMap作为底图基础数据，TMC数据作为一个图层叠加于WebMap之上，不使用画线画点的方式，而是采用叠加图片的方式，Gmap API不是已经支持overlay了吗，所以只需要生成实时路况图片叠加就可以了。至于如何生成图片，方法很简单了，就是WMS，用GeoServer或者ArcIMS等应该都可以。其实上面的第一种方法也可以直接用WMS来实现。我们仅仅需要更新后台数据库或者地图文件，WMS不断刷新输出新的路况图片，这样就可以实现动态路况了。方法也是比较简单，大多数公司的TMC的实现都采用此法吧。(如果判断错误欢迎指正。个人认为Google Map上叠加的wikipedia地图，用的也应该是overlay WMS图片的方式，而不是直接的marker)</li>
+</ol>
+<p>以上是对于TMC展示的个人思路，我所能想到也大概就是这些了。</p>
+<h2 id="tmc对导航的作用" class="heading-element"><span>TMC对导航的作用</span>
+  <a href="#tmc%e5%af%b9%e5%af%bc%e8%88%aa%e7%9a%84%e4%bd%9c%e7%94%a8" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>那么如何作用于导航的呢，此点最为关键，我们还是说原理。其实刚刚上面有一点没有说到的是，什么地方用红色line表示，哪些用绿色的line，如何由堵车红色变成畅通的绿色等，这些如何做到的？</p>
+<p>所有的实时路况其实都和路有关，而即使每一条路都有长有短，也并不是一堵车就整条路堵车的，其实很简单，将所有的路都打断，段越多原则上表现的越细腻或者实际，一般来说在路和路的交叉口打断是比较合理的，如果还有必要则可以进一步的打断，而每一个段就是一条记录，速度信息最终会赋值到这些道路上，堵车与否的信息也就算是赋值到这些道路上了，绘图也就知道着色信息了。</p>
+<p>说的再白话简单一些，一个地区的所有路段(不是道路)都记录于数据库中，一个路段就是一条记录，而每个路段都是包含坐标信息的，这些坐标信息用于绘制Line形状，而对于每个路段的实时路况只有可能是三种情况中的一种，要么畅通要么拥堵要么缓慢，根据这三种情况对Line使用红黄绿分别着色，实时路况信息就一目了然的显示了。此点算是对上面三种表现方式的总结概括吧，但对于导航来说此点也是非常重要。</p>
+<p>在导航电子地图中，所有的道路都是以路段的形式来表现的，每个路段就是一条记录，有形态、等级、速度、名称、单行信息等，当然更有唯一的ID标记，不然上面所说的着色也是无从谈起。理解了这些的话我们就可以将整个实现思路串起来了，也就可以理解明白TMC公司和数据公司以及导航软件公司是如何来合作的了。</p>
+<p>首先，TMC公司按照自己的方法对道路进行分段，以助于将路况信息发布到每一个路段，然后，和数据公司合作，数据公司将TMC公司提供的路况信号路段ID对应到导航电子地图中的道路路段ID，TMC公司甚至不需要考虑坐标信息，因为数据公司的电子地图中就包含了道路形态的坐标信息。</p>
+<p>而这两张ID对应表是至关重要的表，一旦对应错误则整个TMC系统表现混乱，而导航来说更是无法使用了，因为TMC发布的东路发生堵车结果地图对应到西路上堵车，那还能了得。这两张表格，术语上来讲，TMC公司提供的算是Location Table，而数据公司提供的算是Matching Table，也很容易理解，TMC公司发基于位置的路况信息表格，而数据公司就是做道路路段对应表格。</p>
+<p>对于导航公司来说，如何使用TMC信息呢，其实对于导航来说，航线规划需要考虑道路等级、道路速度、道路单行限制等信息，而TMC信息则成为影响航线规划的另一条参考信息，根据TMC提供的路况信息，将道路路段假想成等级降低、速度降低或者将道路设置成限制进入，可以说TMC信息是动态的改变道路的属性来影响整个的航线规划，当然，TMC信息的加入导致的情况是，航线规划也需要根据时间的推移不断的改变航线，让航线更加趋于合理，不可能是以前的从一个起点规划到终点中间一成不变的航线了。</p>
+<p>举例来说：某路段发生交通事故，整个路段很快由畅通变成缓慢，如果事故严重甚至会变成拥堵，而TMC即时捕捉到该信息，并解算成功，通过网络(FM/GPRS/DAB等都可以)广播发送，在GPS导航设备端已经有接收装置，接收到事故信息，原本规划通过该事故路段的航线则需要重新计算，绕过该事故路段继续行走于较畅通的路段，以免在事故路段进入堵车状态。由此可见，TMC的信息是非常有用的。</p>
+<h2 id="tmc技术展望" class="heading-element"><span>TMC技术展望</span>
+  <a href="#tmc%e6%8a%80%e6%9c%af%e5%b1%95%e6%9c%9b" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>严格来说TMC技术应该算是LBS技术的一个分支，并且TMC技术是最有可能演变成LBS技术的，现阶段为什么那么多公司做TMC，并且投入大量资金，个人担心如同现在的导航电子地图行业，因为现阶段导航电子地图都很烧钱，能够赢利的为数不多，虽然十多家公司拥有导航电子地图甲级资质，但真正制作导航电子地图数据的没有几家，有些是因为自己的地图能够搭载自己的软件卖个价钱，有些就根本没有发布过导航电子地图。</p>
+<p>TMC难道也要如此发展？不得而知，看态势可能如此，业内做的最好的应该算是世纪高通公司了，加上被四维图新公司并购，前景也许不错，但暂时应该是没有赢利的，因为真正使用他们TMC上市的为数少之又少，所以我很不解。</p>
+<p>至于前景，如文章开头所言，重要之处首先打通这一通路，从数据采集技术到发布到客户的成熟应用，一路畅通的话对于后期来说是值得期待的，因为TMC本身就属于增值服务，而增值服务可以有很多内容，下次就不仅仅是TMC了，可能是天气预报、停车位信息等等等等。而对于下游行业来说，可以是导航市场，可以是10086这样的服务市场，WebMap也算是一个部分，甚至可以是ITS研究部门等。如同早年的物流，谁掌握了通路谁就控制了市场(想不起来具体句子了，但意思大概如此)。</p>
+<p>谁掌握了TMC通路技术，谁就掌握了上下游市场，不知道这样说是否片面，但至少对于上下游还是有影响的。让我们期待TMC更迅速的发展吧。</p>
+<p>本文飞书文档：<a href="https://rovertang.feishu.cn/docx/doxcn9F7I2nIlHOBtiZtMNPTCqg"target="_blank" rel="external nofollow noopener noreferrer">我来说说TMC信息采集、系统展示、导航作用等杂谈</a></p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2009-03-10 00:00:00">更新于 2009-03-10&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/tmc/" class="post-tag" title="标签 - TMC">TMC</a><a href="/tags/%E5%AE%9E%E6%97%B6%E8%B7%AF%E5%86%B5/" class="post-tag" title="标签 - 实时路况">实时路况</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/map/20090316-mobile-navigation-service-not-software/" class="post-nav-item" rel="next" title="手机导航：是服务，不是软件！">手机导航：是服务，不是软件！<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment"></div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward"><i class="fa-solid fa-qrcode fa-fw" aria-hidden="true"></i>赞赏</label>
+    <div class="reward-ways" data-mode="static"><div><img loading="lazy" src="/images/alipay.png" alt="RoverTang 支付宝" data-title="RoverTang 支付宝" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>支付宝</span>
+          </div><div><img loading="lazy" src="/images/wechatpay.png" alt="RoverTang 微信" data-title="RoverTang 微信" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>微信</span>
+          </div></div>
+  </div></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.139.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.16">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2005 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://rovertang.com"target="_blank" rel="external nofollow noopener noreferrer">RoverTang</a></span></div><div class="footer-line beian"><span class="icp footer-divider">沪ICP备2020036772号-1</span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;bottom: 0;"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.16"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

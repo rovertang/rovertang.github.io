@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>前复权后复权计算股票收益率不准确问题 - 罗孚</title><meta name="author" content="RoverTang">
+<meta name="description" content="使用前复权或后复权计算股票的收益率，都存在结果不准确的情况。罗孚使用最笨的不复权的方法进行计算，反而验证了正确性。希望本文能让你了解复权，理解收益率计算方法。"><meta name="keywords" content='复权, 收益率, 计算方法'>
+  <meta itemprop="name" content="前复权后复权计算股票收益率不准确问题">
+  <meta itemprop="description" content="使用前复权或后复权计算股票的收益率，都存在结果不准确的情况。罗孚使用最笨的不复权的方法进行计算，反而验证了正确性。希望本文能让你了解复权，理解收益率计算方法。">
+  <meta itemprop="datePublished" content="2023-01-25T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2023-01-25T00:00:00+08:00">
+  <meta itemprop="wordCount" content="3152">
+  <meta itemprop="image" content="https://blog.rovertang.com/posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/cover.jpg">
+  <meta itemprop="keywords" content="复权,收益率,计算方法"><meta property="og:url" content="https://blog.rovertang.com/posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/">
+  <meta property="og:site_name" content="罗孚">
+  <meta property="og:title" content="前复权后复权计算股票收益率不准确问题">
+  <meta property="og:description" content="使用前复权或后复权计算股票的收益率，都存在结果不准确的情况。罗孚使用最笨的不复权的方法进行计算，反而验证了正确性。希望本文能让你了解复权，理解收益率计算方法。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-01-25T00:00:00+08:00">
+    <meta property="article:modified_time" content="2023-01-25T00:00:00+08:00">
+    <meta property="article:tag" content="复权">
+    <meta property="article:tag" content="收益率">
+    <meta property="article:tag" content="计算方法">
+    <meta property="og:image" content="https://blog.rovertang.com/posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/cover.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://blog.rovertang.com/posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/cover.jpg">
+  <meta name="twitter:title" content="前复权后复权计算股票收益率不准确问题">
+  <meta name="twitter:description" content="使用前复权或后复权计算股票的收益率，都存在结果不准确的情况。罗孚使用最笨的不复权的方法进行计算，反而验证了正确性。希望本文能让你了解复权，理解收益率计算方法。">
+<meta name="application-name" content="罗孚传说">
+<meta name="apple-mobile-web-app-title" content="罗孚传说"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://blog.rovertang.com/posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/" title="前复权后复权计算股票收益率不准确问题 - 罗孚" /><link rel="prev" type="text/html" href="https://blog.rovertang.com/posts/soul/20230123-reading-outline-of-internal-drive-part-of-five-learning-caps/" title="五顶学习帽之内驱力部分读书大纲" /><link rel="next" type="text/html" href="https://blog.rovertang.com/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/" title="使用ChatGPT写论文、查资料、编代码的一点体验" /><link rel="alternate" type="text/markdown" href="https://blog.rovertang.com/posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/index.md" title="前复权后复权计算股票收益率不准确问题 - 罗孚"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="apxz4dWbUQ2bsnGFk6SmRK4gNZ7tlT21KgMZ1t9hqdk" /><meta name="msvalidate.01" content="5282002B82D61AD2D097F2F6419C1E4A" /><meta name="baidu-site-verification" content="codeva-RiIZqiHrvQ" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "前复权后复权计算股票收益率不准确问题",
+    "inLanguage": "zh-cn",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.rovertang.com\/posts\/rich\/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration\/"
+    },"genre": "posts","keywords": "复权, 收益率, 计算方法","wordcount":  3152 ,
+    "url": "https:\/\/blog.rovertang.com\/posts\/rich\/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration\/","datePublished": "2023-01-25T00:00:00+08:00","dateModified": "2023-01-25T00:00:00+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "RoverTang"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item has-children">
+              <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/" title="文章">文章</a></li><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/rich/" title="个人财富">个人财富</a></li><li class="breadcrumb-item active" data-separator="&gt;" aria-current="page">前复权后复权计算股票收益率不准确问题</li>
+    </ol>
+  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div style="width: 350px; margin: 0 auto; display: flex; justify-content: space-between; text-align: center;">
+  <img src="/images/wxmp-blog.jpg" alt="wxmp-blog" style="width: 115px; height: 153px;">
+  <img src="/images/wxmp-shanghai.jpg" alt="wxmp-shanghai" style="width: 115px; height: 153px;">
+  <img src="/images/zsxq-fromblog.jpg" alt="zsxq-fromblog" style="width: 115px; height: 153px;">
+</div></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>前复权后复权计算股票收益率不准确问题</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://rovertang.com" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    RoverTang</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/" class="post-category" title="分类 - 个人财富"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 个人财富</a></span></div><div class="post-meta-line"><span title="发布于 2023-01-25 00:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-01-25">2023-01-25</time></span>&nbsp;<span title="3152 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 3200 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 7 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#缘起">缘起</a></li>
+    <li><a href="#前复权后复权不复权">前复权、后复权、不复权</a></li>
+    <li><a href="#个人计算收益率的思路">个人计算收益率的思路</a>
+      <ul>
+        <li><a href="#最笨方法的思路">最笨方法的思路</a></li>
+        <li><a href="#捷径方法的思路">捷径方法的思路</a></li>
+      </ul>
+    </li>
+    <li><a href="#股票真实收益率反推">股票真实收益率反推</a></li>
+    <li><a href="#关于复权价格">关于复权价格</a>
+      <ul>
+        <li><a href="#复权价格的计算方法">复权价格的计算方法</a></li>
+        <li><a href="#定点复权法">定点复权法</a></li>
+      </ul>
+    </li>
+    <li><a href="#真实股票收益率计算器在线版">真实股票收益率计算器在线版</a></li>
+    <li><a href="#最后">最后</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p>这是罗孚今天发现的问题，就是按照前复权或者后复权去计算收益率，这个结果是不准确的。</p>
+<p>不过，这个问题：无解。但罗孚希望同大家探讨一下这个问题，也希望能有个明白人给与一下指点，共分如下几个部分进行探讨。</p>
+<h2 id="缘起" class="heading-element"><span>缘起</span>
+  <a href="#%e7%bc%98%e8%b5%b7" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>罗孚上次写了<a href="http://shanghai.rovertang.com/posts/rich/20221218-income-deduction-of-several-bonus-funds/"target="_blank" rel="external nofollow noopener noreferrer">几个红利指数基金的收益推演</a> 一文，是写指数基金的收益推演，今天想做一下股票的收益推演。</p>
+<p>该文中的基金收益率计算用了罗孚的土方法，今天想用一下新思路新思路计算股票的收益率，但发现收益率不准确，甚至很多软件提供的后复权数据都有所不同，所以就有了本文，罗孚想和大家聊聊复权导致的收益率不准确问题。</p>
+<h2 id="前复权后复权不复权" class="heading-element"><span>前复权、后复权、不复权</span>
+  <a href="#%e5%89%8d%e5%a4%8d%e6%9d%83%e5%90%8e%e5%a4%8d%e6%9d%83%e4%b8%8d%e5%a4%8d%e6%9d%83" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>关于这三个概念，大家应该都是理解的，在看 K 线图的时候，就是需要设置的，一般默认用的是前复权。</p>
+<p>说一下个人对这三个名次的理解。</p>
+<p><strong>不复权：按真实价格显示</strong>，真实反映每一天的价格。</p>
+<p><strong>前复权：按当前价格往前推算，修改掉所有除权除息前的价格。</strong></p>
+<p>前复权解决的问题：真实价格(也就是不复权价格)在除权除息前后出现 K 线断裂，有种一落千丈的感觉，为了让曲线看起来平滑，所以需要前复权。</p>
+<p>前复权的价格反映了历史成本价格。所以对于分红多的股票，往前推算后甚至出现了负数的股价，见到此价格请不要见怪。</p>
+<p>**后复权：按上市第一天的股价往后推算，把每次的除权除息的收益都加回到股价中。**后复权的最新价格不是当前最新真实价格。</p>
+<p>后复权解决的问题：解决分红转增导致当前价格无法反映历史收益问题。</p>
+<p>后复权的价格有点类似于基金的累计净值，时间越长、分红越多，最新后复权价格就越高，那些成立年限短并且不赚钱的公司，后复权价格一定是越接近当前真实价格的。</p>
+<p>所以，<strong>前复权主要看股价的趋势，而后复权主要看整体(股价波动 + 分红转增)收益。</strong></p>
+<p>以格力电器为例，1996 年上市，上市首日开盘价 17.5 元，当前(2013 年 1 月 20 日)后复权价格 6655 元，看到这么大数字就感觉分红收益非常的不错。</p>
+<p>为了做对比，罗孚找了一个差不多时间上市的股票，远大控股的上市时间同格力电器差不多，上市首日开盘价 12.2 元，相差也不算大。但当前的后复权收盘价格是 101。孰优孰劣应该显而易见了吧。</p>
+<p>上述就是罗孚个人对前复权、后复权、不复权的理解，如有不当的地方欢迎指正。</p>
+<h2 id="个人计算收益率的思路" class="heading-element"><span>个人计算收益率的思路</span>
+  <a href="#%e4%b8%aa%e4%ba%ba%e8%ae%a1%e7%ae%97%e6%94%b6%e7%9b%8a%e7%8e%87%e7%9a%84%e6%80%9d%e8%b7%af" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>介绍完基本知识后，说一下罗孚计算收益率的思路。</p>
+<h3 id="最笨方法的思路" class="heading-element"><span>最笨方法的思路</span>
+  <a href="#%e6%9c%80%e7%ac%a8%e6%96%b9%e6%b3%95%e7%9a%84%e6%80%9d%e8%b7%af" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>和基金收益推演一文一样，个人会采用最笨的方法，也就是：</p>
+<p>股票收益率 = (当前价格下的持仓市值 - 按不复权价格买入的成本 + 买入时到现在的分红转增金额)/按不复权价格买入的成本 -1</p>
+<p>如果按单股来算的话：</p>
+<p>股票收益率 = (当前价格 + 买入时到现在的每股分红转增金额)/买入时的不复权价格 - 1</p>
+<p>看上去挺正确的吧，个人觉得虽然是最笨方法，但最清晰有效。</p>
+<h3 id="捷径方法的思路" class="heading-element"><span>捷径方法的思路</span>
+  <a href="#%e6%8d%b7%e5%be%84%e6%96%b9%e6%b3%95%e7%9a%84%e6%80%9d%e8%b7%af" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>上述最笨方法确实比较麻烦，因为需要去找每一个股票的分红转增数据，并且逐年计算，所以罗孚想找一个捷径。</p>
+<p>既然后复权能够看股票的整体收益，那么：</p>
+<p>股票收益率 = 后复权卖出价格 / 后复权买入价格 - 1</p>
+<p>对吗？看上去是对的，因为：</p>
+<p>后复权卖出价格 - 后复权买入价格 = 买入到卖出期间的每股整体(股价波动 + 分红转增)收益 = 不复权卖出价格 - 不复权买入价格 + 买入时到现在的每股分红转增金额</p>
+<p>对吗？看上去也对。</p>
+<p>我们找个股票进行真实推演一下。</p>
+<h2 id="股票真实收益率反推" class="heading-element"><span>股票真实收益率反推</span>
+  <a href="#%e8%82%a1%e7%a5%a8%e7%9c%9f%e5%ae%9e%e6%94%b6%e7%9b%8a%e7%8e%87%e5%8f%8d%e6%8e%a8" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>罗孚找了最近分红的中远海控为例，最近一次的分红方案为：10 派 20.1 元，12 月 14 日除权除息。这个分红方案仅仅分红，没有转增，所以比较容易计算，即每股分红 2.01 元。</p>
+<p>现在，我们假设：</p>
+<p>在 12 月 9 日买入(原因：这一天十字星，开盘价=收盘价，并且在除权除息前几天)，1 月 20 日(年前最后一个交易日)卖出。</p>
+<p>买入量 100 手，也就是 10000 股，12 月 9 日的不复权价格是 13.3 元，总投入 133000 元，1 月 20 日收盘价 10.42，当前市值 104200 元，期间收益 20100 元。</p>
+<p>分别计算如下：</p>
+<p><strong>按不复权价格计算股票收益率：</strong></p>
+<p><img loading="lazy" src="/posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/static/boxcnxWqVTumMaRyznFptaeLYQc.png" alt="/posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/static/boxcnxWqVTumMaRyznFptaeLYQc.png" srcset="/posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/static/boxcnxWqVTumMaRyznFptaeLYQc.png?size=small, /posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/static/boxcnxWqVTumMaRyznFptaeLYQc.png?size=medium 1.5x, /posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/static/boxcnxWqVTumMaRyznFptaeLYQc.png?size=large 2x" data-title="/posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/static/boxcnxWqVTumMaRyznFptaeLYQc.png" style="--width: 1360px;--aspect-ratio: 1360 / 2082;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>按不复权价格计算的收益率是-6.54%。</p>
+<p><strong>按后复权价格计算股票收益率：</strong></p>
+<p><img loading="lazy" src="/posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/static/boxcnzxdOMc8feBIdeIfGRaFbOb.png" alt="/posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/static/boxcnzxdOMc8feBIdeIfGRaFbOb.png" srcset="/posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/static/boxcnzxdOMc8feBIdeIfGRaFbOb.png?size=small, /posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/static/boxcnzxdOMc8feBIdeIfGRaFbOb.png?size=medium 1.5x, /posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/static/boxcnzxdOMc8feBIdeIfGRaFbOb.png?size=large 2x" data-title="/posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/static/boxcnzxdOMc8feBIdeIfGRaFbOb.png" style="--width: 1360px;--aspect-ratio: 1360 / 2292;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>按后复权价格计算的收益率为-7.29%，两者相差 0.74%，误差还是比较大的。</p>
+<p>按理后复权价格的差额，应该等于股价波动金额加分红金额。但实际情况相差 0.52 元/股，这个误差有点大，一万股差了 5249 元，数字不小。</p>
+<p><strong>按不复权价格计算股票收益率：</strong></p>
+<p><img loading="lazy" src="/posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/static/boxcnwwjTmwFyaMbTNjAhVJJpoe.png" alt="/posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/static/boxcnwwjTmwFyaMbTNjAhVJJpoe.png" srcset="/posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/static/boxcnwwjTmwFyaMbTNjAhVJJpoe.png?size=small, /posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/static/boxcnwwjTmwFyaMbTNjAhVJJpoe.png?size=medium 1.5x, /posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/static/boxcnwwjTmwFyaMbTNjAhVJJpoe.png?size=large 2x" data-title="/posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/static/boxcnwwjTmwFyaMbTNjAhVJJpoe.png" style="--width: 1360px;--aspect-ratio: 1360 / 2196;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>也有不少直接使用前复权计算收益率的，其结果为-7.29%，这个结果同后复权数据完全相同，这让我怀疑我的不复权收益率计算方法是否产生了错误？罗孚没有看出来，有看出来的欢迎指正。</p>
+<p>按前复权的计算方法，当前股票市值一定是相等的，那么如果加上分红金额，就应该等于买入的成本金额。根据前复权的收盘价进行计算，其同真实成本存在 0.05 元/股的差异，1 万股总共差 511 元，偏差略小，但仍然比较明显。</p>
+<p>综上，到底是哪种股票收益率计算是正确的呢？</p>
+<h2 id="关于复权价格" class="heading-element"><span>关于复权价格</span>
+  <a href="#%e5%85%b3%e4%ba%8e%e5%a4%8d%e6%9d%83%e4%bb%b7%e6%a0%bc" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="复权价格的计算方法" class="heading-element"><span>复权价格的计算方法</span>
+  <a href="#%e5%a4%8d%e6%9d%83%e4%bb%b7%e6%a0%bc%e7%9a%84%e8%ae%a1%e7%ae%97%e6%96%b9%e6%b3%95" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>在计算上述表格的时候，罗孚也去各个软件上去检查了价格，结果有一个惊奇的发现：各软件中 12 月 9 日的后复权价格不一致。</p>
+<p><img loading="lazy" src="/posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/static/boxcnPM8W7OPTkUCfV8VAppgY7d.jpg" alt="/posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/static/boxcnPM8W7OPTkUCfV8VAppgY7d.jpg" srcset="/posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/static/boxcnPM8W7OPTkUCfV8VAppgY7d.jpg?size=small, /posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/static/boxcnPM8W7OPTkUCfV8VAppgY7d.jpg?size=medium 1.5x, /posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/static/boxcnPM8W7OPTkUCfV8VAppgY7d.jpg?size=large 2x" data-title="/posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/static/boxcnPM8W7OPTkUCfV8VAppgY7d.jpg" style="--width: 596px;--aspect-ratio: 596 / 793;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>如上图所示，价格差异不小。产生后复权价格差异的原因，可能是：复权算法不同。</p>
+<p>目前流行的复权算法主要有： 经典算法、递归后复权、递归前复权、涨跌幅复权法。</p>
+<p>罗孚没有细究考证各软件使用的是哪种算法，可能也研究不出来。</p>
+<p>复权算法不同导致了后复权价格不同，这仅仅是罗孚的一个猜测。</p>
+<p>但复权算法不同，是否也导致了上述不复权、后复权、前复权收益率表格计算结果的偏差呢？没有想明白。</p>
+<p>网上也有说是因为分红转增没有计算收益所致，前复权仅从成本角度计算收益率，而后复权则没有计算红利转增再获利的收益，这个说法我也不没明白。</p>
+<p>不过，罗孚发现了一个有意思的方法：定点复权法。</p>
+<h3 id="定点复权法" class="heading-element"><span>定点复权法</span>
+  <a href="#%e5%ae%9a%e7%82%b9%e5%a4%8d%e6%9d%83%e6%b3%95" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>后复权是看收益情况的，那按理使用后复权计算收益率应该是 OK 的，只是从上市开始推算，时间太久远，对于上市较久的股票就产生了累积误差。</p>
+<p>于是，罗孚使用定点复权进行了尝试，定点复权的起始日期设置在了 12 月 9 日，然后检查当前的后复权价格，再计算收益率。</p>
+<p><img loading="lazy" src="/posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/static/boxcnXe0nan4oOtxB96veGUOyHe.jpg" alt="/posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/static/boxcnXe0nan4oOtxB96veGUOyHe.jpg" srcset="/posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/static/boxcnXe0nan4oOtxB96veGUOyHe.jpg?size=small, /posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/static/boxcnXe0nan4oOtxB96veGUOyHe.jpg?size=medium 1.5x, /posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/static/boxcnXe0nan4oOtxB96veGUOyHe.jpg?size=large 2x" data-title="/posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/static/boxcnXe0nan4oOtxB96veGUOyHe.jpg" style="--width: 1384px;--aspect-ratio: 1384 / 660;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>如图所示，12 月 9 日 13.3 元，按此时间点进行定点后复权，1 月 20 日收盘价为 12.43 元。</p>
+<p>收益率计算：12.43/13.3-1*100%=6.54%。</p>
+<p>这个数据同罗孚最笨方法，也就是不复权计算出来的收益率数据完全一致，是不是也侧面证明罗孚的最笨方法反而是正确的呢？</p>
+<p>补充：上图是通达信软件的，使用同花顺软件使用相同方法验证，结果一致。东方财务软件未找到定点复权，所以无法验证。</p>
+<h2 id="真实股票收益率计算器在线版" class="heading-element"><span>真实股票收益率计算器在线版</span>
+  <a href="#%e7%9c%9f%e5%ae%9e%e8%82%a1%e7%a5%a8%e6%94%b6%e7%9b%8a%e7%8e%87%e8%ae%a1%e7%ae%97%e5%99%a8%e5%9c%a8%e7%ba%bf%e7%89%88" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>由于使用前复权、后复权计算的收益率存在偏差，而通过定点复权的方式证明罗孚的最笨方法反而是正确的，基于此，想要实现一个在线版的真实股票收益率计算器。</p>
+<p>使用方法超级简单：选择哪一天买入，买多少股，然后选择哪一天卖出，计算出总收益以及收益率，不直接使用前复权、后复权价格计算，而是使用不复权价格加上分红转增进行计算。</p>
+<p>实现的思路也是有的：通过开源的股票日 K 数据 API，获得买入日和卖出日的不复权价格，再通过分红 API 获得这个时间区间内的分红情况，然后用(当前市值 + 分红金额-买入金额)就可以得到收益，再除以买入金额就可以得到收益率，再将时间区间转换成年，收益率可以转换成年化收益率(复合增长收益率，非单利)，以及每股收益。</p>
+<p>拥有这样的一个真实股价收益率计算器，是不是特别的棒？不过，不好意思，罗孚自己 Python 一下，也许可以，但若做成在线版开放给大家使用，就比较难了，能力和时间有限，就不搞了，有兴趣的同学可以帮搞一下。</p>
+<h2 id="最后" class="heading-element"><span>最后</span>
+  <a href="#%e6%9c%80%e5%90%8e" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>本想写的文章是：几个股票历年收益情况推演，结果因为问题而写成了本文的复权导致收益率计算不准确问题。</p>
+<p>不过，希望通过本文，大家对前复权、后复权、不复权有一定的了解，对收益率的计算，也可以考虑一下到底使用前复权方法、后复权方法还是罗孚的最笨收益率计算方法，各有利弊，复杂度不同，看各自需要和自己的算术能力了。</p>
+<p>本文也有较多疑点，如各位对复权有更好的理解，欢迎沟通交流。</p>
+<p>本文飞书文档：<a href="https://rovertang.feishu.cn/docx/Nt6ydYGT2oF7gXxyyJhcLRKonRb"target="_blank" rel="external nofollow noopener noreferrer">[20230125]前复权后复权计算股票收益率不准确问题</a></p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2023-01-25 00:00:00">更新于 2023-01-25&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/%E5%A4%8D%E6%9D%83/" class="post-tag" title="标签 - 复权">复权</a><a href="/tags/%E6%94%B6%E7%9B%8A%E7%8E%87/" class="post-tag" title="标签 - 收益率">收益率</a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95/" class="post-tag" title="标签 - 计算方法">计算方法</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/soul/20230123-reading-outline-of-internal-drive-part-of-five-learning-caps/" class="post-nav-item" rel="prev" title="五顶学习帽之内驱力部分读书大纲"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>五顶学习帽之内驱力部分读书大纲</a><a href="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/" class="post-nav-item" rel="next" title="使用ChatGPT写论文、查资料、编代码的一点体验">使用ChatGPT写论文、查资料、编代码的一点体验<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment"></div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward"><i class="fa-solid fa-qrcode fa-fw" aria-hidden="true"></i>赞赏</label>
+    <div class="reward-ways" data-mode="static"><div><img loading="lazy" src="/images/alipay.png" alt="RoverTang 支付宝" data-title="RoverTang 支付宝" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>支付宝</span>
+          </div><div><img loading="lazy" src="/images/wechatpay.png" alt="RoverTang 微信" data-title="RoverTang 微信" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>微信</span>
+          </div></div>
+  </div></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.139.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.16">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2005 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://rovertang.com"target="_blank" rel="external nofollow noopener noreferrer">RoverTang</a></span></div><div class="footer-line beian"><span class="icp footer-divider">沪ICP备2020036772号-1</span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;bottom: 0;"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.16"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>从滚动市盈率(TTM)判断公司近期经营情况 - 罗孚</title><meta name="author" content="RoverTang">
+<meta name="description" content="滚动市盈率 TTM 同静态市盈率相比较，可以大概判断公司近期的经营情况，本文就是从原理和数据的角度来说明罗孚的新发现，欢迎一起探讨。"><meta name="keywords" content='市盈率, 滚动市盈率TTM, 经营情况'>
+  <meta itemprop="name" content="从滚动市盈率(TTM)判断公司近期经营情况">
+  <meta itemprop="description" content="滚动市盈率 TTM 同静态市盈率相比较，可以大概判断公司近期的经营情况，本文就是从原理和数据的角度来说明罗孚的新发现，欢迎一起探讨。">
+  <meta itemprop="datePublished" content="2023-02-09T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2023-02-09T00:00:00+08:00">
+  <meta itemprop="wordCount" content="1947">
+  <meta itemprop="image" content="https://blog.rovertang.com/posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/cover.jpg">
+  <meta itemprop="keywords" content="市盈率,滚动市盈率TTM,经营情况"><meta property="og:url" content="https://blog.rovertang.com/posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/">
+  <meta property="og:site_name" content="罗孚">
+  <meta property="og:title" content="从滚动市盈率(TTM)判断公司近期经营情况">
+  <meta property="og:description" content="滚动市盈率 TTM 同静态市盈率相比较，可以大概判断公司近期的经营情况，本文就是从原理和数据的角度来说明罗孚的新发现，欢迎一起探讨。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-02-09T00:00:00+08:00">
+    <meta property="article:modified_time" content="2023-02-09T00:00:00+08:00">
+    <meta property="article:tag" content="市盈率">
+    <meta property="article:tag" content="滚动市盈率TTM">
+    <meta property="article:tag" content="经营情况">
+    <meta property="og:image" content="https://blog.rovertang.com/posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/cover.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://blog.rovertang.com/posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/cover.jpg">
+  <meta name="twitter:title" content="从滚动市盈率(TTM)判断公司近期经营情况">
+  <meta name="twitter:description" content="滚动市盈率 TTM 同静态市盈率相比较，可以大概判断公司近期的经营情况，本文就是从原理和数据的角度来说明罗孚的新发现，欢迎一起探讨。">
+<meta name="application-name" content="罗孚传说">
+<meta name="apple-mobile-web-app-title" content="罗孚传说"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://blog.rovertang.com/posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/" title="从滚动市盈率(TTM)判断公司近期经营情况 - 罗孚" /><link rel="prev" type="text/html" href="https://blog.rovertang.com/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/" title="使用ChatGPT写论文、查资料、编代码的一点体验" /><link rel="next" type="text/html" href="https://blog.rovertang.com/posts/smart/20230210-the-routers-child-online-protection-function-keeps-children-away-from-games-and-videos/" title="路由器的儿童上网保护功能让儿童远离游戏和视频" /><link rel="alternate" type="text/markdown" href="https://blog.rovertang.com/posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/index.md" title="从滚动市盈率(TTM)判断公司近期经营情况 - 罗孚"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="apxz4dWbUQ2bsnGFk6SmRK4gNZ7tlT21KgMZ1t9hqdk" /><meta name="msvalidate.01" content="5282002B82D61AD2D097F2F6419C1E4A" /><meta name="baidu-site-verification" content="codeva-RiIZqiHrvQ" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "从滚动市盈率(TTM)判断公司近期经营情况",
+    "inLanguage": "zh-cn",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.rovertang.com\/posts\/rich\/20230209-judging-the-companys-recent-operation-from-pettm\/"
+    },"genre": "posts","keywords": "市盈率, 滚动市盈率TTM, 经营情况","wordcount":  1947 ,
+    "url": "https:\/\/blog.rovertang.com\/posts\/rich\/20230209-judging-the-companys-recent-operation-from-pettm\/","datePublished": "2023-02-09T00:00:00+08:00","dateModified": "2023-02-09T00:00:00+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "RoverTang"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item has-children">
+              <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/" title="文章">文章</a></li><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/rich/" title="个人财富">个人财富</a></li><li class="breadcrumb-item active" data-separator="&gt;" aria-current="page">从滚动市盈率(TTM)判断公司近期经营情况</li>
+    </ol>
+  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div style="width: 350px; margin: 0 auto; display: flex; justify-content: space-between; text-align: center;">
+  <img src="/images/wxmp-blog.jpg" alt="wxmp-blog" style="width: 115px; height: 153px;">
+  <img src="/images/wxmp-shanghai.jpg" alt="wxmp-shanghai" style="width: 115px; height: 153px;">
+  <img src="/images/zsxq-fromblog.jpg" alt="zsxq-fromblog" style="width: 115px; height: 153px;">
+</div></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>从滚动市盈率(TTM)判断公司近期经营情况</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://rovertang.com" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    RoverTang</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/" class="post-category" title="分类 - 个人财富"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 个人财富</a></span></div><div class="post-meta-line"><span title="发布于 2023-02-09 00:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-02-09">2023-02-09</time></span>&nbsp;<span title="1947 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 2000 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 4 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#市盈率-pe-的概念">市盈率 PE 的概念</a></li>
+    <li><a href="#滚动市盈率-ttm-同公司近期经营情况的关系">滚动市盈率 TTM 同公司近期经营情况的关系</a></li>
+    <li><a href="#基于格力电器的分析">基于格力电器的分析</a></li>
+    <li><a href="#peg-以及滚动市盈率比较表">PEG 以及滚动市盈率比较表</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p>理财小白罗孚同学正在学习理财类的课程，课程正讲到市盈率 PE 估值法，讲完 PE 概念后，罗孚对此有一点点新的发现，就是通过查看静态市盈率、动态市盈率、滚动市盈率 TTM 三者之间的关系，可以对公司近期的经营情况有一定的判断。</p>
+<h2 id="市盈率-pe-的概念" class="heading-element"><span>市盈率 PE 的概念</span>
+  <a href="#%e5%b8%82%e7%9b%88%e7%8e%87-pe-%e7%9a%84%e6%a6%82%e5%bf%b5" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>市盈率 PE 不用多解释，大家都非常的清晰：</p>
+<p><strong>PE = 总市值 / 净利润 = 当前股价(股价) </strong><strong>/ 每股盈利(业绩)</strong></p>
+<p>PE 又可以分为<strong>静态市盈率、动态市盈率和滚动市盈率 TTM</strong>。</p>
+<p>静态市盈率是完全使用上一年的数据进行分析的，而动态市盈率是基于业绩预期的，也就是预测了净利润。</p>
+<p>现阶段大部分情况下会看滚动市盈率 TTM(TTM 意思是过去 12 个月的滚动，也就是 4 个季度)，因为动态市盈率是预估的，所以相对不准，而静态市盈率又太久远，不能反应近期的情况。</p>
+<p><strong>大家为什么看滚动市盈率 TTM？因为更接近真实。</strong>怎么理解呢，比如现在 2023 年新年伊始，2022 的三季报已经披露但年报未披露，此时如果用静态市盈率，也就是 2021 年的财务数据得到的市盈率，差异就会比较大，毕竟公司经过了一年的经营，好坏还是有不少差别的，所以为了减少这种滞后影响，用最近四个季度的净利润代替了去年的年利润，计算得到的数据就是滚动市盈率 TTM。</p>
+<p>市盈率滞后的情况无法避免，因为年报也不可能在元旦那一天发布，但滚动市盈率 TTM 相比静态市盈率可以较好的反应最近的经营情况，时间上在三季报发布后到年报发布前最有用，而年报发布后到中报发布前用处不大，因为静态市盈率应该和滚动市盈率 TTM 一样的。</p>
+<p>上述是罗孚的个人理解，应该和大家理解的一致吧，如有问题的地方欢迎指出。</p>
+<h2 id="滚动市盈率-ttm-同公司近期经营情况的关系" class="heading-element"><span>滚动市盈率 TTM 同公司近期经营情况的关系</span>
+  <a href="#%e6%bb%9a%e5%8a%a8%e5%b8%82%e7%9b%88%e7%8e%87-ttm-%e5%90%8c%e5%85%ac%e5%8f%b8%e8%bf%91%e6%9c%9f%e7%bb%8f%e8%90%a5%e6%83%85%e5%86%b5%e7%9a%84%e5%85%b3%e7%b3%bb" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>根据 PE 公式，分母是总市值或当前股价，分子是净利润或每股盈利(实际就是净利润分拆到每一股)，PE 值的变化取决于分母和分子，只是股价是波动的，净利润在财报中是固定的。</p>
+<p>静态市盈率使用去年的净利润作为分子，动态市盈率使用预测的净利润获得的分子，滚动市盈率 TTM 使用最近 4 个季度的净利润作为分子。</p>
+<p>假设股价仅仅波动，没有明显的上涨或者下跌，也就是假设分母变化不大，那么 PE 的变化就取决于分子的变化，也就是说：<strong>在股价不变的情况下，净利润的增加反而降低了市盈率 PE 值</strong>。</p>
+<p>根据这一启发以及这一假设，可以这么认为：以静态市盈率为基准，动态市盈率高于静态市盈率，那么对该企业的预测利润是下降的，因为分子变小了。而滚动市盈率 TTM 如果小于静态市盈率，那么可以认为近 4 个季度的净利润要高于去年的净利润，也就意味着营收增长。</p>
+<p>这就是罗孚的新发现：<strong>在股价不变的情况下，滚动市盈率 TTM 低于静态市盈率，表明企业近期业绩产生了实际增长。</strong></p>
+<p>当然，股价不变仅仅是一种假设，实际上变化还是很大的，2022 年的沪深 300 跌幅超过 20%，也就意味着市盈率的分母在减小，假设净利润不变，那么 PE 值也会下降。</p>
+<p>如果股价下跌，净利润还进一步增加，那么 PE 就会下降的更快，数值也变得更小。</p>
+<h2 id="基于格力电器的分析" class="heading-element"><span>基于格力电器的分析</span>
+  <a href="#%e5%9f%ba%e4%ba%8e%e6%a0%bc%e5%8a%9b%e7%94%b5%e5%99%a8%e7%9a%84%e5%88%86%e6%9e%90" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>罗孚找了格力电器作为对象进行分析：</p>
+<p><img loading="lazy" src="/posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/static/boxcnBC3gaOFj6P4EYTq66ej4cf.png" alt="/posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/static/boxcnBC3gaOFj6P4EYTq66ej4cf.png" srcset="/posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/static/boxcnBC3gaOFj6P4EYTq66ej4cf.png?size=small, /posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/static/boxcnBC3gaOFj6P4EYTq66ej4cf.png?size=medium 1.5x, /posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/static/boxcnBC3gaOFj6P4EYTq66ej4cf.png?size=large 2x" data-title="/posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/static/boxcnBC3gaOFj6P4EYTq66ej4cf.png" style="--width: 666px;--aspect-ratio: 666 / 248;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>动态市盈率小于静态市盈率，说明对格力电器的盈利预期是增长的。而滚动市盈率 TTM 小于静态市盈率，这就是罗孚所说的股价下跌净利润增长会让市盈率 PE 值跌的更多。同时，滚动市盈率比动态市盈率还低，那也不排除股价跌的更厉害、净利润增长也不少。</p>
+<p>对此，罗孚取了 2021 年到 2022 的股价和 PE 数据，并根据此反算了每股盈利，放到同一个曲线图，如下：</p>
+<p><img loading="lazy" src="/posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/static/boxcnnwyiBE2yTJUWtMQLHHaPrh.png" alt="/posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/static/boxcnnwyiBE2yTJUWtMQLHHaPrh.png" srcset="/posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/static/boxcnnwyiBE2yTJUWtMQLHHaPrh.png?size=small, /posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/static/boxcnnwyiBE2yTJUWtMQLHHaPrh.png?size=medium 1.5x, /posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/static/boxcnnwyiBE2yTJUWtMQLHHaPrh.png?size=large 2x" data-title="/posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/static/boxcnnwyiBE2yTJUWtMQLHHaPrh.png" style="--width: 1806px;--aspect-ratio: 1806 / 742;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>上图中的股价和 PE 是明显的下跌，而每股盈利略有增长，当然，这一点点涨幅乘以股本，就不是小数目啦，不要小看了每股盈利曲线的微微上涨。</p>
+<p>罗孚又去查看了格力电器的财报，近 5 个季度的财报如下：</p>
+<p><img loading="lazy" src="/posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/static/boxcngZUBESkRWA5IQbFnknKWSe.png" alt="/posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/static/boxcngZUBESkRWA5IQbFnknKWSe.png" srcset="/posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/static/boxcngZUBESkRWA5IQbFnknKWSe.png?size=small, /posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/static/boxcngZUBESkRWA5IQbFnknKWSe.png?size=medium 1.5x, /posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/static/boxcngZUBESkRWA5IQbFnknKWSe.png?size=large 2x" data-title="/posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/static/boxcngZUBESkRWA5IQbFnknKWSe.png" style="--width: 979px;--aspect-ratio: 979 / 886;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>可以看到每个季度的利润也都是有所增长的。</p>
+<p>至此，罗孚对自己的发现自证完毕。虽然已经自证，但不代表这一发现一定准确，只是对于非周期类白马股应该可以有一个大致的判断。</p>
+<h2 id="peg-以及滚动市盈率比较表" class="heading-element"><span>PEG 以及滚动市盈率比较表</span>
+  <a href="#peg-%e4%bb%a5%e5%8f%8a%e6%bb%9a%e5%8a%a8%e5%b8%82%e7%9b%88%e7%8e%87%e6%af%94%e8%be%83%e8%a1%a8" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>可能有朋友会说，整的那么复杂，直接看 PEG 不就完事了吗？没错，PEG 其实是一个更好的指标，这里就不展开具体公式了，本文本想结合 PEG 一起讲，但罗孚未能讲清 G，所以就不多啰嗦了，罗孚本身也能明白 PEG 是从更长一段时间的增长来分析公司的，但 G 不好计算啊，所以我们在软件中也较难看到 PEG 这个指标。那么，罗孚的发现，仅仅需要比较滚动市盈率 TTM 和静态市盈率的关系，就能发现公司近期经营的好坏，你不觉得更简单更直观更有效嘛。</p>
+<p>最后附上市值前 30 公司的滚动市盈率 TTM 和静态市盈率以及动态市盈率之间的关系供参考：</p>
+<p><img loading="lazy" src="/posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/static/boxcntcA4Zu7Y7a8HdY8yDQq4Je.jpg" alt="/posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/static/boxcntcA4Zu7Y7a8HdY8yDQq4Je.jpg" srcset="/posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/static/boxcntcA4Zu7Y7a8HdY8yDQq4Je.jpg?size=small, /posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/static/boxcntcA4Zu7Y7a8HdY8yDQq4Je.jpg?size=medium 1.5x, /posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/static/boxcntcA4Zu7Y7a8HdY8yDQq4Je.jpg?size=large 2x" data-title="/posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/static/boxcntcA4Zu7Y7a8HdY8yDQq4Je.jpg" style="--width: 663px;--aspect-ratio: 663 / 652;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>数据取自雪球，2022 年最后一个交易日(12 月 30 日)数据，已去除亏损公司。上表中比亚迪的数据格外亮眼，PE 从 200 多直接降到 100 以内，其业绩也是有目共睹啊。</p>
+<p>以上，就是罗孚对于滚动市盈率 TTM 同公司近期经营情况的新发现，虽然不算太科学的指标，但作为参考应该还是可以的。本文首发于“罗孚在上海”公众号，仅作为学习探讨。欢迎继续讨论。</p>
+<p>本文飞书文档：<a href="https://rovertang.feishu.cn/docx/DkrddAC7Oogm7NxqqScceLCWn4b"target="_blank" rel="external nofollow noopener noreferrer">[20230208]从滚动市盈率(TTM)判断公司近期经营情况</a></p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2023-02-09 00:00:00">更新于 2023-02-09&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/%E5%B8%82%E7%9B%88%E7%8E%87/" class="post-tag" title="标签 - 市盈率">市盈率</a><a href="/tags/%E6%BB%9A%E5%8A%A8%E5%B8%82%E7%9B%88%E7%8E%87ttm/" class="post-tag" title="标签 - 滚动市盈率TTM">滚动市盈率TTM</a><a href="/tags/%E7%BB%8F%E8%90%A5%E6%83%85%E5%86%B5/" class="post-tag" title="标签 - 经营情况">经营情况</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/" class="post-nav-item" rel="prev" title="使用ChatGPT写论文、查资料、编代码的一点体验"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>使用ChatGPT写论文、查资料、编代码的一点体验</a><a href="/posts/smart/20230210-the-routers-child-online-protection-function-keeps-children-away-from-games-and-videos/" class="post-nav-item" rel="next" title="路由器的儿童上网保护功能让儿童远离游戏和视频">路由器的儿童上网保护功能让儿童远离游戏和视频<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment"></div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward"><i class="fa-solid fa-qrcode fa-fw" aria-hidden="true"></i>赞赏</label>
+    <div class="reward-ways" data-mode="static"><div><img loading="lazy" src="/images/alipay.png" alt="RoverTang 支付宝" data-title="RoverTang 支付宝" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>支付宝</span>
+          </div><div><img loading="lazy" src="/images/wechatpay.png" alt="RoverTang 微信" data-title="RoverTang 微信" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>微信</span>
+          </div></div>
+  </div></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.139.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.16">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2005 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://rovertang.com"target="_blank" rel="external nofollow noopener noreferrer">RoverTang</a></span></div><div class="footer-line beian"><span class="icp footer-divider">沪ICP备2020036772号-1</span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;bottom: 0;"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.16"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

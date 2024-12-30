@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>说说转换等高线数据的思路 - 罗孚</title><meta name="author" content="RoverTang">
+<meta name="description" content="最近在讨论等高线的方案，昨天的时候我也研究了一番，然后提交了一份文档给内部，今天我来简单说说我对于等高线转换的思路。
+首先大家可以了解一下什么是等高线，百度百科上已经讲的非常清楚，我也是看了等高线的定义后，才对等高线有了较深入的了解，特别是关于等高线为什么间隔4个画一个粗线，也是从这里了解到的。
+"><meta name="keywords" content='等高线, 数据转换'>
+  <meta itemprop="name" content="说说转换等高线数据的思路">
+  <meta itemprop="description" content="最近在讨论等高线的方案，昨天的时候我也研究了一番，然后提交了一份文档给内部，今天我来简单说说我对于等高线转换的思路。
+首先大家可以了解一下什么是等高线，百度百科上已经讲的非常清楚，我也是看了等高线的定义后，才对等高线有了较深入的了解，特别是关于等高线为什么间隔4个画一个粗线，也是从这里了解到的。">
+  <meta itemprop="datePublished" content="2012-06-10T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2012-06-10T00:00:00+08:00">
+  <meta itemprop="wordCount" content="1660">
+  <meta itemprop="keywords" content="等高线,数据转换"><meta property="og:url" content="https://blog.rovertang.com/posts/map/20120610-talk-about-the-idea-of-converting-contour-data/">
+  <meta property="og:site_name" content="罗孚">
+  <meta property="og:title" content="说说转换等高线数据的思路">
+  <meta property="og:description" content="最近在讨论等高线的方案，昨天的时候我也研究了一番，然后提交了一份文档给内部，今天我来简单说说我对于等高线转换的思路。
+首先大家可以了解一下什么是等高线，百度百科上已经讲的非常清楚，我也是看了等高线的定义后，才对等高线有了较深入的了解，特别是关于等高线为什么间隔4个画一个粗线，也是从这里了解到的。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2012-06-10T00:00:00+08:00">
+    <meta property="article:modified_time" content="2012-06-10T00:00:00+08:00">
+    <meta property="article:tag" content="等高线">
+    <meta property="article:tag" content="数据转换">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="说说转换等高线数据的思路">
+  <meta name="twitter:description" content="最近在讨论等高线的方案，昨天的时候我也研究了一番，然后提交了一份文档给内部，今天我来简单说说我对于等高线转换的思路。
+首先大家可以了解一下什么是等高线，百度百科上已经讲的非常清楚，我也是看了等高线的定义后，才对等高线有了较深入的了解，特别是关于等高线为什么间隔4个画一个粗线，也是从这里了解到的。">
+<meta name="application-name" content="罗孚传说">
+<meta name="apple-mobile-web-app-title" content="罗孚传说"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://blog.rovertang.com/posts/map/20120610-talk-about-the-idea-of-converting-contour-data/" title="说说转换等高线数据的思路 - 罗孚" /><link rel="prev" type="text/html" href="https://blog.rovertang.com/posts/map/20120407-indexing-algorithm-of-google-tile-and-tms/" title="Google tile和TMS的索引算法" /><link rel="next" type="text/html" href="https://blog.rovertang.com/posts/misc/20120724-im-interested-in-reading-the-ten-suggestions-given-by-former-yahoo-employees-to-the-new-ceo/" title="读雅虎前员工给新CEO的十条建议有感" /><link rel="alternate" type="text/markdown" href="https://blog.rovertang.com/posts/map/20120610-talk-about-the-idea-of-converting-contour-data/index.md" title="说说转换等高线数据的思路 - 罗孚"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="apxz4dWbUQ2bsnGFk6SmRK4gNZ7tlT21KgMZ1t9hqdk" /><meta name="msvalidate.01" content="5282002B82D61AD2D097F2F6419C1E4A" /><meta name="baidu-site-verification" content="codeva-RiIZqiHrvQ" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "说说转换等高线数据的思路",
+    "inLanguage": "zh-cn",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.rovertang.com\/posts\/map\/20120610-talk-about-the-idea-of-converting-contour-data\/"
+    },"genre": "posts","keywords": "等高线, 数据转换","wordcount":  1660 ,
+    "url": "https:\/\/blog.rovertang.com\/posts\/map\/20120610-talk-about-the-idea-of-converting-contour-data\/","datePublished": "2012-06-10T00:00:00+08:00","dateModified": "2012-06-10T00:00:00+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "RoverTang"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item has-children">
+              <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/" title="文章">文章</a></li><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/map/" title="地图">地图</a></li><li class="breadcrumb-item active" data-separator="&gt;" aria-current="page">说说转换等高线数据的思路</li>
+    </ol>
+  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div style="width: 350px; margin: 0 auto; display: flex; justify-content: space-between; text-align: center;">
+  <img src="/images/wxmp-blog.jpg" alt="wxmp-blog" style="width: 115px; height: 153px;">
+  <img src="/images/wxmp-shanghai.jpg" alt="wxmp-shanghai" style="width: 115px; height: 153px;">
+  <img src="/images/zsxq-fromblog.jpg" alt="zsxq-fromblog" style="width: 115px; height: 153px;">
+</div></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>说说转换等高线数据的思路</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://rovertang.com" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    RoverTang</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E5%9C%B0%E5%9B%BE/" class="post-category" title="分类 - 地图"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 地图</a></span></div><div class="post-meta-line"><span title="发布于 2012-06-10 00:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2012-06-10">2012-06-10</time></span>&nbsp;<span title="1660 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1700 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 4 分钟</span>&nbsp;</div>
+    </div><div class="content" id="content"><p>最近在讨论等高线的方案，昨天的时候我也研究了一番，然后提交了一份文档给内部，今天我来简单说说我对于等高线转换的思路。</p>
+<p>首先大家可以了解一下什么是等高线，<a href="http://baike.baidu.com/view/94058.htm"target="_blank" rel="external nofollow noopener noreferrer">百度百科</a>上已经讲的非常清楚，我也是看了等高线的定义后，才对等高线有了较深入的了解，特别是关于等高线为什么间隔4个画一个粗线，也是从这里了解到的。</p>
+<p>然后我们来确定输入和输出，输入的是从网上下载的DEM数据，大家可以从这里下载：<a href="http://srtm.csi.cgiar.org/SELECTION/inputCoord.asp"target="_blank" rel="external nofollow noopener noreferrer">http://srtm.csi.cgiar.org/SELECTION/inputCoord.asp</a>，下载下来的是TIFF数据。输出的是自定义的等高线数据，引擎可以显示这份数据，也可以点击等高线查看其高度信息。这个输入输出的内容是一致的，没有任何冲突。</p>
+<p>接下来讲等高线转换思路，这部分的歧义比较大，有说自制一个工具直接将TIFF或.dem格式的数据转换成我们最终的数据格式。我觉得这个做法非常好，但实现难度非常大。我们不能用这一句话概括了整个过程，我们还是来分析细化，以获得最佳的解决方法吧。</p>
+<p>关于输出数据，虽然确定是自定义的二进制数据，但也未说明这个格式的原理是什么。我认为最终数据的原理不外乎两种，一种是矢量数据，就如同大部分的导航电子地图，都是用point、line、area来表示，绝大部分的GIS数据也是如此，另外一种即为栅格数据，可以处理成瓦片数据，同Google地图等所采用的tile，只是将原本放服务端的瓦片数据打包成一个二进制文件供本地显示，现在的百度地图提供的离线地图就是这么做的。个人认为后者的实现比较简单，但比较局限，比如点击等高线显示该等高线的高程信息，似乎有点麻烦。我更愿意采用前者，但如何将一个栅格的TIFF数据直接转换成矢量的最终数据呢？</p>
+<p>我承认，从栅格数据直接能够转换成自定义二进制的矢量数据那是最佳的方式，但实现难度不小。我的思路是：将TIFF通过第三方工具转换成矢量数据，比如SHP格式，然后将这个矢量数据再转换为自定义的二进制文件，自制工具只考虑通用格式到自己格式的转换，难度自然大大降低。并且，这个世界上确实存在这样的工具，我们不比去找国外专业TIFF转矢量的软件，我们使用通用的globe mapper就可以。在globe mapper中有一个生成等高线的菜单，可以直接将地形图数据(包括.tif、.dem、.bil等格式)转换成他自己的中间格式。</p>
+<p><img loading="lazy" src="/posts/map/20120610-talk-about-the-idea-of-converting-contour-data/assets/boxcn5Eg8hxd96CntGVQ45G5jFb.png" alt="/posts/map/20120610-talk-about-the-idea-of-converting-contour-data/assets/boxcn5Eg8hxd96CntGVQ45G5jFb.png" srcset="/posts/map/20120610-talk-about-the-idea-of-converting-contour-data/assets/boxcn5Eg8hxd96CntGVQ45G5jFb.png?size=small, /posts/map/20120610-talk-about-the-idea-of-converting-contour-data/assets/boxcn5Eg8hxd96CntGVQ45G5jFb.png?size=medium 1.5x, /posts/map/20120610-talk-about-the-idea-of-converting-contour-data/assets/boxcn5Eg8hxd96CntGVQ45G5jFb.png?size=large 2x" data-title="/posts/map/20120610-talk-about-the-idea-of-converting-contour-data/assets/boxcn5Eg8hxd96CntGVQ45G5jFb.png" style="--width: 346px;--aspect-ratio: 346 / 582;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>注意：上图中的等高距设置，这一数字决定了最终数据中的最小等高距。个人还有一个观点：若数据源本身是90米精度(比如NASA提供的地形图)，那若将这等高距设置成了30米，那一定存在失真，因为需要差值出90到30中间两条等高线，差值方法一定存在失真。</p>
+<p><img loading="lazy" src="/posts/map/20120610-talk-about-the-idea-of-converting-contour-data/assets/boxcnZA1IcDZ3dIcpuOCsLYK9le.png" alt="/posts/map/20120610-talk-about-the-idea-of-converting-contour-data/assets/boxcnZA1IcDZ3dIcpuOCsLYK9le.png" srcset="/posts/map/20120610-talk-about-the-idea-of-converting-contour-data/assets/boxcnZA1IcDZ3dIcpuOCsLYK9le.png?size=small, /posts/map/20120610-talk-about-the-idea-of-converting-contour-data/assets/boxcnZA1IcDZ3dIcpuOCsLYK9le.png?size=medium 1.5x, /posts/map/20120610-talk-about-the-idea-of-converting-contour-data/assets/boxcnZA1IcDZ3dIcpuOCsLYK9le.png?size=large 2x" data-title="/posts/map/20120610-talk-about-the-idea-of-converting-contour-data/assets/boxcnZA1IcDZ3dIcpuOCsLYK9le.png" style="--width: 449px;--aspect-ratio: 449 / 451;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>上图是拉萨附近转换后的中间格式数据，是globe mapper自定义的.gmp数据，用GM打开这个中间格式的数据，然后选择输出矢量的SHP数据，SHP就是我们需要的易读的等高线中间数据，再从通用中间格式到最终格式，这样的转换是否就变的相对简单了？</p>
+<p>回过头来说，从另外一个例证上证明TIF地形数据到矢量数据的难度：globe mapper没有提供直接的输入地形图栅格数据输出等高线矢量数据的功能，也是需要通过生成等高线这一功能生成中间数据后，再转换成通用的矢量数据格式。</p>
+<p>我认为：技术可以实现很多有难度的内容，但作为我们非专业人士，或者对地形数据领域不熟悉的人来说，我们何必需要追求一步到位的牛叉工具，而不采用分步实现的策略呢？再换个角度来说：一，用户的数据本身就是千奇百怪，你能满足用户的所有需求否？二，从人员梯度或价值传递来讲，用户不会为这牛叉的工具买单的，但用户会为数据买单。如何买单？就是找到我们的产品技术支持团队，将原始数据提供给他们，让他们做成最终的数据，而技术支持人员先通过通用工具转换成中间格式，再用自制工具转换成最终数据，技术支持团队还能依靠这样的业务来赚钱，这样三赢的局面，何乐而不为？</p>
+<p>所以：定义好自己的数据规格，提供简单好用的转换工具，比起做一个牛叉的转换软件，更有钱途。</p>
+<p>本文飞书文档：<a href="https://rovertang.feishu.cn/docx/doxcn6s9x55NiLXfoPQsmrbYmte"target="_blank" rel="external nofollow noopener noreferrer">说说转换等高线数据的思路</a></p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2012-06-10 00:00:00">更新于 2012-06-10&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/%E7%AD%89%E9%AB%98%E7%BA%BF/" class="post-tag" title="标签 - 等高线">等高线</a><a href="/tags/%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2/" class="post-tag" title="标签 - 数据转换">数据转换</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/map/20120407-indexing-algorithm-of-google-tile-and-tms/" class="post-nav-item" rel="prev" title="Google Tile和TMS的索引算法"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Google Tile和TMS的索引算法</a><a href="/posts/misc/20120724-im-interested-in-reading-the-ten-suggestions-given-by-former-yahoo-employees-to-the-new-ceo/" class="post-nav-item" rel="next" title="读雅虎前员工给新CEO的十条建议有感">读雅虎前员工给新CEO的十条建议有感<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment"></div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward"><i class="fa-solid fa-qrcode fa-fw" aria-hidden="true"></i>赞赏</label>
+    <div class="reward-ways" data-mode="static"><div><img loading="lazy" src="/images/alipay.png" alt="RoverTang 支付宝" data-title="RoverTang 支付宝" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>支付宝</span>
+          </div><div><img loading="lazy" src="/images/wechatpay.png" alt="RoverTang 微信" data-title="RoverTang 微信" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>微信</span>
+          </div></div>
+  </div></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.139.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.16">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2005 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://rovertang.com"target="_blank" rel="external nofollow noopener noreferrer">RoverTang</a></span></div><div class="footer-line beian"><span class="icp footer-divider">沪ICP备2020036772号-1</span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;bottom: 0;"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.16"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

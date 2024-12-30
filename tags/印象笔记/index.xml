@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>印象笔记 - 标签 - 罗孚</title>
+    <link>https://blog.rovertang.com/tags/%E5%8D%B0%E8%B1%A1%E7%AC%94%E8%AE%B0/</link>
+    <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
+    <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 23 Sep 2018 00:00:00 +0800</lastBuildDate>
+    <atom:link href="https://blog.rovertang.com/tags/%E5%8D%B0%E8%B1%A1%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何在一小时内更新100篇文章？-Evernote Sync插件介绍</title>
+      <link>https://blog.rovertang.com/posts/misc/20180923-how-to-update-100-articles-in-an-hour-evernote-sync-plug-in-introduction/</link>
+      <pubDate>Sun, 23 Sep 2018 00:00:00 +0800</pubDate>
+      <guid>https://blog.rovertang.com/posts/misc/20180923-how-to-update-100-articles-in-an-hour-evernote-sync-plug-in-introduction/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E6%9D%82/">杂</category>
+      <description>介绍一款WordPress插件，Evernote Sync，这款插件可以让你在一小时内更新100篇文章。要不要试试？</description>
+    </item>
+  </channel>
+</rss>

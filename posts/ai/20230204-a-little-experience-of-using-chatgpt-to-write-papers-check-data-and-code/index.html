@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>使用ChatGPT写论文、查资料、编代码的一点体验 - 罗孚</title><meta name="author" content="RoverTang">
+<meta name="description" content="ChatGPT 的语义对话能力确实让人惊艳，其回复内容的匹配度、准确度也算有所惊喜，后续会替代掉搜索、专业数据库等是可能的，但完全替代掉人的思考能力，是不可能的，通过写论文、查资料、编代码的体验，ChatGPT 仅仅可能成为人类的一个优秀工具，没错，ChatGPT 仅仅是工具。"><meta name="keywords" content='ChatGPT, 体验, 人工智能, AI'>
+  <meta itemprop="name" content="使用ChatGPT写论文、查资料、编代码的一点体验">
+  <meta itemprop="description" content="ChatGPT 的语义对话能力确实让人惊艳，其回复内容的匹配度、准确度也算有所惊喜，后续会替代掉搜索、专业数据库等是可能的，但完全替代掉人的思考能力，是不可能的，通过写论文、查资料、编代码的体验，ChatGPT 仅仅可能成为人类的一个优秀工具，没错，ChatGPT 仅仅是工具。">
+  <meta itemprop="datePublished" content="2023-02-04T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2023-02-04T00:00:00+08:00">
+  <meta itemprop="wordCount" content="6563">
+  <meta itemprop="image" content="https://blog.rovertang.com/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/cover.jpg">
+  <meta itemprop="keywords" content="ChatGPT,体验,人工智能,AI"><meta property="og:url" content="https://blog.rovertang.com/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/">
+  <meta property="og:site_name" content="罗孚">
+  <meta property="og:title" content="使用ChatGPT写论文、查资料、编代码的一点体验">
+  <meta property="og:description" content="ChatGPT 的语义对话能力确实让人惊艳，其回复内容的匹配度、准确度也算有所惊喜，后续会替代掉搜索、专业数据库等是可能的，但完全替代掉人的思考能力，是不可能的，通过写论文、查资料、编代码的体验，ChatGPT 仅仅可能成为人类的一个优秀工具，没错，ChatGPT 仅仅是工具。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-02-04T00:00:00+08:00">
+    <meta property="article:modified_time" content="2023-02-04T00:00:00+08:00">
+    <meta property="article:tag" content="ChatGPT">
+    <meta property="article:tag" content="体验">
+    <meta property="article:tag" content="人工智能">
+    <meta property="article:tag" content="AI">
+    <meta property="og:image" content="https://blog.rovertang.com/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/cover.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://blog.rovertang.com/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/cover.jpg">
+  <meta name="twitter:title" content="使用ChatGPT写论文、查资料、编代码的一点体验">
+  <meta name="twitter:description" content="ChatGPT 的语义对话能力确实让人惊艳，其回复内容的匹配度、准确度也算有所惊喜，后续会替代掉搜索、专业数据库等是可能的，但完全替代掉人的思考能力，是不可能的，通过写论文、查资料、编代码的体验，ChatGPT 仅仅可能成为人类的一个优秀工具，没错，ChatGPT 仅仅是工具。">
+<meta name="application-name" content="罗孚传说">
+<meta name="apple-mobile-web-app-title" content="罗孚传说"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://blog.rovertang.com/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/" title="使用ChatGPT写论文、查资料、编代码的一点体验 - 罗孚" /><link rel="prev" type="text/html" href="https://blog.rovertang.com/posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/" title="前复权后复权计算股票收益率不准确问题" /><link rel="next" type="text/html" href="https://blog.rovertang.com/posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/" title="从滚动市盈率(TTM)判断公司近期经营情况" /><link rel="alternate" type="text/markdown" href="https://blog.rovertang.com/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/index.md" title="使用ChatGPT写论文、查资料、编代码的一点体验 - 罗孚"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="apxz4dWbUQ2bsnGFk6SmRK4gNZ7tlT21KgMZ1t9hqdk" /><meta name="msvalidate.01" content="5282002B82D61AD2D097F2F6419C1E4A" /><meta name="baidu-site-verification" content="codeva-RiIZqiHrvQ" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "使用ChatGPT写论文、查资料、编代码的一点体验",
+    "inLanguage": "zh-cn",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.rovertang.com\/posts\/ai\/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code\/"
+    },"genre": "posts","keywords": "ChatGPT, 体验, 人工智能, AI","wordcount":  6563 ,
+    "url": "https:\/\/blog.rovertang.com\/posts\/ai\/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code\/","datePublished": "2023-02-04T00:00:00+08:00","dateModified": "2023-02-04T00:00:00+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "RoverTang"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item has-children">
+              <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/" title="文章">文章</a></li><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/ai/" title="AI">AI</a></li><li class="breadcrumb-item active" data-separator="&gt;" aria-current="page">使用ChatGPT写论文、查资料、编代码的一点体验</li>
+    </ol>
+  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div class="details collection-details open">
+      <div class="details-summary collection-summary">
+        <i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>
+        <span class="collection-name" data-collections="合集">ChatGPT</span>
+        <span class="collection-count">8</span><i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
+      <div class="details-content collection-content">
+        <nav>
+          <ul class="collection-list"><li class="collection-item"><span class="active" title="使用ChatGPT写论文、查资料、编代码的一点体验">使用ChatGPT写论文、查资料、编代码的一点体验</span></li><li class="collection-item"><a href="/posts/ai/20230226-bing-for-chatgpt-the-newbing-initial-experience/" title="ChatGPT版Bing(也就是NewBing)初体验">ChatGPT版Bing(也就是NewBing)初体验</a></li><li class="collection-item"><a href="/posts/misc/20230406-why-do-i-join-the-chatgpt-ai-circle/" title="我为什么加入粥左罗ChatGPT AI变现圈">我为什么加入粥左罗ChatGPT AI变现圈</a></li><li class="collection-item"><a href="/posts/ai/20230408-you-write-text-chatgpt-writes-code-to-get-daily-stock-price/" title="实战ChatGPT获取每日股价数据(你写作文它写代码)">实战ChatGPT获取每日股价数据(你写作文它写代码)</a></li><li class="collection-item"><a href="/posts/ai/20230415-chatgpt-thinks-chatgpt-has-thoughts/" title="ChatGPT会思考，ChatGPT有思想">ChatGPT会思考，ChatGPT有思想</a></li><li class="collection-item"><a href="/posts/ai/20230519-deploy-the-local-shared-version-of-chatgpt/" title="部署本地共享版ChatGPT，一次搭建，多人免费使用">部署本地共享版ChatGPT，一次搭建，多人免费使用</a></li><li class="collection-item"><a href="/posts/ai/20230527-the-gap-of-ai-by-the-nine-nine-multiplication-table/" title="通过九九乘法表看人工智能大模型的差距">通过九九乘法表看人工智能大模型的差距</a></li><li class="collection-item"><a href="/posts/ai/20230602-understanding-token-in-chatgpt/" title="ChatGPT中token的理解">ChatGPT中token的理解</a></li></ul>
+          <div class="collection-nav-simple"><i class="fa-solid fa-angle-left fa-fw collection-nav-item text-secondary" aria-hidden="true"></i><span class="text-secondary">1/8</span><a href="/posts/ai/20230226-bing-for-chatgpt-the-newbing-initial-experience/" class="collection-nav-item" rel="next" title="ChatGPT版Bing(也就是NewBing)初体验"><i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+        </nav>
+      </div>
+    </div><div style="width: 350px; margin: 0 auto; display: flex; justify-content: space-between; text-align: center;">
+  <img src="/images/wxmp-blog.jpg" alt="wxmp-blog" style="width: 115px; height: 153px;">
+  <img src="/images/wxmp-shanghai.jpg" alt="wxmp-shanghai" style="width: 115px; height: 153px;">
+  <img src="/images/zsxq-fromblog.jpg" alt="zsxq-fromblog" style="width: 115px; height: 153px;">
+</div></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>使用ChatGPT写论文、查资料、编代码的一点体验</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://rovertang.com" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    RoverTang</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/ai/" class="post-category" title="分类 - AI"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> AI</a> 和 <a href="/collections/chatgpt/" class="post-collection" title="合集 - ChatGPT"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> ChatGPT</a></span></div><div class="post-meta-line"><span title="发布于 2023-02-04 00:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-02-04">2023-02-04</time></span>&nbsp;<span title="6563 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 6600 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 14 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#chatgpt-无法写出令人满意的论文">ChatGPT 无法写出令人满意的论文</a></li>
+    <li><a href="#chatgpt-查资料还行但深度不足">ChatGPT 查资料还行，但深度不足</a></li>
+    <li><a href="#chatgpt-能写代码但写不出有质量的代码">ChatGPT 能写代码，但写不出有质量的代码</a></li>
+    <li><a href="#chatgpt-体验总结">ChatGPT 体验总结</a></li>
+    <li><a href="#附论文案例ar-hud-的设计结构和工作原理以及创新功能和特点">附论文案例：AR-HUD 的设计、结构和工作原理，以及创新功能和特点</a>
+      <ul>
+        <li><a href="#大纲">大纲</a></li>
+        <li><a href="#综述">综述</a></li>
+        <li><a href="#正文">正文</a></li>
+        <li><a href="#结语">结语</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p>早上的时候，同事想问罗孚借用米国号码注册个 ChatGPT，最终没成功，可能多年未用 Google voice，导致 GV 虚拟号码都已经不可用了吧。</p>
+<p>傍晚的时候，罗孚需要写点 Python 代码，为了省事，想让 ChatGPT 代写一下，然后罗孚去某宝花了 18.8 买了个 ChatGPT 的独立账号，于是，开始了今天的 ChatGPT 体验之旅。</p>
+<p>本次使用 ChatGPT 写了一篇文章和一段代码，“AR-HUD 的设计、结构和工作原理，以及创新功能和特点”一文见文末附录，“使用 Python3 获取所有股票的历史 K 线数据”见编代码体验章节。总体来说，论文很让人不满意，词不达意，内容错误，编好的代码也无法顺利运行，错误无法修正，罗孚<strong>对 ChatGPT 的写论文和编代码能力表示很不满意</strong>。</p>
+<p>那罗孚就从写论文、查资料、编代码三个方面细说一下 ChatGPT 的不行吧。</p>
+<h2 id="chatgpt-无法写出令人满意的论文" class="heading-element"><span>ChatGPT 无法写出令人满意的论文</span>
+  <a href="#chatgpt-%e6%97%a0%e6%b3%95%e5%86%99%e5%87%ba%e4%bb%a4%e4%ba%ba%e6%bb%a1%e6%84%8f%e7%9a%84%e8%ae%ba%e6%96%87" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>先问 ChatGPT：生成一篇关于 AR-HUD 发展历史、关键技术、未来展望的文章。</p>
+<p>然后生成了一篇 400 字的内容：</p>
+<p><img loading="lazy" src="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnbIeFG2gV9G2Bo5dynMYVih.png" alt="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnbIeFG2gV9G2Bo5dynMYVih.png" srcset="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnbIeFG2gV9G2Bo5dynMYVih.png?size=small, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnbIeFG2gV9G2Bo5dynMYVih.png?size=medium 1.5x, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnbIeFG2gV9G2Bo5dynMYVih.png?size=large 2x" data-title="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnbIeFG2gV9G2Bo5dynMYVih.png" style="--width: 731px;--aspect-ratio: 731 / 558;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>但这肯定不够组成一篇论文吧。于是让它扩展成 4000 字：对设计、结构和工作原理扩展说明到 4000 字。</p>
+<p>然后 ChatGPT 就开始絮絮叨叨：</p>
+<p><img loading="lazy" src="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnJnfV7Y4ChfAsoRzL2DgoKc.png" alt="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnJnfV7Y4ChfAsoRzL2DgoKc.png" srcset="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnJnfV7Y4ChfAsoRzL2DgoKc.png?size=small, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnJnfV7Y4ChfAsoRzL2DgoKc.png?size=medium 1.5x, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnJnfV7Y4ChfAsoRzL2DgoKc.png?size=large 2x" data-title="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnJnfV7Y4ChfAsoRzL2DgoKc.png" style="--width: 719px;--aspect-ratio: 719 / 874;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>不知道什么原因，很多内容没有写完，让它继续，又好像新开了一个段落，所以每次回复，虽然内容不同，但很多内容重复，甚至有些词不达意。比如：</p>
+<p><img loading="lazy" src="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn99jLDtSWr8wBu1qApIYElt.png" alt="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn99jLDtSWr8wBu1qApIYElt.png" srcset="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn99jLDtSWr8wBu1qApIYElt.png?size=small, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn99jLDtSWr8wBu1qApIYElt.png?size=medium 1.5x, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn99jLDtSWr8wBu1qApIYElt.png?size=large 2x" data-title="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn99jLDtSWr8wBu1qApIYElt.png" style="--width: 721px;--aspect-ratio: 721 / 527;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>这里第一段讲的还行，但对摄像头的使用方法，是错误的，因为前文说了摄像头是用来捕获眼球的。原文：为了使图像投影效果更好，AR-HUD 还配备了一个高分辨率摄像头，以跟踪用户的眼睛位置和姿态。</p>
+<p>第二段的结构又是漏洞百出，AR-HUD 不需要显示器，一般认为 AR-HUD 本身是一个显示器，因为 AR-HUD 的投影系统，投射到挡风玻璃或墙或等其他物体上，其投射出来的光线，就是我们肉眼看到的绘制在幕布上的内容，投射并反射光线，就是一个显示系统。所以这一段提到显示器是一个 OLED 或 LED 的显示器，是完全不需要的组成部分。</p>
+<p><img loading="lazy" src="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn6A5yYCENWtbwXMIrqeP8Vd.png" alt="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn6A5yYCENWtbwXMIrqeP8Vd.png" srcset="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn6A5yYCENWtbwXMIrqeP8Vd.png?size=small, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn6A5yYCENWtbwXMIrqeP8Vd.png?size=medium 1.5x, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn6A5yYCENWtbwXMIrqeP8Vd.png?size=large 2x" data-title="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn6A5yYCENWtbwXMIrqeP8Vd.png" style="--width: 677px;--aspect-ratio: 677 / 338;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>第三段中说 AR-HUD 是很小的装置，可以轻松安装在车辆或头盔上，这也是不正确的。车辆方向盘前方区域本身已经设计了较多的部件，使用普通车辆进行改装，基本都无法将 AR-HUD 设备放入，所以安装 AR-HUD 设备是需要车厂在车型设计时就要考虑，而不是简单的轻松安装，毕竟一个 10 升左右的东西，也算是一个大件了，如何设计的更小，又能提高显示的流明值，是 AR-HUD 设备厂商正在攻克的难题，至于头盔、眼镜等 AR-HUD 设备，这完全是另一个产品了，罗孚不熟悉就不瞎说了。</p>
+<p>最后一段关于语音控制，需要继续吐槽一下，ChatGPT 在后面也有谈到：</p>
+<p><img loading="lazy" src="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn5THBVAl4nDejJPjUUO0Dqf.png" alt="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn5THBVAl4nDejJPjUUO0Dqf.png" srcset="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn5THBVAl4nDejJPjUUO0Dqf.png?size=small, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn5THBVAl4nDejJPjUUO0Dqf.png?size=medium 1.5x, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn5THBVAl4nDejJPjUUO0Dqf.png?size=large 2x" data-title="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn5THBVAl4nDejJPjUUO0Dqf.png" style="--width: 719px;--aspect-ratio: 719 / 429;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>这一段可以认为是比较扯淡的一段了，先是讲到 AR-HUD 通过语音识别来控制设备，如果从语音控制 AR-HUD 的角度来说，是可以这么说，但语音识别、语音合成、语音语言处理等技术，可不是 AR-HUD 的技术啊，AR-HUD 为什么要集成这些技术呢？</p>
+<p>第二第三段就更扯了，AR-HUD 具有安全特性，能够保护隐私，可以通过人脸识别进行身份验证。看到这里，罗孚是崩溃的，人脸识别和 AR-HUD 有什么关系呢？是可以组成一个更大更多功能的系统，但本身同 AR-HUD 的关系不大。</p>
+<p><strong>ChatGPT 写论文的特点：</strong></p>
+<ol>
+<li><strong>从网络中大量摘抄，对于不熟悉的领域，存在滥用、堆砌的情况，无法给出清晰有价值的内容。</strong></li>
+<li><strong>大部分内容是描述性内容，无法进一步给出原理、<strong><strong>算法</strong></strong>等信息，导致论文肤浅不满足深度要求。</strong></li>
+</ol>
+<p>上述特点 1，罗孚在让 ChatGPT 写代码的时候也发现了，而对于特点 2，我们来详细描述一下 ChatGPT 的查资料功能。</p>
+<h2 id="chatgpt-查资料还行但深度不足" class="heading-element"><span>ChatGPT 查资料还行，但深度不足</span>
+  <a href="#chatgpt-%e6%9f%a5%e8%b5%84%e6%96%99%e8%bf%98%e8%a1%8c%e4%bd%86%e6%b7%b1%e5%ba%a6%e4%b8%8d%e8%b6%b3" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>论文写不好，就让 ChatGPT 查查资料吧，总体感受还行。</p>
+<p>比如上述论文中提到了专利，于是让 ChatGPT 查查专利相关吧：</p>
+<p><img loading="lazy" src="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn4brqEb0R4EYjxGFFW18Wad.png" alt="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn4brqEb0R4EYjxGFFW18Wad.png" srcset="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn4brqEb0R4EYjxGFFW18Wad.png?size=small, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn4brqEb0R4EYjxGFFW18Wad.png?size=medium 1.5x, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn4brqEb0R4EYjxGFFW18Wad.png?size=large 2x" data-title="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn4brqEb0R4EYjxGFFW18Wad.png" style="--width: 719px;--aspect-ratio: 719 / 667;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>ChatGPT 没能说出苹果公司申请的关于 AR-HUD 的具体专利，回复也比较的敷衍。然后让它去专利数据库检索一下，结果也未能执行：</p>
+<p><img loading="lazy" src="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnAGVxqFxps3942cqJNMEvUf.png" alt="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnAGVxqFxps3942cqJNMEvUf.png" srcset="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnAGVxqFxps3942cqJNMEvUf.png?size=small, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnAGVxqFxps3942cqJNMEvUf.png?size=medium 1.5x, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnAGVxqFxps3942cqJNMEvUf.png?size=large 2x" data-title="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnAGVxqFxps3942cqJNMEvUf.png" style="--width: 714px;--aspect-ratio: 714 / 296;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>实际上专利检索，应该是一个专项库，类似于图书检索等。虽然 ChatGPT 说一些专利数据库需要付费才能查看，这是事实，但没有帮我检索免费的专利数据库，需要打差评。</p>
+<p>然后问了一下 ChatGPT 关于苹果手表的跌倒检测使用方法，看上去还行：</p>
+<p><img loading="lazy" src="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnYZ2mBu0vKmT1jIpsQsmNIf.png" alt="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnYZ2mBu0vKmT1jIpsQsmNIf.png" srcset="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnYZ2mBu0vKmT1jIpsQsmNIf.png?size=small, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnYZ2mBu0vKmT1jIpsQsmNIf.png?size=medium 1.5x, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnYZ2mBu0vKmT1jIpsQsmNIf.png?size=large 2x" data-title="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnYZ2mBu0vKmT1jIpsQsmNIf.png" style="--width: 717px;--aspect-ratio: 717 / 444;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>然后细问了一下原理和算法，就很敷衍了：</p>
+<p><img loading="lazy" src="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcni5BVJn5VPpIu6SFZETLTAh.png" alt="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcni5BVJn5VPpIu6SFZETLTAh.png" srcset="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcni5BVJn5VPpIu6SFZETLTAh.png?size=small, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcni5BVJn5VPpIu6SFZETLTAh.png?size=medium 1.5x, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcni5BVJn5VPpIu6SFZETLTAh.png?size=large 2x" data-title="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcni5BVJn5VPpIu6SFZETLTAh.png" style="--width: 718px;--aspect-ratio: 718 / 724;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>不确定 ChatGPT 是不是中文不好，于是用英文问了一下：</p>
+<p><img loading="lazy" src="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnTrTgKrcTLvqaGFzKRG3eZc.png" alt="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnTrTgKrcTLvqaGFzKRG3eZc.png" srcset="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnTrTgKrcTLvqaGFzKRG3eZc.png?size=small, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnTrTgKrcTLvqaGFzKRG3eZc.png?size=medium 1.5x, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnTrTgKrcTLvqaGFzKRG3eZc.png?size=large 2x" data-title="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnTrTgKrcTLvqaGFzKRG3eZc.png" style="--width: 719px;--aspect-ratio: 719 / 482;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>结果也差不多，只是看上去英文的可能更详细一些：</p>
+<p><img loading="lazy" src="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnOUsPkKjs0ou4HTkjDwSNig.png" alt="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnOUsPkKjs0ou4HTkjDwSNig.png" srcset="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnOUsPkKjs0ou4HTkjDwSNig.png?size=small, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnOUsPkKjs0ou4HTkjDwSNig.png?size=medium 1.5x, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnOUsPkKjs0ou4HTkjDwSNig.png?size=large 2x" data-title="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnOUsPkKjs0ou4HTkjDwSNig.png" style="--width: 710px;--aspect-ratio: 710 / 564;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>然后让它具体描述一下 Movement Analysis，结果也是描述内容，意义不大。用中文继续问 ChatGPT，问到最细的细节：</p>
+<p><img loading="lazy" src="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn7bdRHo9iQXRXX6otZNkAjg.png" alt="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn7bdRHo9iQXRXX6otZNkAjg.png" srcset="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn7bdRHo9iQXRXX6otZNkAjg.png?size=small, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn7bdRHo9iQXRXX6otZNkAjg.png?size=medium 1.5x, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn7bdRHo9iQXRXX6otZNkAjg.png?size=large 2x" data-title="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn7bdRHo9iQXRXX6otZNkAjg.png" style="--width: 711px;--aspect-ratio: 711 / 677;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>ChatGPT 既然敷衍我，我就细问你具体阈值，不知道阈值也给我猜一个也行，最后回复就如上了。</p>
+<p>但罗孚怎能罢休，既然 ChatGPT 不知道，那告诉我它是如何获取这些信息的：</p>
+<p><img loading="lazy" src="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnU3i6IhfOb2bDPuxdPnoGtb.png" alt="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnU3i6IhfOb2bDPuxdPnoGtb.png" srcset="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnU3i6IhfOb2bDPuxdPnoGtb.png?size=small, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnU3i6IhfOb2bDPuxdPnoGtb.png?size=medium 1.5x, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnU3i6IhfOb2bDPuxdPnoGtb.png?size=large 2x" data-title="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnU3i6IhfOb2bDPuxdPnoGtb.png" style="--width: 724px;--aspect-ratio: 724 / 969;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>结果，自然是罗孚问了个寂寞。说什么通过训练语料，然后又通过什么文本学习，但 ChatGPT 就是无法提供具体的来源，最后甚至说自己是一个闭源系统。好吧，ChatGPT，你赢了。</p>
+<p><strong>ChatGPT 查资料的特点：</strong></p>
+<ol>
+<li><strong>可以给出较为精确的资料，比如使用说明书等，可以代替日常的 Google、Bing、Baidu 搜索。</strong></li>
+<li><strong>但问题深度不足，无法获得比较深入的答案内容。</strong></li>
+<li><strong>如果能推出专项技能搜索，当然就更佳了，比如专利搜索、笑话搜索、百病治疗搜索等。</strong></li>
+</ol>
+<h2 id="chatgpt-能写代码但写不出有质量的代码" class="heading-element"><span>ChatGPT 能写代码，但写不出有质量的代码</span>
+  <a href="#chatgpt-%e8%83%bd%e5%86%99%e4%bb%a3%e7%a0%81%e4%bd%86%e5%86%99%e4%b8%8d%e5%87%ba%e6%9c%89%e8%b4%a8%e9%87%8f%e7%9a%84%e4%bb%a3%e7%a0%81" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>最后，试一下 ChatGPT 写代码，有惊喜也有无奈吧。</p>
+<p>先给了一个开放式的命题，写代码获取股票数据：</p>
+<p><img loading="lazy" src="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnPv0sKVeaWzhAcvk2psYTJg.png" alt="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnPv0sKVeaWzhAcvk2psYTJg.png" srcset="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnPv0sKVeaWzhAcvk2psYTJg.png?size=small, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnPv0sKVeaWzhAcvk2psYTJg.png?size=medium 1.5x, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnPv0sKVeaWzhAcvk2psYTJg.png?size=large 2x" data-title="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnPv0sKVeaWzhAcvk2psYTJg.png" style="--width: 719px;--aspect-ratio: 719 / 772;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>代码挺好，友情提示也挺好，因为比较简单，应该可以执行通过。</p>
+<p>由于个人不喜欢这个库，于是让它换个库，换成功了，但是一个新的不熟悉的库。继续让 ChatGPT 换成罗孚熟悉的 baostock 库：</p>
+<p><img loading="lazy" src="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnMvzq0yPLqIMet8aelz35Yb.png" alt="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnMvzq0yPLqIMet8aelz35Yb.png" srcset="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnMvzq0yPLqIMet8aelz35Yb.png?size=small, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnMvzq0yPLqIMet8aelz35Yb.png?size=medium 1.5x, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnMvzq0yPLqIMet8aelz35Yb.png?size=large 2x" data-title="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnMvzq0yPLqIMet8aelz35Yb.png" style="--width: 720px;--aspect-ratio: 720 / 726;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>呀，挺惊喜，还真切换成功了，看上去也能执行。但不能这么简单，要来点难度，那就把查询的结果保存到 csv 文件吧：</p>
+<p><img loading="lazy" src="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn4wwc1smnrJSJCi94VlXVkd.png" alt="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn4wwc1smnrJSJCi94VlXVkd.png" srcset="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn4wwc1smnrJSJCi94VlXVkd.png?size=small, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn4wwc1smnrJSJCi94VlXVkd.png?size=medium 1.5x, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn4wwc1smnrJSJCi94VlXVkd.png?size=large 2x" data-title="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn4wwc1smnrJSJCi94VlXVkd.png" style="--width: 719px;--aspect-ratio: 719 / 646;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>看上去也还行，但没有查询所有的股票数据，于是让它两者结合一下，确实也能生成代码。</p>
+<p>但代码质量有点堪忧：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># 循环读取每只股票的历史K线数据
+</span></span><span class="line"><span class="cl">for stock in stock_list:
+</span></span><span class="line"><span class="cl">    # 登陆系统
+</span></span><span class="line"><span class="cl">    lg = bs.login()
+</span></span><span class="line"><span class="cl">    # 获取当前股票代码
+</span></span><span class="line"><span class="cl">    stock_code = stock[0]
+</span></span><span class="line"><span class="cl">    # 查询历史K线数据
+</span></span><span class="line"><span class="cl">    rs = bs.query_history_k_data(stock_code, &#34;date,code,close,high,low,open,preclose,volume,amount&#34;,
+</span></span><span class="line"><span class="cl">                                 start_date=&#39;2022-01-01&#39;, end_date=&#39;2022-12-31&#39;, frequency=&#34;d&#34;, adjustflag=&#34;3&#34;)
+</span></span><span class="line"><span class="cl">    # 将结果转换为DataFrame格式
+</span></span><span class="line"><span class="cl">    data = pd.DataFrame(rs.get_data(), columns=rs.fields)
+</span></span><span class="line"><span class="cl">    # 将当前股票数据保存到csv文件中
+</span></span><span class="line"><span class="cl">    data.to_csv(f&#34;{stock_code}.csv&#34;, index=False)
+</span></span><span class="line"><span class="cl">    # 关闭查询
+</span></span><span class="line"><span class="cl">    bs.logout()</span></span></code></pre></td></tr></table>
+</div>
+</div><p>比如 login 和 logout 放到了 for 循环，是没必要的，完全可以放在外面，于是让它改，也能改：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">import baostock as bs
+</span></span><span class="line"><span class="cl">import pandas as pd
+</span></span><span class="line"><span class="cl">lg = bs.login()
+</span></span><span class="line"><span class="cl">if not lg.error_code:
+</span></span><span class="line"><span class="cl">    print(&#34;登陆成功&#34;)
+</span></span><span class="line"><span class="cl">else:
+</span></span><span class="line"><span class="cl">    print(&#34;登录失败&#34;)
+</span></span><span class="line"><span class="cl"># 获取所有股票的代码
+</span></span><span class="line"><span class="cl">rs = bs.query_all_stock(day=&#34;2020-01-01&#34;)
+</span></span><span class="line"><span class="cl"># 将所有股票的数据存储在一个DataFrame中
+</span></span><span class="line"><span class="cl">all_stocks = pd.DataFrame()
+</span></span><span class="line"><span class="cl"># 遍历所有股票
+</span></span><span class="line"><span class="cl">for index, row in rs.iterrows():
+</span></span><span class="line"><span class="cl">    code = row[&#34;code&#34;]
+</span></span><span class="line"><span class="cl">    # 查询历史K线数据
+</span></span><span class="line"><span class="cl">    stock = bs.query_history_k_data_plus(code, &#34;date,code,open,high,low,close,preclose,volume,amount,adjustflag&#34;, start_date=&#39;2020-01-01&#39;, end_date=&#39;2023-01-01&#39;, frequency=&#39;d&#39;)
+</span></span><span class="line"><span class="cl">    if stock is not None:
+</span></span><span class="line"><span class="cl">        all_stocks = all_stocks.append(stock, ignore_index=True)
+</span></span><span class="line"><span class="cl"># 将所有数据存储到CSV文件中
+</span></span><span class="line"><span class="cl">all_stocks.to_csv(&#34;shanghai_A_stocks_history_data.csv&#34;, index=False)
+</span></span><span class="line"><span class="cl">bs.logout()</span></span></code></pre></td></tr></table>
+</div>
+</div><p>看上去改好了。但改动似乎有点大。另外也发现一个问题：csv 文件是一次性写入的，导致查询的所有数据放到内存中，那肯定会有较大的内存消耗，这样的写法是有问题的，于是向 ChatGPT 提出了这个问题，并让它修改：</p>
+<p><img loading="lazy" src="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnH1kYY4BIzlmwt8faNm5nR9.png" alt="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnH1kYY4BIzlmwt8faNm5nR9.png" srcset="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnH1kYY4BIzlmwt8faNm5nR9.png?size=small, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnH1kYY4BIzlmwt8faNm5nR9.png?size=medium 1.5x, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnH1kYY4BIzlmwt8faNm5nR9.png?size=large 2x" data-title="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnH1kYY4BIzlmwt8faNm5nR9.png" style="--width: 708px;--aspect-ratio: 708 / 839;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>似乎没法帮我。不过罗孚换了一种说法，竟然执行成功了：</p>
+<p><img loading="lazy" src="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn38pfuhvpt2WVK755wCgy8b.png" alt="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn38pfuhvpt2WVK755wCgy8b.png" srcset="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn38pfuhvpt2WVK755wCgy8b.png?size=small, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn38pfuhvpt2WVK755wCgy8b.png?size=medium 1.5x, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn38pfuhvpt2WVK755wCgy8b.png?size=large 2x" data-title="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn38pfuhvpt2WVK755wCgy8b.png" style="--width: 725px;--aspect-ratio: 725 / 260;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>但还是不能满足要求，继续对 ChatGPT 做要求：</p>
+<p><img loading="lazy" src="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn6ThRO9UObFmTul9CFPEcTd.png" alt="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn6ThRO9UObFmTul9CFPEcTd.png" srcset="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn6ThRO9UObFmTul9CFPEcTd.png?size=small, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn6ThRO9UObFmTul9CFPEcTd.png?size=medium 1.5x, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn6ThRO9UObFmTul9CFPEcTd.png?size=large 2x" data-title="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn6ThRO9UObFmTul9CFPEcTd.png" style="--width: 720px;--aspect-ratio: 720 / 438;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>甚至要求改细节代码：</p>
+<p><img loading="lazy" src="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnjhT2fY8moeoJJKaW4ZKj8e.png" alt="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnjhT2fY8moeoJJKaW4ZKj8e.png" srcset="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnjhT2fY8moeoJJKaW4ZKj8e.png?size=small, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnjhT2fY8moeoJJKaW4ZKj8e.png?size=medium 1.5x, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnjhT2fY8moeoJJKaW4ZKj8e.png?size=large 2x" data-title="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnjhT2fY8moeoJJKaW4ZKj8e.png" style="--width: 715px;--aspect-ratio: 715 / 395;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>这个小细节不确定是真懂代码，还是网上找的蒙的。在 pycharm 中运行了一下，报错，于是反馈给 ChatGPT：</p>
+<p><img loading="lazy" src="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn5RmVrk2gocY46C0HCTIrEB.png" alt="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn5RmVrk2gocY46C0HCTIrEB.png" srcset="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn5RmVrk2gocY46C0HCTIrEB.png?size=small, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn5RmVrk2gocY46C0HCTIrEB.png?size=medium 1.5x, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn5RmVrk2gocY46C0HCTIrEB.png?size=large 2x" data-title="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcn5RmVrk2gocY46C0HCTIrEB.png" style="--width: 722px;--aspect-ratio: 722 / 579;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>看上去挺有道理的，但有点答非所问。</p>
+<p>继续指出 ChatGPT 的错误：</p>
+<p><img loading="lazy" src="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnTOclUZjJJtqilfBKKuj0Ud.png" alt="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnTOclUZjJJtqilfBKKuj0Ud.png" srcset="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnTOclUZjJJtqilfBKKuj0Ud.png?size=small, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnTOclUZjJJtqilfBKKuj0Ud.png?size=medium 1.5x, /posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnTOclUZjJJtqilfBKKuj0Ud.png?size=large 2x" data-title="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/static/boxcnTOclUZjJJtqilfBKKuj0Ud.png" style="--width: 720px;--aspect-ratio: 720 / 251;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>最后的最后，还是没能运行，提供的代码还是无法顺利执行通过的，还是需要自己进行大量的修改。</p>
+<p><strong>ChatGPT 编的特点：</strong></p>
+<ol>
+<li><strong>可以给出一定的代码样例，但仅仅是代码样例而已。</strong></li>
+<li><strong>无法保证代码的正确性，甚至连代码顺利执行通过都无法保证，甚至出现了低级的 type 使用错误的情况。</strong></li>
+<li><strong>无法 debug 代码中的错误，对问题的修正更像是通过网络搜索了一份新的代码。</strong></li>
+<li><strong>完全无法写出完整、可用、高效的功能代码，距离初级程序员还有巨大的距离。</strong></li>
+</ol>
+<h2 id="chatgpt-体验总结" class="heading-element"><span>ChatGPT 体验总结</span>
+  <a href="#chatgpt-%e4%bd%93%e9%aa%8c%e6%80%bb%e7%bb%93" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>从阿尔法狗打败围棋大师开始，罗孚就不敢直面人工智能 AI，也一直深信 AI 将代替人力做很多的事情，会导致很多的人员失业，甚至对自己从事的 IT 行业也产生了危机感，以后不仅仅公认被替代，研究院、程序员都要被 AI 代替了。</p>
+<p>就像几年前就开始大吹特吹自动驾驶，罗孚也甚至一度相信无人驾驶在 2023 年就能到来。但是呢，有一些事实，确实打击到了罗孚，比如：</p>
+<ul>
+<li>特斯拉自动驾驶软件总监 Ashok Elluswamy 在法庭上爆料特斯拉自动驾驶视频造假。</li>
+<li>Apple car 最早也许 2025 年上市，但据说也放弃了自动驾驶汽车的功能，甚至传闻解散了团队。</li>
+<li>前年一度火热的华为自动驾驶技术视频，让人觉得华为 HI 技术牛上天，但极狐阿尔法 S 上市后销量和消息寥寥。</li>
+<li>投资界大师段永平，在雪球说“特斯拉造不出自动生产汽车的产线，那完全自动驾驶的汽车就更遥远了”。</li>
+</ul>
+<p>确实，对于概念，甚至对于看上去好像很真实的东西，我们是应该敬畏，但也不至于恐惧。在试用了 ChatGPT 后，罗孚也感觉，自己原来想多了，对人工智能过度恐惧了。</p>
+<p>ChatGPT 的语义对话能力确实让人惊艳，其回复内容的匹配度、准确度也算有所惊喜，后续会替代掉搜索、专业数据库等是可能的，但完全替代掉人的思考能力，是不可能的，通过写论文、查资料、编代码的体验，ChatGPT 仅仅可能成为人类的一个优秀工具，没错，ChatGPT 仅仅是工具。</p>
+<h2 id="附论文案例ar-hud-的设计结构和工作原理以及创新功能和特点" class="heading-element"><span>附论文案例：AR-HUD 的设计、结构和工作原理，以及创新功能和特点</span>
+  <a href="#%e9%99%84%e8%ae%ba%e6%96%87%e6%a1%88%e4%be%8bar-hud-%e7%9a%84%e8%ae%be%e8%ae%a1%e7%bb%93%e6%9e%84%e5%92%8c%e5%b7%a5%e4%bd%9c%e5%8e%9f%e7%90%86%e4%bb%a5%e5%8f%8a%e5%88%9b%e6%96%b0%e5%8a%9f%e8%83%bd%e5%92%8c%e7%89%b9%e7%82%b9" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="大纲" class="heading-element"><span>大纲</span>
+  <a href="#%e5%a4%a7%e7%ba%b2" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>一、 简介</p>
+<p>1.1 什么是 AR-HUD</p>
+<p>1.2 AR-HUD 的背景及发展历史</p>
+<p>二、 AR-HUD 的设计</p>
+<p>2.1 AR-HUD 的结构</p>
+<p>2.2 AR-HUD 的工作原理</p>
+<p>三、 AR-HUD 的新功能和特点</p>
+<p>3.1 智能识别</p>
+<p>3.2 增强的视觉效果</p>
+<p>3.3 手势交互</p>
+<p>3.4 智能控制</p>
+<p>四、 AR-HUD 的应用</p>
+<p>4.1 导航</p>
+<p>4.2 视觉检测</p>
+<p>4.3 安全驾驶</p>
+<p>五、结论</p>
+<p>5.1 AR-HUD 的未来发展前景</p>
+<p>5.2 AR-HUD 对消费者、市场、技术及行业的影响</p>
+<h3 id="综述" class="heading-element"><span>综述</span>
+  <a href="#%e7%bb%bc%e8%bf%b0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>AR-HUD（Augmented Reality Head-Up Display）是一种增强现实技术，它是将虚拟信息与实际环境融合在一起的结果。一个 AR-HUD 装置可以将用户的视野中的任何实体信息转换成一种虚拟的信息，从而实现实时的控制和交互。</p>
+<p>AR-HUD 的结构主要由三个部分组成：显示器、摄像头和计算机。显示器负责显示虚拟信息，摄像头用于捕捉现实环境的信息，并将其转换成虚拟信息，而计算机则负责将虚拟信息和实际环境信息进行融合，实现增强现实效果。</p>
+<p>AR-HUD 的工作原理是，当用户佩戴 AR-HUD 设备时，摄像头会首先捕捉到眼前的实际环境信息，然后将其传递给计算机，计算机则会将捕捉到的实际环境信息和虚拟信息进行融合，从而实现增强现实效果。AR-HUD 还可以提供用户一些实时控制和交互的功能，例如可以让用户通过头部动作来控制虚拟信息的显示，而且还可以根据用户的要求提供实时的路线指引等等。</p>
+<p>AR-HUD 不仅可以实现增强现实，还可以提供一些创新功能和特点，比如支持实时地图导航，帮助用户制定路线、寻找目的地；支持语音识别，可以直接通过语音来控制设备的操作；支持视觉识别，可以自动识别并显示现实环境中的物体；还可以支持虚拟现实，让用户可以通过 AR-HUD 设备进入一个完全不同的虚拟环境，在这个虚拟环境中可以体验到不同的游戏、娱乐活动等等。</p>
+<p>总之，AR-HUD 是一种具有重大影响力的新型技术，它可以将实际环境与虚拟信息融合在一起，提供用户实时的控制和交互，从而实现增强现实的效果，同时还具有语音识别、视觉识别和虚拟现实等众多创新功能和特点。</p>
+<h3 id="正文" class="heading-element"><span>正文</span>
+  <a href="#%e6%ad%a3%e6%96%87" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>AR-HUD（Augmented Reality Head-Up Display）是一种把虚拟图像投影到现实世界中的显示器。它通常由一个投影单元、一个传感器单元和一个控制单元组成，并与用户眼睛接触。</p>
+<p>设计上，AR-HUD 通常位于车辆或飞机的前挡风玻璃上，并通过投影技术在视野中显示虚拟信息。结构上，AR-HUD 包含了一系列的传感器，用于感测环境，并通过数据处理和算法实现现实世界和虚拟图像的交互。</p>
+<p>工作原理上，AR-HUD 首先通过传感器感测环境，然后通过控制单元处理数据，最后通过投影单元将虚拟图像投影到真实环境中。</p>
+<p>创新的功能和特点包括：</p>
+<ul>
+<li>支持多种输入方式，例如语音、手势、眼动等</li>
+<li>支持多种虚拟图像格式，例如 3D 图形、文本、图像等</li>
+<li>支持现实世界和虚拟图像的交互，例如选择、缩放、旋转等</li>
+<li>支持环境感测，例如光线感测、深度感测、色彩感测等</li>
+<li>支持动态调整虚拟图像的显示，以适应不同的环境和用户需求。</li>
+</ul>
+<p>总的来说，AR-HUD 是一种先进的显示技术，它的设计和结构保证了其高效率和可靠性，并且通过智能化的功能提供了高效、方便和有趣的使用体验。因此，AR-HUD 在未来的应用领域，例如汽车、航空、医疗、教育等，都将发挥重要的作用。</p>
+<p>AR-HUD（Augmented Reality Head-Up Display）的设计与普通的显示器有所不同，它通常包含了一个透镜组件、投影装置、图像处理单元、传感器和控制单元等部分。</p>
+<p>透镜组件的作用是将投影装置产生的图像显示在眼前，同时保证用户能够自然地看到实际环境。投影装置通常是一个微型投影仪，它通过投影光路将图像投影到透镜上，并经过透镜组件进入用户的视野。</p>
+<p>图像处理单元主要负责处理图像，确保图像的清晰度、颜色一致性和品质。同时，图像处理单元还负责读取传感器的数据，并对图像进行适当的处理，以适应不同的环境和用户需求。</p>
+<p>传感器主要用于检测 AR-HUD 周围的环境，例如光线强度、视角、位置等。这些数据会被图像处理单元读取并利用，以确保图像的质量和一致性。</p>
+<p>控制单元是 AR-HUD 的核心部分，负责整个系统的控制和管理。控制单元与图像处理单元、传感器以及其他组件进行通信。</p>
+<p>设计上，AR-HUD 与一般的头戴显示器的不同之处在于它的显示器更加先进，可以在真实环境中投影虚拟图像。除了显示器，AR-HUD 还配备了一系列传感器，如陀螺仪、加速度计、激光雷达等，用于跟踪用户的眼睛和头部的位置，以确保虚拟图像的正确投影。</p>
+<p>结构上，AR-HUD 包括显示器、传感器、光学系统、图形处理器和外壳等部分。显示器是 AR-HUD 的核心部分，它可以通过微型投影技术投影出虚拟图像。传感器则用于跟踪用户的头部位置，以确保虚拟图像与现实环境保持一致。光学系统则通过一系列镜片和反光镜将虚拟图像投影到用户的视野中。</p>
+<p>光学投影系统是 AR-HUD 中非常重要的一部分，它主要负责将虚拟信息从显示器投影到眼睛上。光学投影系统的工作原理通常是利用光学元件，如折射物和反射镜，来控制光线的方向和强度。这样可以确保虚拟信息在用户的视线中呈现出清晰、明亮的形象。</p>
+<p>光学设计方面，AR-HUD 需要选择合适的光学系统来生成所需的图像，并且要考虑到驾驶员的眼睛和视线。为了确保图像的清晰度，AR-HUD 需要消除视线中的所有折射误差，并且要在图像呈现的位置和距离上控制像差。</p>
+<p>显示器方面，AR-HUD 通常使用特殊的显示器来呈现图像，以确保图像的高亮度、高分辨率和快速响应。这些显示器通常使用激光、LED 或者其他高亮度光源，并且拥有特殊的透镜和光学系统来呈现图像。</p>
+<p>AR-HUD 也可以通过语音识别来控制设备，使用者可以说出指令，例如请求打开某个应用，并且可以解答询问。这种语音识别技术的实现也涉及到了多种技术，包括语音识别，语音合成，语音语言处理，以及其他相关技术。这些技术在 AR-HUD 中的应用可以使其具有更加方便和高效的操作方式，为使用者带来更加优质的使用体验。</p>
+<p>另外，AR-HUD 还具有一系列先进的安全特性，可以确保用户的隐私和安全。例如，可以通过人脸识别技术进行身份验证，并且可以使用加密技术来保护用户数据的隐私。这些安全特性使 AR-HUD 更加适合于商业和个人用户的应用，并且可以更好地满足他们的需求。</p>
+<p>未来，AR-HUD 将继续发展和完善，并且将在更多的领域中得到应用。例如，在医疗，教育，军事，建筑等领域都可以看到 AR-HUD 的应用。随着技术的不断发展，AR-HUD 将会具有更加完善的功能，更加高效的性能，更加适合于人类使用。</p>
+<p>AR-HUD 技术的发展一直是汽车行业的一个热门话题，很多公司都在寻求在这一领域的技术突破。与传统的汽车仪表板不同，AR-HUD 通过将虚拟信息直接显示在驾驶员的视线中，实现了更直观、更便捷的信息显示。</p>
+<p>技术上，AR-HUD 通过投射技术和图像处理技术实现了虚拟信息与现实环境的融合。投射技术通过投射仪将虚拟图像投射到玻璃上，从而在驾驶员的视线中显示出虚拟信息；图像处理技术则通过识别环境，实现虚拟信息与环境的融合。</p>
+<p>设计上，AR-HUD 的结构通常包括投射仪、图像处理器、显示屏和控制器等。投射仪通过光学系统将图像投射到玻璃上；图像处理器通过识别环境，实现虚拟信息与环境的融合；显示屏则显示虚拟信息；控制器则负责控制各个组件的工作。</p>
+<p>总之，AR-HUD 在未来还有着广阔的发展空间。随着技术的不断提高，AR-HUD 的设计和功能将不断完善，提供更为方便、安全和高效的驾驶体验。目前，苹果公司已经获得了一项 AR-HUD 相关的专利，并在不断努力开发相关技术。因此，我们可以期待未来 AR-HUD 的技术和产品将有着更大的突破和进步。</p>
+<h3 id="结语" class="heading-element"><span>结语</span>
+  <a href="#%e7%bb%93%e8%af%ad" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>此段本应该是论文的结语，但罗孚需要点破一下：本文由 ChatGPT 生成，大家看到的上述文字，全部来自于 ChatGPT，罗孚仅仅对此进行了整理。</p>
+<p>觉得 ChatGPT 写论文的能力如何？真正试用下来，罗孚觉得：不合格。具体为啥？见罗孚的“使用 ChatGPT 写论文、查资料、编代码的一点体验”一文。</p>
+<p>本文飞书文档地址：<a href="https://rovertang.feishu.cn/docx/GJSXd07gsobC5Cxdo4wcLgXwnob"target="_blank" rel="external nofollow noopener noreferrer">[20230204]使用ChatGPT写论文、查资料、编代码的一点体验</a></p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2023-02-04 00:00:00">更新于 2023-02-04&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/chatgpt/" class="post-tag" title="标签 - ChatGPT">ChatGPT</a><a href="/tags/%E4%BD%93%E9%AA%8C/" class="post-tag" title="标签 - 体验">体验</a><a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" class="post-tag" title="标签 - 人工智能">人工智能</a><a href="/tags/ai/" class="post-tag" title="标签 - AI">AI</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/" class="post-nav-item" rel="prev" title="前复权后复权计算股票收益率不准确问题"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>前复权后复权计算股票收益率不准确问题</a><a href="/posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/" class="post-nav-item" rel="next" title="从滚动市盈率(TTM)判断公司近期经营情况">从滚动市盈率(TTM)判断公司近期经营情况<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment"></div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward"><i class="fa-solid fa-qrcode fa-fw" aria-hidden="true"></i>赞赏</label>
+    <div class="reward-ways" data-mode="static"><div><img loading="lazy" src="/images/alipay.png" alt="RoverTang 支付宝" data-title="RoverTang 支付宝" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>支付宝</span>
+          </div><div><img loading="lazy" src="/images/wechatpay.png" alt="RoverTang 微信" data-title="RoverTang 微信" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>微信</span>
+          </div></div>
+  </div></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.139.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.16">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2005 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://rovertang.com"target="_blank" rel="external nofollow noopener noreferrer">RoverTang</a></span></div><div class="footer-line beian"><span class="icp footer-divider">沪ICP备2020036772号-1</span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;bottom: 0;"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.16"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

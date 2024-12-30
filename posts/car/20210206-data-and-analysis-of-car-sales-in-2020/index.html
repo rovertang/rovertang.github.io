@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>2020年汽车销量数据及分析 - 罗孚</title><meta name="author" content="RoverTang">
+<meta name="description" content="2020年是中国乘用车市场的一次大考，考试结果有两条。一是品牌的优胜劣汰在加剧，销量两极化进一步加大，一些弱势品牌可能会在近两年内消失，好产品依然是立足市场的基石。另一是新能源汽车销量爆发，燃油车也许是销量拐点的开始，以后新能源车的销售份额也一定会进一步蚕食燃油车的份额。2020年受新冠疫情影响，中国乘用车市场全年销量重回2000万辆以下，但得益于国家控制住了疫情，Q4销量近25%的环比增长，足以见得中国乘用车市场的良好复苏，此现象必将会延续到2021年。"><meta name="keywords" content='汽车销量, 数据分析'>
+  <meta itemprop="name" content="2020年汽车销量数据及分析">
+  <meta itemprop="description" content="2020年是中国乘用车市场的一次大考，考试结果有两条。一是品牌的优胜劣汰在加剧，销量两极化进一步加大，一些弱势品牌可能会在近两年内消失，好产品依然是立足市场的基石。另一是新能源汽车销量爆发，燃油车也许是销量拐点的开始，以后新能源车的销售份额也一定会进一步蚕食燃油车的份额。2020年受新冠疫情影响，中国乘用车市场全年销量重回2000万辆以下，但得益于国家控制住了疫情，Q4销量近25%的环比增长，足以见得中国乘用车市场的良好复苏，此现象必将会延续到2021年。">
+  <meta itemprop="datePublished" content="2021-02-06T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2021-02-06T00:00:00+08:00">
+  <meta itemprop="wordCount" content="4245">
+  <meta itemprop="image" content="https://blog.rovertang.com/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/cover.jpg">
+  <meta itemprop="keywords" content="汽车销量,数据分析"><meta property="og:url" content="https://blog.rovertang.com/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/">
+  <meta property="og:site_name" content="罗孚">
+  <meta property="og:title" content="2020年汽车销量数据及分析">
+  <meta property="og:description" content="2020年是中国乘用车市场的一次大考，考试结果有两条。一是品牌的优胜劣汰在加剧，销量两极化进一步加大，一些弱势品牌可能会在近两年内消失，好产品依然是立足市场的基石。另一是新能源汽车销量爆发，燃油车也许是销量拐点的开始，以后新能源车的销售份额也一定会进一步蚕食燃油车的份额。2020年受新冠疫情影响，中国乘用车市场全年销量重回2000万辆以下，但得益于国家控制住了疫情，Q4销量近25%的环比增长，足以见得中国乘用车市场的良好复苏，此现象必将会延续到2021年。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2021-02-06T00:00:00+08:00">
+    <meta property="article:modified_time" content="2021-02-06T00:00:00+08:00">
+    <meta property="article:tag" content="汽车销量">
+    <meta property="article:tag" content="数据分析">
+    <meta property="og:image" content="https://blog.rovertang.com/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/cover.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://blog.rovertang.com/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/cover.jpg">
+  <meta name="twitter:title" content="2020年汽车销量数据及分析">
+  <meta name="twitter:description" content="2020年是中国乘用车市场的一次大考，考试结果有两条。一是品牌的优胜劣汰在加剧，销量两极化进一步加大，一些弱势品牌可能会在近两年内消失，好产品依然是立足市场的基石。另一是新能源汽车销量爆发，燃油车也许是销量拐点的开始，以后新能源车的销售份额也一定会进一步蚕食燃油车的份额。2020年受新冠疫情影响，中国乘用车市场全年销量重回2000万辆以下，但得益于国家控制住了疫情，Q4销量近25%的环比增长，足以见得中国乘用车市场的良好复苏，此现象必将会延续到2021年。">
+<meta name="application-name" content="罗孚传说">
+<meta name="apple-mobile-web-app-title" content="罗孚传说"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://blog.rovertang.com/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/" title="2020年汽车销量数据及分析 - 罗孚" /><link rel="prev" type="text/html" href="https://blog.rovertang.com/posts/soul/20210128-1&#43;00-2021-starting-from-0/" title="1&#43;0=0！2021，从0开始。" /><link rel="next" type="text/html" href="https://blog.rovertang.com/posts/rich/20210208-analysis-of-personal-consumption-bill-in-2020/" title="2020年个人消费账单分析" /><link rel="alternate" type="text/markdown" href="https://blog.rovertang.com/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/index.md" title="2020年汽车销量数据及分析 - 罗孚"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="apxz4dWbUQ2bsnGFk6SmRK4gNZ7tlT21KgMZ1t9hqdk" /><meta name="msvalidate.01" content="5282002B82D61AD2D097F2F6419C1E4A" /><meta name="baidu-site-verification" content="codeva-RiIZqiHrvQ" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "2020年汽车销量数据及分析",
+    "inLanguage": "zh-cn",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.rovertang.com\/posts\/car\/20210206-data-and-analysis-of-car-sales-in-2020\/"
+    },"genre": "posts","keywords": "汽车销量, 数据分析","wordcount":  4245 ,
+    "url": "https:\/\/blog.rovertang.com\/posts\/car\/20210206-data-and-analysis-of-car-sales-in-2020\/","datePublished": "2021-02-06T00:00:00+08:00","dateModified": "2021-02-06T00:00:00+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "RoverTang"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item has-children">
+              <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/" title="文章">文章</a></li><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/car/" title="汽车">汽车</a></li><li class="breadcrumb-item active" data-separator="&gt;" aria-current="page">2020年汽车销量数据及分析</li>
+    </ol>
+  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div class="details collection-details open">
+      <div class="details-summary collection-summary">
+        <i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>
+        <span class="collection-name" data-collections="合集">汽车销量数据分析</span>
+        <span class="collection-count">3</span><i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
+      <div class="details-content collection-content">
+        <nav>
+          <ul class="collection-list"><li class="collection-item"><span class="active" title="2020年汽车销量数据及分析">2020年汽车销量数据及分析</span></li><li class="collection-item"><a href="/posts/car/20220204-data-and-analysis-of-car-sales-in-2021/" title="2021年汽车销量数据及分析">2021年汽车销量数据及分析</a></li><li class="collection-item"><a href="/posts/car/20230120-2022-automobile-sales-data-and-analysis/" title="2022 年汽车销量数据及分析">2022 年汽车销量数据及分析</a></li></ul>
+          <div class="collection-nav-simple"><i class="fa-solid fa-angle-left fa-fw collection-nav-item text-secondary" aria-hidden="true"></i><span class="text-secondary">1/3</span><a href="/posts/car/20220204-data-and-analysis-of-car-sales-in-2021/" class="collection-nav-item" rel="next" title="2021年汽车销量数据及分析"><i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+        </nav>
+      </div>
+    </div><div style="width: 350px; margin: 0 auto; display: flex; justify-content: space-between; text-align: center;">
+  <img src="/images/wxmp-blog.jpg" alt="wxmp-blog" style="width: 115px; height: 153px;">
+  <img src="/images/wxmp-shanghai.jpg" alt="wxmp-shanghai" style="width: 115px; height: 153px;">
+  <img src="/images/zsxq-fromblog.jpg" alt="zsxq-fromblog" style="width: 115px; height: 153px;">
+</div></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>2020年汽车销量数据及分析</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://rovertang.com" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    RoverTang</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E6%B1%BD%E8%BD%A6/" class="post-category" title="分类 - 汽车"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 汽车</a> 和 <a href="/collections/%E6%B1%BD%E8%BD%A6%E9%94%80%E9%87%8F%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" class="post-collection" title="合集 - 汽车销量数据分析"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> 汽车销量数据分析</a></span></div><div class="post-meta-line"><span title="发布于 2021-02-06 00:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2021-02-06">2021-02-06</time></span>&nbsp;<span title="4245 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 4300 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 9 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#数据来源和差异说明">数据来源和差异说明</a>
+      <ul>
+        <li><a href="#同新造车销量数据的差异">同新造车销量数据的差异</a></li>
+        <li><a href="#同建约车评数据的差异">同建约车评数据的差异</a></li>
+      </ul>
+    </li>
+    <li><a href="#品牌数据分析">品牌数据分析</a></li>
+    <li><a href="#车型数据分析">车型数据分析</a></li>
+    <li><a href="#q4环比数据分析">Q4环比数据分析</a>
+      <ul>
+        <li><a href="#基于品牌的q4环比数据">基于品牌的Q4环比数据</a></li>
+        <li><a href="#基于车型的q4环比数据">基于车型的Q4环比数据</a></li>
+      </ul>
+    </li>
+    <li><a href="#一些品牌数据">一些品牌数据</a>
+      <ul>
+        <li><a href="#大众">大众</a></li>
+        <li><a href="#本田">本田</a></li>
+        <li><a href="#丰田">丰田</a></li>
+        <li><a href="#日产">日产</a></li>
+        <li><a href="#吉利汽车">吉利汽车</a></li>
+        <li><a href="#长安汽车">长安汽车</a></li>
+        <li><a href="#长城汽车">长城汽车</a></li>
+        <li><a href="#bba">BBA</a></li>
+        <li><a href="#比亚迪">比亚迪</a></li>
+        <li><a href="#荣威">荣威</a></li>
+        <li><a href="#红旗">红旗</a></li>
+        <li><a href="#特斯拉">特斯拉</a></li>
+        <li><a href="#五菱汽车">五菱汽车</a></li>
+        <li><a href="#造车新势力">造车新势力</a></li>
+        <li><a href="#2020年蔚来品牌下车型销量走势图">2020年蔚来品牌下车型销量走势图</a></li>
+        <li><a href="#2020年理想品牌下车型销量走势图">2020年理想品牌下车型销量走势图</a></li>
+        <li><a href="#2020年小鹏品牌下车型销量走势图">2020年小鹏品牌下车型销量走势图</a></li>
+        <li><a href="#2020年威马品牌下车型销量走势图">2020年威马品牌下车型销量走势图</a></li>
+      </ul>
+    </li>
+    <li><a href="#结语">结语</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p>2020已过，2021已来，2020年车市如何？正巧，罗孚这里有一份2020年全国汽车销量数据，我们一起来看看各汽车品牌以及车型的数据吧。以下数据分析仅为罗孚的个人思考，不代表任何其他观点。</p>
+<p>基于数据的分析，建约车评的<a href="https://mp.weixin.qq.com/s/U8aoyjJqZX25IVyVXfKTKw"target="_blank" rel="external nofollow noopener noreferrer">2020年中国乘用车车市盘点</a>已分析的非常透彻，对各车厂做了全面的点评，但由于数据维度有所差异，所以罗孚的数据未能按车厂进行分析，更多的是基于品牌和车型。</p>
+<h2 id="数据来源和差异说明" class="heading-element"><span>数据来源和差异说明</span>
+  <a href="#%e6%95%b0%e6%8d%ae%e6%9d%a5%e6%ba%90%e5%92%8c%e5%b7%ae%e5%bc%82%e8%af%b4%e6%98%8e" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>本文数据来自于懂车帝，基于懂车帝的每月销量排名数据进行整理，感谢懂车帝！</p>
+<p>懂车帝的数据相对比较真实可靠，虽然确实有一定的差异，但作为参考已经完全足够。</p>
+<h3 id="同新造车销量数据的差异" class="heading-element"><span>同新造车销量数据的差异</span>
+  <a href="#%e5%90%8c%e6%96%b0%e9%80%a0%e8%bd%a6%e9%94%80%e9%87%8f%e6%95%b0%e6%8d%ae%e7%9a%84%e5%b7%ae%e5%bc%82" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><table>
+  <thead>
+      <tr>
+          <th>品牌</th>
+          <th>全年销量</th>
+          <th>官方数据</th>
+          <th>备注</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>蔚来</td>
+          <td>43728</td>
+          <td>43728</td>
+          <td>同官方完全一致，包括每月数据。</td>
+      </tr>
+      <tr>
+          <td>理想汽车</td>
+          <td>31444</td>
+          <td>32624</td>
+          <td>少1180台，仅同官方差1月份数据。</td>
+      </tr>
+      <tr>
+          <td>小鹏汽车</td>
+          <td>26814</td>
+          <td>27041</td>
+          <td>少227台，部分月份有差异。</td>
+      </tr>
+      <tr>
+          <td>威马汽车</td>
+          <td>22413</td>
+          <td>22495</td>
+          <td>少82台，部分月份有差异。</td>
+      </tr>
+  </tbody>
+</table>
+<p>对比了新造车的官方销量数据，从对比结果来看，略有差异。</p>
+<h3 id="同建约车评数据的差异" class="heading-element"><span>同建约车评数据的差异</span>
+  <a href="#%e5%90%8c%e5%bb%ba%e7%ba%a6%e8%bd%a6%e8%af%84%e6%95%b0%e6%8d%ae%e7%9a%84%e5%b7%ae%e5%bc%82" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><table>
+  <thead>
+      <tr>
+          <th></th>
+          <th>罗孚数据</th>
+          <th>建约数据</th>
+          <th>数据差</th>
+          <th>差异比例</th>
+          <th>备注</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>总销量</td>
+          <td>19240714</td>
+          <td>1928.8万</td>
+          <td>-47286</td>
+          <td>-0.2%</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>吉利汽车</td>
+          <td>1308615</td>
+          <td>1247526</td>
+          <td>61089</td>
+          <td>4.9%</td>
+          <td>吉利+领克+几何</td>
+      </tr>
+      <tr>
+          <td>长安汽车</td>
+          <td>930995</td>
+          <td>942100</td>
+          <td>-11105</td>
+          <td>-1.2%</td>
+          <td>长安+欧尚+凯程</td>
+      </tr>
+      <tr>
+          <td>长城汽车</td>
+          <td>881880</td>
+          <td>836366</td>
+          <td>45514</td>
+          <td>5.4%</td>
+          <td>哈弗+WEY+欧拉+长城</td>
+      </tr>
+      <tr>
+          <td>比亚迪</td>
+          <td>408029</td>
+          <td>417192</td>
+          <td>-9163</td>
+          <td>-2.2%</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>长安福特</td>
+          <td>243998</td>
+          <td>248204</td>
+          <td>-4206</td>
+          <td>-1.7%</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>整体数据对比差异0.2%，总量在4.7万辆。</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<p>对比几个主要车企，数据差异最大在5%左右，大部分在1%~2%。</p>
+<h2 id="品牌数据分析" class="heading-element"><span>品牌数据分析</span>
+  <a href="#%e5%93%81%e7%89%8c%e6%95%b0%e6%8d%ae%e5%88%86%e6%9e%90" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>本次数据共统计到114个品牌，销量最高为大众品牌，全年销量超过260.4万辆，销量最低为新特汽车，全年销量共60辆，差异超过4.3万倍。</p>
+<p>114个品牌的销量均值为168778辆，超过此销量共有25个品牌，品牌列表：大众、本田、丰田、日产、吉利汽车、别克、长安、哈弗、奥迪、奔驰、宝马、现代、奇瑞、比亚迪、荣威、广汽传祺、雪佛兰、名爵、宝骏、起亚、福特、凯迪拉克、马自达、红旗、领克。</p>
+<p>上述25个品牌的总销量，占所有品牌总销量的85.6%，而销量前20名的品牌，总销量的占比为80.2%，似乎符合二八定律，并且后续应该会强者恒强弱者更弱的态势。</p>
+<p>如果以5万销量为一个汽车品牌的生死线，那仅45个品牌达标。当然，国内新造车势力刚刚起步，年销量远不足5万辆，加上不超过10个的造车新势力，拥有存在感的品牌还是不足总品牌数量的一半。全年不足1万销量的品牌为43个。</p>
+<p>附上销量TOP45的品牌截图：</p>
+<p><img loading="lazy" src="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcncrDqrE0gUclAOMk3YAyuQb.jpeg" alt="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcncrDqrE0gUclAOMk3YAyuQb.jpeg" srcset="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcncrDqrE0gUclAOMk3YAyuQb.jpeg?size=small, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcncrDqrE0gUclAOMk3YAyuQb.jpeg?size=medium 1.5x, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcncrDqrE0gUclAOMk3YAyuQb.jpeg?size=large 2x" data-title="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcncrDqrE0gUclAOMk3YAyuQb.jpeg" style="--width: 351px;--aspect-ratio: 351 / 875;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<h2 id="车型数据分析" class="heading-element"><span>车型数据分析</span>
+  <a href="#%e8%bd%a6%e5%9e%8b%e6%95%b0%e6%8d%ae%e5%88%86%e6%9e%90" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>本次数据共统计到663个车型，按114个品牌平均则每个品牌约发布6款车型。</p>
+<p>663个车型的销量均值为29021，超过此均值的车型数为165个，销量合计约为总销量的83.4%。</p>
+<p>全年销量超过5万辆的车型为106个，全国销量占比71.7%。全年销量超过10万的车型为55个，全国销量占比52.8%。而全国销量前20的车型，全国总销量占比为27.2%。</p>
+<p>附上销量TOP100的车型截图：</p>
+<p><img loading="lazy" src="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn2X8n0tSKBd7AdYQhuR99Ug.jpeg" alt="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn2X8n0tSKBd7AdYQhuR99Ug.jpeg" srcset="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn2X8n0tSKBd7AdYQhuR99Ug.jpeg?size=small, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn2X8n0tSKBd7AdYQhuR99Ug.jpeg?size=medium 1.5x, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn2X8n0tSKBd7AdYQhuR99Ug.jpeg?size=large 2x" data-title="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn2X8n0tSKBd7AdYQhuR99Ug.jpeg" style="--width: 937px;--aspect-ratio: 937 / 1920;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<h2 id="q4环比数据分析" class="heading-element"><span>Q4环比数据分析</span>
+  <a href="#q4%e7%8e%af%e6%af%94%e6%95%b0%e6%8d%ae%e5%88%86%e6%9e%90" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>鉴于2020年新冠疫情影响，Q1数据应该惨不忍睹，Q2也有较大影响，而Q3和Q4数据应该可以较为真实的反应疫情过后各车企真实销量情况，所以我们对Q4数据做了环比统计，可以略窥2020年的销量态势，又能展望一下2021年的预测。</p>
+<h3 id="基于品牌的q4环比数据" class="heading-element"><span>基于品牌的Q4环比数据</span>
+  <a href="#%e5%9f%ba%e4%ba%8e%e5%93%81%e7%89%8c%e7%9a%84q4%e7%8e%af%e6%af%94%e6%95%b0%e6%8d%ae" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><img loading="lazy" src="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnYX2GXhT2QOdPDMBVoHxoch.jpeg" alt="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnYX2GXhT2QOdPDMBVoHxoch.jpeg" srcset="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnYX2GXhT2QOdPDMBVoHxoch.jpeg?size=small, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnYX2GXhT2QOdPDMBVoHxoch.jpeg?size=medium 1.5x, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnYX2GXhT2QOdPDMBVoHxoch.jpeg?size=large 2x" data-title="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnYX2GXhT2QOdPDMBVoHxoch.jpeg" style="--width: 584px;--aspect-ratio: 584 / 685;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>上述数据仅为销量在10万以上的品牌，同时标红了100万以上销量的品牌，根据Q4环比数据进行降序排序。</p>
+<p>首先最亮眼的是新能源车，五菱以超过500%的环比登顶，而特斯拉Q4环比超过68%，其受欢迎程度可见一斑。当然国内新势力也不差，虽然没在列表，但环比数据也一样亮眼，小鹏和理想的Q4环比超过67%，蔚来和威马的Q4环比也在40%左右，哪吒汽车的Q4环比为69.5%。</p>
+<p>其次是BBA的Q4增长在意料之外，三家均为负数，也是超过10万销量汽车品牌中仅有的负增长品牌，相比新能源汽车的涨势，确实可以见到传统豪华车的颓势。</p>
+<p>唯一超过200万销量的大众品牌，Q4能有12.4%的增长，是非常了不起的成绩。自主品牌吉利汽车，能有28%的Q4增长也不容易。日系品牌中，日产113万的销量和17.6%的Q4增长，有点出乎意外，而本田和丰田虽然销量相差不大，但本田已领跑丰田，丰田在Q4几乎无增长，而本田在Q4能有13.8%的增长已非常亮眼，并且2020年的销量本田已超过丰田，排名第二。</p>
+<p>另外，自主品牌哈弗值得称赞，全年近75万销量，Q4增长66.8%，而奇瑞、宝骏、领克、宝骏、红旗、长安等自主品牌也值得点赞。</p>
+<h3 id="基于车型的q4环比数据" class="heading-element"><span>基于车型的Q4环比数据</span>
+  <a href="#%e5%9f%ba%e4%ba%8e%e8%bd%a6%e5%9e%8b%e7%9a%84q4%e7%8e%af%e6%af%94%e6%95%b0%e6%8d%ae" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><img loading="lazy" src="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnasFsVx7QIFlBb93ij52lsb.jpeg" alt="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnasFsVx7QIFlBb93ij52lsb.jpeg" srcset="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnasFsVx7QIFlBb93ij52lsb.jpeg?size=small, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnasFsVx7QIFlBb93ij52lsb.jpeg?size=medium 1.5x, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnasFsVx7QIFlBb93ij52lsb.jpeg?size=large 2x" data-title="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnasFsVx7QIFlBb93ij52lsb.jpeg" style="--width: 852px;--aspect-ratio: 852 / 1084;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>上述数据仅为销量在10万以上的车型，同时标红了30万以上销量的车型，根据Q4环比数据进行降序排序。</p>
+<p>前面说的新能源车，在基于车型的Q4环比数据中，五菱宏光MINI EV和特斯拉Model 3依然亮眼。</p>
+<p>BBA车型中，宝马X3、奔驰C级、宝马5系、宝马3系的跌幅均超过10%。</p>
+<p>大众品牌的上榜车型较多，增长也较中规中矩。</p>
+<p>吉利汽车的博越、缤越Q4增长喜人，而帝豪的Q4跌幅也让人大跌眼镜。</p>
+<p>哈弗汽车的H6在Q4获得了迅猛的增长，而其M6和F7也增长不错。</p>
+<p>荣威的RX5因10月断崖式下跌影响，Q4跌幅较大，i5车型持平，但因有其他新车型支撑，所以Q4整体增长尚可，并且RX5已重新开始冲量。</p>
+<p>关于车型的更多数据见下述品牌数据部分。</p>
+<h2 id="一些品牌数据" class="heading-element"><span>一些品牌数据</span>
+  <a href="#%e4%b8%80%e4%ba%9b%e5%93%81%e7%89%8c%e6%95%b0%e6%8d%ae" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="大众" class="heading-element"><span>大众</span>
+  <a href="#%e5%a4%a7%e4%bc%97" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><img loading="lazy" src="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnEHbtxXgzPGjOwb7at83vgh.jpeg" alt="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnEHbtxXgzPGjOwb7at83vgh.jpeg" srcset="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnEHbtxXgzPGjOwb7at83vgh.jpeg?size=small, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnEHbtxXgzPGjOwb7at83vgh.jpeg?size=medium 1.5x, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnEHbtxXgzPGjOwb7at83vgh.jpeg?size=large 2x" data-title="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnEHbtxXgzPGjOwb7at83vgh.jpeg" style="--width: 908px;--aspect-ratio: 908 / 455;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>大众销量第一，旗下共30余款车型，其中朗逸、宝来、速腾三款车型，每款销量差不多都超过30万量，销量合计超过100万量，不愧为超热销车型。而途观L、桑塔纳、探岳、迈腾、途岳、帕萨特、T-ROC探歌这七款车型，每款销量超过10万辆，销量合计也超过100万辆。前十车型销量总和超过200万辆，占大众品牌总销量的81%。</p>
+<h3 id="本田" class="heading-element"><span>本田</span>
+  <a href="#%e6%9c%ac%e7%94%b0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><img loading="lazy" src="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnZprLJpxH134L0jnZcstrfc.jpeg" alt="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnZprLJpxH134L0jnZcstrfc.jpeg" srcset="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnZprLJpxH134L0jnZcstrfc.jpeg?size=small, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnZprLJpxH134L0jnZcstrfc.jpeg?size=medium 1.5x, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnZprLJpxH134L0jnZcstrfc.jpeg?size=large 2x" data-title="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnZprLJpxH134L0jnZcstrfc.jpeg" style="--width: 908px;--aspect-ratio: 908 / 455;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>没想到本田在2020年销量超过丰田，晋升为销量第二，其中本田CR-V功不可没，持续的增长态势，而思域、雅阁、本田XR-V、皓影、缤智、凌派这些车型销量也比较平稳。</p>
+<h3 id="丰田" class="heading-element"><span>丰田</span>
+  <a href="#%e4%b8%b0%e7%94%b0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><img loading="lazy" src="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnz6ETseLFaLRUFrymy6996d.jpeg" alt="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnz6ETseLFaLRUFrymy6996d.jpeg" srcset="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnz6ETseLFaLRUFrymy6996d.jpeg?size=small, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnz6ETseLFaLRUFrymy6996d.jpeg?size=medium 1.5x, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnz6ETseLFaLRUFrymy6996d.jpeg?size=large 2x" data-title="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnz6ETseLFaLRUFrymy6996d.jpeg" style="--width: 908px;--aspect-ratio: 908 / 455;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>丰田整体销量平稳，卡罗拉依然领跑，雷凌、凯美瑞、RAV4荣放、亚洲龙车型也是超过10万销量。但也正是因为销量平稳，所以全年销量没有明显增长，以前应该是稳坐销量第二的位置吧。</p>
+<h3 id="日产" class="heading-element"><span>日产</span>
+  <a href="#%e6%97%a5%e4%ba%a7" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><img loading="lazy" src="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcne4rytCxWqvqFtTGC2CROUc.jpeg" alt="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcne4rytCxWqvqFtTGC2CROUc.jpeg" srcset="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcne4rytCxWqvqFtTGC2CROUc.jpeg?size=small, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcne4rytCxWqvqFtTGC2CROUc.jpeg?size=medium 1.5x, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcne4rytCxWqvqFtTGC2CROUc.jpeg?size=large 2x" data-title="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcne4rytCxWqvqFtTGC2CROUc.jpeg" style="--width: 908px;--aspect-ratio: 908 / 455;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>日产品牌最让人看不懂，轩逸车型一直是销量冠军，全年销量超过50万，是唯一销量超过50万的车型，其销量占整个日产品牌销量的47.5%，正是轩逸的突出表现，所以日产才能销量突破100万辆，排名第四。</p>
+<h3 id="吉利汽车" class="heading-element"><span>吉利汽车</span>
+  <a href="#%e5%90%89%e5%88%a9%e6%b1%bd%e8%bd%a6" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><img loading="lazy" src="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn27cCB44HFUnaoUCow0mdLA.jpeg" alt="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn27cCB44HFUnaoUCow0mdLA.jpeg" srcset="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn27cCB44HFUnaoUCow0mdLA.jpeg?size=small, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn27cCB44HFUnaoUCow0mdLA.jpeg?size=medium 1.5x, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn27cCB44HFUnaoUCow0mdLA.jpeg?size=large 2x" data-title="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn27cCB44HFUnaoUCow0mdLA.jpeg" style="--width: 908px;--aspect-ratio: 908 / 455;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>吉利品牌也是车型较多，共有超过20款车型，前三车型是博越、帝豪、缤越，累计销量超过50万辆。博越和帝豪两者走势完全不同，博越增长迅速，而帝豪存在持续的下跌，不确定是大家更喜欢SUV了，还是不喜欢廉价轿车了。</p>
+<p>值得一提的是，星瑞发布仅两个月，销量近两万，来势凶猛，而星越全年也才近两万五的销量。</p>
+<p><img loading="lazy" src="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnKOL8u8E7IgaURMuCP5PeIe.jpeg" alt="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnKOL8u8E7IgaURMuCP5PeIe.jpeg" srcset="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnKOL8u8E7IgaURMuCP5PeIe.jpeg?size=small, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnKOL8u8E7IgaURMuCP5PeIe.jpeg?size=medium 1.5x, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnKOL8u8E7IgaURMuCP5PeIe.jpeg?size=large 2x" data-title="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnKOL8u8E7IgaURMuCP5PeIe.jpeg" style="--width: 908px;--aspect-ratio: 908 / 455;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>吉利旗下领克品牌增长较为明显，领克03销量领涨，而领克01和05也都有较平稳的增长，新车型领克06也表现不俗。</p>
+<p>至于几何汽车，总销量2万多，就不再贴图分析了。</p>
+<h3 id="长安汽车" class="heading-element"><span>长安汽车</span>
+  <a href="#%e9%95%bf%e5%ae%89%e6%b1%bd%e8%bd%a6" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><img loading="lazy" src="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnoTSgMzfrcjSc6G2cGxSYbc.jpeg" alt="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnoTSgMzfrcjSc6G2cGxSYbc.jpeg" srcset="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnoTSgMzfrcjSc6G2cGxSYbc.jpeg?size=small, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnoTSgMzfrcjSc6G2cGxSYbc.jpeg?size=medium 1.5x, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnoTSgMzfrcjSc6G2cGxSYbc.jpeg?size=large 2x" data-title="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnoTSgMzfrcjSc6G2cGxSYbc.jpeg" style="--width: 908px;--aspect-ratio: 908 / 455;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>长安CS75 Plus算是长安的2020年明星车型，媒体一度将其同哈弗H6相比较，只是销量差距明显，超过10万量的差距。超过10万销量的车型还有逸动和CS55，三款车形成了三个销量梯队。另外，长安多款车型销量在12月出现明显下滑，不是是何原因。</p>
+<p><img loading="lazy" src="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnhtziUAmMQ5HAcZ4C1kKvbh.jpeg" alt="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnhtziUAmMQ5HAcZ4C1kKvbh.jpeg" srcset="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnhtziUAmMQ5HAcZ4C1kKvbh.jpeg?size=small, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnhtziUAmMQ5HAcZ4C1kKvbh.jpeg?size=medium 1.5x, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnhtziUAmMQ5HAcZ4C1kKvbh.jpeg?size=large 2x" data-title="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnhtziUAmMQ5HAcZ4C1kKvbh.jpeg" style="--width: 908px;--aspect-ratio: 908 / 455;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>长安欧尚总体销量超过15万辆，而X7车型销量占比超过一半。X5车型12月销量过万，值得关注。</p>
+<h3 id="长城汽车" class="heading-element"><span>长城汽车</span>
+  <a href="#%e9%95%bf%e5%9f%8e%e6%b1%bd%e8%bd%a6" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>长城汽车旗下主要有主打SUV的哈弗、主打高端的WEY以及主打电动的欧拉共三大品牌。值得注意的是：三大品牌的下半年销量均有非常迅猛的增长，其新战略发布对其产生了积极的影响。</p>
+<p><img loading="lazy" src="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnS0yVxz2YNbBL8fBi2H0UVf.jpeg" alt="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnS0yVxz2YNbBL8fBi2H0UVf.jpeg" srcset="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnS0yVxz2YNbBL8fBi2H0UVf.jpeg?size=small, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnS0yVxz2YNbBL8fBi2H0UVf.jpeg?size=medium 1.5x, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnS0yVxz2YNbBL8fBi2H0UVf.jpeg?size=large 2x" data-title="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnS0yVxz2YNbBL8fBi2H0UVf.jpeg" style="--width: 908px;--aspect-ratio: 908 / 455;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>哈弗H6一直是销量第一的SUV车型，全年销量超37万辆，占比整个哈弗品牌销量的一半。</p>
+<p>哈弗大狗车型9月发布，12月销量过万，四个月累计销量近3万，新战略下发布的新车型表现不俗。</p>
+<p><img loading="lazy" src="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn0iUm3uPmLY7SW8K0wC4pqg.jpeg" alt="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn0iUm3uPmLY7SW8K0wC4pqg.jpeg" srcset="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn0iUm3uPmLY7SW8K0wC4pqg.jpeg?size=small, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn0iUm3uPmLY7SW8K0wC4pqg.jpeg?size=medium 1.5x, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn0iUm3uPmLY7SW8K0wC4pqg.jpeg?size=large 2x" data-title="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn0iUm3uPmLY7SW8K0wC4pqg.jpeg" style="--width: 908px;--aspect-ratio: 908 / 455;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>走高端路线的WEY品牌共三款车型，其VV6车型销量增长明显。</p>
+<p><img loading="lazy" src="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnSqP9zJx1WJkwSuVVlEAjDg.jpeg" alt="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnSqP9zJx1WJkwSuVVlEAjDg.jpeg" srcset="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnSqP9zJx1WJkwSuVVlEAjDg.jpeg?size=small, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnSqP9zJx1WJkwSuVVlEAjDg.jpeg?size=medium 1.5x, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnSqP9zJx1WJkwSuVVlEAjDg.jpeg?size=large 2x" data-title="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnSqP9zJx1WJkwSuVVlEAjDg.jpeg" style="--width: 908px;--aspect-ratio: 908 / 455;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>欧拉黑猫原名R1，上半年销量平平，下半年新战略发布后，呈现较迅猛增长，12月突破万辆。</p>
+<h3 id="bba" class="heading-element"><span>BBA</span>
+  <a href="#bba" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>传统高端品牌奔驰、宝马、奥迪，三家全年销量均在60到65万左右。</p>
+<p><img loading="lazy" src="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn3hNgjBEi31zLMy6WqiWMjn.jpeg" alt="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn3hNgjBEi31zLMy6WqiWMjn.jpeg" srcset="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn3hNgjBEi31zLMy6WqiWMjn.jpeg?size=small, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn3hNgjBEi31zLMy6WqiWMjn.jpeg?size=medium 1.5x, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn3hNgjBEi31zLMy6WqiWMjn.jpeg?size=large 2x" data-title="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn3hNgjBEi31zLMy6WqiWMjn.jpeg" style="--width: 908px;--aspect-ratio: 908 / 454;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>奥迪销量前三车型为奥迪A6L、奥迪Q5L、奥迪A4L，销量均超过10万。</p>
+<p><img loading="lazy" src="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn6uoBXclO5Fdhp5M2Apq7Og.jpeg" alt="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn6uoBXclO5Fdhp5M2Apq7Og.jpeg" srcset="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn6uoBXclO5Fdhp5M2Apq7Og.jpeg?size=small, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn6uoBXclO5Fdhp5M2Apq7Og.jpeg?size=medium 1.5x, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn6uoBXclO5Fdhp5M2Apq7Og.jpeg?size=large 2x" data-title="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn6uoBXclO5Fdhp5M2Apq7Og.jpeg" style="--width: 908px;--aspect-ratio: 908 / 454;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>奔驰销量前三车型为奔驰GLC、奔驰C级、奔驰E级，销量均超过10万。</p>
+<p><img loading="lazy" src="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnuUOa3huODrwiZm7vduw3L5.jpeg" alt="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnuUOa3huODrwiZm7vduw3L5.jpeg" srcset="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnuUOa3huODrwiZm7vduw3L5.jpeg?size=small, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnuUOa3huODrwiZm7vduw3L5.jpeg?size=medium 1.5x, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnuUOa3huODrwiZm7vduw3L5.jpeg?size=large 2x" data-title="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnuUOa3huODrwiZm7vduw3L5.jpeg" style="--width: 908px;--aspect-ratio: 908 / 454;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>宝马销量前三车型为宝马3系、宝马X3、宝马5系，销量均超过10万。</p>
+<h3 id="比亚迪" class="heading-element"><span>比亚迪</span>
+  <a href="#%e6%af%94%e4%ba%9a%e8%bf%aa" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><img loading="lazy" src="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnyYXKBYCocsvxEYY8aBmRtf.jpeg" alt="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnyYXKBYCocsvxEYY8aBmRtf.jpeg" srcset="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnyYXKBYCocsvxEYY8aBmRtf.jpeg?size=small, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnyYXKBYCocsvxEYY8aBmRtf.jpeg?size=medium 1.5x, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnyYXKBYCocsvxEYY8aBmRtf.jpeg?size=large 2x" data-title="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnyYXKBYCocsvxEYY8aBmRtf.jpeg" style="--width: 908px;--aspect-ratio: 908 / 454;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>比亚迪也是以品牌众多为专长，共有超过20款车型，但每款车型销量均未能超过10万。</p>
+<p>宋是其主力车型，而汉EV下半年发布后销量也呈现较迅速增长。</p>
+<h3 id="荣威" class="heading-element"><span>荣威</span>
+  <a href="#%e8%8d%a3%e5%a8%81" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><img loading="lazy" src="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnBOlThPhu0NdvOJz38qZHhd.jpeg" alt="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnBOlThPhu0NdvOJz38qZHhd.jpeg" srcset="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnBOlThPhu0NdvOJz38qZHhd.jpeg?size=small, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnBOlThPhu0NdvOJz38qZHhd.jpeg?size=medium 1.5x, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnBOlThPhu0NdvOJz38qZHhd.jpeg?size=large 2x" data-title="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnBOlThPhu0NdvOJz38qZHhd.jpeg" style="--width: 908px;--aspect-ratio: 908 / 454;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>RX5和i5是荣威的主打车型，全年销量均超过10万，两者销量占品牌销量的73%。</p>
+<p>我印象中的高端车型荣威Marvel X，其全年销量仅百余辆，足以证明此车型的失败，也许其400公里左右的续航是其硬伤，而此价格又能买毛豆3，所以没有性价比的车，即便再智能再高端，也还是不能被市场认可的。</p>
+<h3 id="红旗" class="heading-element"><span>红旗</span>
+  <a href="#%e7%ba%a2%e6%97%97" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><img loading="lazy" src="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn9AzPZoEGw2MVctE296pdVt.jpeg" alt="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn9AzPZoEGw2MVctE296pdVt.jpeg" srcset="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn9AzPZoEGw2MVctE296pdVt.jpeg?size=small, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn9AzPZoEGw2MVctE296pdVt.jpeg?size=medium 1.5x, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn9AzPZoEGw2MVctE296pdVt.jpeg?size=large 2x" data-title="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn9AzPZoEGw2MVctE296pdVt.jpeg" style="--width: 908px;--aspect-ratio: 908 / 454;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>民族品牌红旗，2020年表现优异，全年销量近20万，HS5车型销量占比约一半，而新发布的高端车型H9也有较平稳的增长，全年总量过万。</p>
+<h3 id="特斯拉" class="heading-element"><span>特斯拉</span>
+  <a href="#%e7%89%b9%e6%96%af%e6%8b%89" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><img loading="lazy" src="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnEmdvGqdL9VFs2w9tL2IxEb.jpeg" alt="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnEmdvGqdL9VFs2w9tL2IxEb.jpeg" srcset="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnEmdvGqdL9VFs2w9tL2IxEb.jpeg?size=small, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnEmdvGqdL9VFs2w9tL2IxEb.jpeg?size=medium 1.5x, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnEmdvGqdL9VFs2w9tL2IxEb.jpeg?size=large 2x" data-title="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnEmdvGqdL9VFs2w9tL2IxEb.jpeg" style="--width: 908px;--aspect-ratio: 908 / 454;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>明星品牌特斯拉，在国内仅发布了一款车型Model 3，但其表现可以称之为骄人，特别是在Q4将价格降到25万以下，呈现陡坡式增长。</p>
+<h3 id="五菱汽车" class="heading-element"><span>五菱汽车</span>
+  <a href="#%e4%ba%94%e8%8f%b1%e6%b1%bd%e8%bd%a6" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><img loading="lazy" src="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnGP7uztP3GwWej3IH8VHHbg.jpeg" alt="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnGP7uztP3GwWej3IH8VHHbg.jpeg" srcset="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnGP7uztP3GwWej3IH8VHHbg.jpeg?size=small, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnGP7uztP3GwWej3IH8VHHbg.jpeg?size=medium 1.5x, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnGP7uztP3GwWej3IH8VHHbg.jpeg?size=large 2x" data-title="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnGP7uztP3GwWej3IH8VHHbg.jpeg" style="--width: 908px;--aspect-ratio: 908 / 454;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>被称之为国民代步神车的五菱宏光MINIEV，自9月发布以来，一直呈增长态势，12月销量超过3万辆，特斯拉的月销量都一度被其超越，全年销量超过10万辆。</p>
+<h3 id="造车新势力" class="heading-element"><span>造车新势力</span>
+  <a href="#%e9%80%a0%e8%bd%a6%e6%96%b0%e5%8a%bf%e5%8a%9b" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>造车新势力蔚来、理想、小鹏、威马，虽然全年销量均未超过5万辆，但其销量增长迅猛，所以在资本市场表现不俗，不管是股价还是融资。贴上官方销量走势图，不再赘述。</p>
+<h3 id="2020年蔚来品牌下车型销量走势图" class="heading-element"><span>2020年蔚来品牌下车型销量走势图</span>
+  <a href="#2020%e5%b9%b4%e8%94%9a%e6%9d%a5%e5%93%81%e7%89%8c%e4%b8%8b%e8%bd%a6%e5%9e%8b%e9%94%80%e9%87%8f%e8%b5%b0%e5%8a%bf%e5%9b%be" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><img loading="lazy" src="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnEMtRBKUhZcqr0kKpTfoSyh.jpeg" alt="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnEMtRBKUhZcqr0kKpTfoSyh.jpeg" srcset="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnEMtRBKUhZcqr0kKpTfoSyh.jpeg?size=small, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnEMtRBKUhZcqr0kKpTfoSyh.jpeg?size=medium 1.5x, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnEMtRBKUhZcqr0kKpTfoSyh.jpeg?size=large 2x" data-title="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnEMtRBKUhZcqr0kKpTfoSyh.jpeg" style="--width: 1080px;--aspect-ratio: 1080 / 911;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<h3 id="2020年理想品牌下车型销量走势图" class="heading-element"><span>2020年理想品牌下车型销量走势图</span>
+  <a href="#2020%e5%b9%b4%e7%90%86%e6%83%b3%e5%93%81%e7%89%8c%e4%b8%8b%e8%bd%a6%e5%9e%8b%e9%94%80%e9%87%8f%e8%b5%b0%e5%8a%bf%e5%9b%be" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><img loading="lazy" src="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnTF5AoRtBtTHxvXx3ljHgde.jpeg" alt="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnTF5AoRtBtTHxvXx3ljHgde.jpeg" srcset="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnTF5AoRtBtTHxvXx3ljHgde.jpeg?size=small, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnTF5AoRtBtTHxvXx3ljHgde.jpeg?size=medium 1.5x, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnTF5AoRtBtTHxvXx3ljHgde.jpeg?size=large 2x" data-title="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnTF5AoRtBtTHxvXx3ljHgde.jpeg" style="--width: 1080px;--aspect-ratio: 1080 / 1252;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<h3 id="2020年小鹏品牌下车型销量走势图" class="heading-element"><span>2020年小鹏品牌下车型销量走势图</span>
+  <a href="#2020%e5%b9%b4%e5%b0%8f%e9%b9%8f%e5%93%81%e7%89%8c%e4%b8%8b%e8%bd%a6%e5%9e%8b%e9%94%80%e9%87%8f%e8%b5%b0%e5%8a%bf%e5%9b%be" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><img loading="lazy" src="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnuEeimNKswlEC2uu37jjjJh.jpeg" alt="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnuEeimNKswlEC2uu37jjjJh.jpeg" srcset="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnuEeimNKswlEC2uu37jjjJh.jpeg?size=small, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnuEeimNKswlEC2uu37jjjJh.jpeg?size=medium 1.5x, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnuEeimNKswlEC2uu37jjjJh.jpeg?size=large 2x" data-title="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcnuEeimNKswlEC2uu37jjjJh.jpeg" style="--width: 1080px;--aspect-ratio: 1080 / 1497;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<h3 id="2020年威马品牌下车型销量走势图" class="heading-element"><span>2020年威马品牌下车型销量走势图</span>
+  <a href="#2020%e5%b9%b4%e5%a8%81%e9%a9%ac%e5%93%81%e7%89%8c%e4%b8%8b%e8%bd%a6%e5%9e%8b%e9%94%80%e9%87%8f%e8%b5%b0%e5%8a%bf%e5%9b%be" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><img loading="lazy" src="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn33cWEXS6EiTzhC4HyU4nId.jpeg" alt="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn33cWEXS6EiTzhC4HyU4nId.jpeg" srcset="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn33cWEXS6EiTzhC4HyU4nId.jpeg?size=small, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn33cWEXS6EiTzhC4HyU4nId.jpeg?size=medium 1.5x, /posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn33cWEXS6EiTzhC4HyU4nId.jpeg?size=large 2x" data-title="/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/assets/boxcn33cWEXS6EiTzhC4HyU4nId.jpeg" style="--width: 1080px;--aspect-ratio: 1080 / 1023;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<h2 id="结语" class="heading-element"><span>结语</span>
+  <a href="#%e7%bb%93%e8%af%ad" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>本文仅为罗孚的个人浅见，分析的维度和深度也还望拍砖指导，本文参考数据及处理过程中的图表(Excel)已上传至<a href="https://t.zsxq.com/3NNjEEA"target="_blank" rel="external nofollow noopener noreferrer">知识星球</a>，欢迎沟通交流。本文首发于“罗孚传说”公众号。</p>
+<p>2020年是中国乘用车市场的一次大考，考试结果有两条。一是品牌的优胜劣汰在加剧，销量两极化进一步加大，一些弱势品牌可能会在近两年内消失，好产品依然是立足市场的基石。另一是新能源汽车销量爆发，燃油车也许是销量拐点的开始，以后新能源车的销售份额也一定会进一步蚕食燃油车的份额。</p>
+<p>2020年受新冠疫情影响，中国乘用车市场全年销量重回2000万辆以下，但得益于国家控制住了疫情，Q4销量近25%的环比增长，足以见得中国乘用车市场的良好复苏，此现象必将会延续到2021年。</p>
+<p>牛年已来，让我们拭目以待2021年的中国乘用车市场表现。</p>
+<p>本文飞书文档：<a href="https://rovertang.feishu.cn/docx/doxcnk2Mbn1mRaT5mcQAzYNZexh"target="_blank" rel="external nofollow noopener noreferrer">2020年汽车销量数据及分析</a></p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2021-02-06 00:00:00">更新于 2021-02-06&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/%E6%B1%BD%E8%BD%A6%E9%94%80%E9%87%8F/" class="post-tag" title="标签 - 汽车销量">汽车销量</a><a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" class="post-tag" title="标签 - 数据分析">数据分析</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/soul/20210128-1&#43;00-2021-starting-from-0/" class="post-nav-item" rel="prev" title="1&#43;0=0！2021，从0开始。"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>1&#43;0=0！2021，从0开始。</a><a href="/posts/rich/20210208-analysis-of-personal-consumption-bill-in-2020/" class="post-nav-item" rel="next" title="2020年个人消费账单分析">2020年个人消费账单分析<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment"></div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward"><i class="fa-solid fa-qrcode fa-fw" aria-hidden="true"></i>赞赏</label>
+    <div class="reward-ways" data-mode="static"><div><img loading="lazy" src="/images/alipay.png" alt="RoverTang 支付宝" data-title="RoverTang 支付宝" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>支付宝</span>
+          </div><div><img loading="lazy" src="/images/wechatpay.png" alt="RoverTang 微信" data-title="RoverTang 微信" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>微信</span>
+          </div></div>
+  </div></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.139.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.16">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2005 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://rovertang.com"target="_blank" rel="external nofollow noopener noreferrer">RoverTang</a></span></div><div class="footer-line beian"><span class="icp footer-divider">沪ICP备2020036772号-1</span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;bottom: 0;"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.16"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

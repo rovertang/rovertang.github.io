@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DIY地图 - 标签 - 罗孚</title>
+    <link>https://blog.rovertang.com/tags/diy%E5%9C%B0%E5%9B%BE/</link>
+    <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
+    <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 05 Apr 2009 00:00:00 +0800</lastBuildDate>
+    <atom:link href="https://blog.rovertang.com/tags/diy%E5%9C%B0%E5%9B%BE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WebMap DIY(定制你自己的网络地图，GMapImageCutter工具推荐)</title>
+      <link>https://blog.rovertang.com/posts/map/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool/</link>
+      <pubDate>Sun, 05 Apr 2009 00:00:00 +0800</pubDate>
+      <guid>https://blog.rovertang.com/posts/map/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <description>&lt;p&gt;自从上次发布了&lt;a href=&#34;https://www.cnblogs.com/Tangf/archive/2009/02/20/1394511.html&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;Google Maps API离线开发包&lt;/a&gt;以后，就有人来问我，为什么离线状态下不能显示地图，能否显示自己的DIY地图。严格来说，这是两个问题，为什么不能显示地图是因为Google的地图图片本身就不在本地，所以离线状态下是肯定不能显示地图的，不过能够标点画线等动作下有没有地图图片并不重要，而能否显示自己的DIY地图，其实Gmaps API本身就带了，GOverlay/GTileLayer等函数就是能够添加自己的图片，只是我不喜欢只添加一张图片到Gmap上，觉得意义不大，但又没有找到好的tile的切割工具，所以这个功能我一直没有尝试。今天，我向大家推荐GMapImageCutter工具，一个能够将图片切割成tile的工具，并且还帮你生成了HTML文件，直接就能够浏览，厉害。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

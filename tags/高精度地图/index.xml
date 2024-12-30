@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>高精度地图 - 标签 - 罗孚</title>
+    <link>https://blog.rovertang.com/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/</link>
+    <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
+    <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 08 Sep 2018 00:00:00 +0800</lastBuildDate>
+    <atom:link href="https://blog.rovertang.com/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>无人驾驶入门2：高精度地图</title>
+      <link>https://blog.rovertang.com/posts/car/20180908-introduction-to-driverless-2-high-precision-map/</link>
+      <pubDate>Sat, 08 Sep 2018 00:00:00 +0800</pubDate>
+      <guid>https://blog.rovertang.com/posts/car/20180908-introduction-to-driverless-2-high-precision-map/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E6%B1%BD%E8%BD%A6/">汽车</category>
+      <description>无人驾驶入门之高精度地图：了解高精度地图的实现逻辑，这是Apollo定位、感知、规划模块的基础。</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>无人驾驶入门2：高精度地图 - 罗孚</title><meta name="author" content="RoverTang">
+<meta name="description" content="无人驾驶入门之高精度地图：了解高精度地图的实现逻辑，这是Apollo定位、感知、规划模块的基础。"><meta name="keywords" content='百度, Apollo, 无人驾驶, 课程, 高精度地图'>
+  <meta itemprop="name" content="无人驾驶入门2：高精度地图">
+  <meta itemprop="description" content="无人驾驶入门之高精度地图：了解高精度地图的实现逻辑，这是Apollo定位、感知、规划模块的基础。">
+  <meta itemprop="datePublished" content="2018-09-08T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2018-09-08T00:00:00+08:00">
+  <meta itemprop="wordCount" content="3028">
+  <meta itemprop="image" content="https://blog.rovertang.com/posts/car/20180908-introduction-to-driverless-2-high-precision-map/cover.png">
+  <meta itemprop="keywords" content="百度,Apollo,无人驾驶,课程,高精度地图"><meta property="og:url" content="https://blog.rovertang.com/posts/car/20180908-introduction-to-driverless-2-high-precision-map/">
+  <meta property="og:site_name" content="罗孚">
+  <meta property="og:title" content="无人驾驶入门2：高精度地图">
+  <meta property="og:description" content="无人驾驶入门之高精度地图：了解高精度地图的实现逻辑，这是Apollo定位、感知、规划模块的基础。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2018-09-08T00:00:00+08:00">
+    <meta property="article:modified_time" content="2018-09-08T00:00:00+08:00">
+    <meta property="article:tag" content="百度">
+    <meta property="article:tag" content="Apollo">
+    <meta property="article:tag" content="无人驾驶">
+    <meta property="article:tag" content="课程">
+    <meta property="article:tag" content="高精度地图">
+    <meta property="og:image" content="https://blog.rovertang.com/posts/car/20180908-introduction-to-driverless-2-high-precision-map/cover.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://blog.rovertang.com/posts/car/20180908-introduction-to-driverless-2-high-precision-map/cover.png">
+  <meta name="twitter:title" content="无人驾驶入门2：高精度地图">
+  <meta name="twitter:description" content="无人驾驶入门之高精度地图：了解高精度地图的实现逻辑，这是Apollo定位、感知、规划模块的基础。">
+<meta name="application-name" content="罗孚传说">
+<meta name="apple-mobile-web-app-title" content="罗孚传说"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://blog.rovertang.com/posts/car/20180908-introduction-to-driverless-2-high-precision-map/" title="无人驾驶入门2：高精度地图 - 罗孚" /><link rel="prev" type="text/html" href="https://blog.rovertang.com/posts/car/20180825-getting-started-with-driverless-1-driverless-overview/" title="无人驾驶入门1：无人驾驶概览" /><link rel="next" type="text/html" href="https://blog.rovertang.com/posts/car/20180909-understanding-the-internet-of-vehicles/" title="认识车联网" /><link rel="alternate" type="text/markdown" href="https://blog.rovertang.com/posts/car/20180908-introduction-to-driverless-2-high-precision-map/index.md" title="无人驾驶入门2：高精度地图 - 罗孚"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="apxz4dWbUQ2bsnGFk6SmRK4gNZ7tlT21KgMZ1t9hqdk" /><meta name="msvalidate.01" content="5282002B82D61AD2D097F2F6419C1E4A" /><meta name="baidu-site-verification" content="codeva-RiIZqiHrvQ" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "无人驾驶入门2：高精度地图",
+    "inLanguage": "zh-cn",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.rovertang.com\/posts\/car\/20180908-introduction-to-driverless-2-high-precision-map\/"
+    },"genre": "posts","keywords": "百度, Apollo, 无人驾驶, 课程, 高精度地图","wordcount":  3028 ,
+    "url": "https:\/\/blog.rovertang.com\/posts\/car\/20180908-introduction-to-driverless-2-high-precision-map\/","datePublished": "2018-09-08T00:00:00+08:00","dateModified": "2018-09-08T00:00:00+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "RoverTang"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item has-children">
+              <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/" title="文章">文章</a></li><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/car/" title="汽车">汽车</a></li><li class="breadcrumb-item active" data-separator="&gt;" aria-current="page">无人驾驶入门2：高精度地图</li>
+    </ol>
+  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div class="details collection-details open">
+      <div class="details-summary collection-summary">
+        <i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>
+        <span class="collection-name" data-collections="合集">无人驾驶入门课程</span>
+        <span class="collection-count">3</span><i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
+      <div class="details-content collection-content">
+        <nav>
+          <ul class="collection-list"><li class="collection-item"><a href="/posts/car/20180728-baidu-apollo-driverless-introductory-course-download/" title="百度Apollo无人驾驶入门课程下载">百度Apollo无人驾驶入门课程下载</a></li><li class="collection-item"><a href="/posts/car/20180825-getting-started-with-driverless-1-driverless-overview/" title="无人驾驶入门1：无人驾驶概览">无人驾驶入门1：无人驾驶概览</a></li><li class="collection-item"><span class="active" title="无人驾驶入门2：高精度地图">无人驾驶入门2：高精度地图</span></li></ul>
+          <div class="collection-nav-simple"><a href="/posts/car/20180825-getting-started-with-driverless-1-driverless-overview/" class="collection-nav-item" rel="prev" title="无人驾驶入门1：无人驾驶概览"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i></a><span class="text-secondary">3/3</span><i class="fa-solid fa-angle-right fa-fw collection-nav-item text-secondary" aria-hidden="true"></i></div>
+        </nav>
+      </div>
+    </div><div style="width: 350px; margin: 0 auto; display: flex; justify-content: space-between; text-align: center;">
+  <img src="/images/wxmp-blog.jpg" alt="wxmp-blog" style="width: 115px; height: 153px;">
+  <img src="/images/wxmp-shanghai.jpg" alt="wxmp-shanghai" style="width: 115px; height: 153px;">
+  <img src="/images/zsxq-fromblog.jpg" alt="zsxq-fromblog" style="width: 115px; height: 153px;">
+</div></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>无人驾驶入门2：高精度地图</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://rovertang.com" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    RoverTang</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E6%B1%BD%E8%BD%A6/" class="post-category" title="分类 - 汽车"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 汽车</a> 和 <a href="/collections/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E5%85%A5%E9%97%A8%E8%AF%BE%E7%A8%8B/" class="post-collection" title="合集 - 无人驾驶入门课程"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> 无人驾驶入门课程</a></span></div><div class="post-meta-line"><span title="发布于 2018-09-08 00:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2018-09-08">2018-09-08</time></span>&nbsp;<span title="3028 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 3100 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 7 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#3高精度地图vs传统地图">3.高精度地图vs传统地图</a></li>
+    <li><a href="#4地图与定位感知与规划的关系_a">4.地图与定位、感知与规划的关系_a</a></li>
+    <li><a href="#5地图与定位感知与规划的关系_b">5.地图与定位、感知与规划的关系_b</a></li>
+    <li><a href="#6地图与定位感知与规划的关系_c">6.地图与定位、感知与规划的关系_c</a></li>
+    <li><a href="#7apollo高精度地图">7.Apollo高精度地图</a></li>
+    <li><a href="#8apollo高精度地图构建">8.Apollo高精度地图构建</a></li>
+    <li><a href="#课后小结">课后小结</a>
+      <ul>
+        <li><a href="#首先高精度地图可以自定位">首先，高精度地图可以自定位。</a></li>
+        <li><a href="#其次高精度地图是三维的">其次，高精度地图是三维的。</a></li>
+        <li><a href="#再次高精度地图的构建需要众包">再次，高精度地图的构建需要众包</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h2 id="20180908无人驾驶入门2高精度地图" class="heading-element"><span>[20180908]无人驾驶入门2：高精度地图</span>
+  <a href="#20180908%e6%97%a0%e4%ba%ba%e9%a9%be%e9%a9%b6%e5%85%a5%e9%97%a82%e9%ab%98%e7%b2%be%e5%ba%a6%e5%9c%b0%e5%9b%be" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>自从上次发布了《无人驾驶入门1：无人驾驶概览》，就收到了不少的鼓励和鞭策，包括前领导的肯定。那我们赶紧来学习第二课关于高精度地图的课程吧。</p>
+<p>第二课： 高精度地图</p>
+<p>课程简介：了解高精度地图的实现逻辑，这是 Apollo 定位、感知、规划模块的基础。</p>
+<p>1.地图简介</p>
+<p>略</p>
+<p>2.Sebastian介绍高精度地图</p>
+<p>略</p>
+<h2 id="3高精度地图vs传统地图" class="heading-element"><span>3.高精度地图vs传统地图</span>
+  <a href="#3%e9%ab%98%e7%b2%be%e5%ba%a6%e5%9c%b0%e5%9b%bevs%e4%bc%a0%e7%bb%9f%e5%9c%b0%e5%9b%be" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>传统地图能够拥有导航路径规划、拥堵信息提示、多条路径规划的时间等信息，甚至可以获得路口是否有信号灯、道路上是否有测速照相等信息。</p>
+<p><img loading="lazy" src="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnHnYtvFHmPuvmhnNIrO4K5b.png" alt="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnHnYtvFHmPuvmhnNIrO4K5b.png" srcset="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnHnYtvFHmPuvmhnNIrO4K5b.png?size=small, /posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnHnYtvFHmPuvmhnNIrO4K5b.png?size=medium 1.5x, /posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnHnYtvFHmPuvmhnNIrO4K5b.png?size=large 2x" data-title="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnHnYtvFHmPuvmhnNIrO4K5b.png" style="--width: 600px;--aspect-ratio: 600 / 534;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>【传统地图示意】</p>
+<p>高精度地图更包含了大量驾驶辅助信息，其中最重要的就是道路网的精确三维表征，比如交叉路口布局和路标位置等信息，高精度地图还包含了很多语义信息，包括信号灯颜色定义、道路限速信息、车辆转弯开始位置等。</p>
+<p><img loading="lazy" src="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcndZuEl6Qk5eNrXSsRRACBKf.png" alt="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcndZuEl6Qk5eNrXSsRRACBKf.png" srcset="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcndZuEl6Qk5eNrXSsRRACBKf.png?size=small, /posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcndZuEl6Qk5eNrXSsRRACBKf.png?size=medium 1.5x, /posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcndZuEl6Qk5eNrXSsRRACBKf.png?size=large 2x" data-title="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcndZuEl6Qk5eNrXSsRRACBKf.png" style="--width: 600px;--aspect-ratio: 600 / 309;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>【高精度地图中的限速和转弯示意】</p>
+<p>高精度地图区别于传统地图的一个重要特征就是精度，传统地图只能有米级的精度，对于车辆来说，米级的精度是完全不够的。高精度地图做到了厘米级的精度，这对于确保无人驾驶的安全性至关重要。</p>
+<p><img loading="lazy" src="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnzVMNEyXqIdAIOsx9Gvemrh.png" alt="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnzVMNEyXqIdAIOsx9Gvemrh.png" srcset="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnzVMNEyXqIdAIOsx9Gvemrh.png?size=small, /posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnzVMNEyXqIdAIOsx9Gvemrh.png?size=medium 1.5x, /posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnzVMNEyXqIdAIOsx9Gvemrh.png?size=large 2x" data-title="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnzVMNEyXqIdAIOsx9Gvemrh.png" style="--width: 400px;--aspect-ratio: 400 / 463;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>【传统地图的精度无法满足无人驾驶】</p>
+<h2 id="4地图与定位感知与规划的关系_a" class="heading-element"><span>4.地图与定位、感知与规划的关系_a</span>
+  <a href="#4%e5%9c%b0%e5%9b%be%e4%b8%8e%e5%ae%9a%e4%bd%8d%e6%84%9f%e7%9f%a5%e4%b8%8e%e8%a7%84%e5%88%92%e7%9a%84%e5%85%b3%e7%b3%bb_a" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>高精度地图是无人驾驶的核心组成部分，很多模块都依赖高精度地图。</p>
+<p>高精度地图的一个重要功能就是自定位，拿定位和拼图来打比方，当你拿到一小块拼图，你是否能在地图中找到这个拼图所在的位置呢？</p>
+<p><img loading="lazy" src="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnnNk90NuOu5cz6flfslflIz.png" alt="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnnNk90NuOu5cz6flfslflIz.png" srcset="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnnNk90NuOu5cz6flfslflIz.png?size=small, /posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnnNk90NuOu5cz6flfslflIz.png?size=medium 1.5x, /posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnnNk90NuOu5cz6flfslflIz.png?size=large 2x" data-title="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnnNk90NuOu5cz6flfslflIz.png" style="--width: 400px;--aspect-ratio: 400 / 398;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>【车辆当前位置附近地图是高精度地图的一小块拼图】</p>
+<p>无人驾驶需要知道自身所在地图的位置，首先车辆就需要寻找地标，车辆通过摄像头、雷达等传感器获得的信息同高精度地图上已知地标进行比较。</p>
+<p><img loading="lazy" src="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnnhKpr9EYXRWlVrXx3y1vHh.png" alt="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnnhKpr9EYXRWlVrXx3y1vHh.png" srcset="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnnhKpr9EYXRWlVrXx3y1vHh.png?size=small, /posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnnhKpr9EYXRWlVrXx3y1vHh.png?size=medium 1.5x, /posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnnhKpr9EYXRWlVrXx3y1vHh.png?size=large 2x" data-title="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnnhKpr9EYXRWlVrXx3y1vHh.png" style="--width: 600px;--aspect-ratio: 600 / 300;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>【车辆寻找标记进行定位】</p>
+<p>这一匹配过程需要经过预处理、坐标转换、数据融合这几个复杂过程。预处理来消除不准确或质量差的数据，坐标转换将来自不同视角的数据转换为统一的坐标系，借助数据融合可以将来自各种车辆的传感器数据合并。</p>
+<p>定位就是通过这几个复杂的过程完成的，通过高精度地图可以让车辆了解自身的位置。</p>
+<h2 id="5地图与定位感知与规划的关系_b" class="heading-element"><span>5.地图与定位、感知与规划的关系_b</span>
+  <a href="#5%e5%9c%b0%e5%9b%be%e4%b8%8e%e5%ae%9a%e4%bd%8d%e6%84%9f%e7%9f%a5%e4%b8%8e%e8%a7%84%e5%88%92%e7%9a%84%e5%85%b3%e7%b3%bb_b" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>无人驾驶车可以使用高精度地图来帮助感知，车辆的传感器就像是人类的眼睛、耳朵，但同样会受到外界条件的影响，比如恶劣天气、夜间等，另外如果遇到障碍物，感知是无法了解障碍物背后的物体。</p>
+<p>正因为如此，一方面地图可以帮助传感器提前预知事物位置，另一方面地图可以帮助传感器缩小检测范围，即让传感器仅检测感兴趣区域(ROI)。ROI可以提高传感器检测精确度和速度，可以节约计算资源。</p>
+<p><img loading="lazy" src="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnWp6cyDDf9uOvuN6IOGohvf.png" alt="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnWp6cyDDf9uOvuN6IOGohvf.png" srcset="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnWp6cyDDf9uOvuN6IOGohvf.png?size=small, /posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnWp6cyDDf9uOvuN6IOGohvf.png?size=medium 1.5x, /posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnWp6cyDDf9uOvuN6IOGohvf.png?size=large 2x" data-title="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnWp6cyDDf9uOvuN6IOGohvf.png" style="--width: 600px;--aspect-ratio: 600 / 338;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>【感兴趣区域ROI】</p>
+<h2 id="6地图与定位感知与规划的关系_c" class="heading-element"><span>6.地图与定位、感知与规划的关系_c</span>
+  <a href="#6%e5%9c%b0%e5%9b%be%e4%b8%8e%e5%ae%9a%e4%bd%8d%e6%84%9f%e7%9f%a5%e4%b8%8e%e8%a7%84%e5%88%92%e7%9a%84%e5%85%b3%e7%b3%bb_c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>高精度地图可以帮助车辆寻找合适的行车路线，可以帮助确定不同路线的选择，还能确定道路上其他车辆将来的位置。</p>
+<p>比如高精度地图已经精确到车道线，所以车辆尽可能沿着车道中心线行驶；比如在人行横道、减速带等区域，通过高精度地图可以提前预知，提前减速；比如前方遇到障碍物需要变道，高精度地图可以帮助其缩小选择范围，获得最佳变道方案。</p>
+<h2 id="7apollo高精度地图" class="heading-element"><span>7.Apollo高精度地图</span>
+  <a href="#7apollo%e9%ab%98%e7%b2%be%e5%ba%a6%e5%9c%b0%e5%9b%be" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>高精度地图专为无人驾驶设计，提供了道路定义、交叉路口、交通信号、车道规则以及汽车导航的其他元素，可以为无人驾驶车提供多方面的帮助。</p>
+<p>比如高精度地图记录了信号灯的精确位置和高度信息，从而降低了感知难度。</p>
+<p><img loading="lazy" src="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcn1KoglVxDeqGsBnworXOOLc.png" alt="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcn1KoglVxDeqGsBnworXOOLc.png" srcset="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcn1KoglVxDeqGsBnworXOOLc.png?size=small, /posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcn1KoglVxDeqGsBnworXOOLc.png?size=medium 1.5x, /posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcn1KoglVxDeqGsBnworXOOLc.png?size=large 2x" data-title="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcn1KoglVxDeqGsBnworXOOLc.png" style="--width: 600px;--aspect-ratio: 600 / 362;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>【交通信号灯位置和高度信息】</p>
+<p>地图更新是高精度地图中的一项重要工程，需要很多的作业车辆，对高精度地图不断进行验证和更新，同时要达到厘米级的精度，这需要非常高的制图技术。</p>
+<p>高精度地图有很多格式，不同的格式就会导致系统的不兼容，为了便于共享，Apollo采用了OpenDrive格式，这是行业制图标准格式。</p>
+<p>百度Apollo还开发了一套完善的采图绘图系统，其中90%的地图绘制流程实现了自动化。</p>
+<h2 id="8apollo高精度地图构建" class="heading-element"><span>8.Apollo高精度地图构建</span>
+  <a href="#8apollo%e9%ab%98%e7%b2%be%e5%ba%a6%e5%9c%b0%e5%9b%be%e6%9e%84%e5%bb%ba" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>高精度地图的构建由五个过程组成：数据采集、数据处理、对象检测、手动验证和地图发布。</p>
+<p><img loading="lazy" src="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnjvzA2IuLT4iBQ1bizrwMFd.png" alt="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnjvzA2IuLT4iBQ1bizrwMFd.png" srcset="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnjvzA2IuLT4iBQ1bizrwMFd.png?size=small, /posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnjvzA2IuLT4iBQ1bizrwMFd.png?size=medium 1.5x, /posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnjvzA2IuLT4iBQ1bizrwMFd.png?size=large 2x" data-title="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnjvzA2IuLT4iBQ1bizrwMFd.png" style="--width: 600px;--aspect-ratio: 600 / 288;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>【高精度地图的五个构建过程】</p>
+<p>数据采集是一个巨大的工程，百度Apollo拥有近300辆专业车辆用于数据源采集，当然，这些数据采集车不仅仅用于数据采集，对于地图的维护和更新也非常的重要，他可以及时的更新地图数据。</p>
+<p>专业车辆具有角度的传感器，比如GPS、惯性测量单元(IMU)、激光雷达和摄像机，Apollo定义了一个硬件框架，将这些传感器集成到单个自主系统中，通过将这些数据的融合，最终生成高精度地图。</p>
+<p><img loading="lazy" src="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnPcHcUHtBiNExjoXcz4Yy0g.png" alt="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnPcHcUHtBiNExjoXcz4Yy0g.png" srcset="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnPcHcUHtBiNExjoXcz4Yy0g.png?size=small, /posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnPcHcUHtBiNExjoXcz4Yy0g.png?size=medium 1.5x, /posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnPcHcUHtBiNExjoXcz4Yy0g.png?size=large 2x" data-title="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnPcHcUHtBiNExjoXcz4Yy0g.png" style="--width: 600px;--aspect-ratio: 600 / 324;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>【配备了硬件设备的采集车】</p>
+<p>数据处理是指对手机的数据进行整理、分类以及清洗的过程，以获得没有任何语义信息或注释的初始地图模板。</p>
+<p>对于对象检测，Apollo团队使用人工智能来检测静态对象并对其进行分类，包括车道线、交通标志甚至电线杆。</p>
+<p><img loading="lazy" src="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnBVPohbQxrDDQ3ackz3ubYc.png" alt="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnBVPohbQxrDDQ3ackz3ubYc.png" srcset="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnBVPohbQxrDDQ3ackz3ubYc.png?size=small, /posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnBVPohbQxrDDQ3ackz3ubYc.png?size=medium 1.5x, /posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnBVPohbQxrDDQ3ackz3ubYc.png?size=large 2x" data-title="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnBVPohbQxrDDQ3ackz3ubYc.png" style="--width: 600px;--aspect-ratio: 600 / 162;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>【对象检测】</p>
+<p>手动验证可以确保自动地图创建过程正确并及时发现问题。</p>
+<p>经过了上述过程的处理，地图可以进行发布，除了发布高精度地图，Apollo还发布了采用自上而下视图的相对定位地图以及三维点云地图。</p>
+<p><img loading="lazy" src="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnvUNeTLfXjfx7P1eKPt35lb.png" alt="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnvUNeTLfXjfx7P1eKPt35lb.png" srcset="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnvUNeTLfXjfx7P1eKPt35lb.png?size=small, /posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnvUNeTLfXjfx7P1eKPt35lb.png?size=medium 1.5x, /posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnvUNeTLfXjfx7P1eKPt35lb.png?size=large 2x" data-title="/posts/car/20180908-introduction-to-driverless-2-high-precision-map/assets/boxcnvUNeTLfXjfx7P1eKPt35lb.png" style="--width: 600px;--aspect-ratio: 600 / 175;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>【相对定位地图和点云地图】</p>
+<p>在构建和更新地图的过程中，Apollo使用了众包，任何人都可以通过百度发布的工具参与制作高精度地图的任务，Apollo高精度地图众包可以通过智能手机、智能信息娱乐系统甚至是其他无人驾驶车来实现。</p>
+<p>9.课程综述</p>
+<p>略</p>
+<h2 id="课后小结" class="heading-element"><span>课后小结</span>
+  <a href="#%e8%af%be%e5%90%8e%e5%b0%8f%e7%bb%93" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>虽然个人从事导航地图已有十年，但学习高精度地图课程还是有不少的启发。</p>
+<h3 id="首先高精度地图可以自定位" class="heading-element"><span>首先，高精度地图可以自定位。</span>
+  <a href="#%e9%a6%96%e5%85%88%e9%ab%98%e7%b2%be%e5%ba%a6%e5%9c%b0%e5%9b%be%e5%8f%af%e4%bb%a5%e8%87%aa%e5%ae%9a%e4%bd%8d" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>这一点打破了原有的认知，或者需要转换一个角度来思考。</p>
+<p>对于传统地图，都是真实世界的绝对位置地图，我们假定数据公司采集的地图都是真实准确的。而在导航软件中，获得GPS定位信号，再同地图进行匹配，可以即时获得地图中的定位信息，也就是知道了你在世界的哪个角落。GPS是一种传感器，但已经非常成熟，包括硬件和算法的成熟以及系统的稳定。所以，我们会认为地图定位非常容易，借助外部GPS即可。</p>
+<p>而高精度地图，除了传统地图功能外，还可以通过地图中的特征(本视频中的地标，或其他公司所谓的指纹)，进行自定位。既需要地图中的数据支持，也需要借助外部的传感器，这个传感器不是GPS，而是摄像机、雷达等，而其中的定位匹配算法并不像GPS定位算法这么简单，这也是无人驾驶技术中所需要克服的难题之一。</p>
+<h3 id="其次高精度地图是三维的" class="heading-element"><span>其次，高精度地图是三维的。</span>
+  <a href="#%e5%85%b6%e6%ac%a1%e9%ab%98%e7%b2%be%e5%ba%a6%e5%9c%b0%e5%9b%be%e6%98%af%e4%b8%89%e7%bb%b4%e7%9a%84" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>传统地图是二维的，以点线面为主，一方面本身不需要红绿灯、路灯等各种特征对象的高度信息，另一方面高程信息在导航中的应用并不多，显示建筑3D、高架立起或者山丘欺负，仅仅起到美观作用罢了。</p>
+<p>而高精度地图，除了自定位的需要，同时还需要还原真实的世界，不仅仅需要认清可行驶的车道线，也需要识别马路牙子、隧道桥洞等信息。</p>
+<h3 id="再次高精度地图的构建需要众包" class="heading-element"><span>再次，高精度地图的构建需要众包</span>
+  <a href="#%e5%86%8d%e6%ac%a1%e9%ab%98%e7%b2%be%e5%ba%a6%e5%9c%b0%e5%9b%be%e7%9a%84%e6%9e%84%e5%bb%ba%e9%9c%80%e8%a6%81%e4%bc%97%e5%8c%85" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>传统地图的构建，基本都是地图数据公司作业车采集的成果，众人所能提供的信息，也仅仅是反馈。以前的离线地图更新，需要等待一个版本，一般至少要等一个季度，而即便现在的在线地图，从反馈、验证、修正到发布，也至少要数天的时间。我们仅仅是一个使用者，而无法成为创建者。</p>
+<p>对于高精度地图来说，一个季度的更新实在太久，更新的频度是无法满足需求的。同时，高精度地图依然需要专业车辆的采集，作为专业数据输入源，但每一个自动驾驶车辆，又是数据贡献源，因为无人驾驶车的地图自定位同地图采集是想通的，甚至由于算法的一致性，数据验证也将变得简单。</p>
+<p>基于此，更需要高精度地图众包，让众人参与到地图构建中，只为更精准的高精度地图数据。</p>
+<p>既然opendrive format是开放的，那么谁会来主导一个类似openstreet map的众包项目呢？拭目以待。</p>
+<p>本文飞书文档：<a href="https://rovertang.feishu.cn/docx/doxcnQueOr1aJX9fRrZQvBWV7vd"target="_blank" rel="external nofollow noopener noreferrer">无人驾驶入门2：高精度地图</a></p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2018-09-08 00:00:00">更新于 2018-09-08&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/%E7%99%BE%E5%BA%A6/" class="post-tag" title="标签 - 百度">百度</a><a href="/tags/apollo/" class="post-tag" title="标签 - Apollo">Apollo</a><a href="/tags/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6/" class="post-tag" title="标签 - 无人驾驶">无人驾驶</a><a href="/tags/%E8%AF%BE%E7%A8%8B/" class="post-tag" title="标签 - 课程">课程</a><a href="/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE/" class="post-tag" title="标签 - 高精度地图">高精度地图</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/car/20180825-getting-started-with-driverless-1-driverless-overview/" class="post-nav-item" rel="prev" title="无人驾驶入门1：无人驾驶概览"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>无人驾驶入门1：无人驾驶概览</a><a href="/posts/car/20180909-understanding-the-internet-of-vehicles/" class="post-nav-item" rel="next" title="认识车联网">认识车联网<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment"></div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward"><i class="fa-solid fa-qrcode fa-fw" aria-hidden="true"></i>赞赏</label>
+    <div class="reward-ways" data-mode="static"><div><img loading="lazy" src="/images/alipay.png" alt="RoverTang 支付宝" data-title="RoverTang 支付宝" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>支付宝</span>
+          </div><div><img loading="lazy" src="/images/wechatpay.png" alt="RoverTang 微信" data-title="RoverTang 微信" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>微信</span>
+          </div></div>
+  </div></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.139.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.16">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2005 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://rovertang.com"target="_blank" rel="external nofollow noopener noreferrer">RoverTang</a></span></div><div class="footer-line beian"><span class="icp footer-divider">沪ICP备2020036772号-1</span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;bottom: 0;"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.16"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

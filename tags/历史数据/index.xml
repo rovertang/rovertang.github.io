@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>历史数据 - 标签 - 罗孚</title>
+    <link>https://blog.rovertang.com/tags/%E5%8E%86%E5%8F%B2%E6%95%B0%E6%8D%AE/</link>
+    <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
+    <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 26 Mar 2023 00:00:00 +0800</lastBuildDate>
+    <atom:link href="https://blog.rovertang.com/tags/%E5%8E%86%E5%8F%B2%E6%95%B0%E6%8D%AE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>让ChatGPT写代码获取股票历史日K线数据</title>
+      <link>https://blog.rovertang.com/posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/</link>
+      <pubDate>Sun, 26 Mar 2023 00:00:00 +0800</pubDate>
+      <guid>https://blog.rovertang.com/posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
+      <description>分别尝试使用Tushare库和BaoStock库获取某支股票历史数据、某一天的历史数据、所有股票的历史数据，ChatGPT均能给出较为正确的代码，最终获取了股票历史K线数据。有兴趣的小伙伴，可以一起来学习一下。</description>
+    </item>
+  </channel>
+</rss>

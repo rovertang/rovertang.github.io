@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>国内各地图API坐标系统比较 - 罗孚</title><meta name="author" content="RoverTang">
+<meta name="description" content="在开始这个题目之前，先给大家再次扫扫盲，扫的不是坐标系统的盲，而是我们国家所使用的坐标系统。大家都知道，美国GPS使用的是WGS84的坐标系统，以经纬度的形式来表示地球平面上的某一个位置，这应该是国际共识。但在我国，出于国家安全考虑，国内所有导航电子地图必须使用国家测绘局制定的加密坐标系统，即将一个真实的经纬度坐标加密成一个不正确的经纬度坐标，我们在业内将前者称之为地球坐标，后者称之为火星坐标，具体的说明可以参看百度百科中关于火星坐标系统的解释(文中的两段还是对我原文的摘录)。
+"><meta name="keywords" content='地图API, 坐标系'>
+  <meta itemprop="name" content="国内各地图API坐标系统比较">
+  <meta itemprop="description" content="在开始这个题目之前，先给大家再次扫扫盲，扫的不是坐标系统的盲，而是我们国家所使用的坐标系统。大家都知道，美国GPS使用的是WGS84的坐标系统，以经纬度的形式来表示地球平面上的某一个位置，这应该是国际共识。但在我国，出于国家安全考虑，国内所有导航电子地图必须使用国家测绘局制定的加密坐标系统，即将一个真实的经纬度坐标加密成一个不正确的经纬度坐标，我们在业内将前者称之为地球坐标，后者称之为火星坐标，具体的说明可以参看百度百科中关于火星坐标系统的解释(文中的两段还是对我原文的摘录)。">
+  <meta itemprop="datePublished" content="2012-03-15T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2012-03-15T00:00:00+08:00">
+  <meta itemprop="wordCount" content="1459">
+  <meta itemprop="keywords" content="地图API,坐标系"><meta property="og:url" content="https://blog.rovertang.com/posts/map/20120315-comparison-of-api-coordinate-systems-of-various-maps-in-china/">
+  <meta property="og:site_name" content="罗孚">
+  <meta property="og:title" content="国内各地图API坐标系统比较">
+  <meta property="og:description" content="在开始这个题目之前，先给大家再次扫扫盲，扫的不是坐标系统的盲，而是我们国家所使用的坐标系统。大家都知道，美国GPS使用的是WGS84的坐标系统，以经纬度的形式来表示地球平面上的某一个位置，这应该是国际共识。但在我国，出于国家安全考虑，国内所有导航电子地图必须使用国家测绘局制定的加密坐标系统，即将一个真实的经纬度坐标加密成一个不正确的经纬度坐标，我们在业内将前者称之为地球坐标，后者称之为火星坐标，具体的说明可以参看百度百科中关于火星坐标系统的解释(文中的两段还是对我原文的摘录)。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2012-03-15T00:00:00+08:00">
+    <meta property="article:modified_time" content="2012-03-15T00:00:00+08:00">
+    <meta property="article:tag" content="地图API">
+    <meta property="article:tag" content="坐标系">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="国内各地图API坐标系统比较">
+  <meta name="twitter:description" content="在开始这个题目之前，先给大家再次扫扫盲，扫的不是坐标系统的盲，而是我们国家所使用的坐标系统。大家都知道，美国GPS使用的是WGS84的坐标系统，以经纬度的形式来表示地球平面上的某一个位置，这应该是国际共识。但在我国，出于国家安全考虑，国内所有导航电子地图必须使用国家测绘局制定的加密坐标系统，即将一个真实的经纬度坐标加密成一个不正确的经纬度坐标，我们在业内将前者称之为地球坐标，后者称之为火星坐标，具体的说明可以参看百度百科中关于火星坐标系统的解释(文中的两段还是对我原文的摘录)。">
+<meta name="application-name" content="罗孚传说">
+<meta name="apple-mobile-web-app-title" content="罗孚传说"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://blog.rovertang.com/posts/map/20120315-comparison-of-api-coordinate-systems-of-various-maps-in-china/" title="国内各地图API坐标系统比较 - 罗孚" /><link rel="prev" type="text/html" href="https://blog.rovertang.com/posts/car/20120130-review-of-2011-rtic-forum/" title="2011RTIC论坛回顾" /><link rel="next" type="text/html" href="https://blog.rovertang.com/posts/map/20120407-indexing-algorithm-of-google-tile-and-tms/" title="Google tile和TMS的索引算法" /><link rel="alternate" type="text/markdown" href="https://blog.rovertang.com/posts/map/20120315-comparison-of-api-coordinate-systems-of-various-maps-in-china/index.md" title="国内各地图API坐标系统比较 - 罗孚"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="apxz4dWbUQ2bsnGFk6SmRK4gNZ7tlT21KgMZ1t9hqdk" /><meta name="msvalidate.01" content="5282002B82D61AD2D097F2F6419C1E4A" /><meta name="baidu-site-verification" content="codeva-RiIZqiHrvQ" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "国内各地图API坐标系统比较",
+    "inLanguage": "zh-cn",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.rovertang.com\/posts\/map\/20120315-comparison-of-api-coordinate-systems-of-various-maps-in-china\/"
+    },"genre": "posts","keywords": "地图API, 坐标系","wordcount":  1459 ,
+    "url": "https:\/\/blog.rovertang.com\/posts\/map\/20120315-comparison-of-api-coordinate-systems-of-various-maps-in-china\/","datePublished": "2012-03-15T00:00:00+08:00","dateModified": "2012-03-15T00:00:00+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "RoverTang"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item has-children">
+              <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/" title="文章">文章</a></li><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/map/" title="地图">地图</a></li><li class="breadcrumb-item active" data-separator="&gt;" aria-current="page">国内各地图API坐标系统比较</li>
+    </ol>
+  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div style="width: 350px; margin: 0 auto; display: flex; justify-content: space-between; text-align: center;">
+  <img src="/images/wxmp-blog.jpg" alt="wxmp-blog" style="width: 115px; height: 153px;">
+  <img src="/images/wxmp-shanghai.jpg" alt="wxmp-shanghai" style="width: 115px; height: 153px;">
+  <img src="/images/zsxq-fromblog.jpg" alt="zsxq-fromblog" style="width: 115px; height: 153px;">
+</div></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>国内各地图API坐标系统比较</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://rovertang.com" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    RoverTang</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E5%9C%B0%E5%9B%BE/" class="post-category" title="分类 - 地图"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 地图</a></span></div><div class="post-meta-line"><span title="发布于 2012-03-15 00:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2012-03-15">2012-03-15</time></span>&nbsp;<span title="1459 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1500 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
+    </div><div class="content" id="content"><p>在开始这个题目之前，先给大家再次扫扫盲，扫的不是坐标系统的盲，而是我们国家所使用的坐标系统。大家都知道，美国GPS使用的是WGS84的坐标系统，以经纬度的形式来表示地球平面上的某一个位置，这应该是国际共识。但在我国，出于国家安全考虑，国内所有导航电子地图必须使用国家测绘局制定的加密坐标系统，即将一个真实的经纬度坐标加密成一个不正确的经纬度坐标，我们在业内将前者称之为地球坐标，后者称之为火星坐标，具体的说明可以参看百度百科中关于<a href="http://baike.baidu.com/view/3163334.html"target="_blank" rel="external nofollow noopener noreferrer">火星坐标系统</a>的解释(文中的两段还是对我原文的摘录)。</p>
+<p>所以，本文所要讨论的坐标系统，是关于地球坐标和火星坐标的事情。以前使用Google Maps API开发习惯了，就觉得国外用地球坐标国内用火星坐标是共识，但由于Google服务常常被block的因素，加上还没取得所谓的审图号，所以改用国内地图API，结果问题来了，并不是所有的地图API都采用火星坐标的。我用了一个下午的时间写了个API示例，将地球坐标和火星坐标标注到地图上去对比，具体大家可以访问以下网页自行查看差别：</p>
+<p><a href="http://rovertang.com/labs/map-compare/"target="_blank" rel="external nofollow noopener noreferrer">http://rovertang.com/labs/map-compare/</a></p>
+<p>结论是：</p>
+<table>
+  <thead>
+      <tr>
+          <th>API</th>
+          <th>坐标系</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>百度地图API</td>
+          <td>百度坐标</td>
+      </tr>
+      <tr>
+          <td>腾讯搜搜地图API</td>
+          <td>火星坐标</td>
+      </tr>
+      <tr>
+          <td>搜狐搜狗地图API</td>
+          <td>搜狗坐标*</td>
+      </tr>
+      <tr>
+          <td>阿里云地图API</td>
+          <td>火星坐标</td>
+      </tr>
+      <tr>
+          <td>图吧MapBar地图API</td>
+          <td>图吧坐标</td>
+      </tr>
+      <tr>
+          <td>高德MapABC地图API</td>
+          <td>火星坐标</td>
+      </tr>
+      <tr>
+          <td>灵图51ditu地图API</td>
+          <td>火星坐标</td>
+      </tr>
+  </tbody>
+</table>
+<p>注1：百度地图使用百度坐标，支持从地球坐标和火星坐标导入成百度坐标，但无法导出。并且批量坐标转换一次只能转换20个(待验证)。</p>
+<p>注2：搜狗地图支持直接显示地球坐标，支持地球坐标、火星坐标、百度坐标导入成搜狗坐标，同样，搜狗坐标也无法导出。</p>
+<p>个人认为：采用自家坐标体系，而不采用国内通用的火星坐标体系，实在是自寻短处。当然，百度是因为做的足够大、足够好，所以很霸道，也为以后一统天下而不让别人瓜分之而做准备吧。搜狗虽然用自家坐标体系，但能将地球坐标直接导入，此举也属唯一。而图吧地图不知道学什么加密方式，以前用地球坐标用的好好的，现在用图吧自己的坐标，难道是因为给百度做过所以也来了这么一招？或者沿用百度？不得而知。</p>
+<p>本文的目的在于：做地图开发的时候，不希望被一家地图API迁就，所以采用火星坐标是正确的选择，希望本文能够对选择使用谁家API的开发者提供一点帮助吧。就我个人而言，我绝不会使用非火星坐标系统的地图API，虽然百度地图API很好很强大确实很吸引我。</p>
+<p>在做这几个样例的过程中，也同大家分享几点个人感受：</p>
+<p>1、MapBar和MapABC是需要绑定网站域名的。Google Maps API v3开始就不使用了key了，所以也希望更多的地图API不要限制于地图API key(手机开发或地图接口应用倒是可以用key来关联一下)。</p>
+<p>2、兼容性仍然是个大问题。MapBar API在IE6下正常，Chrome和FireFox下有问题。MapABC我也调试了很久，最后在Chrome下还是有点问题。当然，还有更糟糕的地图API(易图通的myemap在Chrome下不显示地图，瑞图的365地图网在Chrome下错位)，我就没有去尝试了。</p>
+<p>3、发现51ditu的地图级别，是越详细数字越小，和其他地图API相反，同时，初始化地图的时候若输入一个超过层级的数字，则地图不显示，放大缩小不可操作，不知道这算不算是一个bug。</p>
+<p>4、在移动设备上的兼容性未做测试，若把这一参数加上，也许又可以刷掉几个地图API。</p>
+<p>虽然做了这些比较，但个人还未能完全拿定主意用哪个API来开发，不知道大家倾向于哪一家地图API呢？</p>
+<p>本文飞书文档：<a href="https://rovertang.feishu.cn/docx/doxcnkG3T7oRSm7uQ9Qx1xlqhDe"target="_blank" rel="external nofollow noopener noreferrer">国内各地图API坐标系统比较</a></p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2012-03-15 00:00:00">更新于 2012-03-15&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/%E5%9C%B0%E5%9B%BEapi/" class="post-tag" title="标签 - 地图API">地图API</a><a href="/tags/%E5%9D%90%E6%A0%87%E7%B3%BB/" class="post-tag" title="标签 - 坐标系">坐标系</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/car/20120130-review-of-2011-rtic-forum/" class="post-nav-item" rel="prev" title="2011RTIC论坛回顾"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>2011RTIC论坛回顾</a><a href="/posts/map/20120407-indexing-algorithm-of-google-tile-and-tms/" class="post-nav-item" rel="next" title="Google Tile和TMS的索引算法">Google Tile和TMS的索引算法<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment"></div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward"><i class="fa-solid fa-qrcode fa-fw" aria-hidden="true"></i>赞赏</label>
+    <div class="reward-ways" data-mode="static"><div><img loading="lazy" src="/images/alipay.png" alt="RoverTang 支付宝" data-title="RoverTang 支付宝" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>支付宝</span>
+          </div><div><img loading="lazy" src="/images/wechatpay.png" alt="RoverTang 微信" data-title="RoverTang 微信" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>微信</span>
+          </div></div>
+  </div></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.139.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.16">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2005 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://rovertang.com"target="_blank" rel="external nofollow noopener noreferrer">RoverTang</a></span></div><div class="footer-line beian"><span class="icp footer-divider">沪ICP备2020036772号-1</span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;bottom: 0;"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.16"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

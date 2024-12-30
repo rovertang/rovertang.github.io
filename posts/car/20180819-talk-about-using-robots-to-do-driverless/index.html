@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>聊聊用机器人做无人驾驶  - 罗孚</title><meta name="author" content="RoverTang">
+<meta name="description" content="无人驾驶是机器人在帮我们开车？今天我们来聊聊机器人的难、无人驾驶的容易以及无人驾驶的实现方式，顺便给让机器人给我们开车的无人驾驶公司做个广告:)"><meta name="keywords" content='机器人, 无人驾驶, 踏歌艾尔'>
+  <meta itemprop="name" content="聊聊用机器人做无人驾驶 ">
+  <meta itemprop="description" content="无人驾驶是机器人在帮我们开车？今天我们来聊聊机器人的难、无人驾驶的容易以及无人驾驶的实现方式，顺便给让机器人给我们开车的无人驾驶公司做个广告:)">
+  <meta itemprop="datePublished" content="2018-08-19T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2018-08-19T00:00:00+08:00">
+  <meta itemprop="wordCount" content="1798">
+  <meta itemprop="image" content="https://blog.rovertang.com/posts/car/20180819-talk-about-using-robots-to-do-driverless/cover.png">
+  <meta itemprop="keywords" content="机器人,无人驾驶,踏歌艾尔"><meta property="og:url" content="https://blog.rovertang.com/posts/car/20180819-talk-about-using-robots-to-do-driverless/">
+  <meta property="og:site_name" content="罗孚">
+  <meta property="og:title" content="聊聊用机器人做无人驾驶 ">
+  <meta property="og:description" content="无人驾驶是机器人在帮我们开车？今天我们来聊聊机器人的难、无人驾驶的容易以及无人驾驶的实现方式，顺便给让机器人给我们开车的无人驾驶公司做个广告:)">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2018-08-19T00:00:00+08:00">
+    <meta property="article:modified_time" content="2018-08-19T00:00:00+08:00">
+    <meta property="article:tag" content="机器人">
+    <meta property="article:tag" content="无人驾驶">
+    <meta property="article:tag" content="踏歌艾尔">
+    <meta property="og:image" content="https://blog.rovertang.com/posts/car/20180819-talk-about-using-robots-to-do-driverless/cover.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://blog.rovertang.com/posts/car/20180819-talk-about-using-robots-to-do-driverless/cover.png">
+  <meta name="twitter:title" content="聊聊用机器人做无人驾驶 ">
+  <meta name="twitter:description" content="无人驾驶是机器人在帮我们开车？今天我们来聊聊机器人的难、无人驾驶的容易以及无人驾驶的实现方式，顺便给让机器人给我们开车的无人驾驶公司做个广告:)">
+<meta name="application-name" content="罗孚传说">
+<meta name="apple-mobile-web-app-title" content="罗孚传说"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://blog.rovertang.com/posts/car/20180819-talk-about-using-robots-to-do-driverless/" title="聊聊用机器人做无人驾驶  - 罗孚" /><link rel="prev" type="text/html" href="https://blog.rovertang.com/posts/map/20180806-viewing-high-precision-map-problems-through-foreign-start-ups/" title="透过国外初创公司看高精度地图难题" /><link rel="next" type="text/html" href="https://blog.rovertang.com/posts/car/20180825-getting-started-with-driverless-1-driverless-overview/" title="无人驾驶入门1：无人驾驶概览" /><link rel="alternate" type="text/markdown" href="https://blog.rovertang.com/posts/car/20180819-talk-about-using-robots-to-do-driverless/index.md" title="聊聊用机器人做无人驾驶  - 罗孚"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="apxz4dWbUQ2bsnGFk6SmRK4gNZ7tlT21KgMZ1t9hqdk" /><meta name="msvalidate.01" content="5282002B82D61AD2D097F2F6419C1E4A" /><meta name="baidu-site-verification" content="codeva-RiIZqiHrvQ" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "聊聊用机器人做无人驾驶 ",
+    "inLanguage": "zh-cn",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.rovertang.com\/posts\/car\/20180819-talk-about-using-robots-to-do-driverless\/"
+    },"genre": "posts","keywords": "机器人, 无人驾驶, 踏歌艾尔","wordcount":  1798 ,
+    "url": "https:\/\/blog.rovertang.com\/posts\/car\/20180819-talk-about-using-robots-to-do-driverless\/","datePublished": "2018-08-19T00:00:00+08:00","dateModified": "2018-08-19T00:00:00+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "RoverTang"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item has-children">
+              <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/" title="文章">文章</a></li><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/car/" title="汽车">汽车</a></li><li class="breadcrumb-item active" data-separator="&gt;" aria-current="page">聊聊用机器人做无人驾驶 </li>
+    </ol>
+  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div style="width: 350px; margin: 0 auto; display: flex; justify-content: space-between; text-align: center;">
+  <img src="/images/wxmp-blog.jpg" alt="wxmp-blog" style="width: 115px; height: 153px;">
+  <img src="/images/wxmp-shanghai.jpg" alt="wxmp-shanghai" style="width: 115px; height: 153px;">
+  <img src="/images/zsxq-fromblog.jpg" alt="zsxq-fromblog" style="width: 115px; height: 153px;">
+</div></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>聊聊用机器人做无人驾驶 </span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://rovertang.com" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    RoverTang</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E6%B1%BD%E8%BD%A6/" class="post-category" title="分类 - 汽车"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 汽车</a></span></div><div class="post-meta-line"><span title="发布于 2018-08-19 00:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2018-08-19">2018-08-19</time></span>&nbsp;<span title="1798 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1800 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 4 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#做个机器人很难">做个机器人很难！</a></li>
+    <li><a href="#无人驾驶是最容易实现并商用的机器人">无人驾驶是最容易实现并商用的机器人！</a></li>
+    <li><a href="#无人驾驶的实现方式">无人驾驶的实现方式</a></li>
+    <li><a href="#广告时间">广告时间</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p>在驾驶座，放一个机器人，让机器人帮我们开车，这就是无人驾驶？</p>
+<p>这是很传统的想法，大部分的科幻片应该会这么演，所以可能大部分人认为这才是我们要的无人驾驶。</p>
+<p>其实做一个人形机器人帮我们开车，很难，至少这十几年应该不会出现这样的机器人。</p>
+<p>但就在最近，我在Apollo的群里发现了一家公司，用机械臂做无人驾驶。</p>
+<p>他们的机械臂，模拟了人的手脚操控，直接控制了方向盘、油门和刹车，很有人类的感觉。</p>
+<p>在介绍这家公司之前，我想先聊聊前沿科技在人工智能的推进，为什么会选择无人驾驶，而不是机器人。</p>
+<h2 id="做个机器人很难" class="heading-element"><span>做个机器人很难！</span>
+  <a href="#%e5%81%9a%e4%b8%aa%e6%9c%ba%e5%99%a8%e4%ba%ba%e5%be%88%e9%9a%be" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>电影中的机器人，很多都有手有脚有头，甚至还要有脸能微笑哭泣，能够完全听从你的使唤。</p>
+<p>没错，这是理想的机器人，能够实现的话，至少是好几代人的事情了。</p>
+<p>就现阶段来说，人型机器人实现站立和行走，都是一件比较困难的事情，更不用说能代替人做万能的事情。</p>
+<p>难度在于，模拟人类躯干，就会产生无限种可能，你让他开车，再让他做饭，事情太多，它没这能力学那么多本领。</p>
+<p>所以，现在大部分机器人，都是限定场景的，比如扫地、开叉车、分拣货物、同小孩语音对话、码头送货等。</p>
+<p>实际上，无人驾驶就是一个限定场景的机器人，只是这个场景足够复杂。(下围棋的阿尔法狗更是典型的限定场景)</p>
+<h2 id="无人驾驶是最容易实现并商用的机器人" class="heading-element"><span>无人驾驶是最容易实现并商用的机器人！</span>
+  <a href="#%e6%97%a0%e4%ba%ba%e9%a9%be%e9%a9%b6%e6%98%af%e6%9c%80%e5%ae%b9%e6%98%93%e5%ae%9e%e7%8e%b0%e5%b9%b6%e5%95%86%e7%94%a8%e7%9a%84%e6%9c%ba%e5%99%a8%e4%ba%ba" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>最容易？你没看错，确实如此。</p>
+<p>无人驾驶限定了场景，就是把人从起点送到终点，所需学习的规则比较简单，一方面学会控制车辆，利用好油门、刹车、转向等制动系统，另一方面交通规则也是有限的，做到按车道行驶、不闯红灯、不撞行人和车辆等行为，基本就可以上路了。</p>
+<p>现阶段的科学技术，特别是slam、cnn等技术的发展，基于人工智能的无人驾驶才成为可能。</p>
+<p>另外，出行是人类的刚需，现阶段共享出行已经造就了独角兽滴滴，而无人驾驶出行，将是一个更大的商业帝国，任何一家公司能进入无人驾驶生态，它就有无限的可能。</p>
+<p>再说，真能实现无人驾驶，不仅仅是成就感，更是个人、团队荣誉，甚至是国家荣誉。</p>
+<h2 id="无人驾驶的实现方式" class="heading-element"><span>无人驾驶的实现方式</span>
+  <a href="#%e6%97%a0%e4%ba%ba%e9%a9%be%e9%a9%b6%e7%9a%84%e5%ae%9e%e7%8e%b0%e6%96%b9%e5%bc%8f" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>正如“<a href="/posts/mapnavi/20180723-discussion-on-the-definition-of-high-precision-map/">关于高精度地图定义的探讨</a>”文中所述，无人驾驶的实现主要由感知、决策、执行三个层面。</p>
+<p>在任何一个层面，都有不同的实现方式，并且都存在不少的争论。</p>
+<p>比如感知层面，纯视觉方案只用摄像头实现感知，也有激光方案的(纯激光无法识别车道线红绿灯等信息，需要结合摄像头)，而GNSS+RTK+IMU用来实现绝对定位感知，这些感知策略需要融合，只用一种策略一定是存在弊端的。</p>
+<p>在决策层面，更是分为两派，一派来自人工智能，要用深度学习来解决无人驾驶难题，让智能汽车学会人类驾驶，另一派来自传统车厂，使用控制理论来实现，遇到什么情况作出什么判断并决策执行。</p>
+<p>在执行层面，一般都是用线控方式来实现的，就是给车发加油、踩刹车、方向盘左转等指令，但大部分车厂还没有开放线控，所以很多车都是改装的，据说Uber和Volvo合作的无人车X90也是改装的。</p>
+<p>而使用机械臂控制油门刹车和方向盘来做无人驾驶，还是比较少有的，这样的做法必须在机械控制领域有多年的积累，但也看出对现阶段无法获得车厂线控指令的无奈。</p>
+<h2 id="广告时间" class="heading-element"><span>广告时间</span>
+  <a href="#%e5%b9%bf%e5%91%8a%e6%97%b6%e9%97%b4" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>这是一家名叫踏歌艾尔机器人的公司，从官网(<a href="https://www.tageair.com"target="_blank" rel="external nofollow noopener noreferrer">www.tageair.com</a>)来看，早期可能是一家为车厂提供车辆测试的公司，正是这样的测试技术积累，才慢慢过渡到无人驾驶领域，据说机械臂控制车辆的方式，已经成功运用到了工程车领域，比如压路机等。</p>
+<p>官方视频：<a href="https://v.qq.com/x/page/v0753w1u3zg.html"target="_blank" rel="external nofollow noopener noreferrer">https://v.qq.com/x/page/v0753w1u3zg.html</a></p>
+<p>除了官网视频，还有一小段乡间小路的无人驾驶视频。</p>
+<p>乡间小路无人驾驶视频：<a href="https://v.qq.com/x/page/x0753hhb3mb.html"target="_blank" rel="external nofollow noopener noreferrer">https://v.qq.com/x/page/x0753hhb3mb.html</a></p>
+<p>(视频中的车辆，在没有任何交通标识的道路上无人驾驶，连特斯拉都无法做到，除了佩服，也有点让人费解。)</p>
+<p>我们一般开自己的车，对自己的车况很熟悉，当借一辆车上车后，还需要一点磨合熟悉的时间。对于机械臂模仿人类操控，它们不需要适配吗？</p>
+<p>毕竟每辆车的油门、刹车不同，在相同的力度控制下会有不同的效果，再加上车辆保养的因素(机油使用时间、刹车片厚薄等)，车辆控制千差万别。</p>
+<p>如果每一辆车都需要适配，那就失去了通用性。如果不适配，那如何保障驾驶的安全性，毕竟多数事故都是因油门刹车的控制而起。(视频中无人驾驶车遇到人主动停车的画面，感觉车辆有一点急刹。)</p>
+<p>让机器人给我们开车，你是怎么看的呢？</p>
+<p>本文飞书文档：<a href="https://rovertang.feishu.cn/docx/doxcnT46tcMcikzOADfqZ8csTLe"target="_blank" rel="external nofollow noopener noreferrer">聊聊用机器人做无人驾驶</a></p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2018-08-19 00:00:00">更新于 2018-08-19&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/" class="post-tag" title="标签 - 机器人">机器人</a><a href="/tags/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6/" class="post-tag" title="标签 - 无人驾驶">无人驾驶</a><a href="/tags/%E8%B8%8F%E6%AD%8C%E8%89%BE%E5%B0%94/" class="post-tag" title="标签 - 踏歌艾尔">踏歌艾尔</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/map/20180806-viewing-high-precision-map-problems-through-foreign-start-ups/" class="post-nav-item" rel="prev" title="透过国外初创公司看高精度地图难题"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>透过国外初创公司看高精度地图难题</a><a href="/posts/car/20180825-getting-started-with-driverless-1-driverless-overview/" class="post-nav-item" rel="next" title="无人驾驶入门1：无人驾驶概览">无人驾驶入门1：无人驾驶概览<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment"></div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward"><i class="fa-solid fa-qrcode fa-fw" aria-hidden="true"></i>赞赏</label>
+    <div class="reward-ways" data-mode="static"><div><img loading="lazy" src="/images/alipay.png" alt="RoverTang 支付宝" data-title="RoverTang 支付宝" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>支付宝</span>
+          </div><div><img loading="lazy" src="/images/wechatpay.png" alt="RoverTang 微信" data-title="RoverTang 微信" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>微信</span>
+          </div></div>
+  </div></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.139.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.16">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2005 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://rovertang.com"target="_blank" rel="external nofollow noopener noreferrer">RoverTang</a></span></div><div class="footer-line beian"><span class="icp footer-divider">沪ICP备2020036772号-1</span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;bottom: 0;"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.16"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

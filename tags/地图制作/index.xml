@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>地图制作 - 标签 - 罗孚</title>
+    <link>https://blog.rovertang.com/tags/%E5%9C%B0%E5%9B%BE%E5%88%B6%E4%BD%9C/</link>
+    <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
+    <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 28 Mar 2010 00:00:00 +0800</lastBuildDate>
+    <atom:link href="https://blog.rovertang.com/tags/%E5%9C%B0%E5%9B%BE%E5%88%B6%E4%BD%9C/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>制作一份简单的网络地图(世博地图的配准和切割)</title>
+      <link>https://blog.rovertang.com/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/</link>
+      <pubDate>Sun, 28 Mar 2010 00:00:00 +0800</pubDate>
+      <guid>https://blog.rovertang.com/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <description>&lt;p&gt;其实我很早的时候就写过一篇“&lt;a href=&#34;http://www.cnblogs.com/Tangf/archive/2009/07/30/1534674.html&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;我的 2010世博地图1.0版发布&lt;/a&gt;”，但没有和大家做明确的说明和制作方法，今天就和大家一起来分享地图配准和地图切割并进行网络发布的问题，其实就是以世博为例制作一份简单的网络地图。网络地图是以Google Maps API为基础，在Google Maps上面叠加一份自制的世博地图，但有一点，这里的地图配准和切割很重要，不过使用本文介绍的工具后一切都将变的不困难了。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>如何制作一份导航电子地图(上)</title>
+      <link>https://blog.rovertang.com/posts/map/20090914-how-to-make-a-navigation-electronic-map/</link>
+      <pubDate>Mon, 14 Sep 2009 00:00:00 +0800</pubDate>
+      <guid>https://blog.rovertang.com/posts/map/20090914-how-to-make-a-navigation-electronic-map/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <description>&lt;p&gt;自从上次发表“&lt;a href=&#34;https://rovertang.feishu.cn/docx/doxcnxTkd0PCsjjpllnXCqD6thh&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;导航电子地图的组成和制作流程&lt;/a&gt;”后，被骂的喷头，说文中有很多的错误言论，但我并没有认为有太多的错误(当然关于微软使用四维地图这一错误点还真的是一大疏忽，但这不是重要的，说不定Google哪一天也使用四维了)。我是听了四维公司产品经理的演讲后写的该文，其中许多的总结性的内容个人认为很对，我也该文也是基于对他PPT的理解，当然也有可能我的理解有误，毕竟我并没有在数据公司供职过。不过没有什么关系，错误还希望大家继续指正，我们今天继续谈“如何制作一份导航电子地图”，也算是我接触过三四家数据公司的数据后做的一些简单思考吧，当然，今天甚至会讲到数据中的字段，我要说的是一份最简单最基本的导航电子地图，如果说你写code的能力够好，也许能够根据我所提供的思路制作出一个导航软件，对此我深信不疑(世界第一的导航软件公司制作导航电子地图也用了如此简单的基本需求)。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

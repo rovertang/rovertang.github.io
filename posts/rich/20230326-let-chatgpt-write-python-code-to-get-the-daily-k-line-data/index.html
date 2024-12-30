@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>让ChatGPT写代码获取股票历史日K线数据 - 罗孚</title><meta name="author" content="RoverTang">
+<meta name="description" content="分别尝试使用Tushare库和BaoStock库获取某支股票历史数据、某一天的历史数据、所有股票的历史数据，ChatGPT均能给出较为正确的代码，最终获取了股票历史K线数据。有兴趣的小伙伴，可以一起来学习一下。"><meta name="keywords" content='ChatGPT, 历史数据, 日K线'>
+  <meta itemprop="name" content="让ChatGPT写代码获取股票历史日K线数据">
+  <meta itemprop="description" content="分别尝试使用Tushare库和BaoStock库获取某支股票历史数据、某一天的历史数据、所有股票的历史数据，ChatGPT均能给出较为正确的代码，最终获取了股票历史K线数据。有兴趣的小伙伴，可以一起来学习一下。">
+  <meta itemprop="datePublished" content="2023-03-26T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2023-03-26T00:00:00+08:00">
+  <meta itemprop="wordCount" content="1486">
+  <meta itemprop="image" content="https://blog.rovertang.com/posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/cover.jpg">
+  <meta itemprop="keywords" content="ChatGPT,历史数据,日K线"><meta property="og:url" content="https://blog.rovertang.com/posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/">
+  <meta property="og:site_name" content="罗孚">
+  <meta property="og:title" content="让ChatGPT写代码获取股票历史日K线数据">
+  <meta property="og:description" content="分别尝试使用Tushare库和BaoStock库获取某支股票历史数据、某一天的历史数据、所有股票的历史数据，ChatGPT均能给出较为正确的代码，最终获取了股票历史K线数据。有兴趣的小伙伴，可以一起来学习一下。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-03-26T00:00:00+08:00">
+    <meta property="article:modified_time" content="2023-03-26T00:00:00+08:00">
+    <meta property="article:tag" content="ChatGPT">
+    <meta property="article:tag" content="历史数据">
+    <meta property="article:tag" content="日K线">
+    <meta property="og:image" content="https://blog.rovertang.com/posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/cover.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://blog.rovertang.com/posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/cover.jpg">
+  <meta name="twitter:title" content="让ChatGPT写代码获取股票历史日K线数据">
+  <meta name="twitter:description" content="分别尝试使用Tushare库和BaoStock库获取某支股票历史数据、某一天的历史数据、所有股票的历史数据，ChatGPT均能给出较为正确的代码，最终获取了股票历史K线数据。有兴趣的小伙伴，可以一起来学习一下。">
+<meta name="application-name" content="罗孚传说">
+<meta name="apple-mobile-web-app-title" content="罗孚传说"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://blog.rovertang.com/posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/" title="让ChatGPT写代码获取股票历史日K线数据 - 罗孚" /><link rel="prev" type="text/html" href="https://blog.rovertang.com/posts/rich/20230315-inspiration-of-svb-to-ordinary-investors/" title="硅谷银行破产对普通投资者的启发" /><link rel="next" type="text/html" href="https://blog.rovertang.com/posts/soul/20230328-the-soft-ribs-and-pains-under-desire/" title="欲望之下的软肋与痛苦" /><link rel="alternate" type="text/markdown" href="https://blog.rovertang.com/posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/index.md" title="让ChatGPT写代码获取股票历史日K线数据 - 罗孚"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="apxz4dWbUQ2bsnGFk6SmRK4gNZ7tlT21KgMZ1t9hqdk" /><meta name="msvalidate.01" content="5282002B82D61AD2D097F2F6419C1E4A" /><meta name="baidu-site-verification" content="codeva-RiIZqiHrvQ" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "让ChatGPT写代码获取股票历史日K线数据",
+    "inLanguage": "zh-cn",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.rovertang.com\/posts\/rich\/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data\/"
+    },"genre": "posts","keywords": "ChatGPT, 历史数据, 日K线","wordcount":  1486 ,
+    "url": "https:\/\/blog.rovertang.com\/posts\/rich\/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data\/","datePublished": "2023-03-26T00:00:00+08:00","dateModified": "2023-03-26T00:00:00+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "RoverTang"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item has-children">
+              <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/" title="文章">文章</a></li><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/rich/" title="个人财富">个人财富</a></li><li class="breadcrumb-item active" data-separator="&gt;" aria-current="page">让ChatGPT写代码获取股票历史日K线数据</li>
+    </ol>
+  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div style="width: 350px; margin: 0 auto; display: flex; justify-content: space-between; text-align: center;">
+  <img src="/images/wxmp-blog.jpg" alt="wxmp-blog" style="width: 115px; height: 153px;">
+  <img src="/images/wxmp-shanghai.jpg" alt="wxmp-shanghai" style="width: 115px; height: 153px;">
+  <img src="/images/zsxq-fromblog.jpg" alt="zsxq-fromblog" style="width: 115px; height: 153px;">
+</div></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>让ChatGPT写代码获取股票历史日K线数据</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://rovertang.com" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    RoverTang</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/" class="post-category" title="分类 - 个人财富"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 个人财富</a></span></div><div class="post-meta-line"><span title="发布于 2023-03-26 00:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-03-26">2023-03-26</time></span>&nbsp;<span title="1486 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1500 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 3 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#目标">目标</a></li>
+    <li><a href="#分析">分析</a></li>
+    <li><a href="#向-chatgpt-提问">向 ChatGPT 提问</a></li>
+    <li><a href="#结语">结语</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p>自从用上 ChatGPT 后，不会的东西也都变的会那么一点点了，这不，我们来让 ChatGPT 写一点代码吧。</p>
+<h2 id="目标" class="heading-element"><span>目标</span>
+  <a href="#%e7%9b%ae%e6%a0%87" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>在股市中，股票的收盘价格很重要，比如今天是否盈利可以基于此结算，比如多日收盘价就成了股价走势，那么，我们今天就用 ChatGPT 写一点代码，来获取股票的 K 线数据吧，主要是每日收盘价。</p>
+<p>更具体的来说，对于关注的股票获取历史价格，是一件大众刚需的事情，我们简单拆分后，可以分成如下三个具体而切实的目标：</p>
+<ol>
+<li>获取某支股票的历史数据(有开始日期和结束日期)</li>
+<li>获取某一天或当天所有股票的收盘价格</li>
+<li>获取所有股票的所有历史数据</li>
+</ol>
+<p>那我们现在就开始吧。</p>
+<h2 id="分析" class="heading-element"><span>分析</span>
+  <a href="#%e5%88%86%e6%9e%90" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>在咨询 ChatGPT 之前，我们先要有一个基础知识：国内获取股票 K 线数据的开放大数据平台，主要有 Tushare、BaoStock 这样的库。</p>
+<p>虽然这两个库都能获取数据，但是各有利弊吧，比如 Tushare 通过日期参数就可以获取某一日的所有股票数据，但 BaoStock 就需要咨询轮询所有股票代码了。</p>
+<p>不管如何，我们都会借助这两个库，让 ChatGPT 写出 Python 代码，让我们获取到我们的目标数据。</p>
+<p>由于大家不一定会用到数据库，所以我们简单一些，获取的数据直接保存到 csv，使用 Excel 打开即可，这应该也是大部分人分析数据的工具了。</p>
+<p>本次可能仅实现上述的前两个目标，因为第三个目标实际是前两个目标的结合。</p>
+<h2 id="向-chatgpt-提问" class="heading-element"><span>向 ChatGPT 提问</span>
+  <a href="#%e5%90%91-chatgpt-%e6%8f%90%e9%97%ae" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>有了目标并且做了分析以后，就需要开始向 ChatGPT 提问了。我们尝试问出具体而且可以一步触达的问题。</p>
+<p><strong>提问：使用 baostock 库获取格力电器从 2022 年 1 月 1 日到 2022 年 12 月 31 日的股票历史 K 线数据并保存到 CSV 文件中。</strong></p>
+<p><img loading="lazy" src="/posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/static/ZQN1bv2bNoC7knxL2MdckUnsnDf.png" alt="/posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/static/ZQN1bv2bNoC7knxL2MdckUnsnDf.png" srcset="/posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/static/ZQN1bv2bNoC7knxL2MdckUnsnDf.png?size=small, /posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/static/ZQN1bv2bNoC7knxL2MdckUnsnDf.png?size=medium 1.5x, /posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/static/ZQN1bv2bNoC7knxL2MdckUnsnDf.png?size=large 2x" data-title="/posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/static/ZQN1bv2bNoC7knxL2MdckUnsnDf.png" style="--width: 722px;--aspect-ratio: 722 / 964;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>结果如上，获取的代码直接运行，一次通过，<strong>获取某支股票的历史价格成功</strong>。</p>
+<p>下面的解释也很清晰：</p>
+<p><img loading="lazy" src="/posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/static/V6Efbt7LFoQ2Skx2RUlcpLIDnPh.png" alt="/posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/static/V6Efbt7LFoQ2Skx2RUlcpLIDnPh.png" srcset="/posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/static/V6Efbt7LFoQ2Skx2RUlcpLIDnPh.png?size=small, /posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/static/V6Efbt7LFoQ2Skx2RUlcpLIDnPh.png?size=medium 1.5x, /posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/static/V6Efbt7LFoQ2Skx2RUlcpLIDnPh.png?size=large 2x" data-title="/posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/static/V6Efbt7LFoQ2Skx2RUlcpLIDnPh.png" style="--width: 675px;--aspect-ratio: 675 / 444;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><strong>提问：使用 tushare 库获取 2023 年 2 月 24 日的股票 K 线数据并保存到 CSV 文件中。</strong></p>
+<p><img loading="lazy" src="/posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/static/OhKmbKawlo1tSRxNHqhc0k7PnJh.png" alt="/posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/static/OhKmbKawlo1tSRxNHqhc0k7PnJh.png" srcset="/posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/static/OhKmbKawlo1tSRxNHqhc0k7PnJh.png?size=small, /posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/static/OhKmbKawlo1tSRxNHqhc0k7PnJh.png?size=medium 1.5x, /posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/static/OhKmbKawlo1tSRxNHqhc0k7PnJh.png?size=large 2x" data-title="/posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/static/OhKmbKawlo1tSRxNHqhc0k7PnJh.png" style="--width: 722px;--aspect-ratio: 722 / 984;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>结果也是一次性通过，<strong>获取某天所有股票的 K 线数据成功</strong>。</p>
+<p>最后就是给出最难的代码了，获取所有股票的历史数据，我们继续向 ChatGPT 提问。</p>
+<p><strong>提问：使用 tushare 库获取 2023 年 2 月 1 日到 2023 年 2 月 24 日期间所有股票 K 线数据并保存到一个 CSV 文件中，在每次数据获取过程中增加 250ms 等待。</strong></p>
+<p><img loading="lazy" src="/posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/static/Q5YrbpoCGoyF2Qx206IcaMRfncc.jpg" alt="/posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/static/Q5YrbpoCGoyF2Qx206IcaMRfncc.jpg" srcset="/posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/static/Q5YrbpoCGoyF2Qx206IcaMRfncc.jpg?size=small, /posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/static/Q5YrbpoCGoyF2Qx206IcaMRfncc.jpg?size=medium 1.5x, /posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/static/Q5YrbpoCGoyF2Qx206IcaMRfncc.jpg?size=large 2x" data-title="/posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/static/Q5YrbpoCGoyF2Qx206IcaMRfncc.jpg" style="--width: 730px;--aspect-ratio: 730 / 1322;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>上述代码可以运行，<strong>获取所有股票历史数据成功</strong>。只是由于 API 限制，1 分钟内最多 500 次访问，所以使用了 250ms 的等待，而截止到目前有 5153 支股票，1 分钟获取 4 支股票的话，大约需要 21.5 分钟。时间有点略长，需要耐心等待，等待完成后，生成了一个 7M 左右的文件。</p>
+<p>在等待期间，使用同样的话术让 ChatGPT 换个库来输出，取消 250ms 的等待。</p>
+<p><strong>提问：使用 baostock 库获取 2023 年 2 月 1 日到 2023 年 2 月 24 日期间所有股票 K 线数据并保存到一个 CSV 文件中。</strong></p>
+<p><img loading="lazy" src="/posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/static/P5s3bwOICo7QSKxuafgcCwp4neh.jpg" alt="/posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/static/P5s3bwOICo7QSKxuafgcCwp4neh.jpg" srcset="/posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/static/P5s3bwOICo7QSKxuafgcCwp4neh.jpg?size=small, /posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/static/P5s3bwOICo7QSKxuafgcCwp4neh.jpg?size=medium 1.5x, /posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/static/P5s3bwOICo7QSKxuafgcCwp4neh.jpg?size=large 2x" data-title="/posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/static/P5s3bwOICo7QSKxuafgcCwp4neh.jpg" style="--width: 725px;--aspect-ratio: 725 / 1396;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>运行上述代码，也<strong>成功获取了所有股票的历史数据</strong>。但没有 250ms 的等待，所以速度会略快。最终生成了一个 12M+ 的 csv 文件。</p>
+<p>总的来说，都是先获取股票列表，然后轮询每一个股票的历史数据获取的所有股票历史数据，实际上我们也可以再提问，让 ChatGPT 的代码写的更好。有兴趣的小伙伴可以去尝试一下。</p>
+<h2 id="结语" class="heading-element"><span>结语</span>
+  <a href="#%e7%bb%93%e8%af%ad" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>仅仅花费不到一小时，ChatGPT 就完全解决了我要获取的股票日 K 线历史数据难题，不得不说，AI 是我们的智慧助手，让我们省去很多找资料和尝试的时间。虽然 ChatGPT 一定无法写一个大而全的工程，但若我们有能力把大工程拆解成小模块，然后不断向 ChatGPT 提问，这个大工程是比较容易实现的。有点类似盖房子，我们先要做框架做分解，然后让 ChatGPT 给我们造砖和搬砖，我们不断地按工艺堆砌，最终房子还是可以盖成的。</p>
+<p>对于获取股票日 K 线历史数据有困难的同学，今天是不是借助 ChatGPT 就学会了呢？代码较简单，就不再单独贴出了，有需要的自己问 ChatGPT 就可以了，后续增加一个配置文件，让代码更易用的时候，罗孚再同大家来分享。</p>
+<p>本文公众号地址：<a href="https://rovertang.feishu.cn/docx/T9EzdopbyoaT90xo0JNc3UU3nRd"target="_blank" rel="external nofollow noopener noreferrer">https://rovertang.feishu.cn/docx/T9EzdopbyoaT90xo0JNc3UU3nRd</a></p>
+<p>本文飞书文档地址：<a href="https://rovertang.feishu.cn/docx/T9EzdopbyoaT90xo0JNc3UU3nRd"target="_blank" rel="external nofollow noopener noreferrer">让 ChatGPT 写代码获取股票历史日 K 线数据</a></p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2023-03-26 00:00:00">更新于 2023-03-26&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/chatgpt/" class="post-tag" title="标签 - ChatGPT">ChatGPT</a><a href="/tags/%E5%8E%86%E5%8F%B2%E6%95%B0%E6%8D%AE/" class="post-tag" title="标签 - 历史数据">历史数据</a><a href="/tags/%E6%97%A5k%E7%BA%BF/" class="post-tag" title="标签 - 日K线">日K线</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/rich/20230315-inspiration-of-svb-to-ordinary-investors/" class="post-nav-item" rel="prev" title="硅谷银行破产对普通投资者的启发"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>硅谷银行破产对普通投资者的启发</a><a href="/posts/soul/20230328-the-soft-ribs-and-pains-under-desire/" class="post-nav-item" rel="next" title="欲望之下的软肋与痛苦">欲望之下的软肋与痛苦<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment"></div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward"><i class="fa-solid fa-qrcode fa-fw" aria-hidden="true"></i>赞赏</label>
+    <div class="reward-ways" data-mode="static"><div><img loading="lazy" src="/images/alipay.png" alt="RoverTang 支付宝" data-title="RoverTang 支付宝" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>支付宝</span>
+          </div><div><img loading="lazy" src="/images/wechatpay.png" alt="RoverTang 微信" data-title="RoverTang 微信" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>微信</span>
+          </div></div>
+  </div></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.139.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.16">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2005 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://rovertang.com"target="_blank" rel="external nofollow noopener noreferrer">RoverTang</a></span></div><div class="footer-line beian"><span class="icp footer-divider">沪ICP备2020036772号-1</span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;bottom: 0;"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.16"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

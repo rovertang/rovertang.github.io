@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>手把手教你快速构建一份全国疫情分布地图 - 罗孚</title><meta name="author" content="RoverTang">
+<meta name="description" content="使用百度地图API和第三方数据API，快速构建一份全国疫情分布地图，赶快来学习一下吧，附送源码。"><meta name="keywords" content='疫情地图, WebMap, 源码'>
+  <meta itemprop="name" content="手把手教你快速构建一份全国疫情分布地图">
+  <meta itemprop="description" content="使用百度地图API和第三方数据API，快速构建一份全国疫情分布地图，赶快来学习一下吧，附送源码。">
+  <meta itemprop="datePublished" content="2020-03-29T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2020-03-29T00:00:00+08:00">
+  <meta itemprop="wordCount" content="3133">
+  <meta itemprop="image" content="https://blog.rovertang.com/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/cover.jpg">
+  <meta itemprop="keywords" content="疫情地图,WebMap,源码"><meta property="og:url" content="https://blog.rovertang.com/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/">
+  <meta property="og:site_name" content="罗孚">
+  <meta property="og:title" content="手把手教你快速构建一份全国疫情分布地图">
+  <meta property="og:description" content="使用百度地图API和第三方数据API，快速构建一份全国疫情分布地图，赶快来学习一下吧，附送源码。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-03-29T00:00:00+08:00">
+    <meta property="article:modified_time" content="2020-03-29T00:00:00+08:00">
+    <meta property="article:tag" content="疫情地图">
+    <meta property="article:tag" content="WebMap">
+    <meta property="article:tag" content="源码">
+    <meta property="og:image" content="https://blog.rovertang.com/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/cover.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://blog.rovertang.com/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/cover.jpg">
+  <meta name="twitter:title" content="手把手教你快速构建一份全国疫情分布地图">
+  <meta name="twitter:description" content="使用百度地图API和第三方数据API，快速构建一份全国疫情分布地图，赶快来学习一下吧，附送源码。">
+<meta name="application-name" content="罗孚传说">
+<meta name="apple-mobile-web-app-title" content="罗孚传说"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://blog.rovertang.com/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/" title="手把手教你快速构建一份全国疫情分布地图 - 罗孚" /><link rel="prev" type="text/html" href="https://blog.rovertang.com/posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/" title="商业模式变革造就未来车联网——《车联网技术解构与商业模式分析》笔记" /><link rel="next" type="text/html" href="https://blog.rovertang.com/posts/smart/20200727-observation-on-the-second-hand-housing-market-in-shanghai-in-the-first-half-of-2020/" title="2020上半年上海二手房市场观察" /><link rel="alternate" type="text/markdown" href="https://blog.rovertang.com/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/index.md" title="手把手教你快速构建一份全国疫情分布地图 - 罗孚"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="apxz4dWbUQ2bsnGFk6SmRK4gNZ7tlT21KgMZ1t9hqdk" /><meta name="msvalidate.01" content="5282002B82D61AD2D097F2F6419C1E4A" /><meta name="baidu-site-verification" content="codeva-RiIZqiHrvQ" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "手把手教你快速构建一份全国疫情分布地图",
+    "inLanguage": "zh-cn",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.rovertang.com\/posts\/map\/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map\/"
+    },"genre": "posts","keywords": "疫情地图, WebMap, 源码","wordcount":  3133 ,
+    "url": "https:\/\/blog.rovertang.com\/posts\/map\/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map\/","datePublished": "2020-03-29T00:00:00+08:00","dateModified": "2020-03-29T00:00:00+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "RoverTang"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item has-children">
+              <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/" title="文章">文章</a></li><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/map/" title="地图">地图</a></li><li class="breadcrumb-item active" data-separator="&gt;" aria-current="page">手把手教你快速构建一份全国疫情分布地图</li>
+    </ol>
+  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div style="width: 350px; margin: 0 auto; display: flex; justify-content: space-between; text-align: center;">
+  <img src="/images/wxmp-blog.jpg" alt="wxmp-blog" style="width: 115px; height: 153px;">
+  <img src="/images/wxmp-shanghai.jpg" alt="wxmp-shanghai" style="width: 115px; height: 153px;">
+  <img src="/images/zsxq-fromblog.jpg" alt="zsxq-fromblog" style="width: 115px; height: 153px;">
+</div></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>手把手教你快速构建一份全国疫情分布地图</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://rovertang.com" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    RoverTang</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E5%9C%B0%E5%9B%BE/" class="post-category" title="分类 - 地图"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 地图</a></span></div><div class="post-meta-line"><span title="发布于 2020-03-29 00:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2020-03-29">2020-03-29</time></span>&nbsp;<span title="3133 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 3200 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 7 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#花絮">花絮</a></li>
+    <li><a href="#效果预览">效果预览</a></li>
+    <li><a href="#功能说明">功能说明</a>
+      <ul>
+        <li><a href="#显示疫情小区">显示疫情小区</a></li>
+        <li><a href="#显示疫情小区详情">显示疫情小区详情</a></li>
+        <li><a href="#显示省市位置">显示省市位置</a></li>
+        <li><a href="#自定位和地图查询">自定位和地图查询</a></li>
+      </ul>
+    </li>
+    <li><a href="#技术点">技术点</a>
+      <ul>
+        <li><a href="#根据不同比例尺显示不同数据">根据不同比例尺显示不同数据</a></li>
+        <li><a href="#城市发生变化后重新加载数据">城市发生变化后重新加载数据</a></li>
+        <li><a href="#显示详情和隐藏详情">显示详情和隐藏详情</a></li>
+        <li><a href="#定位搜索及周边疫情信息">定位、搜索及周边疫情信息</a></li>
+      </ul>
+    </li>
+    <li><a href="#小结和福利">小结和福利</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p>阅读小提示：本文附送源码，文末有链接，同时本文测试公众号(罗孚传说)的付费阅读功能，1元看全文。</p>
+<p>本文基于<a href="http://lbsyun.baidu.com/index.php?title=jspopularGL"target="_blank" rel="external nofollow noopener noreferrer">百度地图API</a>和fangkai提供的<a href="https://github.com/hack-fang/ncov-map"target="_blank" rel="external nofollow noopener noreferrer">疫情数据API</a>制作，是一份真实并实时的疫情场所分布地图，演示地址：<a href="https://rovertang.com/map/ncov/"target="_blank" rel="external nofollow noopener noreferrer">https://rovertang.com/map/ncov/</a></p>
+<h2 id="花絮" class="heading-element"><span>花絮</span>
+  <a href="#%e8%8a%b1%e7%b5%ae" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>上次发表了<a href="https://mp.weixin.qq.com/s/mXWy3HwcVKaopvEh5OPp1Q"target="_blank" rel="external nofollow noopener noreferrer">如何制作一份疫情场所分布地图？(附数据和源码)</a>一文的第二天，百度地图开放平台就发表了一篇<a href="https://mp.weixin.qq.com/s/cPTttruRsHIcHvdR9xfo5g"target="_blank" rel="external nofollow noopener noreferrer">【教程】如何快速构建一张周边疫情地图</a>，一度让我同事以为是我投的稿。</p>
+<p>罗孚确实没投稿，可能是百度地图不爽，你用高德地图API做了份，那我也公开一份用百度地图API的地图吧，还附送了<a href="https://mapopen-website-wiki.bj.bcebos.com/patient-demo/v1.0/patient-demo.zip"target="_blank" rel="external nofollow noopener noreferrer">源码和模拟数据</a>。</p>
+<p>而高德地图API，至今也没有任何信息给到罗孚，反倒是腾讯地图，同样也是第二天，几乎同百度差不多的时间，给罗孚发了邮件，没搞懂百年不给罗孚发邮件的腾讯位置中心，怎么突然会有我的邮箱地址。</p>
+<p>腾讯位置中心发来的邮件主题“腾讯位置服务抗击疫情保障计划：免费配额提升至3倍！”，一听就是一个非常有吸引力的标题，点进去一看，还提供了“紧急上线疫情小区地图，开放给所有开发者接入”，不仅营销做的好，还实用啊，赶紧申请。</p>
+<p>本以为腾讯地图开放平台提供了数据API，结果实际仅仅是一个<a href="https://map.wap.qq.com/app/mp/online/h5-epidemic-20200203/OutMapDetail.html?hideBrowserTitle=1&amp;communitymap=tlbs_lfcs"target="_blank" rel="external nofollow noopener noreferrer">H5的页面</a>(没搞懂这个链接给我开放了啥)，再发邮件咨询数据API的事宜，就没人回复了，一度让罗孚想去扒腾讯的API数据。</p>
+<p>罗孚“将百度地图API和腾讯数据杂交成一份真实的疫情场所地图”的想法泡汤了，于是去GitHub搜索了一圈，虽然大部分都是扒丁香园的疫情数量数据，但也找到了一份<a href="https://ncov.ahusmart.com"target="_blank" rel="external nofollow noopener noreferrer">疫情小区分布地图</a>，是安徽大学的一名学生制作的，还<a href="https://rovertang.com/map/ncov/"target="_blank" rel="external nofollow noopener noreferrer">开放了API</a>(点赞点赞)，最终罗孚用此数据API同百度地图API杂交成功。</p>
+<h2 id="效果预览" class="heading-element"><span>效果预览</span>
+  <a href="#%e6%95%88%e6%9e%9c%e9%a2%84%e8%a7%88" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p><img loading="lazy" src="/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap1-intro.jpg" alt="详情信息、城市点位、地图查询" srcset="/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap1-intro.jpg?size=small, /posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap1-intro.jpg?size=medium 1.5x, /posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap1-intro.jpg?size=large 2x" data-title="详情信息、城市点位、地图查询" style="--width: 800px;--aspect-ratio: 800 / 578;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<h2 id="功能说明" class="heading-element"><span>功能说明</span>
+  <a href="#%e5%8a%9f%e8%83%bd%e8%af%b4%e6%98%8e" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="显示疫情小区" class="heading-element"><span>显示疫情小区</span>
+  <a href="#%e6%98%be%e7%a4%ba%e7%96%ab%e6%83%85%e5%b0%8f%e5%8c%ba" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>当地图层级大于9时，显示疫情小区位置，疫情小区位置数据由数据API根据城市名获得，城市名为地图中心点所在的城市名，当移动地图后地图中心所对应的城市名发生变化，则加载新城市名对应的疫情小区位置数据。</p>
+<h3 id="显示疫情小区详情" class="heading-element"><span>显示疫情小区详情</span>
+  <a href="#%e6%98%be%e7%a4%ba%e7%96%ab%e6%83%85%e5%b0%8f%e5%8c%ba%e8%af%a6%e6%83%85" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>点击疫情小区位置marker，从底部弹出疫情位置的详细信息，详细信息内容来自数据API，包括位置名称、省、市、县以及数据来源和来源链接。</p>
+<h3 id="显示省市位置" class="heading-element"><span>显示省市位置</span>
+  <a href="#%e6%98%be%e7%a4%ba%e7%9c%81%e5%b8%82%e4%bd%8d%e7%bd%ae" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>当地图层级在6到10之间，则显示城市点位数据，当地图层级小于7时，显示省份点位数据，此数据罗孚整理，增加了省、市名称。</p>
+<h3 id="自定位和地图查询" class="heading-element"><span>自定位和地图查询</span>
+  <a href="#%e8%87%aa%e5%ae%9a%e4%bd%8d%e5%92%8c%e5%9c%b0%e5%9b%be%e6%9f%a5%e8%af%a2" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>自定位功能用于显示自身位置信息，需要允许定位才能显示，如果定位失败则显示北京市地图和数据。</p>
+<p>地图查询功能，输入关键词后，自动显示最佳结果，点击某一结果可以将地图定位到该结果并显示周边疫情信息。</p>
+<h2 id="技术点" class="heading-element"><span>技术点</span>
+  <a href="#%e6%8a%80%e6%9c%af%e7%82%b9" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>由于源码不是罗孚所写，原文也提供了概要的源码说明，所以罗孚在此仅介绍一下罗孚修改的几个关键点，以及这里的坑，顺便再吐槽一下百度地图提供的源码。</p>
+<h3 id="根据不同比例尺显示不同数据" class="heading-element"><span>根据不同比例尺显示不同数据</span>
+  <a href="#%e6%a0%b9%e6%8d%ae%e4%b8%8d%e5%90%8c%e6%af%94%e4%be%8b%e5%b0%ba%e6%98%be%e7%a4%ba%e4%b8%8d%e5%90%8c%e6%95%b0%e6%8d%ae" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><img loading="lazy" src="/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap2-marker3layer.jpg" alt="显示省份、城市和小区" srcset="/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap2-marker3layer.jpg?size=small, /posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap2-marker3layer.jpg?size=medium 1.5x, /posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap2-marker3layer.jpg?size=large 2x" data-title="显示省份、城市和小区" style="--width: 800px;--aspect-ratio: 800 / 578;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>数据加载有两个问题，数据量和美观度。</p>
+<p>一次性加载全国数据，对于近万的数据量，地图API提供方表示无压力，但对开发人员来说，加载速度是有影响的，所以我们只加载一个城市的数据，以加快数据加载速度。
+<img loading="lazy" src="/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap3-loadjsonspeed.jpg" alt="地图数据API本身的速度" srcset="/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap3-loadjsonspeed.jpg?size=small, /posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap3-loadjsonspeed.jpg?size=medium 1.5x, /posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap3-loadjsonspeed.jpg?size=large 2x" data-title="地图数据API本身的速度" style="--width: 800px;--aspect-ratio: 800 / 404;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>如果只加载一个城市的数据，那么在全国地图或世界地图时显示，你会发现所有数据缩在了一坨，这样的美观度我们是无法接受的。所以我们要分层级(不同比例尺)的来显示地图。
+<img loading="lazy" src="/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap4-worldmap.jpg" alt="全国地图下显示一个城市的效果" srcset="/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap4-worldmap.jpg?size=small, /posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap4-worldmap.jpg?size=medium 1.5x, /posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap4-worldmap.jpg?size=large 2x" data-title="全国地图下显示一个城市的效果" style="--width: 800px;--aspect-ratio: 800 / 410;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>源码中本身设计了不同比例尺下显示不同数据的逻辑：</p>
+<p><img loading="lazy" src="/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap-js1zoom.jpg" alt="不同比例尺不同数据JS" srcset="/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap-js1zoom.jpg?size=small, /posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap-js1zoom.jpg?size=medium 1.5x, /posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap-js1zoom.jpg?size=large 2x" data-title="不同比例尺不同数据JS" style="--width: 600px;--aspect-ratio: 600 / 171;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>罗孚修改了省份和城市数据，带名称，同时将详细数据改成API获取方式。</p>
+<p>更新数据的逻辑放在了地图缩放过程中：</p>
+<p><img loading="lazy" src="/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap-js2zoomend.jpg" alt="缩放完成后更新地图数据JS" srcset="/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap-js2zoomend.jpg?size=small, /posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap-js2zoomend.jpg?size=medium 1.5x, /posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap-js2zoomend.jpg?size=large 2x" data-title="缩放完成后更新地图数据JS" style="--width: 600px;--aspect-ratio: 600 / 167;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>罗孚不得不吐槽，地图缩放跨一层级就重新加载一次地图数据，既影响了速度，又增加了加载次数，被调用的API要哭，原本在详图层级只需加载一次的数据，最后要被多次加载，每次加载就会产生一次访问，就会增加服务器的访问量，浪费人家服务器的资源。</p>
+<p>所以，罗孚修改为当进入详图时，加载该城市的疫情小区数据，只要不缩小到城市或省份地图，那么该城市的数据就不会重复加载，降低了API的访问量。</p>
+<h3 id="城市发生变化后重新加载数据" class="heading-element"><span>城市发生变化后重新加载数据</span>
+  <a href="#%e5%9f%8e%e5%b8%82%e5%8f%91%e7%94%9f%e5%8f%98%e5%8c%96%e5%90%8e%e9%87%8d%e6%96%b0%e5%8a%a0%e8%bd%bd%e6%95%b0%e6%8d%ae" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><img loading="lazy" src="/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap7-citydetial.jpg" alt="拖动地图，城市发生变化，自动加载新城市数据" srcset="/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap7-citydetial.jpg?size=small, /posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap7-citydetial.jpg?size=medium 1.5x, /posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap7-citydetial.jpg?size=large 2x" data-title="拖动地图，城市发生变化，自动加载新城市数据" style="--width: 500px;--aspect-ratio: 500 / 542;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>当用户拖动或缩放地图时，如果地图中心的城市发生了变化，那就加载该城市的数据，这样的体验应该是最棒的。</p>
+<p>罗孚本想在点击城市marker时根据城市名加载该城市数据，但此方法无法解决移动地图过程中的城市变化加载不同城市数据问题。浏览代码时，发现在移动和缩放地图事件中就存在城市名的判断：</p>
+<p><img loading="lazy" src="/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap-js3moveendupdatemap.jpg" alt="根据地图中心位置获取城市名js" srcset="/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap-js3moveendupdatemap.jpg?size=small, /posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap-js3moveendupdatemap.jpg?size=medium 1.5x, /posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap-js3moveendupdatemap.jpg?size=large 2x" data-title="根据地图中心位置获取城市名js" style="--width: 600px;--aspect-ratio: 600 / 201;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>罗孚吐槽一下Geocoder类，此类可能是异步加载(罗孚不确认)，所以城市名的获取要慢于后续执行的代码，导致后面使用该类的城市名为空，表现为选择从城市地图缩放进入到详情地图时，地图第一次无法加载城市数据。于是我在城市marker的click事件中，在centerAndZoom方法前先将currentCity变量变更为城市marker的name，解决了点击城市marker后不加载该城市数据的问题。</p>
+<p>另外，如果每移动一次地图就加载一次该城市的数据，那数据API的访问量也将无法想象，所以罗孚定义了一个beforeCity，当获得了currentCity后，同beforeCity比较，如果城市名发生了变化，那就加载新城市名的数据，加载完成后更新beforeCity为currentCity，这样就做到了城市名不变就不重新加载数据。同时，增加了zoom &gt; 9的判断，在城市图和省份图下移动地图，无需加载城市详图数据。</p>
+<h3 id="显示详情和隐藏详情" class="heading-element"><span>显示详情和隐藏详情</span>
+  <a href="#%e6%98%be%e7%a4%ba%e8%af%a6%e6%83%85%e5%92%8c%e9%9a%90%e8%97%8f%e8%af%a6%e6%83%85" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><img loading="lazy" src="/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap9-infocard.jpg" alt="点击小区marker显示详情，拖动地图隐藏详情" srcset="/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap9-infocard.jpg?size=small, /posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap9-infocard.jpg?size=medium 1.5x, /posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap9-infocard.jpg?size=large 2x" data-title="点击小区marker显示详情，拖动地图隐藏详情" style="--width: 500px;--aspect-ratio: 500 / 542;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>源码中定义了显示详情卡片showinfoCard和隐藏详情卡片hideInforCard函数，但详情卡片中的内容没有传递，所以罗孚稍加改造，在读取城市详图数据时，将详情内容组织好后传给showinfoCard函数。</p>
+<p>另外，发现隐藏详情卡片的时机有问题，没有及时调用hideInforCard函数，于是在移动结束后就隐藏详情卡片。当然，你也可以添加在地图点击事件中。</p>
+<p><img loading="lazy" src="/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap-js4showorhideinfocard.jpg" alt="显示详情卡片内容和隐藏详情卡片的时机js" srcset="/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap-js4showorhideinfocard.jpg?size=small, /posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap-js4showorhideinfocard.jpg?size=medium 1.5x, /posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap-js4showorhideinfocard.jpg?size=large 2x" data-title="显示详情卡片内容和隐藏详情卡片的时机js" style="--width: 600px;--aspect-ratio: 600 / 166;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>罗孚再吐槽一下，地图API本身配合marker点击就有信息窗口InfoWindow类，并且显示和隐藏都设计了时机或方法，那为什么还要自定义一个从底部弹出来的详情卡片？吃力不讨好还费劲。</p>
+<h3 id="定位搜索及周边疫情信息" class="heading-element"><span>定位、搜索及周边疫情信息</span>
+  <a href="#%e5%ae%9a%e4%bd%8d%e6%90%9c%e7%b4%a2%e5%8f%8a%e5%91%a8%e8%be%b9%e7%96%ab%e6%83%85%e4%bf%a1%e6%81%af" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>定位模块和搜索功能是现成的，罗孚未做任何修改，所以不在此赘述，但需要吐槽一下，源码中的定位模块感觉是自己封装的(罗孚不确认)，而高德地图API是直接封装成了一个公共的类，相比之下似乎有点不专业。</p>
+<p>显示疫情最近的距离数据以及1公里内或3公里内的疫情总数量，属于周边疫情信息模块，罗孚未去实现，简单说一下思路，两个方案吧。如果你本身有数据，可以做一个根据该位置搜索周边数据的API，可以直接提供结果，但可能需要服务端支撑。如果不想自己写服务端，那就根据数据API获取的数据，遍历该城市的数据，做距离排序并聚合数量，一样可以达到疫情信息展示的功能。有兴趣的可以尝试一下。</p>
+<h2 id="小结和福利" class="heading-element"><span>小结和福利</span>
+  <a href="#%e5%b0%8f%e7%bb%93%e5%92%8c%e7%a6%8f%e5%88%a9" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>百度地图虽然提供了源码，但源码的质量实在是soso，逻辑思考不足，甚至语法都存在不规范(比如缺少代码结尾符号)。同时，对于JS API的GL版和V3.0版，虽然存在继承，但在文档中未能很好体现，导致看起来GL版功能很少。另外，对于百度地图API的类，感觉封装的数量少了点，而在可定制性上又欠缺了一些，这仅仅是罗孚的感觉吧，毕竟未通读百度地图API和示例。</p>
+<p>最后的福利依然是源码放送啦，只是罗孚想测试一下公众号新的付费阅读功能，所以本文需要付费1元查看全文，包括下面的下载链接哦。下载文件简要说明如下：</p>
+<p><img loading="lazy" src="/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap-srcscreen.png" alt="疫情地图源码说明" srcset="/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap-srcscreen.png?size=small, /posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap-srcscreen.png?size=medium 1.5x, /posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap-srcscreen.png?size=large 2x" data-title="疫情地图源码说明" style="--width: 487px;--aspect-ratio: 487 / 230;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>对了，还会多送一份地图，一个html文件就可以搞定的地图，自己拿到后再修改布局元素相关的内容吧，数据和地图的代码都可以不用动哦，罗孚仅保存了html，未做任何修改哦，具体效果如下：</p>
+<p><img loading="lazy" src="/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap-cnbdata.jpg" alt="一个html文件的疫情地图" srcset="/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap-cnbdata.jpg?size=small, /posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap-cnbdata.jpg?size=medium 1.5x, /posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/assets/ncovmap-cnbdata.jpg?size=large 2x" data-title="一个html文件的疫情地图" style="--width: 800px;--aspect-ratio: 800 / 419;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>下载地址：在“罗孚传说”公众号后台回复&quot;疫情场所地图&quot;地图试试。</p>
+<p>本文飞书文档：<a href="https://rovertang.feishu.cn/docx/doxcnFWVYJpUoC5r83vDsyyOPuc"target="_blank" rel="external nofollow noopener noreferrer">手把手教你快速构建一份全国疫情分布地图</a></p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2020-03-29 00:00:00">更新于 2020-03-29&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/%E7%96%AB%E6%83%85%E5%9C%B0%E5%9B%BE/" class="post-tag" title="标签 - 疫情地图">疫情地图</a><a href="/tags/webmap/" class="post-tag" title="标签 - WebMap">WebMap</a><a href="/tags/%E6%BA%90%E7%A0%81/" class="post-tag" title="标签 - 源码">源码</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/" class="post-nav-item" rel="prev" title="商业模式变革造就未来车联网——《车联网技术解构与商业模式分析》笔记"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>商业模式变革造就未来车联网——《车联网技术解构与商业模式分析》笔记</a><a href="/posts/smart/20200727-observation-on-the-second-hand-housing-market-in-shanghai-in-the-first-half-of-2020/" class="post-nav-item" rel="next" title="2020上半年上海二手房市场观察">2020上半年上海二手房市场观察<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment"></div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward"><i class="fa-solid fa-qrcode fa-fw" aria-hidden="true"></i>赞赏</label>
+    <div class="reward-ways" data-mode="static"><div><img loading="lazy" src="/images/alipay.png" alt="RoverTang 支付宝" data-title="RoverTang 支付宝" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>支付宝</span>
+          </div><div><img loading="lazy" src="/images/wechatpay.png" alt="RoverTang 微信" data-title="RoverTang 微信" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>微信</span>
+          </div></div>
+  </div></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.139.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.16">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2005 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://rovertang.com"target="_blank" rel="external nofollow noopener noreferrer">RoverTang</a></span></div><div class="footer-line beian"><span class="icp footer-divider">沪ICP备2020036772号-1</span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;bottom: 0;"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.16"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

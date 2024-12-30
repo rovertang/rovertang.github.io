@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>实战ChatGPT获取每日股价数据(你写作文它写代码) - 罗孚</title><meta name="author" content="RoverTang">
+<meta name="description" content="罗孚写了一篇小作文，结果，ChatGPT 帮写成了代码，并且成功运行。两个月前罗孚对 ChatGPT 不满意，今天对 ChatGPT 表示很震撼，其能力确实超出我们的想象。"><meta name="keywords" content='ChatGPT, 写代码, 股价数据, 人工智能'>
+  <meta itemprop="name" content="实战ChatGPT获取每日股价数据(你写作文它写代码)">
+  <meta itemprop="description" content="罗孚写了一篇小作文，结果，ChatGPT 帮写成了代码，并且成功运行。两个月前罗孚对 ChatGPT 不满意，今天对 ChatGPT 表示很震撼，其能力确实超出我们的想象。">
+  <meta itemprop="datePublished" content="2023-04-08T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2023-04-08T00:00:00+08:00">
+  <meta itemprop="wordCount" content="1572">
+  <meta itemprop="image" content="https://blog.rovertang.com/posts/ai/20230408-you-write-text-chatgpt-writes-code-to-get-daily-stock-price/cover.jpg">
+  <meta itemprop="keywords" content="ChatGPT,写代码,股价数据,人工智能"><meta property="og:url" content="https://blog.rovertang.com/posts/ai/20230408-you-write-text-chatgpt-writes-code-to-get-daily-stock-price/">
+  <meta property="og:site_name" content="罗孚">
+  <meta property="og:title" content="实战ChatGPT获取每日股价数据(你写作文它写代码)">
+  <meta property="og:description" content="罗孚写了一篇小作文，结果，ChatGPT 帮写成了代码，并且成功运行。两个月前罗孚对 ChatGPT 不满意，今天对 ChatGPT 表示很震撼，其能力确实超出我们的想象。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-04-08T00:00:00+08:00">
+    <meta property="article:modified_time" content="2023-04-08T00:00:00+08:00">
+    <meta property="article:tag" content="ChatGPT">
+    <meta property="article:tag" content="写代码">
+    <meta property="article:tag" content="股价数据">
+    <meta property="article:tag" content="人工智能">
+    <meta property="og:image" content="https://blog.rovertang.com/posts/ai/20230408-you-write-text-chatgpt-writes-code-to-get-daily-stock-price/cover.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://blog.rovertang.com/posts/ai/20230408-you-write-text-chatgpt-writes-code-to-get-daily-stock-price/cover.jpg">
+  <meta name="twitter:title" content="实战ChatGPT获取每日股价数据(你写作文它写代码)">
+  <meta name="twitter:description" content="罗孚写了一篇小作文，结果，ChatGPT 帮写成了代码，并且成功运行。两个月前罗孚对 ChatGPT 不满意，今天对 ChatGPT 表示很震撼，其能力确实超出我们的想象。">
+<meta name="application-name" content="罗孚传说">
+<meta name="apple-mobile-web-app-title" content="罗孚传说"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://blog.rovertang.com/posts/ai/20230408-you-write-text-chatgpt-writes-code-to-get-daily-stock-price/" title="实战ChatGPT获取每日股价数据(你写作文它写代码) - 罗孚" /><link rel="prev" type="text/html" href="https://blog.rovertang.com/posts/misc/20230406-why-do-i-join-the-chatgpt-ai-circle/" title="我为什么加入粥左罗ChatGPT AI变现圈" /><link rel="next" type="text/html" href="https://blog.rovertang.com/posts/ai/20230415-chatgpt-thinks-chatgpt-has-thoughts/" title="ChatGPT会思考，ChatGPT有思想" /><link rel="alternate" type="text/markdown" href="https://blog.rovertang.com/posts/ai/20230408-you-write-text-chatgpt-writes-code-to-get-daily-stock-price/index.md" title="实战ChatGPT获取每日股价数据(你写作文它写代码) - 罗孚"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="apxz4dWbUQ2bsnGFk6SmRK4gNZ7tlT21KgMZ1t9hqdk" /><meta name="msvalidate.01" content="5282002B82D61AD2D097F2F6419C1E4A" /><meta name="baidu-site-verification" content="codeva-RiIZqiHrvQ" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "实战ChatGPT获取每日股价数据(你写作文它写代码)",
+    "inLanguage": "zh-cn",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.rovertang.com\/posts\/ai\/20230408-you-write-text-chatgpt-writes-code-to-get-daily-stock-price\/"
+    },"genre": "posts","keywords": "ChatGPT, 写代码, 股价数据, 人工智能","wordcount":  1572 ,
+    "url": "https:\/\/blog.rovertang.com\/posts\/ai\/20230408-you-write-text-chatgpt-writes-code-to-get-daily-stock-price\/","datePublished": "2023-04-08T00:00:00+08:00","dateModified": "2023-04-08T00:00:00+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "RoverTang"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item has-children">
+              <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/" title="文章">文章</a></li><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/ai/" title="AI">AI</a></li><li class="breadcrumb-item active" data-separator="&gt;" aria-current="page">实战ChatGPT获取每日股价数据(你写作文它写代码)</li>
+    </ol>
+  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div class="details collection-details open">
+      <div class="details-summary collection-summary">
+        <i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i>
+        <span class="collection-name" data-collections="合集">ChatGPT</span>
+        <span class="collection-count">8</span><i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></div>
+      <div class="details-content collection-content">
+        <nav>
+          <ul class="collection-list"><li class="collection-item"><a href="/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/" title="使用ChatGPT写论文、查资料、编代码的一点体验">使用ChatGPT写论文、查资料、编代码的一点体验</a></li><li class="collection-item"><a href="/posts/ai/20230226-bing-for-chatgpt-the-newbing-initial-experience/" title="ChatGPT版Bing(也就是NewBing)初体验">ChatGPT版Bing(也就是NewBing)初体验</a></li><li class="collection-item"><a href="/posts/misc/20230406-why-do-i-join-the-chatgpt-ai-circle/" title="我为什么加入粥左罗ChatGPT AI变现圈">我为什么加入粥左罗ChatGPT AI变现圈</a></li><li class="collection-item"><span class="active" title="实战ChatGPT获取每日股价数据(你写作文它写代码)">实战ChatGPT获取每日股价数据(你写作文它写代码)</span></li><li class="collection-item"><a href="/posts/ai/20230415-chatgpt-thinks-chatgpt-has-thoughts/" title="ChatGPT会思考，ChatGPT有思想">ChatGPT会思考，ChatGPT有思想</a></li><li class="collection-item"><a href="/posts/ai/20230519-deploy-the-local-shared-version-of-chatgpt/" title="部署本地共享版ChatGPT，一次搭建，多人免费使用">部署本地共享版ChatGPT，一次搭建，多人免费使用</a></li><li class="collection-item"><a href="/posts/ai/20230527-the-gap-of-ai-by-the-nine-nine-multiplication-table/" title="通过九九乘法表看人工智能大模型的差距">通过九九乘法表看人工智能大模型的差距</a></li><li class="collection-item"><a href="/posts/ai/20230602-understanding-token-in-chatgpt/" title="ChatGPT中token的理解">ChatGPT中token的理解</a></li></ul>
+          <div class="collection-nav-simple"><a href="/posts/misc/20230406-why-do-i-join-the-chatgpt-ai-circle/" class="collection-nav-item" rel="prev" title="我为什么加入粥左罗ChatGPT AI变现圈"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i></a><span class="text-secondary">4/8</span><a href="/posts/ai/20230415-chatgpt-thinks-chatgpt-has-thoughts/" class="collection-nav-item" rel="next" title="ChatGPT会思考，ChatGPT有思想"><i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+        </nav>
+      </div>
+    </div><div style="width: 350px; margin: 0 auto; display: flex; justify-content: space-between; text-align: center;">
+  <img src="/images/wxmp-blog.jpg" alt="wxmp-blog" style="width: 115px; height: 153px;">
+  <img src="/images/wxmp-shanghai.jpg" alt="wxmp-shanghai" style="width: 115px; height: 153px;">
+  <img src="/images/zsxq-fromblog.jpg" alt="zsxq-fromblog" style="width: 115px; height: 153px;">
+</div></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>实战ChatGPT获取每日股价数据(你写作文它写代码)</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://rovertang.com" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    RoverTang</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/ai/" class="post-category" title="分类 - AI"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> AI</a> 和 <a href="/collections/chatgpt/" class="post-collection" title="合集 - ChatGPT"><i class="fa-solid fa-layer-group fa-fw" aria-hidden="true"></i> ChatGPT</a></span></div><div class="post-meta-line"><span title="发布于 2023-04-08 00:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-04-08">2023-04-08</time></span>&nbsp;<span title="1572 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1600 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 4 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#小作文">小作文</a></li>
+    <li><a href="#chatgpt-的代码实现">ChatGPT 的代码实现</a></li>
+    <li><a href="#效果展示">效果展示</a></li>
+    <li><a href="#结语">结语</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p>两个月前，罗孚写过一篇“<a href="https://mp.weixin.qq.com/s/YowCZH3K0_7bK0pPqNKkMA"target="_blank" rel="external nofollow noopener noreferrer">使用 ChatGPT 写论文、查资料、编代码的一点体验</a>”，结论是对 ChatGPT 写论文写代码的能力很不满意。</p>
+<p>半个月前，罗孚又写了一篇“<a href="https://mp.weixin.qq.com/s/rbISUPBJZ0yTpRTGejGcGA"target="_blank" rel="external nofollow noopener noreferrer">让 ChatGPT 写代码获取股票历史日 K 线数据</a>”，还不错，基本可以完成功能。</p>
+<p>今天，罗孚再次实战 ChatGPT，目标：<strong>让 ChatGPT 把我写的作文用代码实现，并最终部署到服务器上。</strong></p>
+<h2 id="小作文" class="heading-element"><span>小作文</span>
+  <a href="#%e5%b0%8f%e4%bd%9c%e6%96%87" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>帮我写一个程序。</p>
+<p>主要功能：获取指定股票的信息，保存到 sqlite，并将结果通过 webhook 发送到飞书群。</p>
+<p>具体要求：</p>
+<p>1、使用 Python 实现。</p>
+<p>2、使用 tushare pro 库。tushare 的 token 在配置文件中。</p>
+<p>3、需要有一个配置文件，配置文件名称：config.ini。</p>
+<p>配置文件中：</p>
+<p>默认为[main]</p>
+<p>具体字段：</p>
+<p>stock_codes=股票代码，使用逗号隔开；stock_names=股票名称，使用逗号隔开；stockcodes 和 stocknames 是一一对应关系。</p>
+<p>webhook_url = 是配置飞书群 webhook 地址的。</p>
+<p>tushare_token= 是配置 tushare token 的。</p>
+<p>change_max = 4 用来配置最大涨幅超 4%</p>
+<p>change_min = -3 用来配置最大跌幅超-3%</p>
+<p>4、数据库名称：stocks.db，数据表为 stocks_data</p>
+<p>5、功能实现要求：</p>
+<p>5.1、设置 tushare 账号</p>
+<p>5.2、读取配置文件</p>
+<p>5.3、连接数据库</p>
+<p>5.4、创建表格，需要判断表格是否存在，如果存在，则不再创建表格。</p>
+<p>5.5、获取今天的日期，并根据日期通过 trade_cal 接口查询今天是否交易，如果是休市，则程序退出。</p>
+<p>5.6、根据 stock_codes 获取今天的股票数据，数据字段为：股票代码、交易日期、开盘价、最高价、最低价、收盘价、昨收价、涨跌额、涨跌幅、成交量 、成交额 。然后将查询结果保存到数据库中。</p>
+<p>5.7、在上述 5.6 中增加涨跌幅的判断</p>
+<p>如果涨跌幅大于 change_max，那么将股票名称、股票代码、收盘价、涨跌额、涨跌幅数据保存到 message_bad 中。</p>
+<p>如果涨跌幅小于 change_min，那么将股票名称、股票代码、收盘价、涨跌额、涨跌幅数据保存到 message_great 中。</p>
+<p>5.8、在上述代码实现中，需要在保存到数据库成功时，增加 log 输出，提示保存到数据库成功，并输出到 getstockdata.log 文件中。</p>
+<p>5.9、上述功能实现完成，print 完成的提示。</p>
+<p>好了，帮实现此程序功能吧。</p>
+<h2 id="chatgpt-的代码实现" class="heading-element"><span>ChatGPT 的代码实现</span>
+  <a href="#chatgpt-%e7%9a%84%e4%bb%a3%e7%a0%81%e5%ae%9e%e7%8e%b0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>图太长，先截个大概：</p>
+<p><img loading="lazy" src="/posts/ai/20230408-you-write-text-chatgpt-writes-code-to-get-daily-stock-price/static/GFr3b3rG4od3H0x4rnQcrC4dnKe.png" alt="/posts/ai/20230408-you-write-text-chatgpt-writes-code-to-get-daily-stock-price/static/GFr3b3rG4od3H0x4rnQcrC4dnKe.png" srcset="/posts/ai/20230408-you-write-text-chatgpt-writes-code-to-get-daily-stock-price/static/GFr3b3rG4od3H0x4rnQcrC4dnKe.png?size=small, /posts/ai/20230408-you-write-text-chatgpt-writes-code-to-get-daily-stock-price/static/GFr3b3rG4od3H0x4rnQcrC4dnKe.png?size=medium 1.5x, /posts/ai/20230408-you-write-text-chatgpt-writes-code-to-get-daily-stock-price/static/GFr3b3rG4od3H0x4rnQcrC4dnKe.png?size=large 2x" data-title="/posts/ai/20230408-you-write-text-chatgpt-writes-code-to-get-daily-stock-price/static/GFr3b3rG4od3H0x4rnQcrC4dnKe.png" style="--width: 726px;--aspect-ratio: 726 / 900;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>还不错，基本可用，具体代码我就不贴了。</p>
+<h2 id="效果展示" class="heading-element"><span>效果展示</span>
+  <a href="#%e6%95%88%e6%9e%9c%e5%b1%95%e7%a4%ba" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>来展示一下效果吧。</p>
+<p>数据库中的数据：</p>
+<p><img loading="lazy" src="/posts/ai/20230408-you-write-text-chatgpt-writes-code-to-get-daily-stock-price/static/O0NYb5QzdoYZSRxdHZYc0UdRn6c.png" alt="/posts/ai/20230408-you-write-text-chatgpt-writes-code-to-get-daily-stock-price/static/O0NYb5QzdoYZSRxdHZYc0UdRn6c.png" srcset="/posts/ai/20230408-you-write-text-chatgpt-writes-code-to-get-daily-stock-price/static/O0NYb5QzdoYZSRxdHZYc0UdRn6c.png?size=small, /posts/ai/20230408-you-write-text-chatgpt-writes-code-to-get-daily-stock-price/static/O0NYb5QzdoYZSRxdHZYc0UdRn6c.png?size=medium 1.5x, /posts/ai/20230408-you-write-text-chatgpt-writes-code-to-get-daily-stock-price/static/O0NYb5QzdoYZSRxdHZYc0UdRn6c.png?size=large 2x" data-title="/posts/ai/20230408-you-write-text-chatgpt-writes-code-to-get-daily-stock-price/static/O0NYb5QzdoYZSRxdHZYc0UdRn6c.png" style="--width: 738px;--aspect-ratio: 738 / 264;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>通过 webhook 发送到飞书群的效果：</p>
+<p><img loading="lazy" src="/posts/ai/20230408-you-write-text-chatgpt-writes-code-to-get-daily-stock-price/static/DLaKbAQEBopcABxqSfbc7ZoUnQh.png" alt="/posts/ai/20230408-you-write-text-chatgpt-writes-code-to-get-daily-stock-price/static/DLaKbAQEBopcABxqSfbc7ZoUnQh.png" srcset="/posts/ai/20230408-you-write-text-chatgpt-writes-code-to-get-daily-stock-price/static/DLaKbAQEBopcABxqSfbc7ZoUnQh.png?size=small, /posts/ai/20230408-you-write-text-chatgpt-writes-code-to-get-daily-stock-price/static/DLaKbAQEBopcABxqSfbc7ZoUnQh.png?size=medium 1.5x, /posts/ai/20230408-you-write-text-chatgpt-writes-code-to-get-daily-stock-price/static/DLaKbAQEBopcABxqSfbc7ZoUnQh.png?size=large 2x" data-title="/posts/ai/20230408-you-write-text-chatgpt-writes-code-to-get-daily-stock-price/static/DLaKbAQEBopcABxqSfbc7ZoUnQh.png" style="--width: 547px;--aspect-ratio: 547 / 185;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>这些基本就是罗孚需要的效果了。</p>
+<p>最终实现的主要功能：</p>
+<ol>
+<li>每天将需要的股票数据保存到数据库中，方便以后分析使用。</li>
+<li>根据股票的涨跌幅，将超过涨跌幅的股票信息发送到飞书群。</li>
+<li>股票代码、股票名、涨跌幅等都是在 config 中可配置的。</li>
+</ol>
+<p>将这些代码部署到服务器上定时执行，就可以每天自动获取和提醒了。</p>
+<p>如果你也需要这样的功能，那在文末公众号上提供了全部的代码和文件说明。</p>
+<h2 id="结语" class="heading-element"><span>结语</span>
+  <a href="#%e7%bb%93%e8%af%ad" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>通过这次实战，罗孚挺震撼的，给了一篇小作文，结果输出一个代码工程。前几天还在和产品经理开玩笑说：你把产品 PRD 写的超详细，以后就不需要这些攻城狮了，直接由你产品狗独挡一面。现在有 ChatGPT 的帮助，很有可能这个玩笑会成为现实。</p>
+<p>从两个月前的不满意，到现在的震撼，罗孚在转变，因为对 ChatGPT 的认知在提升。在此，顺便推荐一个 ChatGPT 的圈子吧：<a href="https://mp.weixin.qq.com/s/BZH6JxuwO1ozip1Gwl_-9g"target="_blank" rel="external nofollow noopener noreferrer">我为什么加入粥左罗 ChatGPT AI 变现圈</a>，具体原因已在文中说明，加入链接 <a href="https://t.zsxq.com/0cR2sKBgE"target="_blank" rel="external nofollow noopener noreferrer">https://t.zsxq.com/0cR2sKBgE</a>，或者直接扫码下图。</p>
+<p><img loading="lazy" src="/posts/ai/20230408-you-write-text-chatgpt-writes-code-to-get-daily-stock-price/static/M0yxbAPdjoaH88xVSz3cQHXSnaf.jpg" alt="/posts/ai/20230408-you-write-text-chatgpt-writes-code-to-get-daily-stock-price/static/M0yxbAPdjoaH88xVSz3cQHXSnaf.jpg" srcset="/posts/ai/20230408-you-write-text-chatgpt-writes-code-to-get-daily-stock-price/static/M0yxbAPdjoaH88xVSz3cQHXSnaf.jpg?size=small, /posts/ai/20230408-you-write-text-chatgpt-writes-code-to-get-daily-stock-price/static/M0yxbAPdjoaH88xVSz3cQHXSnaf.jpg?size=medium 1.5x, /posts/ai/20230408-you-write-text-chatgpt-writes-code-to-get-daily-stock-price/static/M0yxbAPdjoaH88xVSz3cQHXSnaf.jpg?size=large 2x" data-title="/posts/ai/20230408-you-write-text-chatgpt-writes-code-to-get-daily-stock-price/static/M0yxbAPdjoaH88xVSz3cQHXSnaf.jpg" style="--width: 1080px;--aspect-ratio: 1080 / 1694;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>哦，对了，本文代码文件说明如下：</p>
+<p>getStockDatabyGPT.py：主程序文件，代码有具体说明。</p>
+<p>config.ini：配置文件，配置了股票代码、涨跌幅、webhook 地址等</p>
+<p>log 目录：按月生成 log 文件，记录当时保存的数据</p>
+<p>stocks.db：默认无，运行后自动生成，sqlite3 数据库，每天会将数据保存到此。</p>
+<p>注意事项：</p>
+<p>1、基于 Python3，需要安装 Python3</p>
+<p>2、使用 tushare 库，需要安装：pip install tushare</p>
+<p><strong>代码下载地址：</strong></p>
+<p><a href="https://mp.weixin.qq.com/s/YtNLrndxiakpWqUp0rkteA"target="_blank" rel="external nofollow noopener noreferrer">https://mp.weixin.qq.com/s/YtNLrndxiakpWqUp0rkteA</a></p>
+<p>谢谢</p>
+<p>本文公众号地址：<a href="https://mp.weixin.qq.com/s/YtNLrndxiakpWqUp0rkteA"target="_blank" rel="external nofollow noopener noreferrer">https://mp.weixin.qq.com/s/YtNLrndxiakpWqUp0rkteA</a></p>
+<p>本文飞书文档地址：<a href="https://rovertang.feishu.cn/docx/FwsgdllWxoY7zSxNObFcYNC4nHg"target="_blank" rel="external nofollow noopener noreferrer">实战 ChatGPT 获取每日股价数据(你写作文它写代码)</a></p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2023-04-08 00:00:00">更新于 2023-04-08&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/chatgpt/" class="post-tag" title="标签 - ChatGPT">ChatGPT</a><a href="/tags/%E5%86%99%E4%BB%A3%E7%A0%81/" class="post-tag" title="标签 - 写代码">写代码</a><a href="/tags/%E8%82%A1%E4%BB%B7%E6%95%B0%E6%8D%AE/" class="post-tag" title="标签 - 股价数据">股价数据</a><a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" class="post-tag" title="标签 - 人工智能">人工智能</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/misc/20230406-why-do-i-join-the-chatgpt-ai-circle/" class="post-nav-item" rel="prev" title="我为什么加入粥左罗ChatGPT AI变现圈"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>我为什么加入粥左罗ChatGPT AI变现圈</a><a href="/posts/ai/20230415-chatgpt-thinks-chatgpt-has-thoughts/" class="post-nav-item" rel="next" title="ChatGPT会思考，ChatGPT有思想">ChatGPT会思考，ChatGPT有思想<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment"></div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward"><i class="fa-solid fa-qrcode fa-fw" aria-hidden="true"></i>赞赏</label>
+    <div class="reward-ways" data-mode="static"><div><img loading="lazy" src="/images/alipay.png" alt="RoverTang 支付宝" data-title="RoverTang 支付宝" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>支付宝</span>
+          </div><div><img loading="lazy" src="/images/wechatpay.png" alt="RoverTang 微信" data-title="RoverTang 微信" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>微信</span>
+          </div></div>
+  </div></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.139.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.16">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2005 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://rovertang.com"target="_blank" rel="external nofollow noopener noreferrer">RoverTang</a></span></div><div class="footer-line beian"><span class="icp footer-divider">沪ICP备2020036772号-1</span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;bottom: 0;"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.16"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

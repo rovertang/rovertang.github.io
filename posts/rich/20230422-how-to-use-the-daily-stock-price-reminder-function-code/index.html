@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>每日获取股价数据并消息提醒功能代码的使用方法 - 罗孚</title><meta name="author" content="RoverTang">
+<meta name="description" content="详细介绍一下每日股价提醒功能代码的使用方法，希望你也早日用上，也欢迎和罗孚探讨每日股价提醒相关的想法或技巧。"><meta name="keywords" content='ChatGPT, 每日股价提醒代码, 自动化'>
+  <meta itemprop="name" content="每日获取股价数据并消息提醒功能代码的使用方法">
+  <meta itemprop="description" content="详细介绍一下每日股价提醒功能代码的使用方法，希望你也早日用上，也欢迎和罗孚探讨每日股价提醒相关的想法或技巧。">
+  <meta itemprop="datePublished" content="2023-04-22T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2023-04-22T00:00:00+08:00">
+  <meta itemprop="wordCount" content="3397">
+  <meta itemprop="image" content="https://blog.rovertang.com/posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/cover.jpg">
+  <meta itemprop="keywords" content="ChatGPT,每日股价提醒代码,自动化"><meta property="og:url" content="https://blog.rovertang.com/posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/">
+  <meta property="og:site_name" content="罗孚">
+  <meta property="og:title" content="每日获取股价数据并消息提醒功能代码的使用方法">
+  <meta property="og:description" content="详细介绍一下每日股价提醒功能代码的使用方法，希望你也早日用上，也欢迎和罗孚探讨每日股价提醒相关的想法或技巧。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-04-22T00:00:00+08:00">
+    <meta property="article:modified_time" content="2023-04-22T00:00:00+08:00">
+    <meta property="article:tag" content="ChatGPT">
+    <meta property="article:tag" content="每日股价提醒代码">
+    <meta property="article:tag" content="自动化">
+    <meta property="og:image" content="https://blog.rovertang.com/posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/cover.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://blog.rovertang.com/posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/cover.jpg">
+  <meta name="twitter:title" content="每日获取股价数据并消息提醒功能代码的使用方法">
+  <meta name="twitter:description" content="详细介绍一下每日股价提醒功能代码的使用方法，希望你也早日用上，也欢迎和罗孚探讨每日股价提醒相关的想法或技巧。">
+<meta name="application-name" content="罗孚传说">
+<meta name="apple-mobile-web-app-title" content="罗孚传说"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://blog.rovertang.com/posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/" title="每日获取股价数据并消息提醒功能代码的使用方法 - 罗孚" /><link rel="prev" type="text/html" href="https://blog.rovertang.com/posts/ai/20230415-chatgpt-thinks-chatgpt-has-thoughts/" title="ChatGPT会思考，ChatGPT有思想" /><link rel="next" type="text/html" href="https://blog.rovertang.com/posts/ai/20230519-deploy-the-local-shared-version-of-chatgpt/" title="部署本地共享版ChatGPT，一次搭建，多人免费使用" /><link rel="alternate" type="text/markdown" href="https://blog.rovertang.com/posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/index.md" title="每日获取股价数据并消息提醒功能代码的使用方法 - 罗孚"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="apxz4dWbUQ2bsnGFk6SmRK4gNZ7tlT21KgMZ1t9hqdk" /><meta name="msvalidate.01" content="5282002B82D61AD2D097F2F6419C1E4A" /><meta name="baidu-site-verification" content="codeva-RiIZqiHrvQ" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "每日获取股价数据并消息提醒功能代码的使用方法",
+    "inLanguage": "zh-cn",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.rovertang.com\/posts\/rich\/20230422-how-to-use-the-daily-stock-price-reminder-function-code\/"
+    },"genre": "posts","keywords": "ChatGPT, 每日股价提醒代码, 自动化","wordcount":  3397 ,
+    "url": "https:\/\/blog.rovertang.com\/posts\/rich\/20230422-how-to-use-the-daily-stock-price-reminder-function-code\/","datePublished": "2023-04-22T00:00:00+08:00","dateModified": "2023-04-22T00:00:00+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "RoverTang"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item has-children">
+              <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/" title="文章">文章</a></li><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/rich/" title="个人财富">个人财富</a></li><li class="breadcrumb-item active" data-separator="&gt;" aria-current="page">每日获取股价数据并消息提醒功能代码的使用方法</li>
+    </ol>
+  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div style="width: 350px; margin: 0 auto; display: flex; justify-content: space-between; text-align: center;">
+  <img src="/images/wxmp-blog.jpg" alt="wxmp-blog" style="width: 115px; height: 153px;">
+  <img src="/images/wxmp-shanghai.jpg" alt="wxmp-shanghai" style="width: 115px; height: 153px;">
+  <img src="/images/zsxq-fromblog.jpg" alt="zsxq-fromblog" style="width: 115px; height: 153px;">
+</div></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>每日获取股价数据并消息提醒功能代码的使用方法</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://rovertang.com" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    RoverTang</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/" class="post-category" title="分类 - 个人财富"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 个人财富</a></span></div><div class="post-meta-line"><span title="发布于 2023-04-22 00:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2023-04-22">2023-04-22</time></span>&nbsp;<span title="3397 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 3400 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 7 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#文件解读">文件解读</a></li>
+    <li><a href="#使用方法含部署">使用方法(含部署)</a>
+      <ul>
+        <li><a href="#配置和运行">配置和运行</a></li>
+        <li><a href="#部署到服务器">部署到服务器</a></li>
+      </ul>
+    </li>
+    <li><a href="#效果">效果</a></li>
+    <li><a href="#一些-todo">一些 TODO</a></li>
+    <li><a href="#结语">结语</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p>罗孚让 ChatGPT 帮写了一个<a href="https://mp.weixin.qq.com/s/YtNLrndxiakpWqUp0rkteA"target="_blank" rel="external nofollow noopener noreferrer">每日获取股票价格并消息提醒的 Python 代码</a>，挺好用的，但不知道为什么，这篇似乎没有太多人喜欢，反而另一篇“<a href="https://mp.weixin.qq.com/s/rbISUPBJZ0yTpRTGejGcGA"target="_blank" rel="external nofollow noopener noreferrer">让 ChatGPT 写代码获取股票历史日 K 线数据</a>”更受到欢迎，不解，可能是发表于不同公众号的原因吧。今天，罗孚来解读一下这个代码和使用方法。</p>
+<p>那篇<a href="https://mp.weixin.qq.com/s/YtNLrndxiakpWqUp0rkteA"target="_blank" rel="external nofollow noopener noreferrer">获取每日股价数据</a>的文章标题中，有“你写作文它写代码”这几个字，实际上在该篇文章中也贴出了小作文的全文，而小作文就是一个小小的具体的产品文档，看完这篇小作文，基本就知道其原理和使用方法，不过，我们还是来细说一下吧。</p>
+<h2 id="文件解读" class="heading-element"><span>文件解读</span>
+  <a href="#%e6%96%87%e4%bb%b6%e8%a7%a3%e8%af%bb" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>代码下载下来解压后，总共有三个文件一个目录，除了 readme 外，一个代码文件一个配置文件，代码文件基本可以不动，因为相关的信息都已经放在配置文件中了。</p>
+<p>getStockDatabyGPT.py：主程序文件，就是代码文件，每天需要运行的就是这个文件了。</p>
+<p>config.ini：配置文件，配置了股票代码、涨跌幅、webhook 地址等。</p>
+<p>log 目录：用于保存代码运行记录的，会按月生成 log 文件。</p>
+<p>stocks.db：默认没有这个文件，运行后会自动生成，sqlite3 数据库，每天会将数据保存到此。</p>
+<p>主要文件和说明就这几个。</p>
+<h2 id="使用方法含部署" class="heading-element"><span>使用方法(含部署)</span>
+  <a href="#%e4%bd%bf%e7%94%a8%e6%96%b9%e6%b3%95%e5%90%ab%e9%83%a8%e7%bd%b2" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>讲完文件，就来讲一下使用方法，以及如何每日获取。</p>
+<h3 id="配置和运行" class="heading-element"><span>配置和运行</span>
+  <a href="#%e9%85%8d%e7%bd%ae%e5%92%8c%e8%bf%90%e8%a1%8c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>安装 Python、安装 tushare 库等，这些就不细讲了，这是环境所需的基础条件。</p>
+<p>不过这里需要讲一个坑：不知道为什么 tushare 库在 32 位的 WIN10 下会闪退，导致程序无法正常运行，一直未能解决。不过罗孚基本不用 32 位的系统，WIN11 和 Ubuntu 都是 64 位的，所以就没再理会。</p>
+<p>运行文件前，先进行配置文件的修改，config.ini 文件用记事本打开就可以修改了，内容也比较清晰，完整的配置：</p>
+<blockquote>
+<p>stock_codes = 601398.SH,601288.SH,601988.SH<br/>stock_names = 工商银行,农业银行,中国银行<br/>tushare_token = 16784cs38ebe2d2afd80869a3de266e935xxxxxxxxxxxxxxxxx<br/>webhook_url = <a href="https://open.feishu.cn/open-apis/bot/v2/hook/922d0f-2a6d-43axxxxxxxxxxxxxxxx"target="_blank" rel="external nofollow noopener noreferrer">https://open.feishu.cn/open-apis/bot/v2/hook/922d0f-2a6d-43axxxxxxxxxxxxxxxx</a><br/>change_max = 4<br/>change_min = -3</p>
+</blockquote>
+<p>相关说明：</p>
+<p>stock_codes 就是股票代码了，按照规则添加上即可，用逗号分隔开，注意股票代码后面带有点加市场简写。</p>
+<p>stock_names 就是股票名称了，这个主要用在消息提醒的时候，同股票代码一同发出来，这样就不用看摸不着头脑的代码了。罗孚除了 Python 代码的提醒外，以前一直用 HiFlow 来做每日提醒，由于没有股票名称，所以每次给我发股票代码的涨跌幅，都还要去百度一下代码对应的股票名，略感烦恼。</p>
+<p>tushare_token = 这个就不多解释了，就是 token 信息，去 <a href="https://tushare.pro/register?reg=550928"target="_blank" rel="external nofollow noopener noreferrer">Tushare Pro</a> 注册一个账号，然后在个人的接口 TOKEN 中就可以复制出来粘贴上去了。需要注意一下：注册完账号，然后完善一下自己的个人资料，这样就是 120 积分了，不然低于 120 积分是什么事情都干不了的。</p>
+<p>webhook_url = <a href="https://open.feishu.cn/open-apis/bot/v2/hook/xxxxxxxxxxxxxxxxx"target="_blank" rel="external nofollow noopener noreferrer">https://open.feishu.cn/open-apis/bot/v2/hook/xxxxxxxxxxxxxxxxx</a>，这是飞书群消息的 webhook 地址，通过这个地址就可以向飞书群发消息，用于每日提醒。</p>
+<p>如何获取这个链接地址？打开飞书，新建一个群，在群&ndash;&gt; 设置&ndash;&gt; 群机器人中，添加通知机器人，然后通知机器人设置里就有一个 webhook 地址，将这个地址贴进来就可以了，具体如下图：</p>
+<p><img loading="lazy" src="/posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/static/VnexbN6Omoo8MFxyeSmcpAfYnFH.png" alt="/posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/static/VnexbN6Omoo8MFxyeSmcpAfYnFH.png" srcset="/posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/static/VnexbN6Omoo8MFxyeSmcpAfYnFH.png?size=small, /posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/static/VnexbN6Omoo8MFxyeSmcpAfYnFH.png?size=medium 1.5x, /posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/static/VnexbN6Omoo8MFxyeSmcpAfYnFH.png?size=large 2x" data-title="/posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/static/VnexbN6Omoo8MFxyeSmcpAfYnFH.png" style="--width: 749px;--aspect-ratio: 749 / 796;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>在做此部分内容的时候，突然觉得，要是不用飞书的人，不就不太友好了嘛，嗯，是个问题，罗孚后续考虑整改吧。</p>
+<p>最后说一下 change_max 和 change_min，其实就是最大涨幅和最大跌幅的设置，罗孚设置的是 4 和-3，也就是当涨幅超过 4% 的时候和跌幅超过 3% 的时候，发消息提醒我，告诉我有哪些股票涨跌幅达到了自己的预期，两个数据都会让我很高兴，前者是涨多了可能会盈利，就会开心，而后者虽然跌的比较惨，但也让我开心的看到买入机会。具体的就根据大家各自的喜好自行设置吧。</p>
+<p>设置完参数，基本可以运行了，可以先 run 一下 getStockDatabyGPT.py 文件，如果顺利，应该可以获得如下提示：</p>
+<p><img loading="lazy" src="/posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/static/CMRabWWNjofUTQxSEIOcIdlxn0g.png" alt="/posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/static/CMRabWWNjofUTQxSEIOcIdlxn0g.png" srcset="/posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/static/CMRabWWNjofUTQxSEIOcIdlxn0g.png?size=small, /posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/static/CMRabWWNjofUTQxSEIOcIdlxn0g.png?size=medium 1.5x, /posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/static/CMRabWWNjofUTQxSEIOcIdlxn0g.png?size=large 2x" data-title="/posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/static/CMRabWWNjofUTQxSEIOcIdlxn0g.png" style="--width: 563px;--aspect-ratio: 563 / 88;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<h3 id="部署到服务器" class="heading-element"><span>部署到服务器</span>
+  <a href="#%e9%83%a8%e7%bd%b2%e5%88%b0%e6%9c%8d%e5%8a%a1%e5%99%a8" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>把这些代码上传到服务器，上述环境配置好，然后搞一个定时任务就可以了。理论虽然如此，但实际实践还是有很多坑。</p>
+<p>定时任务很明确，就是用 crontab。输入 crontab -e 编辑即可，比如刚开始我是这么写的：</p>
+<blockquote>
+<p>01 19 * * * python /路径/getStockDatabyGPT.py &gt; /路径/log.txt 2&gt;&amp;1</p>
+</blockquote>
+<p>表示每天晚上 19 点 01 分，使用 Python 执行此脚本，理想很美好，但现实很打脸，各种出错。</p>
+<p>首先就是文件权限问题，先将文件权限设置为 777，或者 +x，也就是用 chmod 命令修改一下。</p>
+<p>然后是执行不通过，应该是 Python 代码的相对路径问题，要改用绝对路径，这部分最新代码中已经修改了。</p>
+<p>再后来可能是权限问题，不执行。可能使用 crontab 用户来执行的原因，于是在相同目录下建了一个.sh 文件，把刚刚的执行代码放在这个.sh 里：</p>
+<blockquote>
+<p>python /路径/getStockDatabyGPT.py &gt; /路径/log.txt 2&gt;&amp;1</p>
+</blockquote>
+<p>再编辑 crontab 让运行这个.sh 的脚本：</p>
+<blockquote>
+<p>01 19 * * * /路径/getStockData.sh</p>
+</blockquote>
+<p>总算可以运行了，飞书也收到消息了。但检查了一下 db 文件，发现：数据竟然没有写入数据库，也没有任何提示。</p>
+<p>怀疑还是权限问题，于是 chomd +x stocks.db 把数据库文件权限给加上，再运行，就好了。</p>
+<p>这部分遇到的坑虽然也问了 ChatGPT，但由于太琐碎，所以即便给了回答也不算太好用，最后还是自己一点点排查解决，花费的时间比让 ChatGPT 根据我的小作文写代码还要长的多。</p>
+<p>不过，如果你使用 Windows 服务器或者 PC 的话，应该会好一些，应该不会遇到这么多问题，罗孚只在 Windows 下调试代码，没有部署在 Windows 下，尝试部署在 32 位的 Windows 10 下，但 32 位兼容性问题，所以没成功，但应该比较容易，用 Windows 的同学可以试试。</p>
+<h2 id="效果" class="heading-element"><span>效果</span>
+  <a href="#%e6%95%88%e6%9e%9c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>效果主要分两个方面，一是每日可见的效果，另一是数据库记录的文件。</p>
+<p>比如罗孚创建的一个群，然后给我发送的消息截图如下：</p>
+<p><img loading="lazy" src="/posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/static/BPlmbXkmzoV82ixd4GDcivLvned.png" alt="/posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/static/BPlmbXkmzoV82ixd4GDcivLvned.png" srcset="/posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/static/BPlmbXkmzoV82ixd4GDcivLvned.png?size=small, /posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/static/BPlmbXkmzoV82ixd4GDcivLvned.png?size=medium 1.5x, /posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/static/BPlmbXkmzoV82ixd4GDcivLvned.png?size=large 2x" data-title="/posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/static/BPlmbXkmzoV82ixd4GDcivLvned.png" style="--width: 552px;--aspect-ratio: 552 / 328;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>补充说一句：其实飞书一个人也能建群，所以不要局限于说没有联系人没法建群。</p>
+<p>另外就是数据库文件 stocks.db 了，这个文件记录了每日的股价数据，虽然不是及时可见的，但每天记录下来，也方便以后的分析嘛。具体数据库的内容：</p>
+<p><img loading="lazy" src="/posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/static/VwEpbIkCaok8qcxqnPBcMKQjnNf.png" alt="/posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/static/VwEpbIkCaok8qcxqnPBcMKQjnNf.png" srcset="/posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/static/VwEpbIkCaok8qcxqnPBcMKQjnNf.png?size=small, /posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/static/VwEpbIkCaok8qcxqnPBcMKQjnNf.png?size=medium 1.5x, /posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/static/VwEpbIkCaok8qcxqnPBcMKQjnNf.png?size=large 2x" data-title="/posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/static/VwEpbIkCaok8qcxqnPBcMKQjnNf.png" style="--width: 740px;--aspect-ratio: 740 / 326;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>最后再补充一下 log 信息吧，就是程序执行过程中打印的一些提示消息，在 log 目录下，会按月创建和写入到 txt 文件中，打开本月的 txt 文件：</p>
+<blockquote>
+<p>20230420start:<br/>工商银行(601398.SH) 股票数据保存到数据库成功<br/>农业银行(601288.SH) 股票数据保存到数据库成功<br/>中国银行(601988.SH) 股票数据保存到数据库成功<br/>消息已发送到飞书群，状态码为 200<br/>20230420end!</p>
+</blockquote>
+<p>上述的内容记录了写入数据库成功信息以及发送到飞书群成功的信息，以及开始和结束的日期。</p>
+<h2 id="一些-todo" class="heading-element"><span>一些 TODO</span>
+  <a href="#%e4%b8%80%e4%ba%9b-todo" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>在写本文的过程中，也发现一些功能的缺失，或者有一些新的心得，简单总结后可能可以做的 TODO 如下：</p>
+<ol>
+<li>提供每个股票到达最高价、最低价的提醒</li>
+</ol>
+<p>虽然程序中提供了最大涨幅和最大跌幅的设置，但是这个不够智能，因为无法针对个股进行设置，不够个性化。</p>
+<p>后续可以为每个股票设置一个最高价、最低价的提醒，这是卖出和买入的信号，如果有这样的提醒，也就方便自己以后操作啦，避免了经常盯盘的烦恼。</p>
+<ol start="2">
+<li>飞书 webhook 地址设置为可选[DONE]，并且可以支持微信等通知渠道</li>
+</ol>
+<p>飞书可能不够常用，大部分人可能用的是微信。所以一定要设置一个飞书 webhook 地址，似乎强人所难，而程序中又没有增加地址的判断，导致此选项作为了必选，不是很合理，所以后续需要将此设置为空，程序判断为空的情况下就直接跳过了，而不是强制要求推送消息到飞书。</p>
+<p>PS：在本文发表时，已经增加了一行判断，所以webhook地址不填，就可以不发送飞书消息了。</p>
+<p>而对于微信通知渠道，方法本身有，但也较麻烦，一方面要出一个新的教程，详细的说说，另一方面也要等罗孚优化后再提供哈。</p>
+<p>当然，应该还有很多的 TODO，只是在写本文时想到了这些，如果有什么好的建议，也可以提出来，罗孚可以让 ChatGPT 来帮我实现大家想要的功能的:)</p>
+<h2 id="结语" class="heading-element"><span>结语</span>
+  <a href="#%e7%bb%93%e8%af%ad" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>这套功能代码或者说是工具，很好用吧？欢迎和我一样拥有一套，在微信公众号原文获取，还在不断更新迭代中。</p>
+<p>另外，推荐注册 <a href="https://tushare.pro/register?reg=550928"target="_blank" rel="external nofollow noopener noreferrer">Tushare Pro</a>，确实是非常好的 Tushare 大数据开放社区，就如其所言：免费提供各类数据 , 助力行业和量化研究。</p>
+<p>当然，也推荐一个 ChatGPT 的社区，改变对 ChatGPT 认知的社区，罗孚的一些小技巧小心得也是在那学来的。</p>
+<p><img loading="lazy" src="/posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/static/CqAYbC0FloHKgjx51U4c8DVGnCg.jpg" alt="/posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/static/CqAYbC0FloHKgjx51U4c8DVGnCg.jpg" srcset="/posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/static/CqAYbC0FloHKgjx51U4c8DVGnCg.jpg?size=small, /posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/static/CqAYbC0FloHKgjx51U4c8DVGnCg.jpg?size=medium 1.5x, /posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/static/CqAYbC0FloHKgjx51U4c8DVGnCg.jpg?size=large 2x" data-title="/posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/static/CqAYbC0FloHKgjx51U4c8DVGnCg.jpg" style="--width: 1080px;--aspect-ratio: 1080 / 1694;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>加入链接：<a href="https://t.zsxq.com/0cR2sKBgE"target="_blank" rel="external nofollow noopener noreferrer">https://t.zsxq.com/0cR2sKBgE</a></p>
+<p>好了，每日获取股价数据并消息提醒功能代码的使用方法就介绍到这里了，不知道你学会了没有。欢迎和罗孚一起探讨个人理财类话题，让我们共同成长。</p>
+<p>代码下载地址：<a href="https://mp.weixin.qq.com/s/bgZ_Jh3Qivmo4mACnPUfFQ"target="_blank" rel="external nofollow noopener noreferrer">https://mp.weixin.qq.com/s/bgZ_Jh3Qivmo4mACnPUfFQ</a></p>
+<p>本文公众号地址：<a href="https://mp.weixin.qq.com/s/bgZ_Jh3Qivmo4mACnPUfFQ"target="_blank" rel="external nofollow noopener noreferrer">https://mp.weixin.qq.com/s/bgZ_Jh3Qivmo4mACnPUfFQ</a></p>
+<p>本文飞书文档地址：<a href="https://rovertang.feishu.cn/docx/OHvEdDTuso5marxt28Zcu4OZnCe"target="_blank" rel="external nofollow noopener noreferrer">每日获取股价数据并消息提醒功能代码的使用方法</a></p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2023-04-22 00:00:00">更新于 2023-04-22&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/chatgpt/" class="post-tag" title="标签 - ChatGPT">ChatGPT</a><a href="/tags/%E6%AF%8F%E6%97%A5%E8%82%A1%E4%BB%B7%E6%8F%90%E9%86%92%E4%BB%A3%E7%A0%81/" class="post-tag" title="标签 - 每日股价提醒代码">每日股价提醒代码</a><a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/" class="post-tag" title="标签 - 自动化">自动化</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/ai/20230415-chatgpt-thinks-chatgpt-has-thoughts/" class="post-nav-item" rel="prev" title="ChatGPT会思考，ChatGPT有思想"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>ChatGPT会思考，ChatGPT有思想</a><a href="/posts/ai/20230519-deploy-the-local-shared-version-of-chatgpt/" class="post-nav-item" rel="next" title="部署本地共享版ChatGPT，一次搭建，多人免费使用">部署本地共享版ChatGPT，一次搭建，多人免费使用<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment"></div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward"><i class="fa-solid fa-qrcode fa-fw" aria-hidden="true"></i>赞赏</label>
+    <div class="reward-ways" data-mode="static"><div><img loading="lazy" src="/images/alipay.png" alt="RoverTang 支付宝" data-title="RoverTang 支付宝" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>支付宝</span>
+          </div><div><img loading="lazy" src="/images/wechatpay.png" alt="RoverTang 微信" data-title="RoverTang 微信" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>微信</span>
+          </div></div>
+  </div></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.139.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.16">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2005 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://rovertang.com"target="_blank" rel="external nofollow noopener noreferrer">RoverTang</a></span></div><div class="footer-line beian"><span class="icp footer-divider">沪ICP备2020036772号-1</span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;bottom: 0;"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.16"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

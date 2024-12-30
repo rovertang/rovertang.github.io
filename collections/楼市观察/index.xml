@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>楼市观察 - 合集 - 罗孚</title>
+    <link>https://blog.rovertang.com/collections/%E6%A5%BC%E5%B8%82%E8%A7%82%E5%AF%9F/</link>
+    <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
+    <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 02 Aug 2020 00:00:00 +0800</lastBuildDate>
+    <atom:link href="https://blog.rovertang.com/collections/%E6%A5%BC%E5%B8%82%E8%A7%82%E5%AF%9F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2020上半年上海各板块二手房市场分析</title>
+      <link>https://blog.rovertang.com/posts/smart/20200802-analysis-of-second-hand-housing-market-in-shanghai-in-the-first-half-of-2020/</link>
+      <pubDate>Sun, 02 Aug 2020 00:00:00 +0800</pubDate>
+      <guid>https://blog.rovertang.com/posts/smart/20200802-analysis-of-second-hand-housing-market-in-shanghai-in-the-first-half-of-2020/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%AE%B6%E5%B1%85%E5%AE%B6%E7%94%B5/">家居家电</category>
+      <description>2020上半年上海各板块二手房市场分析</description>
+    </item>
+    <item>
+      <title>2020上半年上海二手房市场观察</title>
+      <link>https://blog.rovertang.com/posts/smart/20200727-observation-on-the-second-hand-housing-market-in-shanghai-in-the-first-half-of-2020/</link>
+      <pubDate>Mon, 27 Jul 2020 00:00:00 +0800</pubDate>
+      <guid>https://blog.rovertang.com/posts/smart/20200727-observation-on-the-second-hand-housing-market-in-shanghai-in-the-first-half-of-2020/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%AE%B6%E5%B1%85%E5%AE%B6%E7%94%B5/">家居家电</category>
+      <description>2020上半年上海二手房市场观察</description>
+    </item>
+    <item>
+      <title>透过二手房成交来看2018上半年上海楼市</title>
+      <link>https://blog.rovertang.com/posts/smart/20180704-judging-the-shanghai-property-market-in-the-first-half-of-2018-through-the-transaction-of-second-hand-houses/</link>
+      <pubDate>Wed, 04 Jul 2018 00:00:00 +0800</pubDate>
+      <guid>https://blog.rovertang.com/posts/smart/20180704-judging-the-shanghai-property-market-in-the-first-half-of-2018-through-the-transaction-of-second-hand-houses/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%AE%B6%E5%B1%85%E5%AE%B6%E7%94%B5/">家居家电</category>
+      <description>2018年上半年楼市观察</description>
+    </item>
+  </channel>
+</rss>

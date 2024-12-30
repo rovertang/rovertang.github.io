@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>制作一份简单的网络地图(世博地图的配准和切割) - 罗孚</title><meta name="author" content="RoverTang">
+<meta name="description" content="其实我很早的时候就写过一篇“我的 2010世博地图1.0版发布”，但没有和大家做明确的说明和制作方法，今天就和大家一起来分享地图配准和地图切割并进行网络发布的问题，其实就是以世博为例制作一份简单的网络地图。网络地图是以Google Maps API为基础，在Google Maps上面叠加一份自制的世博地图，但有一点，这里的地图配准和切割很重要，不过使用本文介绍的工具后一切都将变的不困难了。
+"><meta name="keywords" content='WebMap, 网络地图, 地图制作'>
+  <meta itemprop="name" content="制作一份简单的网络地图(世博地图的配准和切割)">
+  <meta itemprop="description" content="其实我很早的时候就写过一篇“我的 2010世博地图1.0版发布”，但没有和大家做明确的说明和制作方法，今天就和大家一起来分享地图配准和地图切割并进行网络发布的问题，其实就是以世博为例制作一份简单的网络地图。网络地图是以Google Maps API为基础，在Google Maps上面叠加一份自制的世博地图，但有一点，这里的地图配准和切割很重要，不过使用本文介绍的工具后一切都将变的不困难了。">
+  <meta itemprop="datePublished" content="2010-03-28T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2010-03-28T00:00:00+08:00">
+  <meta itemprop="wordCount" content="1751">
+  <meta itemprop="keywords" content="WebMap,网络地图,地图制作"><meta property="og:url" content="https://blog.rovertang.com/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/">
+  <meta property="og:site_name" content="罗孚">
+  <meta property="og:title" content="制作一份简单的网络地图(世博地图的配准和切割)">
+  <meta property="og:description" content="其实我很早的时候就写过一篇“我的 2010世博地图1.0版发布”，但没有和大家做明确的说明和制作方法，今天就和大家一起来分享地图配准和地图切割并进行网络发布的问题，其实就是以世博为例制作一份简单的网络地图。网络地图是以Google Maps API为基础，在Google Maps上面叠加一份自制的世博地图，但有一点，这里的地图配准和切割很重要，不过使用本文介绍的工具后一切都将变的不困难了。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2010-03-28T00:00:00+08:00">
+    <meta property="article:modified_time" content="2010-03-28T00:00:00+08:00">
+    <meta property="article:tag" content="WebMap">
+    <meta property="article:tag" content="网络地图">
+    <meta property="article:tag" content="地图制作">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="制作一份简单的网络地图(世博地图的配准和切割)">
+  <meta name="twitter:description" content="其实我很早的时候就写过一篇“我的 2010世博地图1.0版发布”，但没有和大家做明确的说明和制作方法，今天就和大家一起来分享地图配准和地图切割并进行网络发布的问题，其实就是以世博为例制作一份简单的网络地图。网络地图是以Google Maps API为基础，在Google Maps上面叠加一份自制的世博地图，但有一点，这里的地图配准和切割很重要，不过使用本文介绍的工具后一切都将变的不困难了。">
+<meta name="application-name" content="罗孚传说">
+<meta name="apple-mobile-web-app-title" content="罗孚传说"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://blog.rovertang.com/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/" title="制作一份简单的网络地图(世博地图的配准和切割) - 罗孚" /><link rel="prev" type="text/html" href="https://blog.rovertang.com/posts/misc/20100104-crowdsourcing-mass-power-to-promote-the-future-of-business/" title="众包——大众力量推动商业未来" /><link rel="next" type="text/html" href="https://blog.rovertang.com/posts/map/20111102-share-a-webmap-engine-mapbar/" title="分享一个WebMap引擎(MapBar)" /><link rel="alternate" type="text/markdown" href="https://blog.rovertang.com/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/index.md" title="制作一份简单的网络地图(世博地图的配准和切割) - 罗孚"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="apxz4dWbUQ2bsnGFk6SmRK4gNZ7tlT21KgMZ1t9hqdk" /><meta name="msvalidate.01" content="5282002B82D61AD2D097F2F6419C1E4A" /><meta name="baidu-site-verification" content="codeva-RiIZqiHrvQ" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "制作一份简单的网络地图(世博地图的配准和切割)",
+    "inLanguage": "zh-cn",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.rovertang.com\/posts\/map\/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map\/"
+    },"genre": "posts","keywords": "WebMap, 网络地图, 地图制作","wordcount":  1751 ,
+    "url": "https:\/\/blog.rovertang.com\/posts\/map\/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map\/","datePublished": "2010-03-28T00:00:00+08:00","dateModified": "2010-03-28T00:00:00+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "RoverTang"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item has-children">
+              <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/" title="文章">文章</a></li><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/map/" title="地图">地图</a></li><li class="breadcrumb-item active" data-separator="&gt;" aria-current="page">制作一份简单的网络地图(世博地图的配准和切割)</li>
+    </ol>
+  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div style="width: 350px; margin: 0 auto; display: flex; justify-content: space-between; text-align: center;">
+  <img src="/images/wxmp-blog.jpg" alt="wxmp-blog" style="width: 115px; height: 153px;">
+  <img src="/images/wxmp-shanghai.jpg" alt="wxmp-shanghai" style="width: 115px; height: 153px;">
+  <img src="/images/zsxq-fromblog.jpg" alt="zsxq-fromblog" style="width: 115px; height: 153px;">
+</div></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>制作一份简单的网络地图(世博地图的配准和切割)</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://rovertang.com" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    RoverTang</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E5%9C%B0%E5%9B%BE/" class="post-category" title="分类 - 地图"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 地图</a></span></div><div class="post-meta-line"><span title="发布于 2010-03-28 00:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2010-03-28">2010-03-28</time></span>&nbsp;<span title="1751 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1800 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 4 分钟</span>&nbsp;</div>
+    </div><div class="content" id="content"><p>其实我很早的时候就写过一篇“<a href="http://www.cnblogs.com/Tangf/archive/2009/07/30/1534674.html"target="_blank" rel="external nofollow noopener noreferrer">我的 2010世博地图1.0版发布</a>”，但没有和大家做明确的说明和制作方法，今天就和大家一起来分享地图配准和地图切割并进行网络发布的问题，其实就是以世博为例制作一份简单的网络地图。网络地图是以Google Maps API为基础，在Google Maps上面叠加一份自制的世博地图，但有一点，这里的地图配准和切割很重要，不过使用本文介绍的工具后一切都将变的不困难了。</p>
+<p>我们先去世博的网站找一点素材，在<a href="http://www.expo2010.cn/ghjs/ghjs_sbgh/index.htm"target="_blank" rel="external nofollow noopener noreferrer">世博规划</a>中可以下载到规划总平面图，如有兴趣也可以下载一份场馆规划图。不过你所下载的文件是PDF文件，需要导出成为JPG图片，方法是使用PDF编辑软件或者PDFtoJPG软件来完成，这里就不做介绍了，最终得到的就是一个世博规划的平面图。为了不让大家难做，我就直接提供我导出后的世博规划图，点击<a href="http://docs.google.com/leaf?id=0B3cnzdvFbRK_M2ExYWJiZjUtZGNhMi00ODhkLTljNWEtMGUxZjJmNGE5YWMy&amp;sort=name&amp;layout=list&amp;num=50"target="_blank" rel="external nofollow noopener noreferrer">这里</a>可以下载。(BTW：如果觉得世博规划图不够清晰，那我也没有办法，PDF中的图片本身就不清晰)</p>
+<p>接下来配准地图，配准有很多的方法，比如用MapInfo来配准甚至ArcInfo来配准等，不过这些太复杂了，我们今天介绍一个简单的软件来进行配准，这就是<a href="http://www.globalmapper.com/"target="_blank" rel="external nofollow noopener noreferrer">GlobalMapper</a>，一个非常牛的GIS软件，可以打开超级多的地图格式，并且可以另存为超级多的地图格式，我们就用它来进行简单的配准吧。不过万变不离其中，配准重要的就是根据点位来进行配准，就是找到一些关键点标定上坐标。我们使用GlobalMapper打开这个bmp的图片，然后就提示是否配准，我们当然需要配准啦，就点是，这个时候就进入配准界面了。配准所需的关键点就是图片中非常清晰可辨并且容易标定上坐标的位置，看了这份地图我们只能使用路口的方式进行配准了，因为其他信息都没有参考价值，我们选择了三个点位，并且找到了坐标，分别是：打浦路瞿溪路(N31.19832 E121.47227)、历城路昌里路(N31.17383 E121.49261)、临沂路南码头路(N31.19375 E121.51033)，有了这三个位置信息后就可以配置了，如下图所示：</p>
+<p><img loading="lazy" src="/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/assets/boxcnd758Vom0Co4GY6SYJl7Rwe.png" alt="/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/assets/boxcnd758Vom0Co4GY6SYJl7Rwe.png" srcset="/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/assets/boxcnd758Vom0Co4GY6SYJl7Rwe.png?size=small, /posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/assets/boxcnd758Vom0Co4GY6SYJl7Rwe.png?size=medium 1.5x, /posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/assets/boxcnd758Vom0Co4GY6SYJl7Rwe.png?size=large 2x" data-title="/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/assets/boxcnd758Vom0Co4GY6SYJl7Rwe.png" style="--width: 604px;--aspect-ratio: 604 / 362;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>赶紧点击OK吧，你的地图就配准完成啦。其实MapInfo里的配准也是同样的一个道理。</p>
+<p>好了，接下来我们需要切割地图了，由于希望在切割地图的软件里变得更加简单一些，所以我们将刚刚在GlobalMapper中配准完成的地图另存为GeoTIFF格式，就是一个带有坐标信息的TIF图片。我们现在需要介绍一个杀手级的软件，让你的这个平面图直接输出到Google Maps里面，自动帮助你切割完成，真的是超牛，这个软件是什么呢，就是<a href="http://www.maptiler.org/"target="_blank" rel="external nofollow noopener noreferrer">MapTiler</a>，一个Map Tile Cutter软件，可以制作overlay到Google Maps或者Google Earth，不再多介绍这个超级牛的软件，需要了解到用户自行到网站上了解，我们只用简单的切割功能，以前介绍的<a href="/posts/mapnavi/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool/">GMapImageCutter</a>工具和它相比真是小巫见大巫了。BTW，GlobalMapper软件其实也有输出Google maps tile的功能，但是不算太好，所以才用到这个专业的地图切割软件。打开软件，选择第一个Google Maps兼容格式：</p>
+<p><img loading="lazy" src="/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/assets/boxcnwD192woHT6ubROczlEiLI5.png" alt="/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/assets/boxcnwD192woHT6ubROczlEiLI5.png" srcset="/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/assets/boxcnwD192woHT6ubROczlEiLI5.png?size=small, /posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/assets/boxcnwD192woHT6ubROczlEiLI5.png?size=medium 1.5x, /posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/assets/boxcnwD192woHT6ubROczlEiLI5.png?size=large 2x" data-title="/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/assets/boxcnwD192woHT6ubROczlEiLI5.png" style="--width: 604px;--aspect-ratio: 604 / 495;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>下一步当然是添加我们刚刚的tif文件，如下图所示：</p>
+<p><img loading="lazy" src="/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/assets/boxcnNd00sS899A9OYSOTw5Sceg.png" alt="/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/assets/boxcnNd00sS899A9OYSOTw5Sceg.png" srcset="/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/assets/boxcnNd00sS899A9OYSOTw5Sceg.png?size=small, /posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/assets/boxcnNd00sS899A9OYSOTw5Sceg.png?size=medium 1.5x, /posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/assets/boxcnNd00sS899A9OYSOTw5Sceg.png?size=large 2x" data-title="/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/assets/boxcnNd00sS899A9OYSOTw5Sceg.png" style="--width: 604px;--aspect-ratio: 604 / 494;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>可以看到这个图片的坐标信息就自动进入了，而不需要你手动输入地理信息，如果你使用JPG或者BMP图片那当然是需要手动输入的，这也算是一个小小的技巧吧。然后就是选择坐标系啊、地图缩放的级别啊、版权信息啊、Google Maps API key啊什么的，然后就开始真的切割了，等待一会你就可以得到切割好了的地图了。</p>
+<p><img loading="lazy" src="/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/assets/boxcnq8eNPeBWQ1xJNSODWZd7Vc.png" alt="/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/assets/boxcnq8eNPeBWQ1xJNSODWZd7Vc.png" srcset="/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/assets/boxcnq8eNPeBWQ1xJNSODWZd7Vc.png?size=small, /posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/assets/boxcnq8eNPeBWQ1xJNSODWZd7Vc.png?size=medium 1.5x, /posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/assets/boxcnq8eNPeBWQ1xJNSODWZd7Vc.png?size=large 2x" data-title="/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/assets/boxcnq8eNPeBWQ1xJNSODWZd7Vc.png" style="--width: 604px;--aspect-ratio: 604 / 494;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>完成后大家赶紧来看看效果吧：</p>
+<p><img loading="lazy" src="/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/assets/boxcn2yxVY5eEFtF4TtKtyVSsag.png" alt="/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/assets/boxcn2yxVY5eEFtF4TtKtyVSsag.png" srcset="/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/assets/boxcn2yxVY5eEFtF4TtKtyVSsag.png?size=small, /posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/assets/boxcn2yxVY5eEFtF4TtKtyVSsag.png?size=medium 1.5x, /posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/assets/boxcn2yxVY5eEFtF4TtKtyVSsag.png?size=large 2x" data-title="/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/assets/boxcn2yxVY5eEFtF4TtKtyVSsag.png" style="--width: 604px;--aspect-ratio: 604 / 342;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>要知道这不是简单的仅仅是一个图片叠加在Google地图上面，你放大缩小加载的是不同的tile，而且和原有地图的叠加非常的好，因为我们配准了的嘛，但也必须要说MapTile这个软件的功能不可忽视。不过Google地图叠加tile的overlay的速度还是很慢的，除了本身图片加载速度可能有点慢以外，有可能GoogleMapsAPI就是如此，所以我们疯狂的延伸一下想法：将我的<a href="http://www.cnblogs.com/tangf/archive/2009/02/20/1394511.html"target="_blank" rel="external nofollow noopener noreferrer">Google Maps API离线开发包</a>中的Google地图替换成自己的地图，那么就真正的完全的离线并且是定制的地图了，期待看过此文的朋友能够完成这一壮举。</p>
+<p>本文飞书文档：<a href="https://rovertang.feishu.cn/docx/doxcn0jrn5c5oELbffUwzwweaqb"target="_blank" rel="external nofollow noopener noreferrer">制作一份简单的网络地图世博地图的配准和切割</a></p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2010-03-28 00:00:00">更新于 2010-03-28&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/webmap/" class="post-tag" title="标签 - WebMap">WebMap</a><a href="/tags/%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9B%BE/" class="post-tag" title="标签 - 网络地图">网络地图</a><a href="/tags/%E5%9C%B0%E5%9B%BE%E5%88%B6%E4%BD%9C/" class="post-tag" title="标签 - 地图制作">地图制作</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/misc/20100104-crowdsourcing-mass-power-to-promote-the-future-of-business/" class="post-nav-item" rel="prev" title="众包——大众力量推动商业未来"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>众包——大众力量推动商业未来</a><a href="/posts/map/20111102-share-a-webmap-engine-mapbar/" class="post-nav-item" rel="next" title="分享一个WebMap引擎(MapBar)">分享一个WebMap引擎(MapBar)<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment"></div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward"><i class="fa-solid fa-qrcode fa-fw" aria-hidden="true"></i>赞赏</label>
+    <div class="reward-ways" data-mode="static"><div><img loading="lazy" src="/images/alipay.png" alt="RoverTang 支付宝" data-title="RoverTang 支付宝" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>支付宝</span>
+          </div><div><img loading="lazy" src="/images/wechatpay.png" alt="RoverTang 微信" data-title="RoverTang 微信" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>微信</span>
+          </div></div>
+  </div></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.139.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.16">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2005 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://rovertang.com"target="_blank" rel="external nofollow noopener noreferrer">RoverTang</a></span></div><div class="footer-line beian"><span class="icp footer-divider">沪ICP备2020036772号-1</span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;bottom: 0;"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.16"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

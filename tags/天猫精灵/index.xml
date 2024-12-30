@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>天猫精灵 - 标签 - 罗孚</title>
+    <link>https://blog.rovertang.com/tags/%E5%A4%A9%E7%8C%AB%E7%B2%BE%E7%81%B5/</link>
+    <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
+    <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 19 Feb 2023 00:00:00 +0800</lastBuildDate>
+    <atom:link href="https://blog.rovertang.com/tags/%E5%A4%A9%E7%8C%AB%E7%B2%BE%E7%81%B5/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>轻松改造家庭普通灯成为语音控制智能灯</title>
+      <link>https://blog.rovertang.com/posts/smart/20230219-easily-transform-ordinary-household-lights-into-voice-control-smart-lights/</link>
+      <pubDate>Sun, 19 Feb 2023 00:00:00 +0800</pubDate>
+      <guid>https://blog.rovertang.com/posts/smart/20230219-easily-transform-ordinary-household-lights-into-voice-control-smart-lights/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%AE%B6%E5%B1%85%E5%AE%B6%E7%94%B5/">家居家电</category>
+      <description>普通灯秒变智能灯，可以轻松实现语音控制，还有定时开关、调亮度、调色温等功能。如果你也有在家使用普通灯的烦恼，不妨和罗孚一起试试自己动手将普通灯改造成智能灯吧。</description>
+    </item>
+  </channel>
+</rss>

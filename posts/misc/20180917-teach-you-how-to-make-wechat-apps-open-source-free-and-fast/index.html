@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>手把手教你制作微信小程序，开源、免费、快速搞定 - 罗孚</title><meta name="author" content="RoverTang">
+<meta name="description" content="使用百度地图API和第三方数据API，快速构建一份全国疫情分布地图，赶快来学习一下吧，附送源码。"><meta name="keywords" content='小程序, 开源, WordPress'>
+  <meta itemprop="name" content="手把手教你制作微信小程序，开源、免费、快速搞定">
+  <meta itemprop="description" content="使用百度地图API和第三方数据API，快速构建一份全国疫情分布地图，赶快来学习一下吧，附送源码。">
+  <meta itemprop="datePublished" content="2018-09-17T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2018-09-17T00:00:00+08:00">
+  <meta itemprop="wordCount" content="2122">
+  <meta itemprop="image" content="https://blog.rovertang.com/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/cover.png">
+  <meta itemprop="keywords" content="小程序,开源,WordPress"><meta property="og:url" content="https://blog.rovertang.com/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/">
+  <meta property="og:site_name" content="罗孚">
+  <meta property="og:title" content="手把手教你制作微信小程序，开源、免费、快速搞定">
+  <meta property="og:description" content="使用百度地图API和第三方数据API，快速构建一份全国疫情分布地图，赶快来学习一下吧，附送源码。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2018-09-17T00:00:00+08:00">
+    <meta property="article:modified_time" content="2018-09-17T00:00:00+08:00">
+    <meta property="article:tag" content="小程序">
+    <meta property="article:tag" content="开源">
+    <meta property="article:tag" content="WordPress">
+    <meta property="og:image" content="https://blog.rovertang.com/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/cover.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://blog.rovertang.com/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/cover.png">
+  <meta name="twitter:title" content="手把手教你制作微信小程序，开源、免费、快速搞定">
+  <meta name="twitter:description" content="使用百度地图API和第三方数据API，快速构建一份全国疫情分布地图，赶快来学习一下吧，附送源码。">
+<meta name="application-name" content="罗孚传说">
+<meta name="apple-mobile-web-app-title" content="罗孚传说"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://blog.rovertang.com/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/" title="手把手教你制作微信小程序，开源、免费、快速搞定 - 罗孚" /><link rel="prev" type="text/html" href="https://blog.rovertang.com/posts/car/20180916-new-travel-super-industrial-chain-transportation-reform-website-navigation/" title="新出行超级产业链之交通工具变革(网址导航)" /><link rel="next" type="text/html" href="https://blog.rovertang.com/posts/misc/20180923-how-to-update-100-articles-in-an-hour-evernote-sync-plug-in-introduction/" title="如何在一小时内更新100篇文章？-Evernote Sync插件介绍" /><link rel="alternate" type="text/markdown" href="https://blog.rovertang.com/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/index.md" title="手把手教你制作微信小程序，开源、免费、快速搞定 - 罗孚"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="apxz4dWbUQ2bsnGFk6SmRK4gNZ7tlT21KgMZ1t9hqdk" /><meta name="msvalidate.01" content="5282002B82D61AD2D097F2F6419C1E4A" /><meta name="baidu-site-verification" content="codeva-RiIZqiHrvQ" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "手把手教你制作微信小程序，开源、免费、快速搞定",
+    "inLanguage": "zh-cn",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.rovertang.com\/posts\/misc\/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast\/"
+    },"genre": "posts","keywords": "小程序, 开源, WordPress","wordcount":  2122 ,
+    "url": "https:\/\/blog.rovertang.com\/posts\/misc\/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast\/","datePublished": "2018-09-17T00:00:00+08:00","dateModified": "2018-09-17T00:00:00+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "RoverTang"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item has-children">
+              <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/" title="文章">文章</a></li><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/misc/" title="杂">杂</a></li><li class="breadcrumb-item active" data-separator="&gt;" aria-current="page">手把手教你制作微信小程序，开源、免费、快速搞定</li>
+    </ol>
+  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div style="width: 350px; margin: 0 auto; display: flex; justify-content: space-between; text-align: center;">
+  <img src="/images/wxmp-blog.jpg" alt="wxmp-blog" style="width: 115px; height: 153px;">
+  <img src="/images/wxmp-shanghai.jpg" alt="wxmp-shanghai" style="width: 115px; height: 153px;">
+  <img src="/images/zsxq-fromblog.jpg" alt="zsxq-fromblog" style="width: 115px; height: 153px;">
+</div></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>手把手教你制作微信小程序，开源、免费、快速搞定</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://rovertang.com" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    RoverTang</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E6%9D%82/" class="post-category" title="分类 - 杂"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 杂</a></span></div><div class="post-meta-line"><span title="发布于 2018-09-17 00:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2018-09-17">2018-09-17</time></span>&nbsp;<span title="2122 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 2200 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 5 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#最近做了个罗孚传车的小程序">最近做了个“罗孚传车”的小程序</a></li>
+    <li><a href="#为什么要做微信小程序">为什么要做微信小程序？</a></li>
+    <li><a href="#怎么做微信小程序">怎么做微信小程序？</a></li>
+    <li><a href="#一步一步开始制作小程序">一步一步开始制作小程序</a>
+      <ul>
+        <li><a href="#1配置ssl让网站支持https"><strong>1、配置SSL，让网站支持HTTPS</strong></a></li>
+        <li><a href="#2安装wordpress和插件"><strong>2、安装WordPress和插件</strong></a></li>
+        <li><a href="#3申请小程序并配置"><strong>3、申请小程序，并配置</strong></a></li>
+        <li><a href="#4下载并修改小程序代码"><strong>4、下载并修改小程序代码</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h2 id="最近做了个罗孚传车的小程序" class="heading-element"><span>最近做了个“罗孚传车”的小程序</span>
+  <a href="#%e6%9c%80%e8%bf%91%e5%81%9a%e4%ba%86%e4%b8%aa%e7%bd%97%e5%ad%9a%e4%bc%a0%e8%bd%a6%e7%9a%84%e5%b0%8f%e7%a8%8b%e5%ba%8f" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>一时兴起，做了一个小程序，将个人收集的同汽车相关的行业资讯和学习资料，分享到小程序中，既作为历史资料保存，又提供给更多的人学习和了解，还能装一下</p>
+<p>扫描下方小程序码可以体验一下(PS：已从WordPress转为Hugo，所以已不可访问。)</p>
+<p><img loading="lazy" src="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcn8SM9PfwO8bdEFBhF122Rpe.jpg" alt="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcn8SM9PfwO8bdEFBhF122Rpe.jpg" srcset="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcn8SM9PfwO8bdEFBhF122Rpe.jpg?size=small, /posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcn8SM9PfwO8bdEFBhF122Rpe.jpg?size=medium 1.5x, /posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcn8SM9PfwO8bdEFBhF122Rpe.jpg?size=large 2x" data-title="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcn8SM9PfwO8bdEFBhF122Rpe.jpg" style="--width: 344px;--aspect-ratio: 344 / 344;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>主页面：</p>
+<p><img loading="lazy" src="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcn4fTCLba3HJyzqGprtTtZ5V.jpg" alt="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcn4fTCLba3HJyzqGprtTtZ5V.jpg" srcset="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcn4fTCLba3HJyzqGprtTtZ5V.jpg?size=small, /posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcn4fTCLba3HJyzqGprtTtZ5V.jpg?size=medium 1.5x, /posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcn4fTCLba3HJyzqGprtTtZ5V.jpg?size=large 2x" data-title="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcn4fTCLba3HJyzqGprtTtZ5V.jpg" style="--width: 169px;--aspect-ratio: 169 / 300;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>文章页：</p>
+<p><img loading="lazy" src="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcnVDlz7rp9g1VaMFtvINPIJb.jpg" alt="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcnVDlz7rp9g1VaMFtvINPIJb.jpg" srcset="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcnVDlz7rp9g1VaMFtvINPIJb.jpg?size=small, /posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcnVDlz7rp9g1VaMFtvINPIJb.jpg?size=medium 1.5x, /posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcnVDlz7rp9g1VaMFtvINPIJb.jpg?size=large 2x" data-title="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcnVDlz7rp9g1VaMFtvINPIJb.jpg" style="--width: 169px;--aspect-ratio: 169 / 300;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>个人页：</p>
+<p><img loading="lazy" src="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcnJfVOIMdcCWn2yhGvbIxblh.jpg" alt="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcnJfVOIMdcCWn2yhGvbIxblh.jpg" srcset="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcnJfVOIMdcCWn2yhGvbIxblh.jpg?size=small, /posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcnJfVOIMdcCWn2yhGvbIxblh.jpg?size=medium 1.5x, /posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcnJfVOIMdcCWn2yhGvbIxblh.jpg?size=large 2x" data-title="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcnJfVOIMdcCWn2yhGvbIxblh.jpg" style="--width: 169px;--aspect-ratio: 169 / 300;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>关于页：</p>
+<p><img loading="lazy" src="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcnwxHNyorf24Rfk4eAam4rWb.jpg" alt="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcnwxHNyorf24Rfk4eAam4rWb.jpg" srcset="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcnwxHNyorf24Rfk4eAam4rWb.jpg?size=small, /posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcnwxHNyorf24Rfk4eAam4rWb.jpg?size=medium 1.5x, /posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcnwxHNyorf24Rfk4eAam4rWb.jpg?size=large 2x" data-title="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcnwxHNyorf24Rfk4eAam4rWb.jpg" style="--width: 169px;--aspect-ratio: 169 / 300;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>当然，还和我的公众号罗孚传说关联了：</p>
+<p><img loading="lazy" src="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/xiaochengxu-linkmp.jpg" alt="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/xiaochengxu-linkmp.jpg" srcset="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/xiaochengxu-linkmp.jpg?size=small, /posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/xiaochengxu-linkmp.jpg?size=medium 1.5x, /posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/xiaochengxu-linkmp.jpg?size=large 2x" data-title="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/xiaochengxu-linkmp.jpg" style="--width: 300px;--aspect-ratio: 300 / 533;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<h2 id="为什么要做微信小程序" class="heading-element"><span>为什么要做微信小程序？</span>
+  <a href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e5%81%9a%e5%be%ae%e4%bf%a1%e5%b0%8f%e7%a8%8b%e5%ba%8f" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>1、微信中经常收到一些不错的文章，我想保存并整理，同时还能分享给别人看。</p>
+<p>2、做一个微信小程序其实不难，但可以装装装(你懂的)。</p>
+<h2 id="怎么做微信小程序" class="heading-element"><span>怎么做微信小程序？</span>
+  <a href="#%e6%80%8e%e4%b9%88%e5%81%9a%e5%be%ae%e4%bf%a1%e5%b0%8f%e7%a8%8b%e5%ba%8f" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>简单的来说：WordPress+开源程序，一切免费，并且能快速搞定。</p>
+<p>原理是：通过WordPress插件生成REST API数据，然后小程序端组织呈现。</p>
+<p>我用的是“<a href="https://www.watch-life.net/"target="_blank" rel="external nofollow noopener noreferrer">守望轩</a>”提供的整套方案，WordPress端安装<a href="https://github.com/iamxjb/wp-rest-api-for-app"target="_blank" rel="external nofollow noopener noreferrer">wp-rest-api-for-app</a>插件，小程序端使用<a href="https://github.com/iamxjb/winxin-app-watch-life.net"target="_blank" rel="external nofollow noopener noreferrer">winxin-app-watch-life.net</a>代码。</p>
+<h2 id="一步一步开始制作小程序" class="heading-element"><span>一步一步开始制作小程序</span>
+  <a href="#%e4%b8%80%e6%ad%a5%e4%b8%80%e6%ad%a5%e5%bc%80%e5%a7%8b%e5%88%b6%e4%bd%9c%e5%b0%8f%e7%a8%8b%e5%ba%8f" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="1配置ssl让网站支持https" class="heading-element"><span><strong>1、配置SSL，让网站支持HTTPS</strong></span>
+  <a href="#1%e9%85%8d%e7%bd%aessl%e8%ae%a9%e7%bd%91%e7%ab%99%e6%94%af%e6%8c%81https" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>由于小程序需要HTTPS支持，所以你必须建立一个能够HTTPS访问的网站。</p>
+<p>如果你使用<a href="https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=p6lliujk"target="_blank" rel="external nofollow noopener noreferrer">阿里云</a>主机，那么可以免费获得SSL证书，是由Symantec提供的DV SSL证书。</p>
+<p><img loading="lazy" src="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcnpJ8vL2jMmXvQvr7JuNNWKf.png" alt="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcnpJ8vL2jMmXvQvr7JuNNWKf.png" srcset="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcnpJ8vL2jMmXvQvr7JuNNWKf.png?size=small, /posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcnpJ8vL2jMmXvQvr7JuNNWKf.png?size=medium 1.5x, /posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcnpJ8vL2jMmXvQvr7JuNNWKf.png?size=large 2x" data-title="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/boxcnpJ8vL2jMmXvQvr7JuNNWKf.png" style="--width: 800px;--aspect-ratio: 800 / 349;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>PS：如果没有找到上述免费DV SSL证书，那么选择Symantec品牌后，在证书类型中先选择增强型证书试试，应该会跳出免费证书。</p>
+<p>当然，其他平台也是可以免费获得SSL证书的，Symantec的免费证书很通用，如果云服务商不支持，那也可以选用<a href="https://letsencrypt.org/"target="_blank" rel="external nofollow noopener noreferrer">Let’s Encrypt</a>提供的免费证书，自行研究一下吧。</p>
+<p>除了获得证书外，还需要在服务器上安装证书，安装方法不再赘述，百度一下试试。</p>
+<p>特别强调：<strong>HTTPS是小程序的必须步骤</strong>，如果你无法搞定HTTPS，那么无法建立小程序。</p>
+<h3 id="2安装wordpress和插件" class="heading-element"><span><strong>2、安装WordPress和插件</strong></span>
+  <a href="#2%e5%ae%89%e8%a3%85wordpress%e5%92%8c%e6%8f%92%e4%bb%b6" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>下载WordPress并安装，现在版本都已经是4.9以上了，不要搞出一个很旧的版本来哦。</p>
+<p>一个建议：由于网站已经支持HTTPS，所以<strong>建议默认网站设置为HTTPS访问</strong>，大势所趋。</p>
+<p>再下载<a href="https://github.com/iamxjb/wp-rest-api-for-app"target="_blank" rel="external nofollow noopener noreferrer">wp-rest-api-for-app</a>插件，从GitHub上下载下来的zip文件直接可用。</p>
+<p>在WordPress的插件功能下，使用上传文件的方式安装该插件，安装完成启用即可。</p>
+<h3 id="3申请小程序并配置" class="heading-element"><span><strong>3、申请小程序，并配置</strong></span>
+  <a href="#3%e7%94%b3%e8%af%b7%e5%b0%8f%e7%a8%8b%e5%ba%8f%e5%b9%b6%e9%85%8d%e7%bd%ae" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>这里申请个人小程序应该也是可以的，就是无法使用微信支付等功能，如果能用企业申请小程序当然更好了。</p>
+<p>至于小程序是否进行认证，不认证也不影响使用，唯独微信支付无法开通罢了，如果你不差300元，那认证一下也无妨。</p>
+<p>申请完成，填写小程序的相关信息，名称、头像等，接下来在开发设置中设置服务器域名。域名默认HTTPS开头，不支持HTTP。</p>
+<p><img loading="lazy" src="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/xiaochengxuyumingpeizhi2.png" alt="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/xiaochengxuyumingpeizhi2.png" srcset="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/xiaochengxuyumingpeizhi2.png?size=small, /posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/xiaochengxuyumingpeizhi2.png?size=medium 1.5x, /posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/xiaochengxuyumingpeizhi2.png?size=large 2x" data-title="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/xiaochengxuyumingpeizhi2.png" style="--width: 800px;--aspect-ratio: 800 / 527;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>配置完域名，回到WordPress中配置插件，进入设置中的“微信小程序设置”。</p>
+<p><img loading="lazy" src="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/xiaochengxuchajianshezhi.png" alt="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/xiaochengxuchajianshezhi.png" srcset="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/xiaochengxuchajianshezhi.png?size=small, /posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/xiaochengxuchajianshezhi.png?size=medium 1.5x, /posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/xiaochengxuchajianshezhi.png?size=large 2x" data-title="/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/assets/xiaochengxuchajianshezhi.png" style="--width: 600px;--aspect-ratio: 600 / 387;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>AppID和AppSecret都可以在微信的开发设置中获得。</p>
+<p>除了插件设置外，建议对分类目录增加图片，在文章的分类目录中有微信小程序封面设置。</p>
+<h3 id="4下载并修改小程序代码" class="heading-element"><span><strong>4、下载并修改小程序代码</strong></span>
+  <a href="#4%e4%b8%8b%e8%bd%bd%e5%b9%b6%e4%bf%ae%e6%94%b9%e5%b0%8f%e7%a8%8b%e5%ba%8f%e4%bb%a3%e7%a0%81" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>下载<a href="https://github.com/iamxjb/winxin-app-watch-life.net"target="_blank" rel="external nofollow noopener noreferrer">winxin-app-watch-life.net</a>代码，导入到<a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html"target="_blank" rel="external nofollow noopener noreferrer">微信开发者工具</a>中。</p>
+<p>修改utils目录下的config.js文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">DOMAIN</span> <span class="o">=</span> <span class="s2">&#34;your-site-name.com&#34;</span><span class="p">;</span><span class="c1">//配置域名
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">MINAPPTYPE</span><span class="o">=</span><span class="s2">&#34;0&#34;</span><span class="p">;</span><span class="c1">//小程序的类型，如果是企业小程序请填：0 ，如果是个人小程序请填：1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">WEBSITENAME</span><span class="o">=</span><span class="s2">&#34;罗孚传车&#34;</span><span class="p">;</span> <span class="c1">//网站名称
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">ABOUTID</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">//wordpress网站&#34;页面&#34;的id,注意这个&#34;页面&#34;是wordpress的&#34;页面&#34;，不是&#34;文章&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">PAGECOUNT</span><span class="o">=</span><span class="s1">&#39;10&#39;</span><span class="p">;</span> <span class="c1">//每页文章数目
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">CATEGORIESID</span><span class="o">=</span><span class="s1">&#39;all&#39;</span> <span class="c1">//专题页显示全部的分类
+</span></span></span><span class="line"><span class="cl"><span class="c1">//var CATEGORIESID = &#39;1,1059,98,416,189,374,6,463&#39;;//指定专题页显示的分类的id
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">INDEXLISTTYPE</span><span class="o">=</span><span class="s2">&#34;all&#34;</span> <span class="c1">//首页显示所有分类
+</span></span></span><span class="line"><span class="cl"><span class="c1">//var INDEXLISTTYPE =&#34;1&#34; //指定首页显示分类的id
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">PAYTEMPPLATEID</span> <span class="o">=</span> <span class="s1">&#39;t1YE-N&#39;</span><span class="p">;</span><span class="c1">//赞赏消息模版id
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">REPLAYTEMPPLATEID</span> <span class="o">=</span> <span class="s1">&#39;c_Ni2&#39;</span><span class="p">;</span><span class="c1">//回复评论消息模版id
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">ZANIMAGEURL</span> <span class="o">=</span> <span class="s1">&#39;../../images/qrcode&#39;</span><span class="p">;</span><span class="c1">//微信赞赏的图片链接，用于个人小程序的赞赏
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">LOGO</span> <span class="o">=</span> <span class="s2">&#34;../../images/logo-icon.png&#34;</span><span class="p">;</span> <span class="c1">// 网站的logo图片
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">POSTERIMGURL</span> <span class="o">=</span><span class="s2">&#34;../../images/logo700.png&#34;</span><span class="p">;</span> <span class="c1">//生成海报如果没有首图，使用此处设置的图片作为海报图片。
+</span></span></span><span class="line"><span class="cl"><span class="c1">//设置downloadFile合法域名,不带https ,在中括号([])里增加域名，格式：{id=**,domain:&#39;www.**.com&#39;}，用英文逗号分隔。
+</span></span></span><span class="line"><span class="cl"><span class="c1">//此处设置的域名和小程序与小程序后台设置的downloadFile合法域名要一致。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">DOWNLOADFILEDOMAIN</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">domain</span><span class="o">:</span> <span class="s1">&#39;your-site-name.com&#39;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>除了config文件的修改，程序中的页面名称等内容也需要修改，自行查找修改即可。</p>
+<p>修改完后即时预览，差不多了就可以上传代码啦。</p>
+<p>至此，你的小程序就算完成啦，赶快预览一下吧。</p>
+<p>是不是觉得内容有点少？教你一招：<a href="https://rovertang.feishu.cn/docx/doxcnaBfBbfCtQUwfHO2vbCmUVf"target="_blank" rel="external nofollow noopener noreferrer">一小时内更新100篇文章</a>！</p>
+<p>好了，做小程序就这么简单，现在，你是不是也准备跃跃欲试小程序了呢？</p>
+<p>本文飞书文档：<a href="https://rovertang.feishu.cn/docx/doxcnAI6yIYk2n5kut9rdYPvhpf"target="_blank" rel="external nofollow noopener noreferrer">手把手教你制作微信小程序，开源、免费、快速搞定</a></p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2018-09-17 00:00:00">更新于 2018-09-17&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" class="post-tag" title="标签 - 小程序">小程序</a><a href="/tags/%E5%BC%80%E6%BA%90/" class="post-tag" title="标签 - 开源">开源</a><a href="/tags/wordpress/" class="post-tag" title="标签 - WordPress">WordPress</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/car/20180916-new-travel-super-industrial-chain-transportation-reform-website-navigation/" class="post-nav-item" rel="prev" title="新出行超级产业链之交通工具变革(网址导航)"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>新出行超级产业链之交通工具变革(网址导航)</a><a href="/posts/misc/20180923-how-to-update-100-articles-in-an-hour-evernote-sync-plug-in-introduction/" class="post-nav-item" rel="next" title="如何在一小时内更新100篇文章？-Evernote Sync插件介绍">如何在一小时内更新100篇文章？-Evernote Sync插件介绍<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment"></div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward"><i class="fa-solid fa-qrcode fa-fw" aria-hidden="true"></i>赞赏</label>
+    <div class="reward-ways" data-mode="static"><div><img loading="lazy" src="/images/alipay.png" alt="RoverTang 支付宝" data-title="RoverTang 支付宝" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>支付宝</span>
+          </div><div><img loading="lazy" src="/images/wechatpay.png" alt="RoverTang 微信" data-title="RoverTang 微信" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>微信</span>
+          </div></div>
+  </div></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.139.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.16">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2005 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://rovertang.com"target="_blank" rel="external nofollow noopener noreferrer">RoverTang</a></span></div><div class="footer-line beian"><span class="icp footer-divider">沪ICP备2020036772号-1</span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;bottom: 0;"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.16"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

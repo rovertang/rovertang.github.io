@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>世界机场 - 标签 - 罗孚</title>
+    <link>https://blog.rovertang.com/tags/%E4%B8%96%E7%95%8C%E6%9C%BA%E5%9C%BA/</link>
+    <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
+    <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 15 Sep 2018 00:00:00 +0800</lastBuildDate>
+    <atom:link href="https://blog.rovertang.com/tags/%E4%B8%96%E7%95%8C%E6%9C%BA%E5%9C%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>世界机场数据(带位置坐标)</title>
+      <link>https://blog.rovertang.com/posts/map/20180915-world-airport-data-band-location-coordinates/</link>
+      <pubDate>Sat, 15 Sep 2018 00:00:00 +0800</pubDate>
+      <guid>https://blog.rovertang.com/posts/map/20180915-world-airport-data-band-location-coordinates/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <description>&lt;p&gt;最近在一个航旅的项目上需要用到机场数据，网上搜了一圈，有一个开放、免费的世界机场数据网站：&lt;a href=&#34;http://ourairports.com/&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;OurAirports&lt;/a&gt;。&lt;/p&gt;&#xA;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://blog.rovertang.com/posts/map/20180915-world-airport-data-band-location-coordinates/assets/boxcnEUPZNtYVKhGZDvFzJxJWS8.png&#34; alt=&#34;/posts/map/20180915-world-airport-data-band-location-coordinates/assets/boxcnEUPZNtYVKhGZDvFzJxJWS8.png&#34; srcset=&#34;https://blog.rovertang.com/posts/map/20180915-world-airport-data-band-location-coordinates/assets/boxcnEUPZNtYVKhGZDvFzJxJWS8.png?size=small, https://blog.rovertang.com/posts/map/20180915-world-airport-data-band-location-coordinates/assets/boxcnEUPZNtYVKhGZDvFzJxJWS8.png?size=medium 1.5x, https://blog.rovertang.com/posts/map/20180915-world-airport-data-band-location-coordinates/assets/boxcnEUPZNtYVKhGZDvFzJxJWS8.png?size=large 2x&#34; data-title=&#34;/posts/map/20180915-world-airport-data-band-location-coordinates/assets/boxcnEUPZNtYVKhGZDvFzJxJWS8.png&#34; style=&#34;--width: 800px;--aspect-ratio: 800 / 600;background: url(/images/loading.min.svg) no-repeat center;&#34; onload=&#34;this.title=this.dataset.title;for(const i of [&#39;style&#39;, &#39;data-title&#39;,&#39;onerror&#39;,&#39;onload&#39;]){this.removeAttribute(i);}this.dataset.lazyloaded=&#39;&#39;;&#34; onerror=&#34;this.title=this.dataset.title;for(const i of [&#39;style&#39;, &#39;data-title&#39;,&#39;onerror&#39;,&#39;onload&#39;]){this.removeAttribute(i);}&#34;/&gt;&lt;/p&gt;&#xA;&lt;p&gt;同OpenStreetMap类似，是一个开放的可编辑的数据网站，截止目前拥有54609条机场数据，包括中国400条机场数据，应该还是比较全面的。除了基础的机场数据外，还提供了跑道等数据。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

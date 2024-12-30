@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>如何制作一份疫情场所分布地图？(附数据和源码) - 罗孚</title><meta name="author" content="RoverTang">
+<meta name="description" content="使用高德地图API制作一份上海疫情场所分布地图，支持疫情场所地图显示、自身位置显示、查询位置等功能。如何实现的？赶紧进来看看吧。"><meta name="keywords" content='疫情地图, WebMap, 源码'>
+  <meta itemprop="name" content="如何制作一份疫情场所分布地图？(附数据和源码)">
+  <meta itemprop="description" content="使用高德地图API制作一份上海疫情场所分布地图，支持疫情场所地图显示、自身位置显示、查询位置等功能。如何实现的？赶紧进来看看吧。">
+  <meta itemprop="datePublished" content="2020-02-23T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2020-02-23T00:00:00+08:00">
+  <meta itemprop="wordCount" content="6269">
+  <meta itemprop="image" content="https://blog.rovertang.com/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/cover.png">
+  <meta itemprop="keywords" content="疫情地图,WebMap,源码"><meta property="og:url" content="https://blog.rovertang.com/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/">
+  <meta property="og:site_name" content="罗孚">
+  <meta property="og:title" content="如何制作一份疫情场所分布地图？(附数据和源码)">
+  <meta property="og:description" content="使用高德地图API制作一份上海疫情场所分布地图，支持疫情场所地图显示、自身位置显示、查询位置等功能。如何实现的？赶紧进来看看吧。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-02-23T00:00:00+08:00">
+    <meta property="article:modified_time" content="2020-02-23T00:00:00+08:00">
+    <meta property="article:tag" content="疫情地图">
+    <meta property="article:tag" content="WebMap">
+    <meta property="article:tag" content="源码">
+    <meta property="og:image" content="https://blog.rovertang.com/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/cover.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://blog.rovertang.com/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/cover.png">
+  <meta name="twitter:title" content="如何制作一份疫情场所分布地图？(附数据和源码)">
+  <meta name="twitter:description" content="使用高德地图API制作一份上海疫情场所分布地图，支持疫情场所地图显示、自身位置显示、查询位置等功能。如何实现的？赶紧进来看看吧。">
+<meta name="application-name" content="罗孚传说">
+<meta name="apple-mobile-web-app-title" content="罗孚传说"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://blog.rovertang.com/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/" title="如何制作一份疫情场所分布地图？(附数据和源码) - 罗孚" /><link rel="prev" type="text/html" href="https://blog.rovertang.com/posts/soul/20190105-10-life-insights-from-my-wifes-ferocity/" title="从老婆凶我一事获得的10条人生感悟（家庭篇）" /><link rel="next" type="text/html" href="https://blog.rovertang.com/posts/eoffice/20200301-okr-implementation-method-thoughts-on-ideas-and-processes/" title="OKR实施方法——关于思路和流程的思考" /><link rel="alternate" type="text/markdown" href="https://blog.rovertang.com/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/index.md" title="如何制作一份疫情场所分布地图？(附数据和源码) - 罗孚"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="apxz4dWbUQ2bsnGFk6SmRK4gNZ7tlT21KgMZ1t9hqdk" /><meta name="msvalidate.01" content="5282002B82D61AD2D097F2F6419C1E4A" /><meta name="baidu-site-verification" content="codeva-RiIZqiHrvQ" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "如何制作一份疫情场所分布地图？(附数据和源码)",
+    "inLanguage": "zh-cn",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.rovertang.com\/posts\/map\/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code\/"
+    },"genre": "posts","keywords": "疫情地图, WebMap, 源码","wordcount":  6269 ,
+    "url": "https:\/\/blog.rovertang.com\/posts\/map\/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code\/","datePublished": "2020-02-23T00:00:00+08:00","dateModified": "2020-02-23T00:00:00+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "RoverTang"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item has-children">
+              <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/" title="文章">文章</a></li><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/map/" title="地图">地图</a></li><li class="breadcrumb-item active" data-separator="&gt;" aria-current="page">如何制作一份疫情场所分布地图？(附数据和源码)</li>
+    </ol>
+  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div style="width: 350px; margin: 0 auto; display: flex; justify-content: space-between; text-align: center;">
+  <img src="/images/wxmp-blog.jpg" alt="wxmp-blog" style="width: 115px; height: 153px;">
+  <img src="/images/wxmp-shanghai.jpg" alt="wxmp-shanghai" style="width: 115px; height: 153px;">
+  <img src="/images/zsxq-fromblog.jpg" alt="zsxq-fromblog" style="width: 115px; height: 153px;">
+</div></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>如何制作一份疫情场所分布地图？(附数据和源码)</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://rovertang.com" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    RoverTang</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E5%9C%B0%E5%9B%BE/" class="post-category" title="分类 - 地图"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 地图</a></span></div><div class="post-meta-line"><span title="发布于 2020-02-23 00:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2020-02-23">2020-02-23</time></span>&nbsp;<span title="6269 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 6300 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 13 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#功能和效果预览">功能和效果预览</a></li>
+    <li><a href="#概要设计">概要设计</a>
+      <ul>
+        <li><a href="#实现框架">实现框架</a></li>
+        <li><a href="#数据的定义和来源">数据的定义和来源</a></li>
+        <li><a href="#地图平台的选择">地图平台的选择</a></li>
+      </ul>
+    </li>
+    <li><a href="#详细设计功能实现">详细设计(功能实现)</a>
+      <ul>
+        <li><a href="#地图显示">地图显示</a></li>
+        <li><a href="#添加疫情场所marker并弹出气泡框">添加疫情场所marker并弹出气泡框</a></li>
+        <li><a href="#添加自定位功能">添加自定位功能</a></li>
+        <li><a href="#添加查询功能">添加查询功能</a></li>
+        <li><a href="#其他小功能">其他小功能</a></li>
+        <li><a href="#时间顺序和事件的考虑">时间顺序和事件的考虑</a></li>
+      </ul>
+    </li>
+    <li><a href="#延伸思考">延伸思考</a>
+      <ul>
+        <li><a href="#产品思考">产品思考</a></li>
+        <li><a href="#开发思考">开发思考</a></li>
+      </ul>
+    </li>
+    <li><a href="#福利时间">福利时间</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p>罗孚想要制作一份疫情场所分布地图，最初是因为看到我所在的城市(上海)疫情场所位置不准，想自己做一份数据并显示在地图上，结果一拖再拖然后疫情都快结束了[尴尬]，不过我还是花了一天时间研究了一下，于是有了这篇《如何制作一份疫情场所分布地图？》，要不就当罗孚手把手教你制作一份疫情场所分布地图吧[捂脸]。</p>
+<p>本文是以上海地图数据为基础、基于高德地图API设计制作的一份城市地图，如果你收集了你所在城市的地图数据，那么按照本文文末提供的源码和数据结构，你也可以直接复制出一份城市疫情场所地图。要是你真实现了，记得要回来show给我看一下哦。</p>
+<h2 id="功能和效果预览" class="heading-element"><span>功能和效果预览</span>
+  <a href="#%e5%8a%9f%e8%83%bd%e5%92%8c%e6%95%88%e6%9e%9c%e9%a2%84%e8%a7%88" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p><img loading="lazy" src="/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/assets/boxcnxwVAApOZv6emUnEoAihhle.png" alt="/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/assets/boxcnxwVAApOZv6emUnEoAihhle.png" srcset="/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/assets/boxcnxwVAApOZv6emUnEoAihhle.png?size=small, /posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/assets/boxcnxwVAApOZv6emUnEoAihhle.png?size=medium 1.5x, /posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/assets/boxcnxwVAApOZv6emUnEoAihhle.png?size=large 2x" data-title="/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/assets/boxcnxwVAApOZv6emUnEoAihhle.png" style="--width: 800px;--aspect-ratio: 800 / 571;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>上图是几个主要功能的预览</p>
+<p>不过只给个图不给体验，这不是罗孚的风格，直接上体验网址：<a href="https://rovertang.com/map/shncov/"target="_blank" rel="external nofollow noopener noreferrer">https://rovertang.com/map/shncov/</a></p>
+<p>疫情场所分布地图现有的功能：</p>
+<ol>
+<li>地图显示</li>
+<li>疫情场所显示</li>
+<li>个人位置显示</li>
+<li>地图搜索</li>
+<li>其他：缩放控件显示、地图范围限定等
+由于是初版，仅仅研究探讨，所以更强大的功能还无法实现，不过我会在下文中展望一下更强大的功能。</li>
+</ol>
+<h2 id="概要设计" class="heading-element"><span>概要设计</span>
+  <a href="#%e6%a6%82%e8%a6%81%e8%ae%be%e8%ae%a1" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>两个文件就实现了全部功能，还要做个概要设计？不好意思，请让罗孚装一下[捂脸]。实际上，罗孚在这事情上确实走了弯路。</p>
+<h3 id="实现框架" class="heading-element"><span>实现框架</span>
+  <a href="#%e5%ae%9e%e7%8e%b0%e6%a1%86%e6%9e%b6" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>罗孚最开始考虑的实现方案，超级简单，简单到甚至不需要写代码和制作数据文件。</p>
+<p>不管是高德、百度还是腾讯，都提供了地图数据管理方案，高德的<a href="https://lbs.amap.com/api/yuntu/guide/data/storage"target="_blank" rel="external nofollow noopener noreferrer">云图</a>、百度地图的<a href="http://lbsyun.baidu.com/index.php?title=lbscloud"target="_blank" rel="external nofollow noopener noreferrer">LBS云</a>、腾讯地图的<a href="https://lbs.qq.com/place_cloud/index.html"target="_blank" rel="external nofollow noopener noreferrer">地点云</a>，直接使用他们的云存储，然后在地图上添加一个自定义云图层或者通过数据检索API取出数据后marker到地图就行了。</p>
+<p>云数据方案是好的，但罗孚使用下来，竟然都不好用，要么无法在地图上显示，要么API接口不返回数据，只能说罗孚作为一个非专业开发人员，确实太菜了一些。当然，也要批评一下高德，地图如果是3D模式时，无法使用云地图图层，这一信息是在某一文档的一行小字中找到的，擦，这坑挖的够深。</p>
+<p>自建数据库成了唯一的选择。</p>
+<p>不过，为了让方案简单易复制，使用MySQL似乎重了一点，要不使用sqlite吧。但一想到要写数据库的增删改查，又增加了不少麻烦，为了快速实现，直接将最终数据做成了json文本，数据库的操作，以后再考虑吧。</p>
+<p>大言不惭的说，最后的实现框架是：json+js。嗯，两个文件，一个json数据文件，一个js文件(写在html文件里了)。[憨笑]</p>
+<h3 id="数据的定义和来源" class="heading-element"><span>数据的定义和来源</span>
+  <a href="#%e6%95%b0%e6%8d%ae%e7%9a%84%e5%ae%9a%e4%b9%89%e5%92%8c%e6%9d%a5%e6%ba%90" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>对于地图数据，必须的字段可能有：</p>
+<ul>
+<li>名称</li>
+<li>经度</li>
+<li>纬度</li>
+<li>地址(可选)</li>
+</ul>
+<p>对于疫情，可能的字段有：</p>
+<ul>
+<li>次数 <em>(有些省市会提供这个地址发生的次数)</em></li>
+<li>类型 <em>(可以细分为小区、商场等)</em></li>
+<li>时间 <em>(发现时间)</em></li>
+<li>来源 <em>(数据源来自哪里)</em></li>
+</ul>
+<p>呃，考虑的是不是有点复杂？罗孚实际上也没有用这么多数据内容，数据字段越多，内容越丰富，实现难度也就越大，作为一个DEMO，就只考虑必须的名称(实际是用地址代替的)和经纬度吧。
+定义完字段，就要制作数据了，这些点位数据怎么来呢？逃不出两种方式：</p>
+<ul>
+<li>
+<p>自己收集和标注</p>
+</li>
+<li>
+<p>扒别人的位置数据</p>
+</li>
+</ul>
+<p>罗孚的初衷是想自己收集和标注，自力更生是我国人民的传统美德，但本人懒癌严重，所以最后也是取了个巧，扒了份别人的数据(仅使用了上海部分啊，其他城市的没要)。</p>
+<p>当然，如何扒其他平台的数据，似乎又可以写一篇文章，考虑同本教程有较大出入，加上这见不得人的伎俩，以后再说吧。</p>
+<h3 id="地图平台的选择" class="heading-element"><span>地图平台的选择</span>
+  <a href="#%e5%9c%b0%e5%9b%be%e5%b9%b3%e5%8f%b0%e7%9a%84%e9%80%89%e6%8b%a9" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>确定好框架，定义好数据，可以开始开发了，但由于和地图相关，在此多讨论一下地图平台的问题。</p>
+<p>一般来说，使用商业公司成熟的地图API是最佳选择：</p>
+<p>高德和百度地图的API：推荐。毕竟是国内不分伯仲的顶尖API。</p>
+<p>腾讯地图API：可用。可能可以算国内老三，但用的人真少，看在微信、小程序都是鹅厂的产品，也是值得考虑的，看了下API，也基本能用。</p>
+<p>mapbox API：可用，有难度。mapbox是开源地图解决方案公司，属于国际顶尖(在地图上甚至比Google还强大哦)，现在正在大力发展国内市场，此次制作的疫情地图也超级漂亮(<a href="https://www.mapbox.cn/coronavirusmap"target="_blank" rel="external nofollow noopener noreferrer">欣赏一下</a>)。</p>
+<p>Google maps API：不能用。虽然国际顶尖(地图API鼻祖)，但不能用的道理，你懂得。(有兴趣的可以了解一下我十年前拆解的<a href="https://www.cnblogs.com/Tangf/archive/2009/02/20/1394511.html"target="_blank" rel="external nofollow noopener noreferrer">Google Maps API v3离线开发包</a>)</p>
+<p>除了商业公司的方案，当然也可以使用开源方案，比如leaflet。我看到天地图上海做的地方疫情地图就是用了leaflet。开源方案主要是功能框架，但地图底图数据，要么用商业公司的，要么就还是自己扒了(罗孚也扒过：<a href="/posts/mapnavi/20180717-google-maps-tile-map-file-download-1-11-levels/">Google Maps瓦片(tile)地图文件下载(1-11层级)</a>，今年过年太无聊，又扒了更多更细的数据[捂脸])。</p>
+<p>地图平台的探讨，真可以再写几篇文章，对于本文的地图平台，最终选择了高德，主要原因是站在别人肩膀上的选择。百度地图API虽然我想用，但考虑到百度地图坐标是在GCJ02坐标系下又做了一次加密，想到后续的数据坐标混乱，还是罢了罢了。</p>
+<h2 id="详细设计功能实现" class="heading-element"><span>详细设计(功能实现)</span>
+  <a href="#%e8%af%a6%e7%bb%86%e8%ae%be%e8%ae%a1%e5%8a%9f%e8%83%bd%e5%ae%9e%e7%8e%b0" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>继续大言不惭的说说功能实现的详细设计吧，我们针对每一项功能做详细的介绍以及实现上的注意事项，顺便把我参考的地图示例贴出来供大家参考。</p>
+<h3 id="地图显示" class="heading-element"><span>地图显示</span>
+  <a href="#%e5%9c%b0%e5%9b%be%e6%98%be%e7%a4%ba" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>地图显示是最基本的功能，有一些地方需要注意，谈谈我在地图上的一些考虑。</p>
+<ol>
+<li>考虑到是地方地图，那么全国地图、世界地图层级就不要显示啦，所以我把地图层级设置在了10-18之间。</li>
+<li>既然是专题地图，那么杂项就不要显示了，比如室内地图、地图上的热点等，都设置为false吧。</li>
+<li>而地图的风格，normal的色调太亮，换一个官方的远山黛whitesmoke主题吧。</li>
+</ol>
+<p>参考示例：</p>
+<p>地图创建：<a href="https://lbs.amap.com/api/javascript-api/example/map-lifecycle/map-show"target="_blank" rel="external nofollow noopener noreferrer">https://lbs.amap.com/api/javascript-api/example/map-lifecycle/map-show</a></p>
+<p>设置地图中心点/级别：<a href="https://lbs.amap.com/api/javascript-api/example/map/change-map-center"target="_blank" rel="external nofollow noopener noreferrer">https://lbs.amap.com/api/javascript-api/example/map/change-map-center</a></p>
+<p>标准样式主题：<a href="https://lbs.amap.com/api/javascript-api/example/personalized-map/set-theme-style"target="_blank" rel="external nofollow noopener noreferrer">https://lbs.amap.com/api/javascript-api/example/personalized-map/set-theme-style</a></p>
+<p>地图类：<a href="https://lbs.amap.com/api/javascript-api/reference/map"target="_blank" rel="external nofollow noopener noreferrer">https://lbs.amap.com/api/javascript-api/reference/map</a></p>
+<h3 id="添加疫情场所marker并弹出气泡框" class="heading-element"><span>添加疫情场所marker并弹出气泡框</span>
+  <a href="#%e6%b7%bb%e5%8a%a0%e7%96%ab%e6%83%85%e5%9c%ba%e6%89%80marker%e5%b9%b6%e5%bc%b9%e5%87%ba%e6%b0%94%e6%b3%a1%e6%a1%86" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><img loading="lazy" src="/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/assets/boxcnCjI9U9GexsJAX4N3Dt5bMb.png" alt="/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/assets/boxcnCjI9U9GexsJAX4N3Dt5bMb.png" srcset="/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/assets/boxcnCjI9U9GexsJAX4N3Dt5bMb.png?size=small, /posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/assets/boxcnCjI9U9GexsJAX4N3Dt5bMb.png?size=medium 1.5x, /posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/assets/boxcnCjI9U9GexsJAX4N3Dt5bMb.png?size=large 2x" data-title="/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/assets/boxcnCjI9U9GexsJAX4N3Dt5bMb.png" style="--width: 600px;--aspect-ratio: 600 / 600;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>这一步算是本地图DEMO的最核心功能了，虽说比较简单，就是遍历json，然后批量添加marker到地图就可以了，但这里遇到了一个坑，在marker上绑定click事件后，竟然click任何一个marker，都是响应最后一个marker的气泡框。</p>
+<p>调整半天、搜索半天都没能解决，罗孚差点想把整个DEMO都放弃，最后还是搜索到了一个小小的提示，才解决了这个问题。感慨百度搜索真心不灵。</p>
+<p>这个问题的解决方法：使用marker的extData。</p>
+<p>参考示例：</p>
+<p>覆盖物的添加与移除：<a href="https://lbs.amap.com/api/javascript-api/example/map-componets/map-overlays"target="_blank" rel="external nofollow noopener noreferrer">https://lbs.amap.com/api/javascript-api/example/map-componets/map-overlays</a></p>
+<p>点标记：<a href="https://lbs.amap.com/api/javascript-api/example/marker/marker-content"target="_blank" rel="external nofollow noopener noreferrer">https://lbs.amap.com/api/javascript-api/example/marker/marker-content</a></p>
+<p>自定义图标：<a href="https://lbs.amap.com/api/javascript-api/example/marker/custom-icon"target="_blank" rel="external nofollow noopener noreferrer">https://lbs.amap.com/api/javascript-api/example/marker/custom-icon</a></p>
+<p>获取某个覆盖物(关于extData的使用)：<a href="https://lbs.amap.com/api/javascript-api/example/common/ext-data/"target="_blank" rel="external nofollow noopener noreferrer">https://lbs.amap.com/api/javascript-api/example/common/ext-data/</a></p>
+<p>默认样式信息窗体：<a href="https://lbs.amap.com/api/javascript-api/example/infowindow/default-style-infowindow"target="_blank" rel="external nofollow noopener noreferrer">https://lbs.amap.com/api/javascript-api/example/infowindow/default-style-infowindow</a></p>
+<p>Marker类：<a href="https://lbs.amap.com/api/javascript-api/reference/overlay#marker"target="_blank" rel="external nofollow noopener noreferrer">https://lbs.amap.com/api/javascript-api/reference/overlay#marker</a></p>
+<p>InfoWindow 类：<a href="https://lbs.amap.com/api/javascript-api/reference/infowindow#InfoWindow"target="_blank" rel="external nofollow noopener noreferrer">https://lbs.amap.com/api/javascript-api/reference/infowindow#InfoWindow</a></p>
+<h3 id="添加自定位功能" class="heading-element"><span>添加自定位功能</span>
+  <a href="#%e6%b7%bb%e5%8a%a0%e8%87%aa%e5%ae%9a%e4%bd%8d%e5%8a%9f%e8%83%bd" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><img loading="lazy" src="/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/assets/boxcnTkBcFstmXpWKu6kESX2jJb.png" alt="/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/assets/boxcnTkBcFstmXpWKu6kESX2jJb.png" srcset="/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/assets/boxcnTkBcFstmXpWKu6kESX2jJb.png?size=small, /posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/assets/boxcnTkBcFstmXpWKu6kESX2jJb.png?size=medium 1.5x, /posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/assets/boxcnTkBcFstmXpWKu6kESX2jJb.png?size=large 2x" data-title="/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/assets/boxcnTkBcFstmXpWKu6kESX2jJb.png" style="--width: 600px;--aspect-ratio: 600 / 600;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>此功能是显示自己的位置，如果定位成功，则基于自身位置显示半径为1公里和3公里的圈，以了解附近范围内大概有多少疫情场所marker。</p>
+<p>需要注意，本处使用的是AMap.Geolocation，是高德地图API的定位插件。</p>
+<p>定位的一些细节逻辑：当定位成功后，原则上是需要将地图的中心点移动到定位位置的。但如果定位信息中的citycode不是021，那么就不要移动地图中心点。对于无法定位和定位成功返回的citycode不是021，那么仍然是以上海市人民广场为地图中心点。</p>
+<p>参考示例：</p>
+<p>浏览器精确定位：<a href="https://lbs.amap.com/api/javascript-api/example/location/browser-location"target="_blank" rel="external nofollow noopener noreferrer">https://lbs.amap.com/api/javascript-api/example/location/browser-location</a></p>
+<p>圆的绘制和编辑：<a href="https://lbs.amap.com/api/javascript-api/example/overlayers/circle-draw-and-edit"target="_blank" rel="external nofollow noopener noreferrer">https://lbs.amap.com/api/javascript-api/example/overlayers/circle-draw-and-edit</a></p>
+<p>AMap.Geolocation插件：<a href="https://lbs.amap.com/api/javascript-api/reference/location#m_AMap.Geolocation"target="_blank" rel="external nofollow noopener noreferrer">https://lbs.amap.com/api/javascript-api/reference/location#m_AMap.Geolocation</a></p>
+<h3 id="添加查询功能" class="heading-element"><span>添加查询功能</span>
+  <a href="#%e6%b7%bb%e5%8a%a0%e6%9f%a5%e8%af%a2%e5%8a%9f%e8%83%bd" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><img loading="lazy" src="/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/assets/boxcnm6V62iuR8ZJMpwHDpUxLMf.png" alt="/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/assets/boxcnm6V62iuR8ZJMpwHDpUxLMf.png" srcset="/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/assets/boxcnm6V62iuR8ZJMpwHDpUxLMf.png?size=small, /posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/assets/boxcnm6V62iuR8ZJMpwHDpUxLMf.png?size=medium 1.5x, /posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/assets/boxcnm6V62iuR8ZJMpwHDpUxLMf.png?size=large 2x" data-title="/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/assets/boxcnm6V62iuR8ZJMpwHDpUxLMf.png" style="--width: 800px;--aspect-ratio: 800 / 400;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>可以查看自身位置信息了解自身周边的疫情情况，那么想看看某一小区或商场附近的疫情情况是否可以实现呢？这就需要用到查询功能了。</p>
+<p>这里我们使用高德的AMap.Autocomplete，是输入提示插件，虽然不是地点搜索，但已经足够用了，能出现在提示中的结果都是搜索频率较高的结果，同时这个插件的使用也超级简单，输入绑定到某一输入框，比如id为search的input，结果绑定到某一div，比如id为result的div，功能就实现了，你只要输入内容，result中就出现结果了(简单到让罗孚瞠目结舌)。</p>
+<p>完成上述操作，结果内容是无法选择的，好在插件提供了返回结果功能，在AMap中设置一个监听事件，选择某一结果后就可以得到该结果的详细信息，我主要是取经纬度信息，然后在地图上显示一个marker就好了。</p>
+<p>参考示例：</p>
+<p>输入提示：<a href="https://lbs.amap.com/api/javascript-api/example/input/input-prompt"target="_blank" rel="external nofollow noopener noreferrer">https://lbs.amap.com/api/javascript-api/example/input/input-prompt</a></p>
+<h3 id="其他小功能" class="heading-element"><span>其他小功能</span>
+  <a href="#%e5%85%b6%e4%bb%96%e5%b0%8f%e5%8a%9f%e8%83%bd" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>添加简易控件，就是在地图右下角的放大和缩小按钮，使用AMap.ToolBar即可，是地图操作工具条插件。</p>
+<p>为了让地图范围在某一范围中显示，可以给地图设置一个bound，使用map.setLimitBounds方法即可。</p>
+<p>参考示例：</p>
+<p>地图控件：<a href="https://lbs.amap.com/api/javascript-api/example/map-componets/map-with-function-control"target="_blank" rel="external nofollow noopener noreferrer">https://lbs.amap.com/api/javascript-api/example/map-componets/map-with-function-control</a></p>
+<p>限制地图显示范围：<a href="https://lbs.amap.com/api/javascript-api/example/map/limit-map-show-range"target="_blank" rel="external nofollow noopener noreferrer">https://lbs.amap.com/api/javascript-api/example/map/limit-map-show-range</a></p>
+<p>地图操作工具条插件：<a href="https://lbs.amap.com/api/javascript-api/reference/map-control#AMap.ToolBar"target="_blank" rel="external nofollow noopener noreferrer">https://lbs.amap.com/api/javascript-api/reference/map-control#AMap.ToolBar</a></p>
+<h3 id="时间顺序和事件的考虑" class="heading-element"><span>时间顺序和事件的考虑</span>
+  <a href="#%e6%97%b6%e9%97%b4%e9%a1%ba%e5%ba%8f%e5%92%8c%e4%ba%8b%e4%bb%b6%e7%9a%84%e8%80%83%e8%99%91" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>本demo中使用的数据，总量100+，不算很多，但若数据量达到1000+，那么加载的时间顺序就显得尤为重要，所以我们在地图加载完成(使用map.on ‘complete’)后，再去加载json数据。</p>
+<p>这样做的优势：先让地图显示，然后看到地图上出现marker，避免地图长时间等待加载，毕竟用户的耐心是有限的。</p>
+<p>关于事件，由于主要是针对地图或覆盖物类，所以使用这些类的on成员方法实现对事件的绑定。比如上面加载json数据是绑定在map的complete事件上的，比如气泡框的显示是绑定在marker的click事件上的。</p>
+<p>对于非地图或覆盖物类的事件，那就只能增加addListener事件了，比如对输入提示结果的操作。</p>
+<p>参考示例：</p>
+<p>地图加载完成：<a href="https://lbs.amap.com/api/javascript-api/example/map-lifecycle/map-complete"target="_blank" rel="external nofollow noopener noreferrer">https://lbs.amap.com/api/javascript-api/example/map-lifecycle/map-complete</a></p>
+<p>事件：<a href="https://lbs.amap.com/api/javascript-api/reference/event"target="_blank" rel="external nofollow noopener noreferrer">https://lbs.amap.com/api/javascript-api/reference/event</a></p>
+<p>输入提示后查询：<a href="https://lbs.amap.com/api/javascript-api/example/poi-search/search-after-enter-prompt/"target="_blank" rel="external nofollow noopener noreferrer">https://lbs.amap.com/api/javascript-api/example/poi-search/search-after-enter-prompt/</a></p>
+<h2 id="延伸思考" class="heading-element"><span>延伸思考</span>
+  <a href="#%e5%bb%b6%e4%bc%b8%e6%80%9d%e8%80%83" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="产品思考" class="heading-element"><span>产品思考</span>
+  <a href="#%e4%ba%a7%e5%93%81%e6%80%9d%e8%80%83" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>本文真的仅仅是一个DEMO，还有甚多的功能未能实现：</p>
+<ul>
+<li>数据管理后台</li>
+</ul>
+<p>直接使用json文本作为数据源，无法增删改查确实是一个缺憾，需要多数据做一个管理，可以查询地图数据、添加数据、修改数据，这个功能下也包含了不少的小功能。</p>
+<ul>
+<li>更多地图显示方式</li>
+</ul>
+<p>仅仅显示marker，显示方法太粗糙，marker按理是在详图层级(比如16级及以上)才显示的内容，可以考虑引入聚合图和热力图。</p>
+<p>比如10到12层级，可以考虑按照地区对疫情场所数据进行聚合显示，按地区显示每一区域总量总量的marker。</p>
+<p>比如13到15层级，可以考虑显示热力图，因为在此层级下查看疫情出现的热度可能反而更直观一些。</p>
+<ul>
+<li>计算距离和提醒</li>
+</ul>
+<p>在当前位置或查询结果数据上，显示距离最近的疫情场所和距离信息，以让自身了解危险的程度。</p>
+<ul>
+<li>引入其他地图API</li>
+</ul>
+<p>使用高德地图API，虽然实现了此DEMO，但毕竟有自身的局限性，绑定在了此平台上，可以考虑使用同一份数据制作基于百度地图API、腾讯地图API以及leaflet库的地图。</p>
+<p>还有很多很多，无法一一叙述，后续可以考虑写一篇疫情地图功能对比的文章，看看别人在产品制作上的优劣。</p>
+<h3 id="开发思考" class="heading-element"><span>开发思考</span>
+  <a href="#%e5%bc%80%e5%8f%91%e6%80%9d%e8%80%83" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>不是开发人员，但用代码堆起了这个DEMO，那么也说说在开发上的思考吧。</p>
+<ul>
+<li>不要重复造轮子</li>
+</ul>
+<p>站在巨人肩膀上，用成熟的API，其实挺好的。</p>
+<p>有时候你的目标是实现功能，而不是创造一个有竞争力的平台，那么你就没有必要思考自己开发一个平台，甚至连选择哪个平台都不需要太多的顾虑。</p>
+<ul>
+<li>专业的人做专业的事</li>
+</ul>
+<p>罗孚本人不是程序猿，也应该有10年以上没有碰过代码了，这次做个DEMO都费了老半天的劲，只能感慨专业的事还是由专业的人来做吧。</p>
+<p>不过上面产品思考的功能开发，如果在屏幕前的你，有兴趣帮助完成，那也欢迎联系我。不管是互相学习交流，还是互相帮助提升，罗孚都愿意，毕竟罗孚也是热心肠嘛[憨笑]。</p>
+<h2 id="福利时间" class="heading-element"><span>福利时间</span>
+  <a href="#%e7%a6%8f%e5%88%a9%e6%97%b6%e9%97%b4" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>本文太啰嗦，一篇技术文章写成了记叙文，罗孚自身也在感慨，看来以后可以考虑做成PPT或视频的形式，要么更简单明了，要么更详细清晰。</p>
+<p>本文标题和开篇均提到了源码和数据，如果是懂技术的你，应该是不屑的，或者Ctrl+U一下就拿到了（加密版本）。如果确实需要下载，可以在“罗孚传说”公众号上回复“<strong>疫情场所地图</strong>”即可（未加密版本）。如果需要带详细注释的文件来研究，请加入罗孚的知识星球来取（带注释版本），当然还可以附送超详细瓦片地图离线文件哦，后续也有更多内容分享。</p>
+<p>好了，用地图API制作一份疫情场所分布地图，今天，你会了吗？欢迎联系罗孚，欢迎关注罗孚的公众号(罗孚传说)做更多交流，更欢迎加入罗孚的知识星球赞助罗孚获得更多有价值内容，我们下一篇文章中见。</p>
+<p>本文飞书文档：<a href="https://rovertang.feishu.cn/docx/doxcnPTmBwtnNSnGtTE8TQicOee"target="_blank" rel="external nofollow noopener noreferrer">如何制作一份疫情场所分布地图？附数据和源码</a></p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2020-02-23 00:00:00">更新于 2020-02-23&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/%E7%96%AB%E6%83%85%E5%9C%B0%E5%9B%BE/" class="post-tag" title="标签 - 疫情地图">疫情地图</a><a href="/tags/webmap/" class="post-tag" title="标签 - WebMap">WebMap</a><a href="/tags/%E6%BA%90%E7%A0%81/" class="post-tag" title="标签 - 源码">源码</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/soul/20190105-10-life-insights-from-my-wifes-ferocity/" class="post-nav-item" rel="prev" title="从老婆凶我一事获得的10条人生感悟（家庭篇）"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>从老婆凶我一事获得的10条人生感悟（家庭篇）</a><a href="/posts/eoffice/20200301-okr-implementation-method-thoughts-on-ideas-and-processes/" class="post-nav-item" rel="next" title="OKR实施方法——关于思路和流程的思考">OKR实施方法——关于思路和流程的思考<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment"></div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward"><i class="fa-solid fa-qrcode fa-fw" aria-hidden="true"></i>赞赏</label>
+    <div class="reward-ways" data-mode="static"><div><img loading="lazy" src="/images/alipay.png" alt="RoverTang 支付宝" data-title="RoverTang 支付宝" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>支付宝</span>
+          </div><div><img loading="lazy" src="/images/wechatpay.png" alt="RoverTang 微信" data-title="RoverTang 微信" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>微信</span>
+          </div></div>
+  </div></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.139.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.16">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2005 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://rovertang.com"target="_blank" rel="external nofollow noopener noreferrer">RoverTang</a></span></div><div class="footer-line beian"><span class="icp footer-divider">沪ICP备2020036772号-1</span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;bottom: 0;"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.16"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

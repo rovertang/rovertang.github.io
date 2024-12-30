@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>飞书文档 - 标签 - 罗孚</title>
+    <link>https://blog.rovertang.com/tags/%E9%A3%9E%E4%B9%A6%E6%96%87%E6%A1%A3/</link>
+    <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
+    <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 12 Feb 2023 00:00:00 +0800</lastBuildDate>
+    <atom:link href="https://blog.rovertang.com/tags/%E9%A3%9E%E4%B9%A6%E6%96%87%E6%A1%A3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>飞书好用：飞书文档——自媒体写作流最佳实践</title>
+      <link>https://blog.rovertang.com/posts/eoffice/20230212-feishu-document-is-the-best-practice-of-we-media-writing-stream/</link>
+      <pubDate>Sun, 12 Feb 2023 00:00:00 +0800</pubDate>
+      <guid>https://blog.rovertang.com/posts/eoffice/20230212-feishu-document-is-the-best-practice-of-we-media-writing-stream/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E6%95%B0%E5%AD%97%E5%8C%96%E5%8A%9E%E5%85%AC/">数字化办公</category>
+      <description>借助飞书文档形成写作流程的闭环，是自媒体写作流的最佳实践，是飞书好用的一种体现。本文介绍了罗孚在过去写作流上的痛点，以及现在如何使用飞书文档解决这些痛点的，希望对你有所启发。</description>
+    </item>
+  </channel>
+</rss>

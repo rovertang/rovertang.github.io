@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>快递到车服务的实现思路和问题思考 - 罗孚</title><meta name="author" content="RoverTang">
+<meta name="description" content="本文罗孚原创，发表于公众号罗孚传说，本文是车联网行业中关于快递到车服务的思考。
+什么是快递到车 顾名思义，就是将快递送到车上。听起来挺简单的？确实，只需要快递员将快递妥投到用户的汽车后备箱，整个服务就完成了。
+"><meta name="keywords" content='快递到车, 京东, 实现思路'>
+  <meta itemprop="name" content="快递到车服务的实现思路和问题思考">
+  <meta itemprop="description" content="本文罗孚原创，发表于公众号罗孚传说，本文是车联网行业中关于快递到车服务的思考。
+什么是快递到车 顾名思义，就是将快递送到车上。听起来挺简单的？确实，只需要快递员将快递妥投到用户的汽车后备箱，整个服务就完成了。">
+  <meta itemprop="datePublished" content="2018-11-30T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2018-11-30T00:00:00+08:00">
+  <meta itemprop="wordCount" content="3696">
+  <meta itemprop="image" content="https://blog.rovertang.com/posts/car/20181130-thoughts-on-the-realization-and-problems-of-express-arrival-service/cover.jpg">
+  <meta itemprop="keywords" content="快递到车,京东,实现思路"><meta property="og:url" content="https://blog.rovertang.com/posts/car/20181130-thoughts-on-the-realization-and-problems-of-express-arrival-service/">
+  <meta property="og:site_name" content="罗孚">
+  <meta property="og:title" content="快递到车服务的实现思路和问题思考">
+  <meta property="og:description" content="本文罗孚原创，发表于公众号罗孚传说，本文是车联网行业中关于快递到车服务的思考。
+什么是快递到车 顾名思义，就是将快递送到车上。听起来挺简单的？确实，只需要快递员将快递妥投到用户的汽车后备箱，整个服务就完成了。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2018-11-30T00:00:00+08:00">
+    <meta property="article:modified_time" content="2018-11-30T00:00:00+08:00">
+    <meta property="article:tag" content="快递到车">
+    <meta property="article:tag" content="京东">
+    <meta property="article:tag" content="实现思路">
+    <meta property="og:image" content="https://blog.rovertang.com/posts/car/20181130-thoughts-on-the-realization-and-problems-of-express-arrival-service/cover.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://blog.rovertang.com/posts/car/20181130-thoughts-on-the-realization-and-problems-of-express-arrival-service/cover.jpg">
+  <meta name="twitter:title" content="快递到车服务的实现思路和问题思考">
+  <meta name="twitter:description" content="本文罗孚原创，发表于公众号罗孚传说，本文是车联网行业中关于快递到车服务的思考。
+什么是快递到车 顾名思义，就是将快递送到车上。听起来挺简单的？确实，只需要快递员将快递妥投到用户的汽车后备箱，整个服务就完成了。">
+<meta name="application-name" content="罗孚传说">
+<meta name="apple-mobile-web-app-title" content="罗孚传说"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://blog.rovertang.com/posts/car/20181130-thoughts-on-the-realization-and-problems-of-express-arrival-service/" title="快递到车服务的实现思路和问题思考 - 罗孚" /><link rel="prev" type="text/html" href="https://blog.rovertang.com/posts/car/20181118-introduction-to-acc-adaptive-cruise-control-system/" title="ACC自适应巡航控制系统介绍" /><link rel="next" type="text/html" href="https://blog.rovertang.com/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/" title="经纬度编码方法推荐-plus code简介" /><link rel="alternate" type="text/markdown" href="https://blog.rovertang.com/posts/car/20181130-thoughts-on-the-realization-and-problems-of-express-arrival-service/index.md" title="快递到车服务的实现思路和问题思考 - 罗孚"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="apxz4dWbUQ2bsnGFk6SmRK4gNZ7tlT21KgMZ1t9hqdk" /><meta name="msvalidate.01" content="5282002B82D61AD2D097F2F6419C1E4A" /><meta name="baidu-site-verification" content="codeva-RiIZqiHrvQ" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "快递到车服务的实现思路和问题思考",
+    "inLanguage": "zh-cn",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.rovertang.com\/posts\/car\/20181130-thoughts-on-the-realization-and-problems-of-express-arrival-service\/"
+    },"genre": "posts","keywords": "快递到车, 京东, 实现思路","wordcount":  3696 ,
+    "url": "https:\/\/blog.rovertang.com\/posts\/car\/20181130-thoughts-on-the-realization-and-problems-of-express-arrival-service\/","datePublished": "2018-11-30T00:00:00+08:00","dateModified": "2018-11-30T00:00:00+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "RoverTang"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item has-children">
+              <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/" title="文章">文章</a></li><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/car/" title="汽车">汽车</a></li><li class="breadcrumb-item active" data-separator="&gt;" aria-current="page">快递到车服务的实现思路和问题思考</li>
+    </ol>
+  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div style="width: 350px; margin: 0 auto; display: flex; justify-content: space-between; text-align: center;">
+  <img src="/images/wxmp-blog.jpg" alt="wxmp-blog" style="width: 115px; height: 153px;">
+  <img src="/images/wxmp-shanghai.jpg" alt="wxmp-shanghai" style="width: 115px; height: 153px;">
+  <img src="/images/zsxq-fromblog.jpg" alt="zsxq-fromblog" style="width: 115px; height: 153px;">
+</div></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>快递到车服务的实现思路和问题思考</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://rovertang.com" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    RoverTang</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/%E6%B1%BD%E8%BD%A6/" class="post-category" title="分类 - 汽车"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 汽车</a></span></div><div class="post-meta-line"><span title="发布于 2018-11-30 00:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2018-11-30">2018-11-30</time></span>&nbsp;<span title="3696 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 3700 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 8 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#什么是快递到车">什么是快递到车</a></li>
+    <li><a href="#功能流程">功能流程</a></li>
+    <li><a href="#几个关键问题">几个关键问题</a>
+      <ul>
+        <li><a href="#投递位置">投递位置</a></li>
+        <li><a href="#授权时机">授权时机</a></li>
+        <li><a href="#找到车">找到车</a></li>
+        <li><a href="#开后备箱">开后备箱</a></li>
+        <li><a href="#隐私和安全">隐私和安全</a></li>
+      </ul>
+    </li>
+    <li><a href="#京东的快递到车服务">京东的快递到车服务</a>
+      <ul>
+        <li><a href="#入口的优势">入口的优势</a></li>
+        <li><a href="#快递的实力">快递的实力</a></li>
+        <li><a href="#其他壁垒">其他壁垒</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p>本文罗孚原创，发表于公众号罗孚传说，本文是车联网行业中关于快递到车服务的思考。</p>
+<h2 id="什么是快递到车" class="heading-element"><span>什么是快递到车</span>
+  <a href="#%e4%bb%80%e4%b9%88%e6%98%af%e5%bf%ab%e9%80%92%e5%88%b0%e8%bd%a6" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>顾名思义，就是将快递送到车上。听起来挺简单的？确实，只需要快递员将快递妥投到用户的汽车后备箱，整个服务就完成了。</p>
+<p>车辆后备箱就是一个移动的快递柜，是不是觉得很新奇？其实在国外，几年前就有了这样的服务，只是今年(2018)被京东炒火了一点。</p>
+<p>虽然快递到车在国外已有几年历史，但也未获得大规模的发展，至于国内是否火起来，并获得大规模商业化发展，也是一个未知问题。</p>
+<p><img loading="lazy" src="/posts/car/20181130-thoughts-on-the-realization-and-problems-of-express-arrival-service/assets/boxcnn5zAlkMF3O7LF4Cbap191g.jpg" alt="/posts/car/20181130-thoughts-on-the-realization-and-problems-of-express-arrival-service/assets/boxcnn5zAlkMF3O7LF4Cbap191g.jpg" srcset="/posts/car/20181130-thoughts-on-the-realization-and-problems-of-express-arrival-service/assets/boxcnn5zAlkMF3O7LF4Cbap191g.jpg?size=small, /posts/car/20181130-thoughts-on-the-realization-and-problems-of-express-arrival-service/assets/boxcnn5zAlkMF3O7LF4Cbap191g.jpg?size=medium 1.5x, /posts/car/20181130-thoughts-on-the-realization-and-problems-of-express-arrival-service/assets/boxcnn5zAlkMF3O7LF4Cbap191g.jpg?size=large 2x" data-title="/posts/car/20181130-thoughts-on-the-realization-and-problems-of-express-arrival-service/assets/boxcnn5zAlkMF3O7LF4Cbap191g.jpg" style="--width: 600px;--aspect-ratio: 600 / 338;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>罗孚认为，快递到车是一项比较适合公司白领的服务。比如：</p>
+<ul>
+<li>晚上要去约会，下班再买花又来不及，那就让快递送到车上吧；</li>
+<li>也许买了充气娃娃类隐私物品，在公司签收挺尴尬，那就让快递送到车上吧；</li>
+<li>家里没人签收，自己在公司忙于工作还不想被打搅，那就让快递送到车上吧；</li>
+</ul>
+<p>除了上班这一固定场景，也适合于移动场景，比如周末在外逛商场或办事，原本送到家没人签收，现在送到车上让车签收就行。</p>
+<p>也许你会说，这是一个伪需求，有若干条理由反驳：</p>
+<ul>
+<li>忙到都没一两分钟时间签收快递？</li>
+<li>送到前台帮忙代签不是很简单？</li>
+<li>或者送到小区快递柜啊？</li>
+</ul>
+<p>你说的都没有错，但事实是：人们就是不想那么麻烦！在和客户开重要会议的经理，担心隐私外泄的小码农，不想穿着高跟鞋走去快递柜取件的lady，每个人都有他们自己的述求。</p>
+<p>所以快递到车服务的重点：即便仅有1%的场景和用户，也需要做服务覆盖，既满足了高端用户的需求，也为物流、车企提供了亮点feature，甚至制造了一点点小壁垒。</p>
+<p><a href="https://v.qq.com/x/page/g068773ibyk.html"target="_blank" rel="external nofollow noopener noreferrer">京东的快递到车服务上了央视</a></p>
+<h2 id="功能流程" class="heading-element"><span>功能流程</span>
+  <a href="#%e5%8a%9f%e8%83%bd%e6%b5%81%e7%a8%8b" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>罗孚简单绘制了一份快递到车服务的流程图。</p>
+<p><img loading="lazy" src="/posts/car/20181130-thoughts-on-the-realization-and-problems-of-express-arrival-service/assets/boxcnXao8qSMfC5ctkQWwBsAwwe.jpg" alt="/posts/car/20181130-thoughts-on-the-realization-and-problems-of-express-arrival-service/assets/boxcnXao8qSMfC5ctkQWwBsAwwe.jpg" srcset="/posts/car/20181130-thoughts-on-the-realization-and-problems-of-express-arrival-service/assets/boxcnXao8qSMfC5ctkQWwBsAwwe.jpg?size=small, /posts/car/20181130-thoughts-on-the-realization-and-problems-of-express-arrival-service/assets/boxcnXao8qSMfC5ctkQWwBsAwwe.jpg?size=medium 1.5x, /posts/car/20181130-thoughts-on-the-realization-and-problems-of-express-arrival-service/assets/boxcnXao8qSMfC5ctkQWwBsAwwe.jpg?size=large 2x" data-title="/posts/car/20181130-thoughts-on-the-realization-and-problems-of-express-arrival-service/assets/boxcnXao8qSMfC5ctkQWwBsAwwe.jpg" style="--width: 600px;--aspect-ratio: 600 / 376;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>在这流程中，会涉及一些问题，我们针对问题来具体分析。</p>
+<h2 id="几个关键问题" class="heading-element"><span>几个关键问题</span>
+  <a href="#%e5%87%a0%e4%b8%aa%e5%85%b3%e9%94%ae%e9%97%ae%e9%a2%98" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>传统快递的基本特征：</p>
+<ul>
+<li>送到哪里？(必要条件)</li>
+<li>什么时间送？(非必要条件)</li>
+</ul>
+<p>快递到车服务虽然是新鲜事物，但也逃离不了上述特征，甚至要求更加严格。</p>
+<h3 id="投递位置" class="heading-element"><span>投递位置</span>
+  <a href="#%e6%8a%95%e9%80%92%e4%bd%8d%e7%bd%ae" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>汽车后备箱成了移动的快递柜，既然是移动的，按就不存在具体位置了？可以直接使用车辆的实时位置？</p>
+<p>这不太现实，或者说不太科学。一方面，车辆驶入地下车库属于正常情况，地下车库是无法获得精准定位信息，而且在大型停车场找车不是容易事，另一方面，物流配送是一个流程，最终需要落地到具体配送站和配送人员，不可能让快递小哥全城找你车。</p>
+<p>所以，在商城APP下单时，也同样需要指定一个位置，可以是一个大概的位置。</p>
+<p>你不能确定你的位置？对的，在没有明确时间的前提下，确定位置实属不易。</p>
+<p>对于传统快递来说，送达时间是非必要条件，但对快递到车服务来说，时间是必要条件，并且这个时间要求比较精准，粗糙一点可以要求半天(如4小时)内送达，详细一点则要求精确到0.5小时内。</p>
+<p>在有明确时间的前提下，确定一个粗糙的投递位置，就不会是问题。比如上班时是某写字楼、约会时是某咖啡厅、见客户时是某商务楼、逛街时是某商场。</p>
+<p>投递位置的作用，为物流体系确定终端配送站、为配送员确定找车的大概范围，这是非常有必要的。</p>
+<p>注意，投递位置不是送达的车辆位置，移动快递柜的位置我们在下文快递员找车问题中再讲。</p>
+<h3 id="授权时机" class="heading-element"><span>授权时机</span>
+  <a href="#%e6%8e%88%e6%9d%83%e6%97%b6%e6%9c%ba" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>快递到车服务中，一定会存在打开后备箱的动作，这个动作是需要授权的。何时授权？</p>
+<p>快递到了车辆位置，才开始申请授权，等待用户确认？用户没注意授权申请，还需要给客户打个电话？快递送到家，一般也就是快递员敲门和打电话的过程，那快递到车服务和快递到家有什么区别？既没创新也没带来好的用户体验。</p>
+<p>不打搅用户的体验，才是好的体验。我们能否做到不打搅客户？</p>
+<p>在上述“投递位置”问题中，我们将位置和时间作为快递到车服务的必要条件，这些是预知的。那么，在快递送达的限定时间范围内，车主提供一次打开后备箱授权，即提前授权，就可以让快递员悄无声息的将快递妥投到车的后备箱中。</p>
+<p>用信任授权代替即时确认授权，在限定送达时间范围内提供一次开门授权，是较为合理的授权方式，所以授权的时机实际在下单时，而不是在投递过程中。当然，如果还不放心，可以增加位置匹配、二次验证等条件。</p>
+<h3 id="找到车" class="heading-element"><span>找到车</span>
+  <a href="#%e6%89%be%e5%88%b0%e8%bd%a6" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>有了前文提到的投递位置，快递小哥就能找到车了吗？答案是不能的。你收货地址是某某大厦，但车停哪里了呢？</p>
+<p>文字描述永远是无力的，现在汽车基本都配备了GPS，给个停车的真实位置，确实是一个好的解决办法，但也有缺陷。</p>
+<p>车辆在空旷环境下，基本能提供一个较准确的位置，但若停在高楼大厦旁，或者在地下车库，那提供的位置信息基本很难靠谱了。</p>
+<p>对于大型停车场，或者地下多层车库，快递小哥要在这陌生的场地，面对数百甚至数千量车，找到需要投递的那一辆，内心应该是崩溃的。</p>
+<p>当然，上文京东快递到车服务视频中，让车发出声光报警，确实是一个好的方式。也可以结合360环视系统等车上设备，为快递员提供当前车辆以及周围更详细的照片、视频等信息。</p>
+<p>如何让快递员简单、方便、快速的找到目标车辆，是车企应该深入考虑的问题，毕竟服务是双向的，为车主提供服务，也要为服务人员提供方便。</p>
+<h3 id="开后备箱" class="heading-element"><span>开后备箱</span>
+  <a href="#%e5%bc%80%e5%90%8e%e5%a4%87%e7%ae%b1" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>当快递员找到车后，怎么打开车辆后备箱？有钥匙？有感应卡？其实都不是，对于智能汽车来说，远程开后备箱，应该是最基本的标配功能了。</p>
+<p>当然，对于不够智能的车辆，或者为了发展后装市场，可以考虑车辆安装一个设备，在国外也确实有这样的解决方案，但如此低频的服务，非车企也应该不愿意为此解决方案研发和生产吧。</p>
+<p>开后备箱最简单的方式，应该是在快递员的PDA上，点击请求打开后备箱按钮，由于车主已经提供了信任授权，那么对于车企的云端，仅需检查时间、地点、申请次数等是否一致，然后就可以发出远程开启指令了。</p>
+<p>开后备箱带来的另一个问题，就是关后备箱，一般要求快递员帮忙关闭后备箱，但若快递员忘了呢，是否设置一个后备箱打开最长时限，超时情况下后备箱自动关闭，这也取决于车辆硬件。</p>
+<h3 id="隐私和安全" class="heading-element"><span>隐私和安全</span>
+  <a href="#%e9%9a%90%e7%a7%81%e5%92%8c%e5%ae%89%e5%85%a8" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>隐私和安全，虽然不属于技术问题，但也是一个必须面对的问题，算是社会问题吧。车内物品，是否存在隐私，这取决于车主，但车内物品被盗预防，是车企应尽的责任，需要通过尽可能多的技术手段来保护车主的个人财产。</p>
+<p>从安全来看，开后备箱不开车门，这是最基本要求，然后需要增加后备箱打开超时功能，比如三分钟后后备箱未被关闭，则发出声光报警，一分钟后未响应则直接关闭后备箱，同时，如果拥有车内视频录像监控功能，则需自动开启。</p>
+<p>总的来说，安全防范需要有更多的规则和策略，使用快递到车服务确实存在物品和车辆被盗的风险，如果个人对此特别在意，则建议不要使用此功能。同样的，对隐私特别看重的人，比如把车当成自己小老婆的人，也同样不适合使用快递到车服务</p>
+<h2 id="京东的快递到车服务" class="heading-element"><span>京东的快递到车服务</span>
+  <a href="#%e4%ba%ac%e4%b8%9c%e7%9a%84%e5%bf%ab%e9%80%92%e5%88%b0%e8%bd%a6%e6%9c%8d%e5%8a%a1" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>快递到车服务，便民的同时可以提升用户逼格，增加快递企业的曝光和影响力，一定有较多的快递企业来尝试此服务，但为什么偏偏京东做的最起劲？</p>
+<h3 id="入口的优势" class="heading-element"><span>入口的优势</span>
+  <a href="#%e5%85%a5%e5%8f%a3%e7%9a%84%e4%bc%98%e5%8a%bf" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>快递的最普遍使用场景是什么？当然是购物后快递。而国内，也就阿里、京东是数一数二的电商平台，拥有千亿级订单体量，服务于数亿消费者，基于此量级，加之购物的频度，以及较为高端的消费群体，才有可能产生快递到车服务的订单量，有量才能盘活业务。如果没有京东购物的入口，那么快递到车服务可能就是一个小众服务，小众服务是不值得也无法持续投入的，这也是国外没有大范围落地的重要原因。再说，京东也想把持入口优势，反向推动购物平台的持续繁荣啊。</p>
+<h3 id="快递的实力" class="heading-element"><span>快递的实力</span>
+  <a href="#%e5%bf%ab%e9%80%92%e7%9a%84%e5%ae%9e%e5%8a%9b" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>京东快递作为快递行业后起之秀，是唯一能与国内顶尖物流顺丰所匹敌的公司，而能够将快递送达时间限定在0.5小时的，我暂时只看到了京东物流，当然这个前提是基于京东自营商城和自有仓储物流体系。送达时间是否精准，我们消费者能亲身体验到，而其背后的高效物流流程系统、自动分拣流水线、规范化物流车队、高素质快递人员等，不是我所能触及的软实力。</p>
+<h3 id="其他壁垒" class="heading-element"><span>其他壁垒</span>
+  <a href="#%e5%85%b6%e4%bb%96%e5%a3%81%e5%9e%92" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>对于小众物流公司，运营模式、研发能力、利润空间等因素，都决定了他们不可能实现快递到车服务。除了入口优势和快递实力，企业的信用背书、技术研发的投入等壁垒也是其他企业无法企及的。企业壁垒可以成就快递到车服务，但也为企业建立了壁垒，同竞争者拉开了鸿沟。</p>
+<p>最后，罗孚也要吐槽一下，关于京东所谓的快递到车服务企业标准。当我看到京东发布服务标准的新闻，我觉得京东是NB的，但当我下载到京东服务标准的文件时，我是崩溃的。一份所谓的企业标准文档，洋洋洒洒一千字，还没我此篇日志字数多，而服务要求这一重点部分，对于沟通、投递前、投递中、投递后、例外情况、查询这六个部分，基本都用一句话描述结束，把一份在新闻宣传稿中描述的NB哄哄的企业标准文档，完完全全的写成了流水叙事文，本希望能给尔等小辈提供专业指导，最后只能呵呵结束了。</p>
+<p><img loading="lazy" src="/posts/car/20181130-thoughts-on-the-realization-and-problems-of-express-arrival-service/assets/boxcnh3FeIaE7dsy89H2FVYkCYe.jpg" alt="/posts/car/20181130-thoughts-on-the-realization-and-problems-of-express-arrival-service/assets/boxcnh3FeIaE7dsy89H2FVYkCYe.jpg" srcset="/posts/car/20181130-thoughts-on-the-realization-and-problems-of-express-arrival-service/assets/boxcnh3FeIaE7dsy89H2FVYkCYe.jpg?size=small, /posts/car/20181130-thoughts-on-the-realization-and-problems-of-express-arrival-service/assets/boxcnh3FeIaE7dsy89H2FVYkCYe.jpg?size=medium 1.5x, /posts/car/20181130-thoughts-on-the-realization-and-problems-of-express-arrival-service/assets/boxcnh3FeIaE7dsy89H2FVYkCYe.jpg?size=large 2x" data-title="/posts/car/20181130-thoughts-on-the-realization-and-problems-of-express-arrival-service/assets/boxcnh3FeIaE7dsy89H2FVYkCYe.jpg" style="--width: 600px;--aspect-ratio: 600 / 469;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>如需膜拜《JD-WL-001-2018京东快递到车服务标准》文档，欢迎关注“罗孚传说”公众号，回复“快递到车”即可获得。</p>
+<p>随着汽车网联化时代的到来，快递到车服务也将日益成熟，最终可能会成为智能网联汽车的标准功能，现在看上去可能是不太实用的博眼球功能，但若干年后，快递到车服务也许就和现在兴起的小区快递柜服务一样，终将成为我们生活的一部分。</p>
+<p>限于篇幅，仍有较多细节未能深入思考，但愿本文能给相关从业者带来启发，也欢迎深入探讨。</p>
+<p><a href="assets/boxcnd0VKvbTUugOJFdxXxQ0uCb_JD-WL-001-2018%e4%ba%ac%e4%b8%9c%e5%bf%ab%e9%80%92%e5%88%b0%e8%bd%a6%e6%9c%8d%e5%8a%a1%e6%a0%87%e5%87%86%e6%9c%80%e6%96%b0.pdf">JD-WL-001-2018京东快递到车服务标准最新.pdf</a></p>
+<p>本文飞书文档：<a href="https://rovertang.feishu.cn/docx/doxcnpXV1KiyYmXkJhLmB4v76Jh"target="_blank" rel="external nofollow noopener noreferrer">快递到车服务的实现思路和问题思考</a></p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2018-11-30 00:00:00">更新于 2018-11-30&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/%E5%BF%AB%E9%80%92%E5%88%B0%E8%BD%A6/" class="post-tag" title="标签 - 快递到车">快递到车</a><a href="/tags/%E4%BA%AC%E4%B8%9C/" class="post-tag" title="标签 - 京东">京东</a><a href="/tags/%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF/" class="post-tag" title="标签 - 实现思路">实现思路</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/car/20181118-introduction-to-acc-adaptive-cruise-control-system/" class="post-nav-item" rel="prev" title="ACC自适应巡航控制系统介绍"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>ACC自适应巡航控制系统介绍</a><a href="/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/" class="post-nav-item" rel="next" title="经纬度编码方法推荐-Plus Code简介">经纬度编码方法推荐-Plus Code简介<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment"></div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward"><i class="fa-solid fa-qrcode fa-fw" aria-hidden="true"></i>赞赏</label>
+    <div class="reward-ways" data-mode="static"><div><img loading="lazy" src="/images/alipay.png" alt="RoverTang 支付宝" data-title="RoverTang 支付宝" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>支付宝</span>
+          </div><div><img loading="lazy" src="/images/wechatpay.png" alt="RoverTang 微信" data-title="RoverTang 微信" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>微信</span>
+          </div></div>
+  </div></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.139.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.16">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2005 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://rovertang.com"target="_blank" rel="external nofollow noopener noreferrer">RoverTang</a></span></div><div class="footer-line beian"><span class="icp footer-divider">沪ICP备2020036772号-1</span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;bottom: 0;"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.16"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>
