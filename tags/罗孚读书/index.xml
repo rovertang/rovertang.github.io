@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>读书变现 - 标签 - 罗孚</title>
-    <link>https://blog.rovertang.com/tags/%E8%AF%BB%E4%B9%A6%E5%8F%98%E7%8E%B0/</link>
+    <title>罗孚读书 - 标签 - 罗孚</title>
+    <link>https://blog.rovertang.com/tags/%E7%BD%97%E5%AD%9A%E8%AF%BB%E4%B9%A6/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 11 Jan 2025 00:00:00 +0800</lastBuildDate>
-    <atom:link href="https://blog.rovertang.com/tags/%E8%AF%BB%E4%B9%A6%E5%8F%98%E7%8E%B0/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.rovertang.com/tags/%E7%BD%97%E5%AD%9A%E8%AF%BB%E4%B9%A6/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>如何通过读书让自己变得更好？读《读书变现》第一章 升级读书思维</title>
       <link>https://blog.rovertang.com/posts/grow/20250111-how-to-improve-oneself-through-reading-chapter-1-upgrade-reading-thinking/</link>
@@ -15,14 +15,6 @@
       <guid>https://blog.rovertang.com/posts/grow/20250111-how-to-improve-oneself-through-reading-chapter-1-upgrade-reading-thinking/</guid>
       <category domain="https://blog.rovertang.com/categories/%E5%AD%A6%E4%B9%A0%E6%88%90%E9%95%BF/">学习成长</category>
       <description>《读书变现》第一章：升级读书思维，如何通过读书让自己变得更好？提供了阅读评估表来衡量阅读情况，从设定开始真正的改变自己，最后还提供了非常实用的年度阅读计划表用于落地执行。</description>
-    </item>
-    <item>
-      <title>《读书变现》自序：读书改变命运</title>
-      <link>https://blog.rovertang.com/posts/grow/20250104-preface-to-reading-monetization-reading-changes-destiny/</link>
-      <pubDate>Sat, 04 Jan 2025 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/grow/20250104-preface-to-reading-monetization-reading-changes-destiny/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E5%AD%A6%E4%B9%A0%E6%88%90%E9%95%BF/">学习成长</category>
-      <description>《读书变现》自序：读书改变命运。自我担当、激发自己的内驱力、专注力和聚焦力、坚毅是读书重要的四大品质，核心是我们要拥有成长性思维。</description>
     </item>
   </channel>
 </rss>

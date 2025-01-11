@@ -1,39 +1,47 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.rovertang.com/tags/</loc>
+    <lastmod>2025-01-11T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/tags/%E8%AF%BB%E4%B9%A6%E5%8F%98%E7%8E%B0/</loc>
+    <lastmod>2025-01-11T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/categories/</loc>
+    <lastmod>2025-01-11T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/</loc>
+    <lastmod>2025-01-11T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/tags/%E7%BD%97%E5%AD%9A%E8%AF%BB%E4%B9%A6/</loc>
+    <lastmod>2025-01-11T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/posts/grow/20250111-how-to-improve-oneself-through-reading-chapter-1-upgrade-reading-thinking/</loc>
+    <lastmod>2025-01-11T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/posts/</loc>
+    <lastmod>2025-01-11T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/categories/%E5%AD%A6%E4%B9%A0%E6%88%90%E9%95%BF/</loc>
+    <lastmod>2025-01-11T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/posts/grow/</loc>
+    <lastmod>2025-01-11T00:00:00+08:00</lastmod>
+  </url>
+  <url>
     <loc>https://blog.rovertang.com/posts/grow/20250104-preface-to-reading-monetization-reading-changes-destiny/</loc>
     <lastmod>2025-01-04T00:00:00+08:00</lastmod>
   </url>
   <url>
-    <loc>https://blog.rovertang.com/tags/</loc>
-    <lastmod>2025-01-04T00:00:00+08:00</lastmod>
-  </url>
-  <url>
     <loc>https://blog.rovertang.com/tags/%E8%AF%BB%E4%B9%A6/</loc>
-    <lastmod>2025-01-04T00:00:00+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.rovertang.com/tags/%E8%AF%BB%E4%B9%A6%E5%8F%98%E7%8E%B0/</loc>
-    <lastmod>2025-01-04T00:00:00+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.rovertang.com/categories/</loc>
-    <lastmod>2025-01-04T00:00:00+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.rovertang.com/</loc>
-    <lastmod>2025-01-04T00:00:00+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.rovertang.com/posts/</loc>
-    <lastmod>2025-01-04T00:00:00+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.rovertang.com/categories/%E5%AD%A6%E4%B9%A0%E6%88%90%E9%95%BF/</loc>
-    <lastmod>2025-01-04T00:00:00+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.rovertang.com/posts/grow/</loc>
     <lastmod>2025-01-04T00:00:00+08:00</lastmod>
   </url>
   <url>
