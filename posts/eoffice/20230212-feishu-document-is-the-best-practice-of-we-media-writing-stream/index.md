@@ -153,5 +153,5 @@ feishu2md 使用非常简单，直接在 cmd 里输入&#34;feishu2md 飞书文�
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/eoffice/20230212-feishu-document-is-the-best-practice-of-we-media-writing-stream/  
+> URL: http://localhost:1313/posts/eoffice/20230212-feishu-document-is-the-best-practice-of-we-media-writing-stream/  
 

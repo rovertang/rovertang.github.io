@@ -71,5 +71,5 @@ V2X是V2V、V2R、V2I、V2P等概念的统称，是车和车、人、路的互�
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/car/20180909-understanding-the-internet-of-vehicles/  
+> URL: http://localhost:1313/posts/car/20180909-understanding-the-internet-of-vehicles/  
 

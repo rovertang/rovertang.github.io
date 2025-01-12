@@ -93,5 +93,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/grow/20250111-how-to-improve-oneself-through-reading-chapter-1-upgrade-reading-thinking/  
+> URL: http://localhost:1313/posts/grow/20250111-how-to-improve-oneself-through-reading-chapter-1-upgrade-reading-thinking/  
 

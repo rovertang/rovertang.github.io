@@ -275,5 +275,5 @@ ETF 和基金的表现很普通，这部分还没摸到门道，所以买的有�
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/rich/20231003-review-and-analysis-of-personal-financing-in-2023q3/  
+> URL: http://localhost:1313/posts/rich/20231003-review-and-analysis-of-personal-financing-in-2023q3/  
 

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>系统驱动人生 - 标签 - 罗孚</title>
-    <link>https://blog.rovertang.com/tags/%E7%B3%BB%E7%BB%9F%E9%A9%B1%E5%8A%A8%E4%BA%BA%E7%94%9F/</link>
+    <link>http://localhost:1313/tags/%E7%B3%BB%E7%BB%9F%E9%A9%B1%E5%8A%A8%E4%BA%BA%E7%94%9F/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 04 Oct 2023 00:00:00 +0800</lastBuildDate>
-    <atom:link href="https://blog.rovertang.com/tags/%E7%B3%BB%E7%BB%9F%E9%A9%B1%E5%8A%A8%E4%BA%BA%E7%94%9F/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E7%B3%BB%E7%BB%9F%E9%A9%B1%E5%8A%A8%E4%BA%BA%E7%94%9F/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>听“借助系统，获得确定性的成功”有感</title>
-      <link>https://blog.rovertang.com/posts/grow/20231004-using-the-system-to-achieve-deterministic-success/</link>
+      <link>http://localhost:1313/posts/grow/20231004-using-the-system-to-achieve-deterministic-success/</link>
       <pubDate>Wed, 04 Oct 2023 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/grow/20231004-using-the-system-to-achieve-deterministic-success/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E5%AD%A6%E4%B9%A0%E6%88%90%E9%95%BF/">学习成长</category>
+      <guid>http://localhost:1313/posts/grow/20231004-using-the-system-to-achieve-deterministic-success/</guid>
+      <category domain="http://localhost:1313/categories/%E5%AD%A6%E4%B9%A0%E6%88%90%E9%95%BF/">学习成长</category>
       <description>&lt;p&gt;这是辉哥知识星球中“系统驱动人生”系列的第一篇，听了几遍，有一些感触。&lt;/p&gt;&#xA;&lt;p&gt;系统很重要，音频中虽然列举了很多重要性，但一言以蔽之就是标题：可以获得确定性成功。&lt;/p&gt;</description>
     </item>
   </channel>

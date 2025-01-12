@@ -71,5 +71,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/car/20211016-significance-of-charging-station-aggregation-platform/  
+> URL: http://localhost:1313/posts/car/20211016-significance-of-charging-station-aggregation-platform/  
 

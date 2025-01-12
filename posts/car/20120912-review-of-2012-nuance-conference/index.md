@@ -101,5 +101,5 @@ Nuance大会为我们提供了很多新的见识和思路，也看到了Nuance�
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/car/20120912-review-of-2012-nuance-conference/  
+> URL: http://localhost:1313/posts/car/20120912-review-of-2012-nuance-conference/  
 

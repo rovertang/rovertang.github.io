@@ -48,5 +48,5 @@ gmap：Google Maps API离线开发包，内附北京师范大学和北京动物�
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/map/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool/  
+> URL: http://localhost:1313/posts/map/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool/  
 

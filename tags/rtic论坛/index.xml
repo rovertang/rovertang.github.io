@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>RTIC论坛 - 标签 - 罗孚</title>
-    <link>https://blog.rovertang.com/tags/rtic%E8%AE%BA%E5%9D%9B/</link>
+    <link>http://localhost:1313/tags/rtic%E8%AE%BA%E5%9D%9B/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 30 Jan 2012 00:00:00 +0800</lastBuildDate>
-    <atom:link href="https://blog.rovertang.com/tags/rtic%E8%AE%BA%E5%9D%9B/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/rtic%E8%AE%BA%E5%9D%9B/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2011RTIC论坛回顾</title>
-      <link>https://blog.rovertang.com/posts/car/20120130-review-of-2011-rtic-forum/</link>
+      <link>http://localhost:1313/posts/car/20120130-review-of-2011-rtic-forum/</link>
       <pubDate>Mon, 30 Jan 2012 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/car/20120130-review-of-2011-rtic-forum/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E6%B1%BD%E8%BD%A6/">汽车</category>
+      <guid>http://localhost:1313/posts/car/20120130-review-of-2011-rtic-forum/</guid>
+      <category domain="http://localhost:1313/categories/%E6%B1%BD%E8%BD%A6/">汽车</category>
       <description>&lt;p&gt;本文完成于两个月前，由于种种原因现在才同大家分享，以下是原文：&lt;/p&gt;&#xA;&lt;p&gt;一年一度的由世纪高通公司组织的RTIC论坛于11月23日在昆明世纪金源大酒店举行。RTIC论坛精神在于组织讨论和分享RTIC技术在国内以及国际上的应用，以拓展大家对RTIC的认识，切磋在使用过程中的问题和心得体会。论坛邀请到了车厂、互联网、导航软件等厂商，当然还有政府部门，其中车厂居多，主要包括了上海汽车、大众、丰田、本田、日产等，当然也包括了较多汽车零部件厂商，以日系为主，比如电装、先锋、阿尔派、三洋等，还有像歌乐、哈曼、伟世通、博世等。除了车厂以及汽车零件厂商外，也有导航软件厂商和互联网企业，比如美行科技、新科、搜狗地图、腾瑞万里(导航犬)、泰为、百度、Google、中国电信等企业。当然，还有部分企业和研究机构，如北京交通信息中心等。&lt;/p&gt;</description>
     </item>
   </channel>

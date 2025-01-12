@@ -216,5 +216,5 @@ New Bing 的网址：[https://www.bing.com/new](https://www.bing.com/new)
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/ai/20230226-bing-for-chatgpt-the-newbing-initial-experience/  
+> URL: http://localhost:1313/posts/ai/20230226-bing-for-chatgpt-the-newbing-initial-experience/  
 

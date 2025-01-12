@@ -199,5 +199,5 @@ smart虽然早早地掀起了两座车的风潮，但销量惨不忍睹现已绝
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/car/20210328-on-the-product-power-of-wuling-mini-ev/  
+> URL: http://localhost:1313/posts/car/20210328-on-the-product-power-of-wuling-mini-ev/  
 

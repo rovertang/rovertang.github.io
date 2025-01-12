@@ -88,5 +88,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/soul/20230328-the-soft-ribs-and-pains-under-desire/  
+> URL: http://localhost:1313/posts/soul/20230328-the-soft-ribs-and-pains-under-desire/  
 

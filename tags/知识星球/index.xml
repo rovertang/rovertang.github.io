@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>知识星球 - 标签 - 罗孚</title>
-    <link>https://blog.rovertang.com/tags/%E7%9F%A5%E8%AF%86%E6%98%9F%E7%90%83/</link>
+    <link>http://localhost:1313/tags/%E7%9F%A5%E8%AF%86%E6%98%9F%E7%90%83/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 06 Apr 2023 00:00:00 +0800</lastBuildDate>
-    <atom:link href="https://blog.rovertang.com/tags/%E7%9F%A5%E8%AF%86%E6%98%9F%E7%90%83/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E7%9F%A5%E8%AF%86%E6%98%9F%E7%90%83/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>我为什么加入粥左罗ChatGPT AI变现圈</title>
-      <link>https://blog.rovertang.com/posts/misc/20230406-why-do-i-join-the-chatgpt-ai-circle/</link>
+      <link>http://localhost:1313/posts/misc/20230406-why-do-i-join-the-chatgpt-ai-circle/</link>
       <pubDate>Thu, 06 Apr 2023 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/misc/20230406-why-do-i-join-the-chatgpt-ai-circle/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E6%9D%82/">杂</category>
+      <guid>http://localhost:1313/posts/misc/20230406-why-do-i-join-the-chatgpt-ai-circle/</guid>
+      <category domain="http://localhost:1313/categories/%E6%9D%82/">杂</category>
       <description>愿我们通过 ChatGPT 圈子的学习，获得知识，获得提升，让自己成为能够驾驭 ChatGPT 的人！祝好</description>
     </item>
   </channel>

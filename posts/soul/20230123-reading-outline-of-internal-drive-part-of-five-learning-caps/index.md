@@ -331,5 +331,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/soul/20230123-reading-outline-of-internal-drive-part-of-five-learning-caps/  
+> URL: http://localhost:1313/posts/soul/20230123-reading-outline-of-internal-drive-part-of-five-learning-caps/  
 

@@ -41,5 +41,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/soul/20210128-1&#43;00-2021-starting-from-0/  
+> URL: http://localhost:1313/posts/soul/20210128-1&#43;00-2021-starting-from-0/  
 

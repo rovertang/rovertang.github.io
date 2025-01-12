@@ -134,5 +134,5 @@ C 类唯一的优势，可能是赎回费率上，在较短的时间内赎回，
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/rich/20230225-the-method-of-saving-money-and-fixed-investment-of-etf/  
+> URL: http://localhost:1313/posts/rich/20230225-the-method-of-saving-money-and-fixed-investment-of-etf/  
 

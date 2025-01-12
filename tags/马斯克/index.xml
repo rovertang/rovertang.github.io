@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>马斯克 - 标签 - 罗孚</title>
-    <link>https://blog.rovertang.com/tags/%E9%A9%AC%E6%96%AF%E5%85%8B/</link>
+    <link>http://localhost:1313/tags/%E9%A9%AC%E6%96%AF%E5%85%8B/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 27 Nov 2022 00:00:00 +0800</lastBuildDate>
-    <atom:link href="https://blog.rovertang.com/tags/%E9%A9%AC%E6%96%AF%E5%85%8B/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E9%A9%AC%E6%96%AF%E5%85%8B/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>马斯克在印尼B20峰会访谈记录小感悟</title>
-      <link>https://blog.rovertang.com/posts/misc/20221127-musks-interview-record-at-b20-summit-in-indonesia/</link>
+      <link>http://localhost:1313/posts/misc/20221127-musks-interview-record-at-b20-summit-in-indonesia/</link>
       <pubDate>Sun, 27 Nov 2022 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/misc/20221127-musks-interview-record-at-b20-summit-in-indonesia/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E6%9D%82/">杂</category>
+      <guid>http://localhost:1313/posts/misc/20221127-musks-interview-record-at-b20-summit-in-indonesia/</guid>
+      <category domain="http://localhost:1313/categories/%E6%9D%82/">杂</category>
       <description>关于马斯克在印尼B20峰会访谈内容的一点点小感悟。</description>
     </item>
   </channel>

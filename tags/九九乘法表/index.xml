@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>九九乘法表 - 标签 - 罗孚</title>
-    <link>https://blog.rovertang.com/tags/%E4%B9%9D%E4%B9%9D%E4%B9%98%E6%B3%95%E8%A1%A8/</link>
+    <link>http://localhost:1313/tags/%E4%B9%9D%E4%B9%9D%E4%B9%98%E6%B3%95%E8%A1%A8/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 27 May 2023 00:00:00 +0800</lastBuildDate>
-    <atom:link href="https://blog.rovertang.com/tags/%E4%B9%9D%E4%B9%9D%E4%B9%98%E6%B3%95%E8%A1%A8/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E4%B9%9D%E4%B9%9D%E4%B9%98%E6%B3%95%E8%A1%A8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>通过九九乘法表看人工智能大模型的差距</title>
-      <link>https://blog.rovertang.com/posts/ai/20230527-the-gap-of-ai-by-the-nine-nine-multiplication-table/</link>
+      <link>http://localhost:1313/posts/ai/20230527-the-gap-of-ai-by-the-nine-nine-multiplication-table/</link>
       <pubDate>Sat, 27 May 2023 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/ai/20230527-the-gap-of-ai-by-the-nine-nine-multiplication-table/</guid>
-      <category domain="https://blog.rovertang.com/categories/ai/">AI</category>
+      <guid>http://localhost:1313/posts/ai/20230527-the-gap-of-ai-by-the-nine-nine-multiplication-table/</guid>
+      <category domain="http://localhost:1313/categories/ai/">AI</category>
       <description>针对九九乘法表这一考题，New Bing 给出了正确的回答，ChatGPT 的回答也基本正确，而 Google Bard、文心一言、通义千问、讯飞星火都给出了错误的回答。人工智能大模型之间还是存在巨大的差距。</description>
     </item>
   </channel>

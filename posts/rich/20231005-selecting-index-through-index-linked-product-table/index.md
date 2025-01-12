@@ -148,5 +148,5 @@ CS 人工智：中证人工智能主题指数 (930713)；人工智能：中证�
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/rich/20231005-selecting-index-through-index-linked-product-table/  
+> URL: http://localhost:1313/posts/rich/20231005-selecting-index-through-index-linked-product-table/  
 

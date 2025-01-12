@@ -2,34 +2,34 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2020年 - 标签 - 罗孚</title>
-    <link>https://blog.rovertang.com/tags/2020%E5%B9%B4/</link>
+    <link>http://localhost:1313/tags/2020%E5%B9%B4/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 08 Feb 2021 00:00:00 +0800</lastBuildDate>
-    <atom:link href="https://blog.rovertang.com/tags/2020%E5%B9%B4/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/2020%E5%B9%B4/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2020年个人消费账单分析</title>
-      <link>https://blog.rovertang.com/posts/rich/20210208-analysis-of-personal-consumption-bill-in-2020/</link>
+      <link>http://localhost:1313/posts/rich/20210208-analysis-of-personal-consumption-bill-in-2020/</link>
       <pubDate>Mon, 08 Feb 2021 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/rich/20210208-analysis-of-personal-consumption-bill-in-2020/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
+      <guid>http://localhost:1313/posts/rich/20210208-analysis-of-personal-consumption-bill-in-2020/</guid>
+      <category domain="http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
       <description>知过去明未来，心中有数方能来时不乱。通过2020年个人消费账单回顾，了解个人消费支出分布，做到2021年消费心里有个数。</description>
     </item>
     <item>
       <title>2020上半年上海各板块二手房市场分析</title>
-      <link>https://blog.rovertang.com/posts/smart/20200802-analysis-of-second-hand-housing-market-in-shanghai-in-the-first-half-of-2020/</link>
+      <link>http://localhost:1313/posts/smart/20200802-analysis-of-second-hand-housing-market-in-shanghai-in-the-first-half-of-2020/</link>
       <pubDate>Sun, 02 Aug 2020 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/smart/20200802-analysis-of-second-hand-housing-market-in-shanghai-in-the-first-half-of-2020/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E5%AE%B6%E5%B1%85%E5%AE%B6%E7%94%B5/">家居家电</category>
+      <guid>http://localhost:1313/posts/smart/20200802-analysis-of-second-hand-housing-market-in-shanghai-in-the-first-half-of-2020/</guid>
+      <category domain="http://localhost:1313/categories/%E5%AE%B6%E5%B1%85%E5%AE%B6%E7%94%B5/">家居家电</category>
       <description>2020上半年上海各板块二手房市场分析</description>
     </item>
     <item>
       <title>2020上半年上海二手房市场观察</title>
-      <link>https://blog.rovertang.com/posts/smart/20200727-observation-on-the-second-hand-housing-market-in-shanghai-in-the-first-half-of-2020/</link>
+      <link>http://localhost:1313/posts/smart/20200727-observation-on-the-second-hand-housing-market-in-shanghai-in-the-first-half-of-2020/</link>
       <pubDate>Mon, 27 Jul 2020 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/smart/20200727-observation-on-the-second-hand-housing-market-in-shanghai-in-the-first-half-of-2020/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E5%AE%B6%E5%B1%85%E5%AE%B6%E7%94%B5/">家居家电</category>
+      <guid>http://localhost:1313/posts/smart/20200727-observation-on-the-second-hand-housing-market-in-shanghai-in-the-first-half-of-2020/</guid>
+      <category domain="http://localhost:1313/categories/%E5%AE%B6%E5%B1%85%E5%AE%B6%E7%94%B5/">家居家电</category>
       <description>2020上半年上海二手房市场观察</description>
     </item>
   </channel>

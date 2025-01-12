@@ -221,5 +221,5 @@ ChatGPT 的回答：
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/ai/20230415-chatgpt-thinks-chatgpt-has-thoughts/  
+> URL: http://localhost:1313/posts/ai/20230415-chatgpt-thinks-chatgpt-has-thoughts/  
 

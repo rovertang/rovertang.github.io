@@ -212,5 +212,5 @@ MPV 的柱子高度基本看不见，毕竟买 MPV 的确实是少数。轿车�
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/car/20230120-2022-automobile-sales-data-and-analysis/  
+> URL: http://localhost:1313/posts/car/20230120-2022-automobile-sales-data-and-analysis/  
 

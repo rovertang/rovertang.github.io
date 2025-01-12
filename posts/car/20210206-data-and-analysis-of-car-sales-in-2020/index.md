@@ -352,5 +352,5 @@ RX5和i5是荣威的主打车型，全年销量均超过10万，两者销量占�
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/  
+> URL: http://localhost:1313/posts/car/20210206-data-and-analysis-of-car-sales-in-2020/  
 

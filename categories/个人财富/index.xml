@@ -2,194 +2,194 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>个人财富 - 分类 - 罗孚</title>
-    <link>https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/</link>
+    <link>http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 05 Oct 2023 00:00:00 +0800</lastBuildDate>
-    <atom:link href="https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>通过指数挂钩产品表选指数</title>
-      <link>https://blog.rovertang.com/posts/rich/20231005-selecting-index-through-index-linked-product-table/</link>
+      <link>http://localhost:1313/posts/rich/20231005-selecting-index-through-index-linked-product-table/</link>
       <pubDate>Thu, 05 Oct 2023 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/rich/20231005-selecting-index-through-index-linked-product-table/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
+      <guid>http://localhost:1313/posts/rich/20231005-selecting-index-through-index-linked-product-table/</guid>
+      <category domain="http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
       <description>在中证指数官网获得了一张指数挂钩产品表，这张表基本列出了国内全部的指数挂钩产品，通过这张表可以给我们选择指数带来一定的启发，毕竟选被动基金还是要先看指数嘛，同时也可以看到各基金公司在指数基金上的布局，通过本文让我们一起来选指数选基金公司。</description>
     </item>
     <item>
       <title>2023Q3个人(年度)投资理财回顾分析</title>
-      <link>https://blog.rovertang.com/posts/rich/20231003-review-and-analysis-of-personal-financing-in-2023q3/</link>
+      <link>http://localhost:1313/posts/rich/20231003-review-and-analysis-of-personal-financing-in-2023q3/</link>
       <pubDate>Tue, 03 Oct 2023 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/rich/20231003-review-and-analysis-of-personal-financing-in-2023q3/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
+      <guid>http://localhost:1313/posts/rich/20231003-review-and-analysis-of-personal-financing-in-2023q3/</guid>
+      <category domain="http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
       <description>罗孚入市已一年，这一年到底什么感悟什么收获，整理这一年的数据，从分类、仓位、收益、行业、策略、月度、股息等维度进行了详尽分析，愿通过数据和你一起分享罗孚的理财心得。愿有收获，更愿沟通交流。</description>
     </item>
     <item>
       <title>个人投资理财系统中关于分析维度的探讨</title>
-      <link>https://blog.rovertang.com/posts/rich/20230602-analysis-dimensions-in-personal-investment-and-wealth-management-systems/</link>
+      <link>http://localhost:1313/posts/rich/20230602-analysis-dimensions-in-personal-investment-and-wealth-management-systems/</link>
       <pubDate>Fri, 02 Jun 2023 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/rich/20230602-analysis-dimensions-in-personal-investment-and-wealth-management-systems/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
+      <guid>http://localhost:1313/posts/rich/20230602-analysis-dimensions-in-personal-investment-and-wealth-management-systems/</guid>
+      <category domain="http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
       <description>本文从投资理财的品类、账户、币种等方面同大家做一下分析维度的探讨，希望为以后得分析系统打好基石，欢迎大家来说说你期望的分析维度。</description>
     </item>
     <item>
       <title>每日获取股价数据并消息提醒功能代码的使用方法</title>
-      <link>https://blog.rovertang.com/posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/</link>
+      <link>http://localhost:1313/posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/</link>
       <pubDate>Sat, 22 Apr 2023 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
+      <guid>http://localhost:1313/posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/</guid>
+      <category domain="http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
       <description>详细介绍一下每日股价提醒功能代码的使用方法，希望你也早日用上，也欢迎和罗孚探讨每日股价提醒相关的想法或技巧。</description>
     </item>
     <item>
       <title>2023Q1个人投资理财回顾分析</title>
-      <link>https://blog.rovertang.com/posts/rich/20230404-review-and-analysis-of-personal-financing-in-2023q1/</link>
+      <link>http://localhost:1313/posts/rich/20230404-review-and-analysis-of-personal-financing-in-2023q1/</link>
       <pubDate>Tue, 04 Apr 2023 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/rich/20230404-review-and-analysis-of-personal-financing-in-2023q1/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
+      <guid>http://localhost:1313/posts/rich/20230404-review-and-analysis-of-personal-financing-in-2023q1/</guid>
+      <category domain="http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
       <description>2023Q1 投入是上一季度的 6 成多，但收益率仅为 1.68%，同上季度相比相差甚远，主要原因也是在季末的时候买入的，静待下个季度的表现。总体表现还行，整体上涨，但基金投资仍然没有好的方法和思路。这个季度开始建立一个表格系统，希望下个季度能够完善。</description>
     </item>
     <item>
       <title>让ChatGPT写代码获取股票历史日K线数据</title>
-      <link>https://blog.rovertang.com/posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/</link>
+      <link>http://localhost:1313/posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/</link>
       <pubDate>Sun, 26 Mar 2023 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
+      <guid>http://localhost:1313/posts/rich/20230326-let-chatgpt-write-python-code-to-get-the-daily-k-line-data/</guid>
+      <category domain="http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
       <description>分别尝试使用Tushare库和BaoStock库获取某支股票历史数据、某一天的历史数据、所有股票的历史数据，ChatGPT均能给出较为正确的代码，最终获取了股票历史K线数据。有兴趣的小伙伴，可以一起来学习一下。</description>
     </item>
     <item>
       <title>硅谷银行破产对普通投资者的启发</title>
-      <link>https://blog.rovertang.com/posts/rich/20230315-inspiration-of-svb-to-ordinary-investors/</link>
+      <link>http://localhost:1313/posts/rich/20230315-inspiration-of-svb-to-ordinary-investors/</link>
       <pubDate>Wed, 15 Mar 2023 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/rich/20230315-inspiration-of-svb-to-ordinary-investors/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
+      <guid>http://localhost:1313/posts/rich/20230315-inspiration-of-svb-to-ordinary-investors/</guid>
+      <category domain="http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
       <description>硅谷银行破产给个人投资理财带来的启发：务必要留有余钱或闲钱，提升自己的理财能力，做好仓位管理或资产配置，并且务必要感谢这个时代。</description>
     </item>
     <item>
       <title>场内基金(ETF)省钱定投方法</title>
-      <link>https://blog.rovertang.com/posts/rich/20230225-the-method-of-saving-money-and-fixed-investment-of-etf/</link>
+      <link>http://localhost:1313/posts/rich/20230225-the-method-of-saving-money-and-fixed-investment-of-etf/</link>
       <pubDate>Sat, 25 Feb 2023 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/rich/20230225-the-method-of-saving-money-and-fixed-investment-of-etf/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
+      <guid>http://localhost:1313/posts/rich/20230225-the-method-of-saving-money-and-fixed-investment-of-etf/</guid>
+      <category domain="http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
       <description>低佣是场内基金 ETF 省钱购买的基础途径，通过定价买入功能实现低价买入也是省钱。可以使用定期定投功能实现定投，但建议使用定价买入功能做半自动定投。</description>
     </item>
     <item>
       <title>2023年投资B股市场的一点研究</title>
-      <link>https://blog.rovertang.com/posts/rich/20230211-a-study-on-investment-in-b-share-market-in-2023/</link>
+      <link>http://localhost:1313/posts/rich/20230211-a-study-on-investment-in-b-share-market-in-2023/</link>
       <pubDate>Sat, 11 Feb 2023 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/rich/20230211-a-study-on-investment-in-b-share-market-in-2023/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
+      <guid>http://localhost:1313/posts/rich/20230211-a-study-on-investment-in-b-share-market-in-2023/</guid>
+      <category domain="http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
       <description>罗孚最近想买点B股，所以对B股市场做了一点点研究，总的来说，负溢价确实非常吸引人，也因此带动了高股息率，但当前已经开始起高，是否值得投资？可以一起来聊聊。</description>
     </item>
     <item>
       <title>从滚动市盈率(TTM)判断公司近期经营情况</title>
-      <link>https://blog.rovertang.com/posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/</link>
+      <link>http://localhost:1313/posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/</link>
       <pubDate>Thu, 09 Feb 2023 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
+      <guid>http://localhost:1313/posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/</guid>
+      <category domain="http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
       <description>滚动市盈率 TTM 同静态市盈率相比较，可以大概判断公司近期的经营情况，本文就是从原理和数据的角度来说明罗孚的新发现，欢迎一起探讨。</description>
     </item>
     <item>
       <title>前复权后复权计算股票收益率不准确问题</title>
-      <link>https://blog.rovertang.com/posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/</link>
+      <link>http://localhost:1313/posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/</link>
       <pubDate>Wed, 25 Jan 2023 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
+      <guid>http://localhost:1313/posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/</guid>
+      <category domain="http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
       <description>使用前复权或后复权计算股票的收益率，都存在结果不准确的情况。罗孚使用最笨的不复权的方法进行计算，反而验证了正确性。希望本文能让你了解复权，理解收益率计算方法。</description>
     </item>
     <item>
       <title>证券交易佣金最低5元的坑以及避坑指南</title>
-      <link>https://blog.rovertang.com/posts/rich/20230120-a-pit-with-a-minimum-commission-of-5-yuan-for-securities-trading/</link>
+      <link>http://localhost:1313/posts/rich/20230120-a-pit-with-a-minimum-commission-of-5-yuan-for-securities-trading/</link>
       <pubDate>Fri, 20 Jan 2023 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/rich/20230120-a-pit-with-a-minimum-commission-of-5-yuan-for-securities-trading/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
+      <guid>http://localhost:1313/posts/rich/20230120-a-pit-with-a-minimum-commission-of-5-yuan-for-securities-trading/</guid>
+      <category domain="http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
       <description>证券交易佣金最低5元，这是证监会的规定，导致对于小资金量的买入卖出，比如买卖几手 ETF，就会产生非常高的佣金费率，如何避坑？罗孚给您支两招，希望对您有用。</description>
     </item>
     <item>
       <title>股票型、混合型、债券型基金近 5 年总体收益分析(2018-2022)</title>
-      <link>https://blog.rovertang.com/posts/rich/20230114-overall-income-analysis-of-the-fund-in-the-past-five-years-2018-2022/</link>
+      <link>http://localhost:1313/posts/rich/20230114-overall-income-analysis-of-the-fund-in-the-past-five-years-2018-2022/</link>
       <pubDate>Sat, 14 Jan 2023 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/rich/20230114-overall-income-analysis-of-the-fund-in-the-past-five-years-2018-2022/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
+      <guid>http://localhost:1313/posts/rich/20230114-overall-income-analysis-of-the-fund-in-the-past-five-years-2018-2022/</guid>
+      <category domain="http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
       <description>根据最近几年的收益率数据，分析股票型、混合型、债券型基金下细分类型基金的收益情况，通过总体收益、年度收益等数据观察各二级分类基金的收益率和波动情况。</description>
     </item>
     <item>
       <title>2022 年个人消费总结(账单分析)</title>
-      <link>https://blog.rovertang.com/posts/rich/20230101-personal-consumption-summary-in-2022-with-bill-analysis/</link>
+      <link>http://localhost:1313/posts/rich/20230101-personal-consumption-summary-in-2022-with-bill-analysis/</link>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/rich/20230101-personal-consumption-summary-in-2022-with-bill-analysis/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
+      <guid>http://localhost:1313/posts/rich/20230101-personal-consumption-summary-in-2022-with-bill-analysis/</guid>
+      <category domain="http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
       <description>这是罗孚的 2022 年个人消费分析总结，总体来说费用有一定下降，而学习支出和保险支出有所增加，这是好事，也开始尝试理财赚钱，而总体的消费支出还算平稳，希望自己 2023 年可以适当增加娱乐方面的支出。</description>
     </item>
     <item>
       <title>2022Q4 个人投资理财回顾分析</title>
-      <link>https://blog.rovertang.com/posts/rich/20221231-review-and-analysis-of-personal-financing-in-2022q4/</link>
+      <link>http://localhost:1313/posts/rich/20221231-review-and-analysis-of-personal-financing-in-2022q4/</link>
       <pubDate>Sat, 31 Dec 2022 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/rich/20221231-review-and-analysis-of-personal-financing-in-2022q4/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
+      <guid>http://localhost:1313/posts/rich/20221231-review-and-analysis-of-personal-financing-in-2022q4/</guid>
+      <category domain="http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
       <description>2022 年第四季度个人投资理财回顾分析，总体正收益，得益于择时的重要性，另外建议要从看得懂的股票入手，要有耐心，不能心痒，同时也提供了一些技术手段供参考。相信 2023，相信收益更多。</description>
     </item>
     <item>
       <title>为什么股票不适合定投？</title>
-      <link>https://blog.rovertang.com/posts/rich/20221224-why-are-stocks-not-suitable-for-fixed-investment/</link>
+      <link>http://localhost:1313/posts/rich/20221224-why-are-stocks-not-suitable-for-fixed-investment/</link>
       <pubDate>Sat, 24 Dec 2022 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/rich/20221224-why-are-stocks-not-suitable-for-fixed-investment/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
+      <guid>http://localhost:1313/posts/rich/20221224-why-are-stocks-not-suitable-for-fixed-investment/</guid>
+      <category domain="http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
       <description>通过 3 年、5 年、10 年定投格力电器股票，从这案例看股票是否真的适合定投。结论是不适合，因为前 3 年、5 年都处于高位，最终还是需要做基本面分析和择时来选择股票。基于此，我也放弃了股票定投的想法。</description>
     </item>
     <item>
       <title>几个红利指数基金的收益推演</title>
-      <link>https://blog.rovertang.com/posts/rich/20221218-income-deduction-of-several-bonus-funds/</link>
+      <link>http://localhost:1313/posts/rich/20221218-income-deduction-of-several-bonus-funds/</link>
       <pubDate>Sun, 18 Dec 2022 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/rich/20221218-income-deduction-of-several-bonus-funds/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
+      <guid>http://localhost:1313/posts/rich/20221218-income-deduction-of-several-bonus-funds/</guid>
+      <category domain="http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
       <description>根据一次性投入和定投两种方式，对红利指数下的几个基金做 3 年、5 年、10 年的收益推演，以了解基金的好坏以及投资方式差异对收益的影响。</description>
     </item>
     <item>
       <title>透过历史看沪深 300、中证 500、红利等宽基指数</title>
-      <link>https://blog.rovertang.com/posts/rich/20221217-looking-at-broad-base-indexes-such-as-csi-300-csi-500-and-dividend-through-history/</link>
+      <link>http://localhost:1313/posts/rich/20221217-looking-at-broad-base-indexes-such-as-csi-300-csi-500-and-dividend-through-history/</link>
       <pubDate>Sat, 17 Dec 2022 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/rich/20221217-looking-at-broad-base-indexes-such-as-csi-300-csi-500-and-dividend-through-history/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
+      <guid>http://localhost:1313/posts/rich/20221217-looking-at-broad-base-indexes-such-as-csi-300-csi-500-and-dividend-through-history/</guid>
+      <category domain="http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
       <description>通过 3 年、5 年内、10 年、18 年的数据，来看上证指数、上证 50、沪深 300、中证 500、红利指数、中证红利这几个指数的收益情况。结论不甚乐观，因为近 5 年或近 3 年甚至近 10 年，都没有什么特别好的收益，虽然 18 年来看是不错的正收益。一方面说明长期投资才是价值的体现，另一方面说明不能只看一个时间点的高低，而要加入定投、低买高卖等策略方能获得更大收益。</description>
     </item>
     <item>
       <title>2022 年基金市场数据分析和思考</title>
-      <link>https://blog.rovertang.com/posts/rich/20221126-analysis-and-reflection-on-fund-market-data-in-2022/</link>
+      <link>http://localhost:1313/posts/rich/20221126-analysis-and-reflection-on-fund-market-data-in-2022/</link>
       <pubDate>Sat, 26 Nov 2022 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/rich/20221126-analysis-and-reflection-on-fund-market-data-in-2022/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
+      <guid>http://localhost:1313/posts/rich/20221126-analysis-and-reflection-on-fund-market-data-in-2022/</guid>
+      <category domain="http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
       <description>根据 1.7 万支基金近一年的涨跌幅分析，2022 年的基金市场是悲观的，因为这一年的股票市场很惨，但通过涨幅高于 5% 的基金分析，又让我们看到了光明，想要盈利还需要看你怎么选择投资类型以及基金经理，本文就是对这一大结论的个人分析和思考。</description>
     </item>
     <item>
       <title>关于指数基金定投的随笔</title>
-      <link>https://blog.rovertang.com/posts/rich/20221119-essay-on-fixed-investment-of-index-fund/</link>
+      <link>http://localhost:1313/posts/rich/20221119-essay-on-fixed-investment-of-index-fund/</link>
       <pubDate>Sat, 19 Nov 2022 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/rich/20221119-essay-on-fixed-investment-of-index-fund/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
+      <guid>http://localhost:1313/posts/rich/20221119-essay-on-fixed-investment-of-index-fund/</guid>
+      <category domain="http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
       <description>关于指数基金定投，投多少钱，按什么周期投，什么时候买入卖出，如何更智能定投，通过下午图书馆看的两本书，有一定的启发。</description>
     </item>
     <item>
       <title>2021年个人消费账单分析</title>
-      <link>https://blog.rovertang.com/posts/rich/20220116-analysis-of-personal-consumption-bill-in-2021/</link>
+      <link>http://localhost:1313/posts/rich/20220116-analysis-of-personal-consumption-bill-in-2021/</link>
       <pubDate>Sun, 16 Jan 2022 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/rich/20220116-analysis-of-personal-consumption-bill-in-2021/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
+      <guid>http://localhost:1313/posts/rich/20220116-analysis-of-personal-consumption-bill-in-2021/</guid>
+      <category domain="http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
       <description>2021年消费总体还算合理，花费不算多，但孩子和住房的维持性花费较大，带来了较大的生活压力，而投资性支出看上去多，实则投入不多，需要进一步加大投资性支出，最后消费类支出虽然在吃上花费略多，但总体花费较少，也要适当增加娱乐部分支出。</description>
     </item>
     <item>
       <title>2020年个人消费账单分析</title>
-      <link>https://blog.rovertang.com/posts/rich/20210208-analysis-of-personal-consumption-bill-in-2020/</link>
+      <link>http://localhost:1313/posts/rich/20210208-analysis-of-personal-consumption-bill-in-2020/</link>
       <pubDate>Mon, 08 Feb 2021 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/rich/20210208-analysis-of-personal-consumption-bill-in-2020/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
+      <guid>http://localhost:1313/posts/rich/20210208-analysis-of-personal-consumption-bill-in-2020/</guid>
+      <category domain="http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
       <description>知过去明未来，心中有数方能来时不乱。通过2020年个人消费账单回顾，了解个人消费支出分布，做到2021年消费心里有个数。</description>
     </item>
     <item>
       <title>结婚后从老婆那学来的个人理财知识</title>
-      <link>https://blog.rovertang.com/posts/rich/20140910-personal-finance-knowledge-learned-from-my-wife-after-marriage/</link>
+      <link>http://localhost:1313/posts/rich/20140910-personal-finance-knowledge-learned-from-my-wife-after-marriage/</link>
       <pubDate>Wed, 10 Sep 2014 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/rich/20140910-personal-finance-knowledge-learned-from-my-wife-after-marriage/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
+      <guid>http://localhost:1313/posts/rich/20140910-personal-finance-knowledge-learned-from-my-wife-after-marriage/</guid>
+      <category domain="http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
       <description>本文主要从信用卡、贷款、存款、保险以及用钱这几个方面来说我的理财观。</description>
     </item>
   </channel>

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>路由器 - 标签 - 罗孚</title>
-    <link>https://blog.rovertang.com/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/</link>
+    <link>http://localhost:1313/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 10 Feb 2023 00:00:00 +0800</lastBuildDate>
-    <atom:link href="https://blog.rovertang.com/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>路由器的儿童上网保护功能让儿童远离游戏和视频</title>
-      <link>https://blog.rovertang.com/posts/smart/20230210-the-routers-child-online-protection-function-keeps-children-away-from-games-and-videos/</link>
+      <link>http://localhost:1313/posts/smart/20230210-the-routers-child-online-protection-function-keeps-children-away-from-games-and-videos/</link>
       <pubDate>Fri, 10 Feb 2023 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/smart/20230210-the-routers-child-online-protection-function-keeps-children-away-from-games-and-videos/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E5%AE%B6%E5%B1%85%E5%AE%B6%E7%94%B5/">家居家电</category>
+      <guid>http://localhost:1313/posts/smart/20230210-the-routers-child-online-protection-function-keeps-children-away-from-games-and-videos/</guid>
+      <category domain="http://localhost:1313/categories/%E5%AE%B6%E5%B1%85%E5%AE%B6%E7%94%B5/">家居家电</category>
       <description>家庭路由器的儿童上网保护功能，可以禁止某些设备在某些时间段上网或访问某些网址，算是一种让儿童远离游戏和视频的方法吧，本文仅讲述方法，希望家长们都不要用到:)</description>
     </item>
   </channel>

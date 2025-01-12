@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>等高线 - 标签 - 罗孚</title>
-    <link>https://blog.rovertang.com/tags/%E7%AD%89%E9%AB%98%E7%BA%BF/</link>
+    <link>http://localhost:1313/tags/%E7%AD%89%E9%AB%98%E7%BA%BF/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 10 Jun 2012 00:00:00 +0800</lastBuildDate>
-    <atom:link href="https://blog.rovertang.com/tags/%E7%AD%89%E9%AB%98%E7%BA%BF/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E7%AD%89%E9%AB%98%E7%BA%BF/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>说说转换等高线数据的思路</title>
-      <link>https://blog.rovertang.com/posts/map/20120610-talk-about-the-idea-of-converting-contour-data/</link>
+      <link>http://localhost:1313/posts/map/20120610-talk-about-the-idea-of-converting-contour-data/</link>
       <pubDate>Sun, 10 Jun 2012 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/map/20120610-talk-about-the-idea-of-converting-contour-data/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <guid>http://localhost:1313/posts/map/20120610-talk-about-the-idea-of-converting-contour-data/</guid>
+      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
       <description>&lt;p&gt;最近在讨论等高线的方案，昨天的时候我也研究了一番，然后提交了一份文档给内部，今天我来简单说说我对于等高线转换的思路。&lt;/p&gt;&#xA;&lt;p&gt;首先大家可以了解一下什么是等高线，&lt;a href=&#34;http://baike.baidu.com/view/94058.htm&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;百度百科&lt;/a&gt;上已经讲的非常清楚，我也是看了等高线的定义后，才对等高线有了较深入的了解，特别是关于等高线为什么间隔4个画一个粗线，也是从这里了解到的。&lt;/p&gt;</description>
     </item>
   </channel>

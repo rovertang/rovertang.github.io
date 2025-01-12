@@ -2,50 +2,50 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>WebMap - 标签 - 罗孚</title>
-    <link>https://blog.rovertang.com/tags/webmap/</link>
+    <link>http://localhost:1313/tags/webmap/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 29 Mar 2020 00:00:00 +0800</lastBuildDate>
-    <atom:link href="https://blog.rovertang.com/tags/webmap/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/webmap/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>手把手教你快速构建一份全国疫情分布地图</title>
-      <link>https://blog.rovertang.com/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/</link>
+      <link>http://localhost:1313/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/</link>
       <pubDate>Sun, 29 Mar 2020 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <guid>http://localhost:1313/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/</guid>
+      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
       <description>使用百度地图API和第三方数据API，快速构建一份全国疫情分布地图，赶快来学习一下吧，附送源码。</description>
     </item>
     <item>
       <title>如何制作一份疫情场所分布地图？(附数据和源码)</title>
-      <link>https://blog.rovertang.com/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/</link>
+      <link>http://localhost:1313/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/</link>
       <pubDate>Sun, 23 Feb 2020 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <guid>http://localhost:1313/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/</guid>
+      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
       <description>使用高德地图API制作一份上海疫情场所分布地图，支持疫情场所地图显示、自身位置显示、查询位置等功能。如何实现的？赶紧进来看看吧。</description>
     </item>
     <item>
       <title>分享一个WebMap引擎(MapBar)</title>
-      <link>https://blog.rovertang.com/posts/map/20111102-share-a-webmap-engine-mapbar/</link>
+      <link>http://localhost:1313/posts/map/20111102-share-a-webmap-engine-mapbar/</link>
       <pubDate>Wed, 02 Nov 2011 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/map/20111102-share-a-webmap-engine-mapbar/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <guid>http://localhost:1313/posts/map/20111102-share-a-webmap-engine-mapbar/</guid>
+      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
       <description>&lt;p&gt;这个WebMap的引擎实则我早就(2006年初)&lt;a href=&#34;http://www.cnblogs.com/Tangf/archive/2006/01/22/321756.html&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;分享&lt;/a&gt;过了，只是当时也没有人注意。08年的时候，我还用这个引擎为别人做过项目，只是当时付了我八成的费用后一拖再拖就不了了之了，后来再回头找到我的时候我也不搭理他们了。时过境迁，又是三个年头(11年都快结束了)过去了，今天在移动硬盘里竟然无意看到了这个当年的项目，简单的看了一下代码，竟然还能用，加上文档比较健全，所以简单整理一下后打包分享给大家。&lt;/p&gt;</description>
     </item>
     <item>
       <title>制作一份简单的网络地图(世博地图的配准和切割)</title>
-      <link>https://blog.rovertang.com/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/</link>
+      <link>http://localhost:1313/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/</link>
       <pubDate>Sun, 28 Mar 2010 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <guid>http://localhost:1313/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/</guid>
+      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
       <description>&lt;p&gt;其实我很早的时候就写过一篇“&lt;a href=&#34;http://www.cnblogs.com/Tangf/archive/2009/07/30/1534674.html&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;我的 2010世博地图1.0版发布&lt;/a&gt;”，但没有和大家做明确的说明和制作方法，今天就和大家一起来分享地图配准和地图切割并进行网络发布的问题，其实就是以世博为例制作一份简单的网络地图。网络地图是以Google Maps API为基础，在Google Maps上面叠加一份自制的世博地图，但有一点，这里的地图配准和切割很重要，不过使用本文介绍的工具后一切都将变的不困难了。&lt;/p&gt;</description>
     </item>
     <item>
       <title>WebMap DIY(定制你自己的网络地图，GMapImageCutter工具推荐)</title>
-      <link>https://blog.rovertang.com/posts/map/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool/</link>
+      <link>http://localhost:1313/posts/map/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool/</link>
       <pubDate>Sun, 05 Apr 2009 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/map/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <guid>http://localhost:1313/posts/map/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool/</guid>
+      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
       <description>&lt;p&gt;自从上次发布了&lt;a href=&#34;https://www.cnblogs.com/Tangf/archive/2009/02/20/1394511.html&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;Google Maps API离线开发包&lt;/a&gt;以后，就有人来问我，为什么离线状态下不能显示地图，能否显示自己的DIY地图。严格来说，这是两个问题，为什么不能显示地图是因为Google的地图图片本身就不在本地，所以离线状态下是肯定不能显示地图的，不过能够标点画线等动作下有没有地图图片并不重要，而能否显示自己的DIY地图，其实Gmaps API本身就带了，GOverlay/GTileLayer等函数就是能够添加自己的图片，只是我不喜欢只添加一张图片到Gmap上，觉得意义不大，但又没有找到好的tile的切割工具，所以这个功能我一直没有尝试。今天，我向大家推荐GMapImageCutter工具，一个能够将图片切割成tile的工具，并且还帮你生成了HTML文件，直接就能够浏览，厉害。&lt;/p&gt;</description>
     </item>
   </channel>

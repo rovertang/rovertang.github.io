@@ -100,5 +100,5 @@ ChatGPT 的回答：
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/ai/20230602-understanding-token-in-chatgpt/  
+> URL: http://localhost:1313/posts/ai/20230602-understanding-token-in-chatgpt/  
 

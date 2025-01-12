@@ -2,34 +2,34 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>百度 - 标签 - 罗孚</title>
-    <link>https://blog.rovertang.com/tags/%E7%99%BE%E5%BA%A6/</link>
+    <link>http://localhost:1313/tags/%E7%99%BE%E5%BA%A6/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 08 Sep 2018 00:00:00 +0800</lastBuildDate>
-    <atom:link href="https://blog.rovertang.com/tags/%E7%99%BE%E5%BA%A6/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E7%99%BE%E5%BA%A6/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>无人驾驶入门2：高精度地图</title>
-      <link>https://blog.rovertang.com/posts/car/20180908-introduction-to-driverless-2-high-precision-map/</link>
+      <link>http://localhost:1313/posts/car/20180908-introduction-to-driverless-2-high-precision-map/</link>
       <pubDate>Sat, 08 Sep 2018 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/car/20180908-introduction-to-driverless-2-high-precision-map/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E6%B1%BD%E8%BD%A6/">汽车</category>
+      <guid>http://localhost:1313/posts/car/20180908-introduction-to-driverless-2-high-precision-map/</guid>
+      <category domain="http://localhost:1313/categories/%E6%B1%BD%E8%BD%A6/">汽车</category>
       <description>无人驾驶入门之高精度地图：了解高精度地图的实现逻辑，这是Apollo定位、感知、规划模块的基础。</description>
     </item>
     <item>
       <title>无人驾驶入门1：无人驾驶概览</title>
-      <link>https://blog.rovertang.com/posts/car/20180825-getting-started-with-driverless-1-driverless-overview/</link>
+      <link>http://localhost:1313/posts/car/20180825-getting-started-with-driverless-1-driverless-overview/</link>
       <pubDate>Sat, 25 Aug 2018 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/car/20180825-getting-started-with-driverless-1-driverless-overview/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E6%B1%BD%E8%BD%A6/">汽车</category>
+      <guid>http://localhost:1313/posts/car/20180825-getting-started-with-driverless-1-driverless-overview/</guid>
+      <category domain="http://localhost:1313/categories/%E6%B1%BD%E8%BD%A6/">汽车</category>
       <description>无人驾驶入门第一课，介绍了无人驾驶车的关键部分以及Apollo的架构，带大家入门无人驾驶技术。</description>
     </item>
     <item>
       <title>百度Apollo无人驾驶入门课程下载</title>
-      <link>https://blog.rovertang.com/posts/car/20180728-baidu-apollo-driverless-introductory-course-download/</link>
+      <link>http://localhost:1313/posts/car/20180728-baidu-apollo-driverless-introductory-course-download/</link>
       <pubDate>Sat, 28 Jul 2018 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/car/20180728-baidu-apollo-driverless-introductory-course-download/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E6%B1%BD%E8%BD%A6/">汽车</category>
+      <guid>http://localhost:1313/posts/car/20180728-baidu-apollo-driverless-introductory-course-download/</guid>
+      <category domain="http://localhost:1313/categories/%E6%B1%BD%E8%BD%A6/">汽车</category>
       <description>本视频作为无人驾驶的入门课程，超棒，可以让你系统性的了解无人驾驶，获得一个全面的知识体系认知。课程中介绍了无人驾驶的高精度地图、定位、感知、预测、规划、控制这几个方面，视频虽然简短，每个两三分钟，但确实是现实的、不骗人的、让你少走弯路的课程。总之，这是我（现阶段）见过的最佳无人驾驶入门课程，视频精美，制作优良，良心之作，值得推荐。</description>
     </item>
   </channel>

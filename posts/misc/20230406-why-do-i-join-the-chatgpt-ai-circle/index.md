@@ -64,5 +64,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/misc/20230406-why-do-i-join-the-chatgpt-ai-circle/  
+> URL: http://localhost:1313/posts/misc/20230406-why-do-i-join-the-chatgpt-ai-circle/  
 

@@ -2,90 +2,90 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>心理心灵 - 罗孚</title>
-    <link>https://blog.rovertang.com/posts/soul/</link>
+    <link>http://localhost:1313/posts/soul/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 28 Mar 2023 00:00:00 +0800</lastBuildDate>
-    <atom:link href="https://blog.rovertang.com/posts/soul/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/posts/soul/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>欲望之下的软肋与痛苦</title>
-      <link>https://blog.rovertang.com/posts/soul/20230328-the-soft-ribs-and-pains-under-desire/</link>
+      <link>http://localhost:1313/posts/soul/20230328-the-soft-ribs-and-pains-under-desire/</link>
       <pubDate>Tue, 28 Mar 2023 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/soul/20230328-the-soft-ribs-and-pains-under-desire/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E5%BF%83%E7%90%86%E5%BF%83%E7%81%B5/">心理心灵</category>
+      <guid>http://localhost:1313/posts/soul/20230328-the-soft-ribs-and-pains-under-desire/</guid>
+      <category domain="http://localhost:1313/categories/%E5%BF%83%E7%90%86%E5%BF%83%E7%81%B5/">心理心灵</category>
       <description>我们需要那么多欲望吗？我们缺的，是对生命的感受，一种让自己慢下来的感觉。</description>
     </item>
     <item>
       <title>五顶学习帽之内驱力部分读书大纲</title>
-      <link>https://blog.rovertang.com/posts/soul/20230123-reading-outline-of-internal-drive-part-of-five-learning-caps/</link>
+      <link>http://localhost:1313/posts/soul/20230123-reading-outline-of-internal-drive-part-of-five-learning-caps/</link>
       <pubDate>Mon, 23 Jan 2023 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/soul/20230123-reading-outline-of-internal-drive-part-of-five-learning-caps/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E5%BF%83%E7%90%86%E5%BF%83%E7%81%B5/">心理心灵</category>
+      <guid>http://localhost:1313/posts/soul/20230123-reading-outline-of-internal-drive-part-of-five-learning-caps/</guid>
+      <category domain="http://localhost:1313/categories/%E5%BF%83%E7%90%86%E5%BF%83%E7%81%B5/">心理心灵</category>
       <description>从道和术的层面，解决孩子的学习内驱力问题。只是知易行难，有了好的思想和方法，更重要的是践行，日积月累才能保证目标的达成。</description>
     </item>
     <item>
       <title>透过二舅的故事，看生命的韧性</title>
-      <link>https://blog.rovertang.com/posts/soul/20220911-see-the-resilience-of-life-through-the-story-of-my-second-uncle/</link>
+      <link>http://localhost:1313/posts/soul/20220911-see-the-resilience-of-life-through-the-story-of-my-second-uncle/</link>
       <pubDate>Sun, 11 Sep 2022 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/soul/20220911-see-the-resilience-of-life-through-the-story-of-my-second-uncle/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E5%BF%83%E7%90%86%E5%BF%83%E7%81%B5/">心理心灵</category>
+      <guid>http://localhost:1313/posts/soul/20220911-see-the-resilience-of-life-through-the-story-of-my-second-uncle/</guid>
+      <category domain="http://localhost:1313/categories/%E5%BF%83%E7%90%86%E5%BF%83%E7%81%B5/">心理心灵</category>
       <description>二舅的故事，让我看到的，不是饱满的人生，而是生命的韧性。</description>
     </item>
     <item>
       <title>《正面管教》第2章“几个基本概念”笔记 </title>
-      <link>https://blog.rovertang.com/posts/soul/20210505-notes-on-several-basic-concepts-in-chapter-2-of-positive-discipline/</link>
+      <link>http://localhost:1313/posts/soul/20210505-notes-on-several-basic-concepts-in-chapter-2-of-positive-discipline/</link>
       <pubDate>Wed, 05 May 2021 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/soul/20210505-notes-on-several-basic-concepts-in-chapter-2-of-positive-discipline/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E5%BF%83%E7%90%86%E5%BF%83%E7%81%B5/">心理心灵</category>
+      <guid>http://localhost:1313/posts/soul/20210505-notes-on-several-basic-concepts-in-chapter-2-of-positive-discipline/</guid>
+      <category domain="http://localhost:1313/categories/%E5%BF%83%E7%90%86%E5%BF%83%E7%81%B5/">心理心灵</category>
       <description>阿德勒的基本概念：1．孩子是社会人；2．行为以目的为导向；3．孩子的首要目的是追求归属感和价值感；4．一个行为不当的孩子，是一个丧失信心的孩子；5．社会责任感或集体感；6．平等；7．犯错误是学习的好时机；8．要确保把爱的讯息传递给孩子</description>
     </item>
     <item>
       <title>《正面管教》第1章“正面的方法”笔记</title>
-      <link>https://blog.rovertang.com/posts/soul/20210406-notes-on-positive-methods-in-chapter-1-of-positive-discipline/</link>
+      <link>http://localhost:1313/posts/soul/20210406-notes-on-positive-methods-in-chapter-1-of-positive-discipline/</link>
       <pubDate>Tue, 06 Apr 2021 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/soul/20210406-notes-on-positive-methods-in-chapter-1-of-positive-discipline/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E5%BF%83%E7%90%86%E5%BF%83%E7%81%B5/">心理心灵</category>
+      <guid>http://localhost:1313/posts/soul/20210406-notes-on-positive-methods-in-chapter-1-of-positive-discipline/</guid>
+      <category domain="http://localhost:1313/categories/%E5%BF%83%E7%90%86%E5%BF%83%E7%81%B5/">心理心灵</category>
       <description>正面管教工具：1．废除惩罚；2．废除娇纵；3．和善而坚定；4．给孩子培养“七项重要的感知力和技能”的机会；5．当心是什么在起作用（惩罚带来长期负面的效果）；6．放弃荒诞的观念——“若想让孩子做得好就要先让他感觉糟”；7．让孩子参与到设立限制中来；8．问启发式的问题；9．使用和善而坚定的话语。</description>
     </item>
     <item>
       <title>《正面管教》“序言”笔记 </title>
-      <link>https://blog.rovertang.com/posts/soul/20210331-notes-on-preface-of-positive-discipline/</link>
+      <link>http://localhost:1313/posts/soul/20210331-notes-on-preface-of-positive-discipline/</link>
       <pubDate>Wed, 31 Mar 2021 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/soul/20210331-notes-on-preface-of-positive-discipline/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E5%BF%83%E7%90%86%E5%BF%83%E7%81%B5/">心理心灵</category>
+      <guid>http://localhost:1313/posts/soul/20210331-notes-on-preface-of-positive-discipline/</guid>
+      <category domain="http://localhost:1313/categories/%E5%BF%83%E7%90%86%E5%BF%83%E7%81%B5/">心理心灵</category>
       <description>正面管教能够帮助大人们找到一条既不惩罚也不娇纵的中间路线。正面管教倡导的是和善而坚定，并且把有价值的社会技能和人生技能教给孩子。</description>
     </item>
     <item>
       <title>《父母专业课》学习感悟</title>
-      <link>https://blog.rovertang.com/posts/soul/20210316-learning-experience-of-parents-professional-course/</link>
+      <link>http://localhost:1313/posts/soul/20210316-learning-experience-of-parents-professional-course/</link>
       <pubDate>Tue, 16 Mar 2021 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/soul/20210316-learning-experience-of-parents-professional-course/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E5%BF%83%E7%90%86%E5%BF%83%E7%81%B5/">心理心灵</category>
+      <guid>http://localhost:1313/posts/soul/20210316-learning-experience-of-parents-professional-course/</guid>
+      <category domain="http://localhost:1313/categories/%E5%BF%83%E7%90%86%E5%BF%83%E7%81%B5/">心理心灵</category>
       <description>父母专业课是一门关于孩子教育的线下培训课程，个人对于比较有感触的心理营养、原生家庭、冰山模型、应对姿态这四个部分做了回顾。虽然这门课程的培训不能完全改变自己，但确实有不同的感触，并有小小的改变，这就已经很超值了。做父母不易，同孩子一样，需要不断学习进步。</description>
     </item>
     <item>
       <title>1&#43;0=0！2021，从0开始。</title>
-      <link>https://blog.rovertang.com/posts/soul/20210128-1&#43;00-2021-starting-from-0/</link>
+      <link>http://localhost:1313/posts/soul/20210128-1&#43;00-2021-starting-from-0/</link>
       <pubDate>Thu, 28 Jan 2021 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/soul/20210128-1&#43;00-2021-starting-from-0/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E5%BF%83%E7%90%86%E5%BF%83%E7%81%B5/">心理心灵</category>
+      <guid>http://localhost:1313/posts/soul/20210128-1&#43;00-2021-starting-from-0/</guid>
+      <category domain="http://localhost:1313/categories/%E5%BF%83%E7%90%86%E5%BF%83%E7%81%B5/">心理心灵</category>
       <description>回忆过去，快乐与痛苦，已不再重要。展望未来，暂不知晓，1+1&amp;gt;3已不再，1+0=0已来。就让这0祭拜这十年。2021，从0开始。</description>
     </item>
     <item>
       <title>正面管教大纲(听樊登读书)</title>
-      <link>https://blog.rovertang.com/posts/soul/20210124-outline-of-positive-discipline-listen-to-fandeng-read/</link>
+      <link>http://localhost:1313/posts/soul/20210124-outline-of-positive-discipline-listen-to-fandeng-read/</link>
       <pubDate>Sun, 24 Jan 2021 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/soul/20210124-outline-of-positive-discipline-listen-to-fandeng-read/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E5%BF%83%E7%90%86%E5%BF%83%E7%81%B5/">心理心灵</category>
+      <guid>http://localhost:1313/posts/soul/20210124-outline-of-positive-discipline-listen-to-fandeng-read/</guid>
+      <category domain="http://localhost:1313/categories/%E5%BF%83%E7%90%86%E5%BF%83%E7%81%B5/">心理心灵</category>
       <description>《正面管教》一书是教养孩子的重要经典著作，其“正面”的要义是教我们如何和善而坚定的教养孩子，和善是对孩子的尊重，而坚定是对现实和自己的尊重，全书通过“正面”的理念让家长们发生思想上的转变，而通过书中的方法让家长们实际落地解决教养过程中发生在孩子身上的问题，是一本非常值得推荐的好书。</description>
     </item>
     <item>
       <title>从老婆凶我一事获得的10条人生感悟（家庭篇）</title>
-      <link>https://blog.rovertang.com/posts/soul/20190105-10-life-insights-from-my-wifes-ferocity/</link>
+      <link>http://localhost:1313/posts/soul/20190105-10-life-insights-from-my-wifes-ferocity/</link>
       <pubDate>Sat, 05 Jan 2019 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/soul/20190105-10-life-insights-from-my-wifes-ferocity/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E5%BF%83%E7%90%86%E5%BF%83%E7%81%B5/">心理心灵</category>
+      <guid>http://localhost:1313/posts/soul/20190105-10-life-insights-from-my-wifes-ferocity/</guid>
+      <category domain="http://localhost:1313/categories/%E5%BF%83%E7%90%86%E5%BF%83%E7%81%B5/">心理心灵</category>
       <description>1、身体是革命的本钱，生命无价；2、手机和微信是家庭的隐形杀手；3、我们都有病，不只是手机病；4、现在的自我欢愉可能会耽误孩子的一生；5、沟通是解决家庭矛盾的最有效方法；6、理解、包容、价值观，成就美满家庭；7、金钱是解决所有问题的最佳办法；8、做真实的自己方能获得更精彩的人生；9、家庭是人生最重要的资产；10、一个好老婆可以改变三代人的命运；</description>
     </item>
   </channel>

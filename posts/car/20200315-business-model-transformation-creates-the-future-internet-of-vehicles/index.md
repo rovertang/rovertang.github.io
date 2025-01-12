@@ -59,5 +59,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/  
+> URL: http://localhost:1313/posts/car/20200315-business-model-transformation-creates-the-future-internet-of-vehicles/  
 

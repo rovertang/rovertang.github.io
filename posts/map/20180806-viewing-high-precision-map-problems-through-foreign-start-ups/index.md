@@ -233,5 +233,5 @@ Ushr还提供了地图API，对于需要地图数据的车厂，无需开发地�
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/map/20180806-viewing-high-precision-map-problems-through-foreign-start-ups/  
+> URL: http://localhost:1313/posts/map/20180806-viewing-high-precision-map-problems-through-foreign-start-ups/  
 

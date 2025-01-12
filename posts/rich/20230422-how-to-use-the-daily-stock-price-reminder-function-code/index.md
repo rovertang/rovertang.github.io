@@ -147,5 +147,5 @@ PS：在本文发表时，已经增加了一行判断，所以webhook地址不�
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/  
+> URL: http://localhost:1313/posts/rich/20230422-how-to-use-the-daily-stock-price-reminder-function-code/  
 

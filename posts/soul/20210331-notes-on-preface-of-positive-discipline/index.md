@@ -81,5 +81,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/soul/20210331-notes-on-preface-of-positive-discipline/  
+> URL: http://localhost:1313/posts/soul/20210331-notes-on-preface-of-positive-discipline/  
 

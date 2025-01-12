@@ -141,5 +141,5 @@ HiCar正大面积进入车厂体系，车厂对产品质量和体验的要求非
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/car/20210123-huaweis-on-board-smart-screen-opens-a-new-world-on-board/  
+> URL: http://localhost:1313/posts/car/20210123-huaweis-on-board-smart-screen-opens-a-new-world-on-board/  
 

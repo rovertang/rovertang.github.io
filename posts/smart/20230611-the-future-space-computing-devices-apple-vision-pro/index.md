@@ -170,5 +170,5 @@ Apple vision Pro 的官方页面已经上线，欢迎了解：[https://www.apple
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/smart/20230611-the-future-space-computing-devices-apple-vision-pro/  
+> URL: http://localhost:1313/posts/smart/20230611-the-future-space-computing-devices-apple-vision-pro/  
 

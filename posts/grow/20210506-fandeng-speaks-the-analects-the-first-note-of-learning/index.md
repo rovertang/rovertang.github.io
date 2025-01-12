@@ -302,5 +302,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/grow/20210506-fandeng-speaks-the-analects-the-first-note-of-learning/  
+> URL: http://localhost:1313/posts/grow/20210506-fandeng-speaks-the-analects-the-first-note-of-learning/  
 

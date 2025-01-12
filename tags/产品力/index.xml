@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>产品力 - 标签 - 罗孚</title>
-    <link>https://blog.rovertang.com/tags/%E4%BA%A7%E5%93%81%E5%8A%9B/</link>
+    <link>http://localhost:1313/tags/%E4%BA%A7%E5%93%81%E5%8A%9B/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 28 Mar 2021 00:00:00 +0800</lastBuildDate>
-    <atom:link href="https://blog.rovertang.com/tags/%E4%BA%A7%E5%93%81%E5%8A%9B/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E4%BA%A7%E5%93%81%E5%8A%9B/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>论五菱MINI EV的产品力</title>
-      <link>https://blog.rovertang.com/posts/car/20210328-on-the-product-power-of-wuling-mini-ev/</link>
+      <link>http://localhost:1313/posts/car/20210328-on-the-product-power-of-wuling-mini-ev/</link>
       <pubDate>Sun, 28 Mar 2021 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/car/20210328-on-the-product-power-of-wuling-mini-ev/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E6%B1%BD%E8%BD%A6/">汽车</category>
+      <guid>http://localhost:1313/posts/car/20210328-on-the-product-power-of-wuling-mini-ev/</guid>
+      <category domain="http://localhost:1313/categories/%E6%B1%BD%E8%BD%A6/">汽车</category>
       <description>五菱MINI EV不是第一辆4座迷你车，但其恰到好处地满足了“实惠、实用、时尚”三大需求，填补了市场空白，开辟了新赛道，虽然一定不及特斯拉，但比买两轮小牛强，在迷你4座小车上占领了用户的心智，并且受到了年轻人的青睐，是名副其实的“年轻人的第一辆车”。好产品仍然是第一竞争力，不玩虚的，拿出诚意，自然赢得民心。为 用好产品改变世界 的民族智造企业，点个赞。</description>
     </item>
   </channel>

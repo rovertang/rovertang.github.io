@@ -121,5 +121,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/car/20230219-review-and-analysis-of-sales-volume-of-neo-xpeng-li-in-2022/  
+> URL: http://localhost:1313/posts/car/20230219-review-and-analysis-of-sales-volume-of-neo-xpeng-li-in-2022/  
 

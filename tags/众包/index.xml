@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>众包 - 标签 - 罗孚</title>
-    <link>https://blog.rovertang.com/tags/%E4%BC%97%E5%8C%85/</link>
+    <link>http://localhost:1313/tags/%E4%BC%97%E5%8C%85/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 04 Jan 2010 00:00:00 +0800</lastBuildDate>
-    <atom:link href="https://blog.rovertang.com/tags/%E4%BC%97%E5%8C%85/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E4%BC%97%E5%8C%85/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>众包——大众力量推动商业未来</title>
-      <link>https://blog.rovertang.com/posts/misc/20100104-crowdsourcing-mass-power-to-promote-the-future-of-business/</link>
+      <link>http://localhost:1313/posts/misc/20100104-crowdsourcing-mass-power-to-promote-the-future-of-business/</link>
       <pubDate>Mon, 04 Jan 2010 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/misc/20100104-crowdsourcing-mass-power-to-promote-the-future-of-business/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E6%9D%82/">杂</category>
+      <guid>http://localhost:1313/posts/misc/20100104-crowdsourcing-mass-power-to-promote-the-future-of-business/</guid>
+      <category domain="http://localhost:1313/categories/%E6%9D%82/">杂</category>
       <description>&lt;p&gt;第一次知道&lt;a href=&#34;http://zh.wikipedia.org/zh-cn/%E4%BC%97%E5%8C%85&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;众包&lt;/a&gt;这个词，是朋友告知有一本新书：&lt;a href=&#34;http://product.dangdang.com/product.aspx?product_id=20604709&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;《众包：大众力量缘何推动商业未来》&lt;/a&gt;。现在，我真的买了这本书拜读起来，书刚刚才看完第二章，觉得有点枯燥、太过于理论，所以决定先发表一下我对众包的理解或想法。&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>小白跑步 - 合集 - 罗孚</title>
-    <link>https://blog.rovertang.com/collections/%E5%B0%8F%E7%99%BD%E8%B7%91%E6%AD%A5/</link>
+    <link>http://localhost:1313/collections/%E5%B0%8F%E7%99%BD%E8%B7%91%E6%AD%A5/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 02 Jan 2023 00:00:00 +0800</lastBuildDate>
-    <atom:link href="https://blog.rovertang.com/collections/%E5%B0%8F%E7%99%BD%E8%B7%91%E6%AD%A5/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/collections/%E5%B0%8F%E7%99%BD%E8%B7%91%E6%AD%A5/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>小白坚持跑步不受伤的三个关键要素</title>
-      <link>https://blog.rovertang.com/posts/life/20230102-three-key-factors-for-xiaobai-to-keep-running-without-injury/</link>
+      <link>http://localhost:1313/posts/life/20230102-three-key-factors-for-xiaobai-to-keep-running-without-injury/</link>
       <pubDate>Mon, 02 Jan 2023 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/life/20230102-three-key-factors-for-xiaobai-to-keep-running-without-injury/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E7%94%9F%E6%B4%BB%E5%81%A5%E5%BA%B7/">生活健康</category>
+      <guid>http://localhost:1313/posts/life/20230102-three-key-factors-for-xiaobai-to-keep-running-without-injury/</guid>
+      <category domain="http://localhost:1313/categories/%E7%94%9F%E6%B4%BB%E5%81%A5%E5%BA%B7/">生活健康</category>
       <description>跑步小白罗孚总结的三条能够坚持跑步并且不受伤的关键要素：坚持用前脚掌跑步，隔天跑 5 公里或 30 分钟，一定做跑前热身和跑后拉伸的动作。相信我，做到这三条，你真的可以坚持跑步还不受伤。</description>
     </item>
     <item>
       <title>2022年跑了650公里有感</title>
-      <link>https://blog.rovertang.com/posts/life/20221231-running-650km-in-2022/</link>
+      <link>http://localhost:1313/posts/life/20221231-running-650km-in-2022/</link>
       <pubDate>Sat, 31 Dec 2022 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/life/20221231-running-650km-in-2022/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E7%94%9F%E6%B4%BB%E5%81%A5%E5%BA%B7/">生活健康</category>
+      <guid>http://localhost:1313/posts/life/20221231-running-650km-in-2022/</guid>
+      <category domain="http://localhost:1313/categories/%E7%94%9F%E6%B4%BB%E5%81%A5%E5%BA%B7/">生活健康</category>
       <description>没想到自己能在2022年跑650公里，回过头才觉得：坚持实际也没那么难，关键是找到自己可掌控的时间点，而规律生活会让我们的生活更规律。2023，继续加油！</description>
     </item>
   </channel>

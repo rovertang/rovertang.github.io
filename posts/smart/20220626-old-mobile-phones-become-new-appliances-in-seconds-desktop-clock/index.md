@@ -93,5 +93,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/smart/20220626-old-mobile-phones-become-new-appliances-in-seconds-desktop-clock/  
+> URL: http://localhost:1313/posts/smart/20220626-old-mobile-phones-become-new-appliances-in-seconds-desktop-clock/  
 

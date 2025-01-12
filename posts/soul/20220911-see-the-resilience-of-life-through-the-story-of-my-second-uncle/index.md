@@ -350,5 +350,5 @@ B站视频《回村三天，二舅治好了我的精神内耗》：https://www.b
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/soul/20220911-see-the-resilience-of-life-through-the-story-of-my-second-uncle/  
+> URL: http://localhost:1313/posts/soul/20220911-see-the-resilience-of-life-through-the-story-of-my-second-uncle/  
 

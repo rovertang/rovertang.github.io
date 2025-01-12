@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -15,8 +15,8 @@
   <meta itemprop="datePublished" content="2018-11-18T00:00:00+08:00">
   <meta itemprop="dateModified" content="2018-11-18T00:00:00+08:00">
   <meta itemprop="wordCount" content="3316">
-  <meta itemprop="image" content="https://blog.rovertang.com/posts/car/20181118-introduction-to-acc-adaptive-cruise-control-system/cover.png">
-  <meta itemprop="keywords" content="ACC,自适应巡航,系统介绍"><meta property="og:url" content="https://blog.rovertang.com/posts/car/20181118-introduction-to-acc-adaptive-cruise-control-system/">
+  <meta itemprop="image" content="http://localhost:1313/posts/car/20181118-introduction-to-acc-adaptive-cruise-control-system/cover.png">
+  <meta itemprop="keywords" content="ACC,自适应巡航,系统介绍"><meta property="og:url" content="http://localhost:1313/posts/car/20181118-introduction-to-acc-adaptive-cruise-control-system/">
   <meta property="og:site_name" content="罗孚">
   <meta property="og:title" content="ACC自适应巡航控制系统介绍">
   <meta property="og:description" content="本文是关于ACC自适应巡航控制系统的介绍，罗孚从个人视角出发，描述对ACC系统的理解，以及在一些使用场景下的思考。
@@ -29,17 +29,17 @@
     <meta property="article:tag" content="ACC">
     <meta property="article:tag" content="自适应巡航">
     <meta property="article:tag" content="系统介绍">
-    <meta property="og:image" content="https://blog.rovertang.com/posts/car/20181118-introduction-to-acc-adaptive-cruise-control-system/cover.png">
+    <meta property="og:image" content="http://localhost:1313/posts/car/20181118-introduction-to-acc-adaptive-cruise-control-system/cover.png">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://blog.rovertang.com/posts/car/20181118-introduction-to-acc-adaptive-cruise-control-system/cover.png">
+  <meta name="twitter:image" content="http://localhost:1313/posts/car/20181118-introduction-to-acc-adaptive-cruise-control-system/cover.png">
   <meta name="twitter:title" content="ACC自适应巡航控制系统介绍">
   <meta name="twitter:description" content="本文是关于ACC自适应巡航控制系统的介绍，罗孚从个人视角出发，描述对ACC系统的理解，以及在一些使用场景下的思考。
 什么是ACC？ ACC系统是在定速巡航装置的基础上发展而来的，区别在于定速巡航只能限定速度，方向盘和刹车还需要驾驶员控制，而ACC能够较好的帮助驾驶员协调方向盘和刹车。定速巡航算是L1级别的自动驾驶，而ACC则可以算是L2级别的自动驾驶。">
 <meta name="application-name" content="罗孚传说">
 <meta name="apple-mobile-web-app-title" content="罗孚传说"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://blog.rovertang.com/posts/car/20181118-introduction-to-acc-adaptive-cruise-control-system/" title="ACC自适应巡航控制系统介绍 - 罗孚" /><link rel="prev" type="text/html" href="https://blog.rovertang.com/posts/car/20181020-driverless-the-best-book-to-learn-about-driverless-driving/" title="《无人驾驶》-了解无人驾驶最佳读物" /><link rel="next" type="text/html" href="https://blog.rovertang.com/posts/car/20181130-thoughts-on-the-realization-and-problems-of-express-arrival-service/" title="快递到车服务的实现思路和问题思考" /><link rel="alternate" type="text/markdown" href="https://blog.rovertang.com/posts/car/20181118-introduction-to-acc-adaptive-cruise-control-system/index.md" title="ACC自适应巡航控制系统介绍 - 罗孚"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="http://localhost:1313/posts/car/20181118-introduction-to-acc-adaptive-cruise-control-system/" title="ACC自适应巡航控制系统介绍 - 罗孚" /><link rel="prev" type="text/html" href="http://localhost:1313/posts/car/20181020-driverless-the-best-book-to-learn-about-driverless-driving/" title="《无人驾驶》-了解无人驾驶最佳读物" /><link rel="next" type="text/html" href="http://localhost:1313/posts/car/20181130-thoughts-on-the-realization-and-problems-of-express-arrival-service/" title="快递到车服务的实现思路和问题思考" /><link rel="alternate" type="text/markdown" href="http://localhost:1313/posts/car/20181118-introduction-to-acc-adaptive-cruise-control-system/index.md" title="ACC自适应巡航控制系统介绍 - 罗孚"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="apxz4dWbUQ2bsnGFk6SmRK4gNZ7tlT21KgMZ1t9hqdk" /><meta name="msvalidate.01" content="5282002B82D61AD2D097F2F6419C1E4A" /><meta name="baidu-site-verification" content="codeva-RiIZqiHrvQ" /><script type="application/ld+json">
   {
@@ -49,9 +49,9 @@
     "inLanguage": "zh-cn",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https:\/\/blog.rovertang.com\/posts\/car\/20181118-introduction-to-acc-adaptive-cruise-control-system\/"
+      "@id": "http:\/\/localhost:1313\/posts\/car\/20181118-introduction-to-acc-adaptive-cruise-control-system\/"
     },"genre": "posts","keywords": "ACC, 自适应巡航, 系统介绍","wordcount":  3316 ,
-    "url": "https:\/\/blog.rovertang.com\/posts\/car\/20181118-introduction-to-acc-adaptive-cruise-control-system\/","datePublished": "2018-11-18T00:00:00+08:00","dateModified": "2018-11-18T00:00:00+08:00","publisher": {
+    "url": "http:\/\/localhost:1313\/posts\/car\/20181118-introduction-to-acc-adaptive-cruise-control-system\/","datePublished": "2018-11-18T00:00:00+08:00","dateModified": "2018-11-18T00:00:00+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -339,5 +339,5 @@
     <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
   </noscript>
 </div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.16"};</script><script src="/js/theme.min.js" defer></script></body>
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.16"};console.log('Page config:', window.config);</script><script src="/js/theme.min.js" defer></script></body>
 </html>

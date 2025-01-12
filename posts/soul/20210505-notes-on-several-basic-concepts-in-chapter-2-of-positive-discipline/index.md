@@ -210,5 +210,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/soul/20210505-notes-on-several-basic-concepts-in-chapter-2-of-positive-discipline/  
+> URL: http://localhost:1313/posts/soul/20210505-notes-on-several-basic-concepts-in-chapter-2-of-positive-discipline/  
 

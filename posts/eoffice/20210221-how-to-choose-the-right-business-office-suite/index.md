@@ -656,5 +656,5 @@ Google算是企业办公套件的鼻祖了，早在十几年前就开放了“�
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/eoffice/20210221-how-to-choose-the-right-business-office-suite/  
+> URL: http://localhost:1313/posts/eoffice/20210221-how-to-choose-the-right-business-office-suite/  
 

@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>导航电子地图 - 标签 - 罗孚</title>
-    <link>https://blog.rovertang.com/tags/%E5%AF%BC%E8%88%AA%E7%94%B5%E5%AD%90%E5%9C%B0%E5%9B%BE/</link>
+    <link>http://localhost:1313/tags/%E5%AF%BC%E8%88%AA%E7%94%B5%E5%AD%90%E5%9C%B0%E5%9B%BE/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 14 Sep 2009 00:00:00 +0800</lastBuildDate>
-    <atom:link href="https://blog.rovertang.com/tags/%E5%AF%BC%E8%88%AA%E7%94%B5%E5%AD%90%E5%9C%B0%E5%9B%BE/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E5%AF%BC%E8%88%AA%E7%94%B5%E5%AD%90%E5%9C%B0%E5%9B%BE/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>如何制作一份导航电子地图(上)</title>
-      <link>https://blog.rovertang.com/posts/map/20090914-how-to-make-a-navigation-electronic-map/</link>
+      <link>http://localhost:1313/posts/map/20090914-how-to-make-a-navigation-electronic-map/</link>
       <pubDate>Mon, 14 Sep 2009 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/map/20090914-how-to-make-a-navigation-electronic-map/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <guid>http://localhost:1313/posts/map/20090914-how-to-make-a-navigation-electronic-map/</guid>
+      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
       <description>&lt;p&gt;自从上次发表“&lt;a href=&#34;https://rovertang.feishu.cn/docx/doxcnxTkd0PCsjjpllnXCqD6thh&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;导航电子地图的组成和制作流程&lt;/a&gt;”后，被骂的喷头，说文中有很多的错误言论，但我并没有认为有太多的错误(当然关于微软使用四维地图这一错误点还真的是一大疏忽，但这不是重要的，说不定Google哪一天也使用四维了)。我是听了四维公司产品经理的演讲后写的该文，其中许多的总结性的内容个人认为很对，我也该文也是基于对他PPT的理解，当然也有可能我的理解有误，毕竟我并没有在数据公司供职过。不过没有什么关系，错误还希望大家继续指正，我们今天继续谈“如何制作一份导航电子地图”，也算是我接触过三四家数据公司的数据后做的一些简单思考吧，当然，今天甚至会讲到数据中的字段，我要说的是一份最简单最基本的导航电子地图，如果说你写code的能力够好，也许能够根据我所提供的思路制作出一个导航软件，对此我深信不疑(世界第一的导航软件公司制作导航电子地图也用了如此简单的基本需求)。&lt;/p&gt;</description>
     </item>
     <item>
       <title>浅谈导航电子地图的组成和制作流程</title>
-      <link>https://blog.rovertang.com/posts/map/20090822-on-the-composition-and-production-process-of-navigation-electronic-map/</link>
+      <link>http://localhost:1313/posts/map/20090822-on-the-composition-and-production-process-of-navigation-electronic-map/</link>
       <pubDate>Sat, 22 Aug 2009 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/map/20090822-on-the-composition-and-production-process-of-navigation-electronic-map/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <guid>http://localhost:1313/posts/map/20090822-on-the-composition-and-production-process-of-navigation-electronic-map/</guid>
+      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
       <description>&lt;p&gt;这是四维公司在周四的时候做的一个小小的活动(由于一直有点忙，所以今天才整理此篇文章)，主要是讨论行人导航地图的应用与发展。由于我们经理比较忙，所以就让我过去看看。这次活动在蓝色港湾酒吧一条街的全明星运动餐厅(All Star)举行，环境还非常不错。&lt;/p&gt;</description>
     </item>
   </channel>

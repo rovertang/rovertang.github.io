@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>地图组成 - 标签 - 罗孚</title>
-    <link>https://blog.rovertang.com/tags/%E5%9C%B0%E5%9B%BE%E7%BB%84%E6%88%90/</link>
+    <link>http://localhost:1313/tags/%E5%9C%B0%E5%9B%BE%E7%BB%84%E6%88%90/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 22 Aug 2009 00:00:00 +0800</lastBuildDate>
-    <atom:link href="https://blog.rovertang.com/tags/%E5%9C%B0%E5%9B%BE%E7%BB%84%E6%88%90/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E5%9C%B0%E5%9B%BE%E7%BB%84%E6%88%90/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>浅谈导航电子地图的组成和制作流程</title>
-      <link>https://blog.rovertang.com/posts/map/20090822-on-the-composition-and-production-process-of-navigation-electronic-map/</link>
+      <link>http://localhost:1313/posts/map/20090822-on-the-composition-and-production-process-of-navigation-electronic-map/</link>
       <pubDate>Sat, 22 Aug 2009 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/map/20090822-on-the-composition-and-production-process-of-navigation-electronic-map/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <guid>http://localhost:1313/posts/map/20090822-on-the-composition-and-production-process-of-navigation-electronic-map/</guid>
+      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
       <description>&lt;p&gt;这是四维公司在周四的时候做的一个小小的活动(由于一直有点忙，所以今天才整理此篇文章)，主要是讨论行人导航地图的应用与发展。由于我们经理比较忙，所以就让我过去看看。这次活动在蓝色港湾酒吧一条街的全明星运动餐厅(All Star)举行，环境还非常不错。&lt;/p&gt;</description>
     </item>
   </channel>

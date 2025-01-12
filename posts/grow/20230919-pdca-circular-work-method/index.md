@@ -56,5 +56,5 @@ GTD 方法的 4 个步骤：是否需要做？内容是否复杂？两分钟内�
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/grow/20230919-pdca-circular-work-method/  
+> URL: http://localhost:1313/posts/grow/20230919-pdca-circular-work-method/  
 

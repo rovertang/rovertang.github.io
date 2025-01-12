@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>思路 - 标签 - 罗孚</title>
-    <link>https://blog.rovertang.com/tags/%E6%80%9D%E8%B7%AF/</link>
+    <link>http://localhost:1313/tags/%E6%80%9D%E8%B7%AF/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 01 Mar 2020 00:00:00 +0800</lastBuildDate>
-    <atom:link href="https://blog.rovertang.com/tags/%E6%80%9D%E8%B7%AF/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E6%80%9D%E8%B7%AF/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>OKR实施方法——关于思路和流程的思考</title>
-      <link>https://blog.rovertang.com/posts/eoffice/20200301-okr-implementation-method-thoughts-on-ideas-and-processes/</link>
+      <link>http://localhost:1313/posts/eoffice/20200301-okr-implementation-method-thoughts-on-ideas-and-processes/</link>
       <pubDate>Sun, 01 Mar 2020 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/eoffice/20200301-okr-implementation-method-thoughts-on-ideas-and-processes/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E6%95%B0%E5%AD%97%E5%8C%96%E5%8A%9E%E5%85%AC/">数字化办公</category>
+      <guid>http://localhost:1313/posts/eoffice/20200301-okr-implementation-method-thoughts-on-ideas-and-processes/</guid>
+      <category domain="http://localhost:1313/categories/%E6%95%B0%E5%AD%97%E5%8C%96%E5%8A%9E%E5%85%AC/">数字化办公</category>
       <description>OKR不是一个简单的工具，而是一种系统方法，一种思想的提升，通过自驱，不断在正确的事情上努力，产出更优结果，最终达成目标，一个超出预期的目标。OKR的重点：1、制定目标、量化指标、对齐目标、(凝聚并有野心) 2、立即执行、不断跟踪、定期复盘、(自驱) 3、形成循环。(习惯)</description>
     </item>
   </channel>

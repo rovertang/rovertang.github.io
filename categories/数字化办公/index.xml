@@ -2,50 +2,50 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>数字化办公 - 分类 - 罗孚</title>
-    <link>https://blog.rovertang.com/categories/%E6%95%B0%E5%AD%97%E5%8C%96%E5%8A%9E%E5%85%AC/</link>
+    <link>http://localhost:1313/categories/%E6%95%B0%E5%AD%97%E5%8C%96%E5%8A%9E%E5%85%AC/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 11 Mar 2023 00:00:00 +0800</lastBuildDate>
-    <atom:link href="https://blog.rovertang.com/categories/%E6%95%B0%E5%AD%97%E5%8C%96%E5%8A%9E%E5%85%AC/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/%E6%95%B0%E5%AD%97%E5%8C%96%E5%8A%9E%E5%85%AC/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>飞书技巧：用飞书捷径收集at你的消息</title>
-      <link>https://blog.rovertang.com/posts/eoffice/20230311-collect-information-about-at-you-by-feishu/</link>
+      <link>http://localhost:1313/posts/eoffice/20230311-collect-information-about-at-you-by-feishu/</link>
       <pubDate>Sat, 11 Mar 2023 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/eoffice/20230311-collect-information-about-at-you-by-feishu/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E6%95%B0%E5%AD%97%E5%8C%96%E5%8A%9E%E5%85%AC/">数字化办公</category>
+      <guid>http://localhost:1313/posts/eoffice/20230311-collect-information-about-at-you-by-feishu/</guid>
+      <category domain="http://localhost:1313/categories/%E6%95%B0%E5%AD%97%E5%8C%96%E5%8A%9E%E5%85%AC/">数字化办公</category>
       <description>&lt;p&gt;飞书已经飞进千万家，在一家超过千人的公司里使用飞书，一定存在非常忙碌的景象，今天，罗孚就讲讲如何收集飞书中 at 你的消息。&lt;/p&gt;&#xA;&lt;h2 id=&#34;为什么要收集消息&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;为什么要收集消息？&lt;/span&gt;&#xA;  &lt;a href=&#34;#%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e6%94%b6%e9%9b%86%e6%b6%88%e6%81%af&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;信息存在一个较大的问题，就是碎片化。实际在工作过程中，消息也是碎片化的。除非你的工作本身不需要沟通交流，不然，一定就淹没在了各种消息中。&lt;/p&gt;</description>
     </item>
     <item>
       <title>飞书好用：飞书文档——自媒体写作流最佳实践</title>
-      <link>https://blog.rovertang.com/posts/eoffice/20230212-feishu-document-is-the-best-practice-of-we-media-writing-stream/</link>
+      <link>http://localhost:1313/posts/eoffice/20230212-feishu-document-is-the-best-practice-of-we-media-writing-stream/</link>
       <pubDate>Sun, 12 Feb 2023 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/eoffice/20230212-feishu-document-is-the-best-practice-of-we-media-writing-stream/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E6%95%B0%E5%AD%97%E5%8C%96%E5%8A%9E%E5%85%AC/">数字化办公</category>
+      <guid>http://localhost:1313/posts/eoffice/20230212-feishu-document-is-the-best-practice-of-we-media-writing-stream/</guid>
+      <category domain="http://localhost:1313/categories/%E6%95%B0%E5%AD%97%E5%8C%96%E5%8A%9E%E5%85%AC/">数字化办公</category>
       <description>借助飞书文档形成写作流程的闭环，是自媒体写作流的最佳实践，是飞书好用的一种体现。本文介绍了罗孚在过去写作流上的痛点，以及现在如何使用飞书文档解决这些痛点的，希望对你有所启发。</description>
     </item>
     <item>
       <title>没有总部大楼的公司给我们的启发</title>
-      <link>https://blog.rovertang.com/posts/eoffice/20210306-inspiration-from-companies-without-headquarters/</link>
+      <link>http://localhost:1313/posts/eoffice/20210306-inspiration-from-companies-without-headquarters/</link>
       <pubDate>Sat, 06 Mar 2021 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/eoffice/20210306-inspiration-from-companies-without-headquarters/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E6%95%B0%E5%AD%97%E5%8C%96%E5%8A%9E%E5%85%AC/">数字化办公</category>
+      <guid>http://localhost:1313/posts/eoffice/20210306-inspiration-from-companies-without-headquarters/</guid>
+      <category domain="http://localhost:1313/categories/%E6%95%B0%E5%AD%97%E5%8C%96%E5%8A%9E%E5%85%AC/">数字化办公</category>
       <description>组织保障永远是干成事的前提！公司内部的人力、行政、财务、IT等部门，搭建了公司的基础，为公司不断向外、向上探索提供保障。拥有强大基础部门的公司，不一定优秀，但优秀的公司一定拥有强大的基础部门。</description>
     </item>
     <item>
       <title>如何选择合适的企业办公套件</title>
-      <link>https://blog.rovertang.com/posts/eoffice/20210221-how-to-choose-the-right-business-office-suite/</link>
+      <link>http://localhost:1313/posts/eoffice/20210221-how-to-choose-the-right-business-office-suite/</link>
       <pubDate>Sun, 21 Feb 2021 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/eoffice/20210221-how-to-choose-the-right-business-office-suite/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E6%95%B0%E5%AD%97%E5%8C%96%E5%8A%9E%E5%85%AC/">数字化办公</category>
+      <guid>http://localhost:1313/posts/eoffice/20210221-how-to-choose-the-right-business-office-suite/</guid>
+      <category domain="http://localhost:1313/categories/%E6%95%B0%E5%AD%97%E5%8C%96%E5%8A%9E%E5%85%AC/">数字化办公</category>
       <description>从沟通、积累、管理三个维度为企业选择一套合适的企业办公套件。</description>
     </item>
     <item>
       <title>OKR实施方法——关于思路和流程的思考</title>
-      <link>https://blog.rovertang.com/posts/eoffice/20200301-okr-implementation-method-thoughts-on-ideas-and-processes/</link>
+      <link>http://localhost:1313/posts/eoffice/20200301-okr-implementation-method-thoughts-on-ideas-and-processes/</link>
       <pubDate>Sun, 01 Mar 2020 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/eoffice/20200301-okr-implementation-method-thoughts-on-ideas-and-processes/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E6%95%B0%E5%AD%97%E5%8C%96%E5%8A%9E%E5%85%AC/">数字化办公</category>
+      <guid>http://localhost:1313/posts/eoffice/20200301-okr-implementation-method-thoughts-on-ideas-and-processes/</guid>
+      <category domain="http://localhost:1313/categories/%E6%95%B0%E5%AD%97%E5%8C%96%E5%8A%9E%E5%85%AC/">数字化办公</category>
       <description>OKR不是一个简单的工具，而是一种系统方法，一种思想的提升，通过自驱，不断在正确的事情上努力，产出更优结果，最终达成目标，一个超出预期的目标。OKR的重点：1、制定目标、量化指标、对齐目标、(凝聚并有野心) 2、立即执行、不断跟踪、定期复盘、(自驱) 3、形成循环。(习惯)</description>
     </item>
   </channel>

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>聚合平台 - 标签 - 罗孚</title>
-    <link>https://blog.rovertang.com/tags/%E8%81%9A%E5%90%88%E5%B9%B3%E5%8F%B0/</link>
+    <link>http://localhost:1313/tags/%E8%81%9A%E5%90%88%E5%B9%B3%E5%8F%B0/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 16 Oct 2021 00:00:00 +0800</lastBuildDate>
-    <atom:link href="https://blog.rovertang.com/tags/%E8%81%9A%E5%90%88%E5%B9%B3%E5%8F%B0/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E8%81%9A%E5%90%88%E5%B9%B3%E5%8F%B0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>充电站聚合平台的意义</title>
-      <link>https://blog.rovertang.com/posts/car/20211016-significance-of-charging-station-aggregation-platform/</link>
+      <link>http://localhost:1313/posts/car/20211016-significance-of-charging-station-aggregation-platform/</link>
       <pubDate>Sat, 16 Oct 2021 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/car/20211016-significance-of-charging-station-aggregation-platform/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E6%B1%BD%E8%BD%A6/">汽车</category>
+      <guid>http://localhost:1313/posts/car/20211016-significance-of-charging-station-aggregation-platform/</guid>
+      <category domain="http://localhost:1313/categories/%E6%B1%BD%E8%BD%A6/">汽车</category>
       <description>充电站聚合平台给上游供应商、下游客户、平台带来了重大的意义，也改变了原有固化的商业模式，并且随着充电站运营商的进一步开放、涌入的平台商越来越多，必将给充电这个行业带来一定的变革，并且我们相信在充电聚合这个垂直领域，会有更多的拓展业务。总的来说，充电站聚合平台给平台带来了重大的意义。</description>
     </item>
   </channel>

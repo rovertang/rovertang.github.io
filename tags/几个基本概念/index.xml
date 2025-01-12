@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>几个基本概念 - 标签 - 罗孚</title>
-    <link>https://blog.rovertang.com/tags/%E5%87%A0%E4%B8%AA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</link>
+    <link>http://localhost:1313/tags/%E5%87%A0%E4%B8%AA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 05 May 2021 00:00:00 +0800</lastBuildDate>
-    <atom:link href="https://blog.rovertang.com/tags/%E5%87%A0%E4%B8%AA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E5%87%A0%E4%B8%AA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>《正面管教》第2章“几个基本概念”笔记 </title>
-      <link>https://blog.rovertang.com/posts/soul/20210505-notes-on-several-basic-concepts-in-chapter-2-of-positive-discipline/</link>
+      <link>http://localhost:1313/posts/soul/20210505-notes-on-several-basic-concepts-in-chapter-2-of-positive-discipline/</link>
       <pubDate>Wed, 05 May 2021 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/soul/20210505-notes-on-several-basic-concepts-in-chapter-2-of-positive-discipline/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E5%BF%83%E7%90%86%E5%BF%83%E7%81%B5/">心理心灵</category>
+      <guid>http://localhost:1313/posts/soul/20210505-notes-on-several-basic-concepts-in-chapter-2-of-positive-discipline/</guid>
+      <category domain="http://localhost:1313/categories/%E5%BF%83%E7%90%86%E5%BF%83%E7%81%B5/">心理心灵</category>
       <description>阿德勒的基本概念：1．孩子是社会人；2．行为以目的为导向；3．孩子的首要目的是追求归属感和价值感；4．一个行为不当的孩子，是一个丧失信心的孩子；5．社会责任感或集体感；6．平等；7．犯错误是学习的好时机；8．要确保把爱的讯息传递给孩子</description>
     </item>
   </channel>

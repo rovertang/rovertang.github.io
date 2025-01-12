@@ -52,5 +52,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/rich/20221224-why-are-stocks-not-suitable-for-fixed-investment/  
+> URL: http://localhost:1313/posts/rich/20221224-why-are-stocks-not-suitable-for-fixed-investment/  
 

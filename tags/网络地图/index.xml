@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>网络地图 - 标签 - 罗孚</title>
-    <link>https://blog.rovertang.com/tags/%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9B%BE/</link>
+    <link>http://localhost:1313/tags/%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9B%BE/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 28 Mar 2010 00:00:00 +0800</lastBuildDate>
-    <atom:link href="https://blog.rovertang.com/tags/%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9B%BE/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9B%BE/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>制作一份简单的网络地图(世博地图的配准和切割)</title>
-      <link>https://blog.rovertang.com/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/</link>
+      <link>http://localhost:1313/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/</link>
       <pubDate>Sun, 28 Mar 2010 00:00:00 +0800</pubDate>
-      <guid>https://blog.rovertang.com/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/</guid>
-      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <guid>http://localhost:1313/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/</guid>
+      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
       <description>&lt;p&gt;其实我很早的时候就写过一篇“&lt;a href=&#34;http://www.cnblogs.com/Tangf/archive/2009/07/30/1534674.html&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;我的 2010世博地图1.0版发布&lt;/a&gt;”，但没有和大家做明确的说明和制作方法，今天就和大家一起来分享地图配准和地图切割并进行网络发布的问题，其实就是以世博为例制作一份简单的网络地图。网络地图是以Google Maps API为基础，在Google Maps上面叠加一份自制的世博地图，但有一点，这里的地图配准和切割很重要，不过使用本文介绍的工具后一切都将变的不困难了。&lt;/p&gt;</description>
     </item>
   </channel>

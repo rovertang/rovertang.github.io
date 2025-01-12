@@ -140,5 +140,5 @@ ETF 和 REITs 也没有具体的二级分类，可以简单分为 ETF 和 REITs 
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/rich/20230602-analysis-dimensions-in-personal-investment-and-wealth-management-systems/  
+> URL: http://localhost:1313/posts/rich/20230602-analysis-dimensions-in-personal-investment-and-wealth-management-systems/  
 

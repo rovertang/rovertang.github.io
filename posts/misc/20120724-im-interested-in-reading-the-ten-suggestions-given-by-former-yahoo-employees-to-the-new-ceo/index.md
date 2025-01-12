@@ -85,5 +85,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/misc/20120724-im-interested-in-reading-the-ten-suggestions-given-by-former-yahoo-employees-to-the-new-ceo/  
+> URL: http://localhost:1313/posts/misc/20120724-im-interested-in-reading-the-ten-suggestions-given-by-former-yahoo-employees-to-the-new-ceo/  
 

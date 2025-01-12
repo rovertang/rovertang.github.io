@@ -121,5 +121,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/  
+> URL: http://localhost:1313/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/  
 

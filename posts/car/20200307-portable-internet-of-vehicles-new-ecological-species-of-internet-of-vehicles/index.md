@@ -355,5 +355,5 @@ PATEO博泰发布擎mobile随身车联网_腾讯视频：[v.qq.com/x/page/a3077c
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/car/20200307-portable-internet-of-vehicles-new-ecological-species-of-internet-of-vehicles/  
+> URL: http://localhost:1313/posts/car/20200307-portable-internet-of-vehicles-new-ecological-species-of-internet-of-vehicles/  
 

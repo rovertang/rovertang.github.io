@@ -179,5 +179,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/car/20180728-baidu-apollo-driverless-introductory-course-download/  
+> URL: http://localhost:1313/posts/car/20180728-baidu-apollo-driverless-introductory-course-download/  
 

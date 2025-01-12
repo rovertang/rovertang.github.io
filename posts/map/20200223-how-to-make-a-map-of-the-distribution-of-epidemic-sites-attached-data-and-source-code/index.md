@@ -255,5 +255,5 @@ AMap.Geolocation插件：[https://lbs.amap.com/api/javascript-api/reference/loca
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: https://blog.rovertang.com/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/  
+> URL: http://localhost:1313/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/  
 
