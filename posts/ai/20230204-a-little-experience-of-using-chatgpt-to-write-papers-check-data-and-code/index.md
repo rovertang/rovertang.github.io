@@ -329,5 +329,5 @@ AR-HUD 技术的发展一直是汽车行业的一个热门话题，很多公司�
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/  
+> URL: https://blog.rovertang.com/posts/ai/20230204-a-little-experience-of-using-chatgpt-to-write-papers-check-data-and-code/  
 

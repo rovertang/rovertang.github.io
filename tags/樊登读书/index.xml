@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>樊登读书 - 标签 - 罗孚</title>
-    <link>http://localhost:1313/tags/%E6%A8%8A%E7%99%BB%E8%AF%BB%E4%B9%A6/</link>
+    <link>https://blog.rovertang.com/tags/%E6%A8%8A%E7%99%BB%E8%AF%BB%E4%B9%A6/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 16 Jul 2022 00:00:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E6%A8%8A%E7%99%BB%E8%AF%BB%E4%B9%A6/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.rovertang.com/tags/%E6%A8%8A%E7%99%BB%E8%AF%BB%E4%B9%A6/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>樊登读书图书编目和思维导图整理</title>
-      <link>http://localhost:1313/posts/grow/20220716-fan-dengs-book-cataloguing-and-mind-mapping/</link>
+      <link>https://blog.rovertang.com/posts/grow/20220716-fan-dengs-book-cataloguing-and-mind-mapping/</link>
       <pubDate>Sat, 16 Jul 2022 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/grow/20220716-fan-dengs-book-cataloguing-and-mind-mapping/</guid>
-      <category domain="http://localhost:1313/categories/%E5%AD%A6%E4%B9%A0%E6%88%90%E9%95%BF/">学习成长</category>
+      <guid>https://blog.rovertang.com/posts/grow/20220716-fan-dengs-book-cataloguing-and-mind-mapping/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%AD%A6%E4%B9%A0%E6%88%90%E9%95%BF/">学习成长</category>
       <description>整理了一份樊登读书截止到目前(20220716)的图书列表以及对应的思维导图，放在了飞书多维表格中，有使用方法、心路历程和技术实现，希望「樊登读书BookList20220716」能够给你带来帮助并从中受益。</description>
     </item>
     <item>
       <title>正面管教大纲(听樊登读书)</title>
-      <link>http://localhost:1313/posts/soul/20210124-outline-of-positive-discipline-listen-to-fandeng-read/</link>
+      <link>https://blog.rovertang.com/posts/soul/20210124-outline-of-positive-discipline-listen-to-fandeng-read/</link>
       <pubDate>Sun, 24 Jan 2021 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/soul/20210124-outline-of-positive-discipline-listen-to-fandeng-read/</guid>
-      <category domain="http://localhost:1313/categories/%E5%BF%83%E7%90%86%E5%BF%83%E7%81%B5/">心理心灵</category>
+      <guid>https://blog.rovertang.com/posts/soul/20210124-outline-of-positive-discipline-listen-to-fandeng-read/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%BF%83%E7%90%86%E5%BF%83%E7%81%B5/">心理心灵</category>
       <description>《正面管教》一书是教养孩子的重要经典著作，其“正面”的要义是教我们如何和善而坚定的教养孩子，和善是对孩子的尊重，而坚定是对现实和自己的尊重，全书通过“正面”的理念让家长们发生思想上的转变，而通过书中的方法让家长们实际落地解决教养过程中发生在孩子身上的问题，是一本非常值得推荐的好书。</description>
     </item>
   </channel>

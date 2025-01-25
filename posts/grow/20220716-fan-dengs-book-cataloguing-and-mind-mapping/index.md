@@ -206,5 +206,5 @@ but，鼠标的拖动功能竟然不能用，按住，往上拖动，再释放�
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/grow/20220716-fan-dengs-book-cataloguing-and-mind-mapping/  
+> URL: https://blog.rovertang.com/posts/grow/20220716-fan-dengs-book-cataloguing-and-mind-mapping/  
 

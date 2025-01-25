@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>华为 - 标签 - 罗孚</title>
-    <link>http://localhost:1313/tags/%E5%8D%8E%E4%B8%BA/</link>
+    <link>https://blog.rovertang.com/tags/%E5%8D%8E%E4%B8%BA/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 23 Jan 2021 00:00:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E5%8D%8E%E4%B8%BA/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.rovertang.com/tags/%E5%8D%8E%E4%B8%BA/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>华为车载智慧屏打开车载新世界</title>
-      <link>http://localhost:1313/posts/car/20210123-huaweis-on-board-smart-screen-opens-a-new-world-on-board/</link>
+      <link>https://blog.rovertang.com/posts/car/20210123-huaweis-on-board-smart-screen-opens-a-new-world-on-board/</link>
       <pubDate>Sat, 23 Jan 2021 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/car/20210123-huaweis-on-board-smart-screen-opens-a-new-world-on-board/</guid>
-      <category domain="http://localhost:1313/categories/%E6%B1%BD%E8%BD%A6/">汽车</category>
+      <guid>https://blog.rovertang.com/posts/car/20210123-huaweis-on-board-smart-screen-opens-a-new-world-on-board/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E6%B1%BD%E8%BD%A6/">汽车</category>
       <description>华为车载智慧屏，搭载华为HiCar核心，手机车机无缝协同，适配30+Apps，配备智慧语音交互，内置2K行车记录仪，屏幕清晰细腻，让老车秒变智能车，打开了车载新世界。</description>
     </item>
   </channel>

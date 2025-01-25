@@ -337,5 +337,5 @@ IPX7 防水，听上去很高大上，但不防水怎么装水？即便装水 OK
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/smart/20230304-improving-oral-health-problems-with-water-flosser/  
+> URL: https://blog.rovertang.com/posts/smart/20230304-improving-oral-health-problems-with-water-flosser/  
 

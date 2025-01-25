@@ -136,5 +136,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/car/20230211-thinking-about-the-sales-growth-of-byd-in-2022/  
+> URL: https://blog.rovertang.com/posts/car/20230211-thinking-about-the-sales-growth-of-byd-in-2022/  
 

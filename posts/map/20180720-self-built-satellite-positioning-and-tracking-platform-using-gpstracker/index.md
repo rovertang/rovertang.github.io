@@ -55,5 +55,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/map/20180720-self-built-satellite-positioning-and-tracking-platform-using-gpstracker/  
+> URL: https://blog.rovertang.com/posts/map/20180720-self-built-satellite-positioning-and-tracking-platform-using-gpstracker/  
 

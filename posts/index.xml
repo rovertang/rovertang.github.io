@@ -2,80 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>文章 - 罗孚</title>
-    <link>http://localhost:1313/posts/</link>
+    <link>https://blog.rovertang.com/posts/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 11 Jan 2025 00:00:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Jan 2025 00:00:00 +0800</lastBuildDate>
+    <atom:link href="https://blog.rovertang.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>学习成长</title>
-      <link>http://localhost:1313/posts/grow/</link>
-      <pubDate>Sat, 11 Jan 2025 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/grow/</guid>
+      <link>https://blog.rovertang.com/posts/grow/</link>
+      <pubDate>Sat, 25 Jan 2025 00:00:00 +0800</pubDate>
+      <guid>https://blog.rovertang.com/posts/grow/</guid>
       <description>学习成长</description>
     </item>
     <item>
+      <title>心理心灵</title>
+      <link>https://blog.rovertang.com/posts/soul/</link>
+      <pubDate>Sun, 19 Jan 2025 00:00:00 +0800</pubDate>
+      <guid>https://blog.rovertang.com/posts/soul/</guid>
+      <description>心理心灵</description>
+    </item>
+    <item>
       <title>家居家电</title>
-      <link>http://localhost:1313/posts/smart/</link>
+      <link>https://blog.rovertang.com/posts/smart/</link>
       <pubDate>Sun, 04 Aug 2024 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/smart/</guid>
+      <guid>https://blog.rovertang.com/posts/smart/</guid>
       <description>家居家电</description>
     </item>
     <item>
       <title>个人财富</title>
-      <link>http://localhost:1313/posts/rich/</link>
+      <link>https://blog.rovertang.com/posts/rich/</link>
       <pubDate>Thu, 05 Oct 2023 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/rich/</guid>
+      <guid>https://blog.rovertang.com/posts/rich/</guid>
       <description>个人财富</description>
     </item>
     <item>
       <title>AI</title>
-      <link>http://localhost:1313/posts/ai/</link>
+      <link>https://blog.rovertang.com/posts/ai/</link>
       <pubDate>Fri, 02 Jun 2023 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/ai/</guid>
+      <guid>https://blog.rovertang.com/posts/ai/</guid>
       <description>AI</description>
     </item>
     <item>
       <title>杂</title>
-      <link>http://localhost:1313/posts/misc/</link>
+      <link>https://blog.rovertang.com/posts/misc/</link>
       <pubDate>Thu, 06 Apr 2023 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/misc/</guid>
+      <guid>https://blog.rovertang.com/posts/misc/</guid>
       <description>杂</description>
     </item>
     <item>
-      <title>心理心灵</title>
-      <link>http://localhost:1313/posts/soul/</link>
-      <pubDate>Tue, 28 Mar 2023 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/soul/</guid>
-      <description>心理心灵</description>
-    </item>
-    <item>
       <title>数字化办公</title>
-      <link>http://localhost:1313/posts/eoffice/</link>
+      <link>https://blog.rovertang.com/posts/eoffice/</link>
       <pubDate>Sat, 11 Mar 2023 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/eoffice/</guid>
+      <guid>https://blog.rovertang.com/posts/eoffice/</guid>
       <description>数字化办公</description>
     </item>
     <item>
       <title>汽车</title>
-      <link>http://localhost:1313/posts/car/</link>
+      <link>https://blog.rovertang.com/posts/car/</link>
       <pubDate>Sun, 19 Feb 2023 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/car/</guid>
+      <guid>https://blog.rovertang.com/posts/car/</guid>
       <description>汽车</description>
     </item>
     <item>
       <title>生活健康</title>
-      <link>http://localhost:1313/posts/life/</link>
+      <link>https://blog.rovertang.com/posts/life/</link>
       <pubDate>Mon, 02 Jan 2023 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/life/</guid>
+      <guid>https://blog.rovertang.com/posts/life/</guid>
       <description>生活健康</description>
     </item>
     <item>
       <title>地图</title>
-      <link>http://localhost:1313/posts/map/</link>
+      <link>https://blog.rovertang.com/posts/map/</link>
       <pubDate>Sun, 29 Mar 2020 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/map/</guid>
+      <guid>https://blog.rovertang.com/posts/map/</guid>
       <description>地图</description>
     </item>
   </channel>

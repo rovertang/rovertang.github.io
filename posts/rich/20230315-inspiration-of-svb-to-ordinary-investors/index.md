@@ -46,5 +46,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/rich/20230315-inspiration-of-svb-to-ordinary-investors/  
+> URL: https://blog.rovertang.com/posts/rich/20230315-inspiration-of-svb-to-ordinary-investors/  
 

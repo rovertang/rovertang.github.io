@@ -168,5 +168,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/  
+> URL: https://blog.rovertang.com/posts/rich/20230125-inaccurate-calculation-of-stock-return-rate-before-and-after-restoration/  
 

@@ -134,5 +134,5 @@ stocks.db：默认无，运行后自动生成，sqlite3 数据库，每天会将
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/ai/20230408-you-write-text-chatgpt-writes-code-to-get-daily-stock-price/  
+> URL: https://blog.rovertang.com/posts/ai/20230408-you-write-text-chatgpt-writes-code-to-get-daily-stock-price/  
 

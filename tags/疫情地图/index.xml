@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>疫情地图 - 标签 - 罗孚</title>
-    <link>http://localhost:1313/tags/%E7%96%AB%E6%83%85%E5%9C%B0%E5%9B%BE/</link>
+    <link>https://blog.rovertang.com/tags/%E7%96%AB%E6%83%85%E5%9C%B0%E5%9B%BE/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 29 Mar 2020 00:00:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E7%96%AB%E6%83%85%E5%9C%B0%E5%9B%BE/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.rovertang.com/tags/%E7%96%AB%E6%83%85%E5%9C%B0%E5%9B%BE/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>手把手教你快速构建一份全国疫情分布地图</title>
-      <link>http://localhost:1313/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/</link>
+      <link>https://blog.rovertang.com/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/</link>
       <pubDate>Sun, 29 Mar 2020 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/</guid>
-      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <guid>https://blog.rovertang.com/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
       <description>使用百度地图API和第三方数据API，快速构建一份全国疫情分布地图，赶快来学习一下吧，附送源码。</description>
     </item>
     <item>
       <title>如何制作一份疫情场所分布地图？(附数据和源码)</title>
-      <link>http://localhost:1313/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/</link>
+      <link>https://blog.rovertang.com/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/</link>
       <pubDate>Sun, 23 Feb 2020 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/</guid>
-      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <guid>https://blog.rovertang.com/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
       <description>使用高德地图API制作一份上海疫情场所分布地图，支持疫情场所地图显示、自身位置显示、查询位置等功能。如何实现的？赶紧进来看看吧。</description>
     </item>
   </channel>

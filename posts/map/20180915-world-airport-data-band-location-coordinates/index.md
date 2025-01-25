@@ -19,5 +19,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/map/20180915-world-airport-data-band-location-coordinates/  
+> URL: https://blog.rovertang.com/posts/map/20180915-world-airport-data-band-location-coordinates/  
 

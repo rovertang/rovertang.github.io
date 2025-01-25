@@ -49,5 +49,5 @@ BTW：如果你需要更多的将TMS算法公式变为可执行代码，那么�
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/map/20120407-indexing-algorithm-of-google-tile-and-tms/  
+> URL: https://blog.rovertang.com/posts/map/20120407-indexing-algorithm-of-google-tile-and-tms/  
 

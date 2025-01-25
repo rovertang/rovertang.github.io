@@ -107,5 +107,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/smart/20240804-thoughts-on-lightweight-small-screen-laptops-its-better-to-buy-a-large-screen-laptop/  
+> URL: https://blog.rovertang.com/posts/smart/20240804-thoughts-on-lightweight-small-screen-laptops-its-better-to-buy-a-large-screen-laptop/  
 

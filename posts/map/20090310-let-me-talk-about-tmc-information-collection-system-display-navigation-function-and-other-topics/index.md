@@ -71,5 +71,5 @@ TMC难道也要如此发展？不得而知，看态势可能如此，业内做�
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/map/20090310-let-me-talk-about-tmc-information-collection-system-display-navigation-function-and-other-topics/  
+> URL: https://blog.rovertang.com/posts/map/20090310-let-me-talk-about-tmc-information-collection-system-display-navigation-function-and-other-topics/  
 

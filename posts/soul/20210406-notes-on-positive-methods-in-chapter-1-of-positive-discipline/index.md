@@ -258,5 +258,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/soul/20210406-notes-on-positive-methods-in-chapter-1-of-positive-discipline/  
+> URL: https://blog.rovertang.com/posts/soul/20210406-notes-on-positive-methods-in-chapter-1-of-positive-discipline/  
 

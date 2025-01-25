@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>索引算法 - 标签 - 罗孚</title>
-    <link>http://localhost:1313/tags/%E7%B4%A2%E5%BC%95%E7%AE%97%E6%B3%95/</link>
+    <link>https://blog.rovertang.com/tags/%E7%B4%A2%E5%BC%95%E7%AE%97%E6%B3%95/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 07 Apr 2012 00:00:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E7%B4%A2%E5%BC%95%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.rovertang.com/tags/%E7%B4%A2%E5%BC%95%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Google tile和TMS的索引算法</title>
-      <link>http://localhost:1313/posts/map/20120407-indexing-algorithm-of-google-tile-and-tms/</link>
+      <link>https://blog.rovertang.com/posts/map/20120407-indexing-algorithm-of-google-tile-and-tms/</link>
       <pubDate>Sat, 07 Apr 2012 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/map/20120407-indexing-algorithm-of-google-tile-and-tms/</guid>
-      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <guid>https://blog.rovertang.com/posts/map/20120407-indexing-algorithm-of-google-tile-and-tms/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
       <description>&lt;p&gt;TMS是tile map service的缩写，是一种瓦片地图服务，也称之为WMTS（web map tile service），具体的标准可以见&lt;a href=&#34;http://www.opengeospatial.org/standards/wmts&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;OGC网站&lt;/a&gt;。TMS的算法很简单，就是把投影后的世界地图按照层级进行四叉树(待验证)切割，切割后的瓦片数量随层级呈金字塔型，数量和层级关系如下表所示：&lt;/p&gt;</description>
     </item>
   </channel>

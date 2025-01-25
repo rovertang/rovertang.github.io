@@ -2,34 +2,34 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>指数基金 - 标签 - 罗孚</title>
-    <link>http://localhost:1313/tags/%E6%8C%87%E6%95%B0%E5%9F%BA%E9%87%91/</link>
+    <link>https://blog.rovertang.com/tags/%E6%8C%87%E6%95%B0%E5%9F%BA%E9%87%91/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 05 Oct 2023 00:00:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E6%8C%87%E6%95%B0%E5%9F%BA%E9%87%91/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.rovertang.com/tags/%E6%8C%87%E6%95%B0%E5%9F%BA%E9%87%91/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>通过指数挂钩产品表选指数</title>
-      <link>http://localhost:1313/posts/rich/20231005-selecting-index-through-index-linked-product-table/</link>
+      <link>https://blog.rovertang.com/posts/rich/20231005-selecting-index-through-index-linked-product-table/</link>
       <pubDate>Thu, 05 Oct 2023 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/rich/20231005-selecting-index-through-index-linked-product-table/</guid>
-      <category domain="http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
+      <guid>https://blog.rovertang.com/posts/rich/20231005-selecting-index-through-index-linked-product-table/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
       <description>在中证指数官网获得了一张指数挂钩产品表，这张表基本列出了国内全部的指数挂钩产品，通过这张表可以给我们选择指数带来一定的启发，毕竟选被动基金还是要先看指数嘛，同时也可以看到各基金公司在指数基金上的布局，通过本文让我们一起来选指数选基金公司。</description>
     </item>
     <item>
       <title>几个红利指数基金的收益推演</title>
-      <link>http://localhost:1313/posts/rich/20221218-income-deduction-of-several-bonus-funds/</link>
+      <link>https://blog.rovertang.com/posts/rich/20221218-income-deduction-of-several-bonus-funds/</link>
       <pubDate>Sun, 18 Dec 2022 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/rich/20221218-income-deduction-of-several-bonus-funds/</guid>
-      <category domain="http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
+      <guid>https://blog.rovertang.com/posts/rich/20221218-income-deduction-of-several-bonus-funds/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
       <description>根据一次性投入和定投两种方式，对红利指数下的几个基金做 3 年、5 年、10 年的收益推演，以了解基金的好坏以及投资方式差异对收益的影响。</description>
     </item>
     <item>
       <title>关于指数基金定投的随笔</title>
-      <link>http://localhost:1313/posts/rich/20221119-essay-on-fixed-investment-of-index-fund/</link>
+      <link>https://blog.rovertang.com/posts/rich/20221119-essay-on-fixed-investment-of-index-fund/</link>
       <pubDate>Sat, 19 Nov 2022 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/rich/20221119-essay-on-fixed-investment-of-index-fund/</guid>
-      <category domain="http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
+      <guid>https://blog.rovertang.com/posts/rich/20221119-essay-on-fixed-investment-of-index-fund/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
       <description>关于指数基金定投，投多少钱，按什么周期投，什么时候买入卖出，如何更智能定投，通过下午图书馆看的两本书，有一定的启发。</description>
     </item>
   </channel>

@@ -114,5 +114,5 @@ B股市场总共不到 100 支股票，所以同 5000 支相比，做筛选相�
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/rich/20230211-a-study-on-investment-in-b-share-market-in-2023/  
+> URL: https://blog.rovertang.com/posts/rich/20230211-a-study-on-investment-in-b-share-market-in-2023/  
 

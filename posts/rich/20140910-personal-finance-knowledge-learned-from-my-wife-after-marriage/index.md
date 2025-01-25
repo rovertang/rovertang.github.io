@@ -123,5 +123,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/rich/20140910-personal-finance-knowledge-learned-from-my-wife-after-marriage/  
+> URL: https://blog.rovertang.com/posts/rich/20140910-personal-finance-knowledge-learned-from-my-wife-after-marriage/  
 

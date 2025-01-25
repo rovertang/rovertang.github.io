@@ -35,5 +35,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/  
+> URL: https://blog.rovertang.com/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/  
 

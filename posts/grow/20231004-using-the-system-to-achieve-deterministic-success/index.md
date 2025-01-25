@@ -112,5 +112,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/grow/20231004-using-the-system-to-achieve-deterministic-success/  
+> URL: https://blog.rovertang.com/posts/grow/20231004-using-the-system-to-achieve-deterministic-success/  
 

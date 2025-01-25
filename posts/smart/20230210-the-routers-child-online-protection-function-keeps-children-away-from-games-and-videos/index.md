@@ -62,5 +62,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/smart/20230210-the-routers-child-online-protection-function-keeps-children-away-from-games-and-videos/  
+> URL: https://blog.rovertang.com/posts/smart/20230210-the-routers-child-online-protection-function-keeps-children-away-from-games-and-videos/  
 

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>蔚小理 - 标签 - 罗孚</title>
-    <link>http://localhost:1313/tags/%E8%94%9A%E5%B0%8F%E7%90%86/</link>
+    <link>https://blog.rovertang.com/tags/%E8%94%9A%E5%B0%8F%E7%90%86/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 19 Feb 2023 00:00:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E8%94%9A%E5%B0%8F%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.rovertang.com/tags/%E8%94%9A%E5%B0%8F%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>蔚小理2022年销量回顾和分析</title>
-      <link>http://localhost:1313/posts/car/20230219-review-and-analysis-of-sales-volume-of-neo-xpeng-li-in-2022/</link>
+      <link>https://blog.rovertang.com/posts/car/20230219-review-and-analysis-of-sales-volume-of-neo-xpeng-li-in-2022/</link>
       <pubDate>Sun, 19 Feb 2023 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/car/20230219-review-and-analysis-of-sales-volume-of-neo-xpeng-li-in-2022/</guid>
-      <category domain="http://localhost:1313/categories/%E6%B1%BD%E8%BD%A6/">汽车</category>
+      <guid>https://blog.rovertang.com/posts/car/20230219-review-and-analysis-of-sales-volume-of-neo-xpeng-li-in-2022/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E6%B1%BD%E8%BD%A6/">汽车</category>
       <description>理想2022年销量拔得头筹，同其专注于中大型 SUV 和定位家庭用户是分不开的。小鹏2022年下半年呈现下滑态势，其低价策略是有问题的，而 G9 能否力挽狂澜，还需看 2023。蔚来虽然车型多，但老车型呈现疲软态势，整体价格定位偏高，不是很看好，不过 ET5 的销量还不错。</description>
     </item>
   </channel>

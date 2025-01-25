@@ -2,58 +2,58 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>杂 - 罗孚</title>
-    <link>http://localhost:1313/posts/misc/</link>
+    <link>https://blog.rovertang.com/posts/misc/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 06 Apr 2023 00:00:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/misc/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.rovertang.com/posts/misc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>我为什么加入粥左罗ChatGPT AI变现圈</title>
-      <link>http://localhost:1313/posts/misc/20230406-why-do-i-join-the-chatgpt-ai-circle/</link>
+      <link>https://blog.rovertang.com/posts/misc/20230406-why-do-i-join-the-chatgpt-ai-circle/</link>
       <pubDate>Thu, 06 Apr 2023 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/misc/20230406-why-do-i-join-the-chatgpt-ai-circle/</guid>
-      <category domain="http://localhost:1313/categories/%E6%9D%82/">杂</category>
+      <guid>https://blog.rovertang.com/posts/misc/20230406-why-do-i-join-the-chatgpt-ai-circle/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E6%9D%82/">杂</category>
       <description>愿我们通过 ChatGPT 圈子的学习，获得知识，获得提升，让自己成为能够驾驭 ChatGPT 的人！祝好</description>
     </item>
     <item>
       <title>马斯克在印尼B20峰会访谈记录小感悟</title>
-      <link>http://localhost:1313/posts/misc/20221127-musks-interview-record-at-b20-summit-in-indonesia/</link>
+      <link>https://blog.rovertang.com/posts/misc/20221127-musks-interview-record-at-b20-summit-in-indonesia/</link>
       <pubDate>Sun, 27 Nov 2022 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/misc/20221127-musks-interview-record-at-b20-summit-in-indonesia/</guid>
-      <category domain="http://localhost:1313/categories/%E6%9D%82/">杂</category>
+      <guid>https://blog.rovertang.com/posts/misc/20221127-musks-interview-record-at-b20-summit-in-indonesia/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E6%9D%82/">杂</category>
       <description>关于马斯克在印尼B20峰会访谈内容的一点点小感悟。</description>
     </item>
     <item>
       <title>如何在一小时内更新100篇文章？-Evernote Sync插件介绍</title>
-      <link>http://localhost:1313/posts/misc/20180923-how-to-update-100-articles-in-an-hour-evernote-sync-plug-in-introduction/</link>
+      <link>https://blog.rovertang.com/posts/misc/20180923-how-to-update-100-articles-in-an-hour-evernote-sync-plug-in-introduction/</link>
       <pubDate>Sun, 23 Sep 2018 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/misc/20180923-how-to-update-100-articles-in-an-hour-evernote-sync-plug-in-introduction/</guid>
-      <category domain="http://localhost:1313/categories/%E6%9D%82/">杂</category>
+      <guid>https://blog.rovertang.com/posts/misc/20180923-how-to-update-100-articles-in-an-hour-evernote-sync-plug-in-introduction/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E6%9D%82/">杂</category>
       <description>介绍一款WordPress插件，Evernote Sync，这款插件可以让你在一小时内更新100篇文章。要不要试试？</description>
     </item>
     <item>
       <title>手把手教你制作微信小程序，开源、免费、快速搞定</title>
-      <link>http://localhost:1313/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/</link>
+      <link>https://blog.rovertang.com/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/</link>
       <pubDate>Mon, 17 Sep 2018 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/</guid>
-      <category domain="http://localhost:1313/categories/%E6%9D%82/">杂</category>
+      <guid>https://blog.rovertang.com/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E6%9D%82/">杂</category>
       <description>使用百度地图API和第三方数据API，快速构建一份全国疫情分布地图，赶快来学习一下吧，附送源码。</description>
     </item>
     <item>
       <title>读雅虎前员工给新CEO的十条建议有感</title>
-      <link>http://localhost:1313/posts/misc/20120724-im-interested-in-reading-the-ten-suggestions-given-by-former-yahoo-employees-to-the-new-ceo/</link>
+      <link>https://blog.rovertang.com/posts/misc/20120724-im-interested-in-reading-the-ten-suggestions-given-by-former-yahoo-employees-to-the-new-ceo/</link>
       <pubDate>Tue, 24 Jul 2012 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/misc/20120724-im-interested-in-reading-the-ten-suggestions-given-by-former-yahoo-employees-to-the-new-ceo/</guid>
-      <category domain="http://localhost:1313/categories/%E6%9D%82/">杂</category>
+      <guid>https://blog.rovertang.com/posts/misc/20120724-im-interested-in-reading-the-ten-suggestions-given-by-former-yahoo-employees-to-the-new-ceo/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E6%9D%82/">杂</category>
       <description>&lt;p&gt;雅虎新任CEO是原Google美女副总裁玛丽莎·梅耶尔，最近这一新闻甚是火爆，但我倒对雅虎前员工给新CEO的十条建议更有兴趣。我觉得这十条建议非常适合绝大部分的IT公司。&lt;/p&gt;</description>
     </item>
     <item>
       <title>众包——大众力量推动商业未来</title>
-      <link>http://localhost:1313/posts/misc/20100104-crowdsourcing-mass-power-to-promote-the-future-of-business/</link>
+      <link>https://blog.rovertang.com/posts/misc/20100104-crowdsourcing-mass-power-to-promote-the-future-of-business/</link>
       <pubDate>Mon, 04 Jan 2010 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/misc/20100104-crowdsourcing-mass-power-to-promote-the-future-of-business/</guid>
-      <category domain="http://localhost:1313/categories/%E6%9D%82/">杂</category>
+      <guid>https://blog.rovertang.com/posts/misc/20100104-crowdsourcing-mass-power-to-promote-the-future-of-business/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E6%9D%82/">杂</category>
       <description>&lt;p&gt;第一次知道&lt;a href=&#34;http://zh.wikipedia.org/zh-cn/%E4%BC%97%E5%8C%85&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;众包&lt;/a&gt;这个词，是朋友告知有一本新书：&lt;a href=&#34;http://product.dangdang.com/product.aspx?product_id=20604709&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;《众包：大众力量缘何推动商业未来》&lt;/a&gt;。现在，我真的买了这本书拜读起来，书刚刚才看完第二章，觉得有点枯燥、太过于理论，所以决定先发表一下我对众包的理解或想法。&lt;/p&gt;</description>
     </item>
   </channel>

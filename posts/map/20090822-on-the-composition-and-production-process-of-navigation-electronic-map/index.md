@@ -83,5 +83,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/map/20090822-on-the-composition-and-production-process-of-navigation-electronic-map/  
+> URL: https://blog.rovertang.com/posts/map/20090822-on-the-composition-and-production-process-of-navigation-electronic-map/  
 

@@ -217,5 +217,5 @@ chatgpt-web 确实非常的赞，在此也给作者 Chanzhaoyu 打个广告，�
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/ai/20230519-deploy-the-local-shared-version-of-chatgpt/  
+> URL: https://blog.rovertang.com/posts/ai/20230519-deploy-the-local-shared-version-of-chatgpt/  
 

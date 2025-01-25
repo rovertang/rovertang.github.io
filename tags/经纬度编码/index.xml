@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>经纬度编码 - 标签 - 罗孚</title>
-    <link>http://localhost:1313/tags/%E7%BB%8F%E7%BA%AC%E5%BA%A6%E7%BC%96%E7%A0%81/</link>
+    <link>https://blog.rovertang.com/tags/%E7%BB%8F%E7%BA%AC%E5%BA%A6%E7%BC%96%E7%A0%81/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 12 Dec 2018 00:00:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E7%BB%8F%E7%BA%AC%E5%BA%A6%E7%BC%96%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.rovertang.com/tags/%E7%BB%8F%E7%BA%AC%E5%BA%A6%E7%BC%96%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>经纬度编码方法推荐-plus code简介</title>
-      <link>http://localhost:1313/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/</link>
+      <link>https://blog.rovertang.com/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/</link>
       <pubDate>Wed, 12 Dec 2018 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/</guid>
-      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <guid>https://blog.rovertang.com/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
       <description>&lt;p&gt;今天罗孚为大家推荐一种经纬度编码的方法——plus code，原名open location code，是Google于2014年发明的，旨在将表示地理位置的经纬度通过算法推导成一个字符串。&lt;/p&gt;</description>
     </item>
   </channel>

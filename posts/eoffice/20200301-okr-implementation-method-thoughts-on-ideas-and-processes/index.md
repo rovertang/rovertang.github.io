@@ -360,5 +360,5 @@ OKR不仅仅可以用于工作，更可以用于生活，OKR的范围可以是�
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/eoffice/20200301-okr-implementation-method-thoughts-on-ideas-and-processes/  
+> URL: https://blog.rovertang.com/posts/eoffice/20200301-okr-implementation-method-thoughts-on-ideas-and-processes/  
 

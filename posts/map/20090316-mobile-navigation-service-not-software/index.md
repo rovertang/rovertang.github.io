@@ -87,5 +87,5 @@ Google 通过免费的方式让用户了解了 Google Map 和 Google Earth，通
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/map/20090316-mobile-navigation-service-not-software/  
+> URL: https://blog.rovertang.com/posts/map/20090316-mobile-navigation-service-not-software/  
 

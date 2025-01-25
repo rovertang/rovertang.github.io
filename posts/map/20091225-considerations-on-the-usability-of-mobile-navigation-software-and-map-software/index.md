@@ -33,5 +33,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/map/20091225-considerations-on-the-usability-of-mobile-navigation-software-and-map-software/  
+> URL: https://blog.rovertang.com/posts/map/20091225-considerations-on-the-usability-of-mobile-navigation-software-and-map-software/  
 

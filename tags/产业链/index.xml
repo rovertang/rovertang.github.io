@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>产业链 - 标签 - 罗孚</title>
-    <link>http://localhost:1313/tags/%E4%BA%A7%E4%B8%9A%E9%93%BE/</link>
+    <link>https://blog.rovertang.com/tags/%E4%BA%A7%E4%B8%9A%E9%93%BE/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 16 Sep 2018 00:00:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E4%BA%A7%E4%B8%9A%E9%93%BE/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.rovertang.com/tags/%E4%BA%A7%E4%B8%9A%E9%93%BE/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>新出行超级产业链之交通工具变革(网址导航)</title>
-      <link>http://localhost:1313/posts/car/20180916-new-travel-super-industrial-chain-transportation-reform-website-navigation/</link>
+      <link>https://blog.rovertang.com/posts/car/20180916-new-travel-super-industrial-chain-transportation-reform-website-navigation/</link>
       <pubDate>Sun, 16 Sep 2018 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/car/20180916-new-travel-super-industrial-chain-transportation-reform-website-navigation/</guid>
-      <category domain="http://localhost:1313/categories/%E6%B1%BD%E8%BD%A6/">汽车</category>
+      <guid>https://blog.rovertang.com/posts/car/20180916-new-travel-super-industrial-chain-transportation-reform-website-navigation/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E6%B1%BD%E8%BD%A6/">汽车</category>
       <description>&lt;p&gt;一直想做一个“车圈导航”，旨在收集同汽车相关的网址导航，幸运的是车东西已经整理了一份较完美的“新出行超级产业链”，我根据该文件搜寻了相关企业的网址，现将整理的网址分享给大家。希望这份网址导航能够帮助大家迅速找到相关技术公司，并通过他们的网站了解相关的技术，以及在不同公司之间做出对比，希望能给大家带来益处。&lt;/p&gt;</description>
     </item>
   </channel>

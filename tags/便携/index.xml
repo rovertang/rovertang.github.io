@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>便携 - 标签 - 罗孚</title>
-    <link>http://localhost:1313/tags/%E4%BE%BF%E6%90%BA/</link>
+    <link>https://blog.rovertang.com/tags/%E4%BE%BF%E6%90%BA/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 04 Aug 2024 00:00:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E4%BE%BF%E6%90%BA/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.rovertang.com/tags/%E4%BE%BF%E6%90%BA/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>对轻薄(小屏幕)笔记本的思考：还是买大屏幕笔记本吧</title>
-      <link>http://localhost:1313/posts/smart/20240804-thoughts-on-lightweight-small-screen-laptops-its-better-to-buy-a-large-screen-laptop/</link>
+      <link>https://blog.rovertang.com/posts/smart/20240804-thoughts-on-lightweight-small-screen-laptops-its-better-to-buy-a-large-screen-laptop/</link>
       <pubDate>Sun, 04 Aug 2024 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/smart/20240804-thoughts-on-lightweight-small-screen-laptops-its-better-to-buy-a-large-screen-laptop/</guid>
-      <category domain="http://localhost:1313/categories/%E5%AE%B6%E5%B1%85%E5%AE%B6%E7%94%B5/">家居家电</category>
+      <guid>https://blog.rovertang.com/posts/smart/20240804-thoughts-on-lightweight-small-screen-laptops-its-better-to-buy-a-large-screen-laptop/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%AE%B6%E5%B1%85%E5%AE%B6%E7%94%B5/">家居家电</category>
       <description>本文从价格、屏幕、便携的角度对轻薄小屏幕类笔记本做了思考，最后认为：还是买大屏幕笔记本吧。同时，也比较了小主机和笔记本的选择，也感叹选择是哲学问题。那么，你会如何选笔记本呢？</description>
     </item>
   </channel>

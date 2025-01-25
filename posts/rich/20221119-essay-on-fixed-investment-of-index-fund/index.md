@@ -166,5 +166,5 @@ PE、PB、以及百分位都需要考虑，而且一般公司用市盈率，但�
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/rich/20221119-essay-on-fixed-investment-of-index-fund/  
+> URL: https://blog.rovertang.com/posts/rich/20221119-essay-on-fixed-investment-of-index-fund/  
 

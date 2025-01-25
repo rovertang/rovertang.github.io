@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>书籍 - 标签 - 罗孚</title>
-    <link>http://localhost:1313/tags/%E4%B9%A6%E7%B1%8D/</link>
+    <link>https://blog.rovertang.com/tags/%E4%B9%A6%E7%B1%8D/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 20 Oct 2018 00:00:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E4%B9%A6%E7%B1%8D/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.rovertang.com/tags/%E4%B9%A6%E7%B1%8D/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>《无人驾驶》-了解无人驾驶最佳读物</title>
-      <link>http://localhost:1313/posts/car/20181020-driverless-the-best-book-to-learn-about-driverless-driving/</link>
+      <link>https://blog.rovertang.com/posts/car/20181020-driverless-the-best-book-to-learn-about-driverless-driving/</link>
       <pubDate>Sat, 20 Oct 2018 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/car/20181020-driverless-the-best-book-to-learn-about-driverless-driving/</guid>
-      <category domain="http://localhost:1313/categories/%E6%B1%BD%E8%BD%A6/">汽车</category>
+      <guid>https://blog.rovertang.com/posts/car/20181020-driverless-the-best-book-to-learn-about-driverless-driving/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E6%B1%BD%E8%BD%A6/">汽车</category>
       <description>如果推荐一本关于无人驾驶的入门读物，那么这本《无人驾驶》无疑是最佳读物。这本书全面并通俗的介绍了无人驾驶，畅想了无人驾驶的世界，比较全面的介绍了自动驾驶的技术，并在最后思考了无人驾驶对人类的影响。不管是从场景想象、技术科普还是未来社会问题分析，这本书都值得一读，不仅适合产品设计、研发、支持人员，同样适合驾驶相关人员，如车险从业者、物流管理者等。</description>
     </item>
   </channel>

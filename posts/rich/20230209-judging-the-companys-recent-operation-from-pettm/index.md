@@ -76,5 +76,5 @@ PE 又可以分为&lt;strong&gt;静态市盈率、动态市盈率和滚动市盈
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/  
+> URL: https://blog.rovertang.com/posts/rich/20230209-judging-the-companys-recent-operation-from-pettm/  
 

@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>基金数据 - 标签 - 罗孚</title>
-    <link>http://localhost:1313/tags/%E5%9F%BA%E9%87%91%E6%95%B0%E6%8D%AE/</link>
+    <link>https://blog.rovertang.com/tags/%E5%9F%BA%E9%87%91%E6%95%B0%E6%8D%AE/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 14 Jan 2023 00:00:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E5%9F%BA%E9%87%91%E6%95%B0%E6%8D%AE/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.rovertang.com/tags/%E5%9F%BA%E9%87%91%E6%95%B0%E6%8D%AE/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>股票型、混合型、债券型基金近 5 年总体收益分析(2018-2022)</title>
-      <link>http://localhost:1313/posts/rich/20230114-overall-income-analysis-of-the-fund-in-the-past-five-years-2018-2022/</link>
+      <link>https://blog.rovertang.com/posts/rich/20230114-overall-income-analysis-of-the-fund-in-the-past-five-years-2018-2022/</link>
       <pubDate>Sat, 14 Jan 2023 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/rich/20230114-overall-income-analysis-of-the-fund-in-the-past-five-years-2018-2022/</guid>
-      <category domain="http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
+      <guid>https://blog.rovertang.com/posts/rich/20230114-overall-income-analysis-of-the-fund-in-the-past-five-years-2018-2022/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
       <description>根据最近几年的收益率数据，分析股票型、混合型、债券型基金下细分类型基金的收益情况，通过总体收益、年度收益等数据观察各二级分类基金的收益率和波动情况。</description>
     </item>
     <item>
       <title>2022 年基金市场数据分析和思考</title>
-      <link>http://localhost:1313/posts/rich/20221126-analysis-and-reflection-on-fund-market-data-in-2022/</link>
+      <link>https://blog.rovertang.com/posts/rich/20221126-analysis-and-reflection-on-fund-market-data-in-2022/</link>
       <pubDate>Sat, 26 Nov 2022 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/rich/20221126-analysis-and-reflection-on-fund-market-data-in-2022/</guid>
-      <category domain="http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
+      <guid>https://blog.rovertang.com/posts/rich/20221126-analysis-and-reflection-on-fund-market-data-in-2022/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
       <description>根据 1.7 万支基金近一年的涨跌幅分析，2022 年的基金市场是悲观的，因为这一年的股票市场很惨，但通过涨幅高于 5% 的基金分析，又让我们看到了光明，想要盈利还需要看你怎么选择投资类型以及基金经理，本文就是对这一大结论的个人分析和思考。</description>
     </item>
   </channel>

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>地图引擎 - 标签 - 罗孚</title>
-    <link>http://localhost:1313/tags/%E5%9C%B0%E5%9B%BE%E5%BC%95%E6%93%8E/</link>
+    <link>https://blog.rovertang.com/tags/%E5%9C%B0%E5%9B%BE%E5%BC%95%E6%93%8E/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 02 Nov 2011 00:00:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E5%9C%B0%E5%9B%BE%E5%BC%95%E6%93%8E/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.rovertang.com/tags/%E5%9C%B0%E5%9B%BE%E5%BC%95%E6%93%8E/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>分享一个WebMap引擎(MapBar)</title>
-      <link>http://localhost:1313/posts/map/20111102-share-a-webmap-engine-mapbar/</link>
+      <link>https://blog.rovertang.com/posts/map/20111102-share-a-webmap-engine-mapbar/</link>
       <pubDate>Wed, 02 Nov 2011 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/map/20111102-share-a-webmap-engine-mapbar/</guid>
-      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <guid>https://blog.rovertang.com/posts/map/20111102-share-a-webmap-engine-mapbar/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
       <description>&lt;p&gt;这个WebMap的引擎实则我早就(2006年初)&lt;a href=&#34;http://www.cnblogs.com/Tangf/archive/2006/01/22/321756.html&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;分享&lt;/a&gt;过了，只是当时也没有人注意。08年的时候，我还用这个引擎为别人做过项目，只是当时付了我八成的费用后一拖再拖就不了了之了，后来再回头找到我的时候我也不搭理他们了。时过境迁，又是三个年头(11年都快结束了)过去了，今天在移动硬盘里竟然无意看到了这个当年的项目，简单的看了一下代码，竟然还能用，加上文档比较健全，所以简单整理一下后打包分享给大家。&lt;/p&gt;</description>
     </item>
   </channel>

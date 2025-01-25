@@ -159,5 +159,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/ai/20230527-the-gap-of-ai-by-the-nine-nine-multiplication-table/  
+> URL: https://blog.rovertang.com/posts/ai/20230527-the-gap-of-ai-by-the-nine-nine-multiplication-table/  
 

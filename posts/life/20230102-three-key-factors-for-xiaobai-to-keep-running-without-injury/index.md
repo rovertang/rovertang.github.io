@@ -65,5 +65,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/life/20230102-three-key-factors-for-xiaobai-to-keep-running-without-injury/  
+> URL: https://blog.rovertang.com/posts/life/20230102-three-key-factors-for-xiaobai-to-keep-running-without-injury/  
 

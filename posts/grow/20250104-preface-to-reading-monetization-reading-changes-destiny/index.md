@@ -38,5 +38,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/grow/20250104-preface-to-reading-monetization-reading-changes-destiny/  
+> URL: https://blog.rovertang.com/posts/grow/20250104-preface-to-reading-monetization-reading-changes-destiny/  
 

@@ -67,5 +67,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/life/20221231-running-650km-in-2022/  
+> URL: https://blog.rovertang.com/posts/life/20221231-running-650km-in-2022/  
 

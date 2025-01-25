@@ -21,5 +21,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/misc/20100104-crowdsourcing-mass-power-to-promote-the-future-of-business/  
+> URL: https://blog.rovertang.com/posts/misc/20100104-crowdsourcing-mass-power-to-promote-the-future-of-business/  
 

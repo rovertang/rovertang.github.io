@@ -172,5 +172,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/smart/20230219-easily-transform-ordinary-household-lights-into-voice-control-smart-lights/  
+> URL: https://blog.rovertang.com/posts/smart/20230219-easily-transform-ordinary-household-lights-into-voice-control-smart-lights/  
 

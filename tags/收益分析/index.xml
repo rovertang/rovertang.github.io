@@ -2,42 +2,42 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>收益分析 - 标签 - 罗孚</title>
-    <link>http://localhost:1313/tags/%E6%94%B6%E7%9B%8A%E5%88%86%E6%9E%90/</link>
+    <link>https://blog.rovertang.com/tags/%E6%94%B6%E7%9B%8A%E5%88%86%E6%9E%90/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 03 Oct 2023 00:00:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E6%94%B6%E7%9B%8A%E5%88%86%E6%9E%90/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.rovertang.com/tags/%E6%94%B6%E7%9B%8A%E5%88%86%E6%9E%90/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2023Q3个人(年度)投资理财回顾分析</title>
-      <link>http://localhost:1313/posts/rich/20231003-review-and-analysis-of-personal-financing-in-2023q3/</link>
+      <link>https://blog.rovertang.com/posts/rich/20231003-review-and-analysis-of-personal-financing-in-2023q3/</link>
       <pubDate>Tue, 03 Oct 2023 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/rich/20231003-review-and-analysis-of-personal-financing-in-2023q3/</guid>
-      <category domain="http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
+      <guid>https://blog.rovertang.com/posts/rich/20231003-review-and-analysis-of-personal-financing-in-2023q3/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
       <description>罗孚入市已一年，这一年到底什么感悟什么收获，整理这一年的数据，从分类、仓位、收益、行业、策略、月度、股息等维度进行了详尽分析，愿通过数据和你一起分享罗孚的理财心得。愿有收获，更愿沟通交流。</description>
     </item>
     <item>
       <title>2023Q1个人投资理财回顾分析</title>
-      <link>http://localhost:1313/posts/rich/20230404-review-and-analysis-of-personal-financing-in-2023q1/</link>
+      <link>https://blog.rovertang.com/posts/rich/20230404-review-and-analysis-of-personal-financing-in-2023q1/</link>
       <pubDate>Tue, 04 Apr 2023 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/rich/20230404-review-and-analysis-of-personal-financing-in-2023q1/</guid>
-      <category domain="http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
+      <guid>https://blog.rovertang.com/posts/rich/20230404-review-and-analysis-of-personal-financing-in-2023q1/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
       <description>2023Q1 投入是上一季度的 6 成多，但收益率仅为 1.68%，同上季度相比相差甚远，主要原因也是在季末的时候买入的，静待下个季度的表现。总体表现还行，整体上涨，但基金投资仍然没有好的方法和思路。这个季度开始建立一个表格系统，希望下个季度能够完善。</description>
     </item>
     <item>
       <title>2022Q4 个人投资理财回顾分析</title>
-      <link>http://localhost:1313/posts/rich/20221231-review-and-analysis-of-personal-financing-in-2022q4/</link>
+      <link>https://blog.rovertang.com/posts/rich/20221231-review-and-analysis-of-personal-financing-in-2022q4/</link>
       <pubDate>Sat, 31 Dec 2022 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/rich/20221231-review-and-analysis-of-personal-financing-in-2022q4/</guid>
-      <category domain="http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
+      <guid>https://blog.rovertang.com/posts/rich/20221231-review-and-analysis-of-personal-financing-in-2022q4/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
       <description>2022 年第四季度个人投资理财回顾分析，总体正收益，得益于择时的重要性，另外建议要从看得懂的股票入手，要有耐心，不能心痒，同时也提供了一些技术手段供参考。相信 2023，相信收益更多。</description>
     </item>
     <item>
       <title>为什么股票不适合定投？</title>
-      <link>http://localhost:1313/posts/rich/20221224-why-are-stocks-not-suitable-for-fixed-investment/</link>
+      <link>https://blog.rovertang.com/posts/rich/20221224-why-are-stocks-not-suitable-for-fixed-investment/</link>
       <pubDate>Sat, 24 Dec 2022 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/rich/20221224-why-are-stocks-not-suitable-for-fixed-investment/</guid>
-      <category domain="http://localhost:1313/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
+      <guid>https://blog.rovertang.com/posts/rich/20221224-why-are-stocks-not-suitable-for-fixed-investment/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E4%B8%AA%E4%BA%BA%E8%B4%A2%E5%AF%8C/">个人财富</category>
       <description>通过 3 年、5 年、10 年定投格力电器股票，从这案例看股票是否真的适合定投。结论是不适合，因为前 3 年、5 年都处于高位，最终还是需要做基本面分析和择时来选择股票。基于此，我也放弃了股票定投的想法。</description>
     </item>
   </channel>

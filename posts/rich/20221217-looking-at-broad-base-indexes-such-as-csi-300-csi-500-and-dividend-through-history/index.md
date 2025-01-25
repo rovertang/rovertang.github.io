@@ -104,5 +104,5 @@
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/rich/20221217-looking-at-broad-base-indexes-such-as-csi-300-csi-500-and-dividend-through-history/  
+> URL: https://blog.rovertang.com/posts/rich/20221217-looking-at-broad-base-indexes-such-as-csi-300-csi-500-and-dividend-through-history/  
 

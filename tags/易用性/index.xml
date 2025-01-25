@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>易用性 - 标签 - 罗孚</title>
-    <link>http://localhost:1313/tags/%E6%98%93%E7%94%A8%E6%80%A7/</link>
+    <link>https://blog.rovertang.com/tags/%E6%98%93%E7%94%A8%E6%80%A7/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 25 Dec 2009 00:00:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E6%98%93%E7%94%A8%E6%80%A7/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.rovertang.com/tags/%E6%98%93%E7%94%A8%E6%80%A7/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>手机导航软件和地图软件的易用性思考</title>
-      <link>http://localhost:1313/posts/map/20091225-considerations-on-the-usability-of-mobile-navigation-software-and-map-software/</link>
+      <link>https://blog.rovertang.com/posts/map/20091225-considerations-on-the-usability-of-mobile-navigation-software-and-map-software/</link>
       <pubDate>Fri, 25 Dec 2009 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/map/20091225-considerations-on-the-usability-of-mobile-navigation-software-and-map-software/</guid>
-      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
-      <description>&lt;p&gt;写这篇文字是由某大虾谈及Ophone屏蔽Google Map引起，文中谈到了Google Map和高德地图，讲到打开和放大地图速度，讲到定位和搜索速度，讲到导航和LBS，大部分观点我认同，但说Google Map用来导航高德地图用来LBS我是不认同的，我甚至认为高德地图的LBS功能都没有Google Map强大，Google Map为什么提供在线搜索更是LBS的必须。不认同归不认同，但同时引发了我对导航地图软件的易用性思考，作为一名GPS的从业者，什么样的导航地图软件算是好用的导航软件？以前写过一篇“&lt;a href=&#34;http://localhost:1313/posts/smallthink/20090316-mobile-navigation-service-not-software/&#34;&gt;手机导航：是服务，不是软件！&lt;/a&gt;”，阐述的似乎是道理，今天结合我自身的使用感受来说一下我认为的导航地图软件的易用性。这里需要说明的是，导航软件肯定是地图软件，但地图软件不一定是导航软件，至于手机上的软件，Google Map严格来说是足够用的了，只是也有很多我不满意的地方，但总体来说我是很满意的。&lt;/p&gt;</description>
+      <guid>https://blog.rovertang.com/posts/map/20091225-considerations-on-the-usability-of-mobile-navigation-software-and-map-software/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <description>&lt;p&gt;写这篇文字是由某大虾谈及Ophone屏蔽Google Map引起，文中谈到了Google Map和高德地图，讲到打开和放大地图速度，讲到定位和搜索速度，讲到导航和LBS，大部分观点我认同，但说Google Map用来导航高德地图用来LBS我是不认同的，我甚至认为高德地图的LBS功能都没有Google Map强大，Google Map为什么提供在线搜索更是LBS的必须。不认同归不认同，但同时引发了我对导航地图软件的易用性思考，作为一名GPS的从业者，什么样的导航地图软件算是好用的导航软件？以前写过一篇“&lt;a href=&#34;https://blog.rovertang.com/posts/smallthink/20090316-mobile-navigation-service-not-software/&#34;&gt;手机导航：是服务，不是软件！&lt;/a&gt;”，阐述的似乎是道理，今天结合我自身的使用感受来说一下我认为的导航地图软件的易用性。这里需要说明的是，导航软件肯定是地图软件，但地图软件不一定是导航软件，至于手机上的软件，Google Map严格来说是足够用的了，只是也有很多我不满意的地方，但总体来说我是很满意的。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

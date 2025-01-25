@@ -62,5 +62,5 @@ end
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/misc/20221127-musks-interview-record-at-b20-summit-in-indonesia/  
+> URL: https://blog.rovertang.com/posts/misc/20221127-musks-interview-record-at-b20-summit-in-indonesia/  
 

@@ -105,5 +105,5 @@ ACC开发的初衷就是缓解疲劳，提高驾驶舒适度，这是毋庸置�
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/car/20181118-introduction-to-acc-adaptive-cruise-control-system/  
+> URL: https://blog.rovertang.com/posts/car/20181118-introduction-to-acc-adaptive-cruise-control-system/  
 

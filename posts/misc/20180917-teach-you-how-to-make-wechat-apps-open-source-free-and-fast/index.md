@@ -133,5 +133,5 @@ var DOWNLOADFILEDOMAIN = [
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/  
+> URL: https://blog.rovertang.com/posts/misc/20180917-teach-you-how-to-make-wechat-apps-open-source-free-and-fast/  
 

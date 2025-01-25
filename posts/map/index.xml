@@ -2,170 +2,170 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>地图 - 罗孚</title>
-    <link>http://localhost:1313/posts/map/</link>
+    <link>https://blog.rovertang.com/posts/map/</link>
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 29 Mar 2020 00:00:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/map/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.rovertang.com/posts/map/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>手把手教你快速构建一份全国疫情分布地图</title>
-      <link>http://localhost:1313/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/</link>
+      <link>https://blog.rovertang.com/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/</link>
       <pubDate>Sun, 29 Mar 2020 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/</guid>
-      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <guid>https://blog.rovertang.com/posts/map/20200329-teach-you-hand-in-hand-to-quickly-build-a-nationwide-epidemic-distribution-map/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
       <description>使用百度地图API和第三方数据API，快速构建一份全国疫情分布地图，赶快来学习一下吧，附送源码。</description>
     </item>
     <item>
       <title>如何制作一份疫情场所分布地图？(附数据和源码)</title>
-      <link>http://localhost:1313/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/</link>
+      <link>https://blog.rovertang.com/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/</link>
       <pubDate>Sun, 23 Feb 2020 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/</guid>
-      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <guid>https://blog.rovertang.com/posts/map/20200223-how-to-make-a-map-of-the-distribution-of-epidemic-sites-attached-data-and-source-code/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
       <description>使用高德地图API制作一份上海疫情场所分布地图，支持疫情场所地图显示、自身位置显示、查询位置等功能。如何实现的？赶紧进来看看吧。</description>
     </item>
     <item>
       <title>经纬度编码方法推荐-plus code简介</title>
-      <link>http://localhost:1313/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/</link>
+      <link>https://blog.rovertang.com/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/</link>
       <pubDate>Wed, 12 Dec 2018 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/</guid>
-      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <guid>https://blog.rovertang.com/posts/map/20181212-recommended-longitude-and-latitude-coding-methods-plus-code-introduction/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
       <description>&lt;p&gt;今天罗孚为大家推荐一种经纬度编码的方法——plus code，原名open location code，是Google于2014年发明的，旨在将表示地理位置的经纬度通过算法推导成一个字符串。&lt;/p&gt;</description>
     </item>
     <item>
       <title>世界机场数据(带位置坐标)</title>
-      <link>http://localhost:1313/posts/map/20180915-world-airport-data-band-location-coordinates/</link>
+      <link>https://blog.rovertang.com/posts/map/20180915-world-airport-data-band-location-coordinates/</link>
       <pubDate>Sat, 15 Sep 2018 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/map/20180915-world-airport-data-band-location-coordinates/</guid>
-      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
-      <description>&lt;p&gt;最近在一个航旅的项目上需要用到机场数据，网上搜了一圈，有一个开放、免费的世界机场数据网站：&lt;a href=&#34;http://ourairports.com/&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;OurAirports&lt;/a&gt;。&lt;/p&gt;&#xA;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/posts/map/20180915-world-airport-data-band-location-coordinates/assets/boxcnEUPZNtYVKhGZDvFzJxJWS8.png&#34; alt=&#34;/posts/map/20180915-world-airport-data-band-location-coordinates/assets/boxcnEUPZNtYVKhGZDvFzJxJWS8.png&#34; srcset=&#34;http://localhost:1313/posts/map/20180915-world-airport-data-band-location-coordinates/assets/boxcnEUPZNtYVKhGZDvFzJxJWS8.png?size=small, http://localhost:1313/posts/map/20180915-world-airport-data-band-location-coordinates/assets/boxcnEUPZNtYVKhGZDvFzJxJWS8.png?size=medium 1.5x, http://localhost:1313/posts/map/20180915-world-airport-data-band-location-coordinates/assets/boxcnEUPZNtYVKhGZDvFzJxJWS8.png?size=large 2x&#34; data-title=&#34;/posts/map/20180915-world-airport-data-band-location-coordinates/assets/boxcnEUPZNtYVKhGZDvFzJxJWS8.png&#34; style=&#34;--width: 800px;--aspect-ratio: 800 / 600;background: url(/images/loading.min.svg) no-repeat center;&#34; onload=&#34;this.title=this.dataset.title;for(const i of [&#39;style&#39;, &#39;data-title&#39;,&#39;onerror&#39;,&#39;onload&#39;]){this.removeAttribute(i);}this.dataset.lazyloaded=&#39;&#39;;&#34; onerror=&#34;this.title=this.dataset.title;for(const i of [&#39;style&#39;, &#39;data-title&#39;,&#39;onerror&#39;,&#39;onload&#39;]){this.removeAttribute(i);}&#34;/&gt;&lt;/p&gt;&#xA;&lt;p&gt;同OpenStreetMap类似，是一个开放的可编辑的数据网站，截止目前拥有54609条机场数据，包括中国400条机场数据，应该还是比较全面的。除了基础的机场数据外，还提供了跑道等数据。&lt;/p&gt;</description>
+      <guid>https://blog.rovertang.com/posts/map/20180915-world-airport-data-band-location-coordinates/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <description>&lt;p&gt;最近在一个航旅的项目上需要用到机场数据，网上搜了一圈，有一个开放、免费的世界机场数据网站：&lt;a href=&#34;http://ourairports.com/&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;OurAirports&lt;/a&gt;。&lt;/p&gt;&#xA;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://blog.rovertang.com/posts/map/20180915-world-airport-data-band-location-coordinates/assets/boxcnEUPZNtYVKhGZDvFzJxJWS8.png&#34; alt=&#34;/posts/map/20180915-world-airport-data-band-location-coordinates/assets/boxcnEUPZNtYVKhGZDvFzJxJWS8.png&#34; srcset=&#34;https://blog.rovertang.com/posts/map/20180915-world-airport-data-band-location-coordinates/assets/boxcnEUPZNtYVKhGZDvFzJxJWS8.png?size=small, https://blog.rovertang.com/posts/map/20180915-world-airport-data-band-location-coordinates/assets/boxcnEUPZNtYVKhGZDvFzJxJWS8.png?size=medium 1.5x, https://blog.rovertang.com/posts/map/20180915-world-airport-data-band-location-coordinates/assets/boxcnEUPZNtYVKhGZDvFzJxJWS8.png?size=large 2x&#34; data-title=&#34;/posts/map/20180915-world-airport-data-band-location-coordinates/assets/boxcnEUPZNtYVKhGZDvFzJxJWS8.png&#34; style=&#34;--width: 800px;--aspect-ratio: 800 / 600;background: url(/images/loading.min.svg) no-repeat center;&#34; onload=&#34;this.title=this.dataset.title;for(const i of [&#39;style&#39;, &#39;data-title&#39;,&#39;onerror&#39;,&#39;onload&#39;]){this.removeAttribute(i);}this.dataset.lazyloaded=&#39;&#39;;&#34; onerror=&#34;this.title=this.dataset.title;for(const i of [&#39;style&#39;, &#39;data-title&#39;,&#39;onerror&#39;,&#39;onload&#39;]){this.removeAttribute(i);}&#34;/&gt;&lt;/p&gt;&#xA;&lt;p&gt;同OpenStreetMap类似，是一个开放的可编辑的数据网站，截止目前拥有54609条机场数据，包括中国400条机场数据，应该还是比较全面的。除了基础的机场数据外，还提供了跑道等数据。&lt;/p&gt;</description>
     </item>
     <item>
       <title>透过国外初创公司看高精度地图难题</title>
-      <link>http://localhost:1313/posts/map/20180806-viewing-high-precision-map-problems-through-foreign-start-ups/</link>
+      <link>https://blog.rovertang.com/posts/map/20180806-viewing-high-precision-map-problems-through-foreign-start-ups/</link>
       <pubDate>Mon, 06 Aug 2018 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/map/20180806-viewing-high-precision-map-problems-through-foreign-start-ups/</guid>
-      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <guid>https://blog.rovertang.com/posts/map/20180806-viewing-high-precision-map-problems-through-foreign-start-ups/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
       <description>透过Civil Maps、DeepMap、lvl5、Carmera、Mapper、Ushr这几家国外初创公司，了解高精度地图的难题，通过他们的采集形式、产品优势以及商业模式，给我们在高精度地图问题的解决办法上带来启发。</description>
     </item>
     <item>
       <title>关于高精度地图定义的探讨</title>
-      <link>http://localhost:1313/posts/map/20180723-discussion-on-the-definition-of-high-precision-map/</link>
+      <link>https://blog.rovertang.com/posts/map/20180723-discussion-on-the-definition-of-high-precision-map/</link>
       <pubDate>Mon, 23 Jul 2018 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/map/20180723-discussion-on-the-definition-of-high-precision-map/</guid>
-      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <guid>https://blog.rovertang.com/posts/map/20180723-discussion-on-the-definition-of-high-precision-map/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
       <description>&lt;p&gt;高精度地图是自动驾驶/无人驾驶的重要组成，那究竟什么是高精度地图？&lt;/p&gt;&#xA;&lt;p&gt;网上找了两个关于高精度地图的定义，如下：&lt;/p&gt;&#xA;&lt;p&gt;定义一：高精细地图是指高精度、精细化定义的地图，其精度需要达到分米级才能够区分各个车道，如今随着定位技术的发展，高精度的定位已经成为可能。而精细化定义，则是需要格式化存储交通场景中的各种交通要素，包括传统地图的道路网数据、车道网络数据、车道线以和交通标志等数据。&lt;/p&gt;</description>
     </item>
     <item>
       <title>使用GPStracker自建卫星定位跟踪平台</title>
-      <link>http://localhost:1313/posts/map/20180720-self-built-satellite-positioning-and-tracking-platform-using-gpstracker/</link>
+      <link>https://blog.rovertang.com/posts/map/20180720-self-built-satellite-positioning-and-tracking-platform-using-gpstracker/</link>
       <pubDate>Fri, 20 Jul 2018 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/map/20180720-self-built-satellite-positioning-and-tracking-platform-using-gpstracker/</guid>
-      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <guid>https://blog.rovertang.com/posts/map/20180720-self-built-satellite-positioning-and-tracking-platform-using-gpstracker/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
       <description>&lt;p&gt;经常有人问，我能不能手机定位跟踪谁谁谁，我能不能定位跟踪我的车，等等问题。&lt;/p&gt;&#xA;&lt;p&gt;话说不难，确实，需要客户端和服务端结合起来就能实现。&lt;/p&gt;&#xA;&lt;p&gt;今天就给大家介绍一下GPStracker，一套开源的定位跟踪系统，有手机端和服务端。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Google Maps瓦片(tile)地图文件下载(1-11层级)</title>
-      <link>http://localhost:1313/posts/map/20180717-google-maps-tile-map-file-download-1-11-levels/</link>
+      <link>https://blog.rovertang.com/posts/map/20180717-google-maps-tile-map-file-download-1-11-levels/</link>
       <pubDate>Tue, 17 Jul 2018 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/map/20180717-google-maps-tile-map-file-download-1-11-levels/</guid>
-      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <guid>https://blog.rovertang.com/posts/map/20180717-google-maps-tile-map-file-download-1-11-levels/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
       <description>&lt;p&gt;整理硬盘时，发现一份去年下载的谷歌地图瓦片文件，整理并分享给大家。&lt;/p&gt;&#xA;&lt;p&gt;地图来源：Google Maps(应该是&lt;a href=&#34;http://www.google.cn/maps/&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;国内谷歌地图&lt;/a&gt;)&lt;/p&gt;</description>
     </item>
     <item>
       <title>关于百度地图坐标转换接口的研究</title>
-      <link>http://localhost:1313/posts/map/20120916-research-on-baidu-map-coordinate-conversion-interface/</link>
+      <link>https://blog.rovertang.com/posts/map/20120916-research-on-baidu-map-coordinate-conversion-interface/</link>
       <pubDate>Sun, 16 Sep 2012 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/map/20120916-research-on-baidu-map-coordinate-conversion-interface/</guid>
-      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
-      <description>&lt;p&gt;这个世界的坐标系统已经让人搞得昏头转向(请看这篇：&lt;a href=&#34;http://localhost:1313/posts/mapnavi/20120315-comparison-of-api-coordinate-systems-of-various-maps-in-china/&#34;&gt;国内各地图API比较&lt;/a&gt;)，而百度地图还用了自家的坐标系统，今天偶然看到百度地图批量转换接口，心想看看代码反转一下，但尝试无果。虽然将百度坐标转换成火星坐标不成，但我还是有些东西想和大家分享，使用百度地图坐标接口实现地球坐标转换到火星坐标。&lt;/p&gt;&#xA;&lt;p&gt;在说这个问题之前，我们还是普及一下坐标系统的概念。我们使用GPS系统获得的坐标系统，基本为标准的国际通用的WGS84坐标系统，而我们的国测局出于安全考虑，推出了02坐标系统，就是在标准的WGS84坐标系统上进行了人为的偏移，并且还是非线性的，所有的导航软件导航地图都需要使用国家02坐标系统，比如Google地图、腾讯SOSO地图等就是直接使用了国家02坐标系统，我们有一个不成文的说法，前者叫地球坐标，后者叫火星坐标，并且，火星坐标是无法转换成地球坐标的(网上虽然有一定的方法，但基本上都是基于偏移数据库，精度较高的数据库需要购买，当然这都是一种破解手段)。而百度地图等，可能是出于商业化考虑，为了不让自己的用户流失，而推出了自家的坐标系统，就是谁也看不懂的百度坐标系统，在百度地图上，没有任何偏差，但你又无法将转换后的百度坐标系统反转回来，这样你用百度地图坐标就自然离不开百度了。对于这样的行径，很是无语，但作为一个公司的商业化手段，也算能理解。&lt;/p&gt;</description>
+      <guid>https://blog.rovertang.com/posts/map/20120916-research-on-baidu-map-coordinate-conversion-interface/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <description>&lt;p&gt;这个世界的坐标系统已经让人搞得昏头转向(请看这篇：&lt;a href=&#34;https://blog.rovertang.com/posts/mapnavi/20120315-comparison-of-api-coordinate-systems-of-various-maps-in-china/&#34;&gt;国内各地图API比较&lt;/a&gt;)，而百度地图还用了自家的坐标系统，今天偶然看到百度地图批量转换接口，心想看看代码反转一下，但尝试无果。虽然将百度坐标转换成火星坐标不成，但我还是有些东西想和大家分享，使用百度地图坐标接口实现地球坐标转换到火星坐标。&lt;/p&gt;&#xA;&lt;p&gt;在说这个问题之前，我们还是普及一下坐标系统的概念。我们使用GPS系统获得的坐标系统，基本为标准的国际通用的WGS84坐标系统，而我们的国测局出于安全考虑，推出了02坐标系统，就是在标准的WGS84坐标系统上进行了人为的偏移，并且还是非线性的，所有的导航软件导航地图都需要使用国家02坐标系统，比如Google地图、腾讯SOSO地图等就是直接使用了国家02坐标系统，我们有一个不成文的说法，前者叫地球坐标，后者叫火星坐标，并且，火星坐标是无法转换成地球坐标的(网上虽然有一定的方法，但基本上都是基于偏移数据库，精度较高的数据库需要购买，当然这都是一种破解手段)。而百度地图等，可能是出于商业化考虑，为了不让自己的用户流失，而推出了自家的坐标系统，就是谁也看不懂的百度坐标系统，在百度地图上，没有任何偏差，但你又无法将转换后的百度坐标系统反转回来，这样你用百度地图坐标就自然离不开百度了。对于这样的行径，很是无语，但作为一个公司的商业化手段，也算能理解。&lt;/p&gt;</description>
     </item>
     <item>
       <title>说说转换等高线数据的思路</title>
-      <link>http://localhost:1313/posts/map/20120610-talk-about-the-idea-of-converting-contour-data/</link>
+      <link>https://blog.rovertang.com/posts/map/20120610-talk-about-the-idea-of-converting-contour-data/</link>
       <pubDate>Sun, 10 Jun 2012 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/map/20120610-talk-about-the-idea-of-converting-contour-data/</guid>
-      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <guid>https://blog.rovertang.com/posts/map/20120610-talk-about-the-idea-of-converting-contour-data/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
       <description>&lt;p&gt;最近在讨论等高线的方案，昨天的时候我也研究了一番，然后提交了一份文档给内部，今天我来简单说说我对于等高线转换的思路。&lt;/p&gt;&#xA;&lt;p&gt;首先大家可以了解一下什么是等高线，&lt;a href=&#34;http://baike.baidu.com/view/94058.htm&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;百度百科&lt;/a&gt;上已经讲的非常清楚，我也是看了等高线的定义后，才对等高线有了较深入的了解，特别是关于等高线为什么间隔4个画一个粗线，也是从这里了解到的。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Google tile和TMS的索引算法</title>
-      <link>http://localhost:1313/posts/map/20120407-indexing-algorithm-of-google-tile-and-tms/</link>
+      <link>https://blog.rovertang.com/posts/map/20120407-indexing-algorithm-of-google-tile-and-tms/</link>
       <pubDate>Sat, 07 Apr 2012 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/map/20120407-indexing-algorithm-of-google-tile-and-tms/</guid>
-      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <guid>https://blog.rovertang.com/posts/map/20120407-indexing-algorithm-of-google-tile-and-tms/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
       <description>&lt;p&gt;TMS是tile map service的缩写，是一种瓦片地图服务，也称之为WMTS（web map tile service），具体的标准可以见&lt;a href=&#34;http://www.opengeospatial.org/standards/wmts&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;OGC网站&lt;/a&gt;。TMS的算法很简单，就是把投影后的世界地图按照层级进行四叉树(待验证)切割，切割后的瓦片数量随层级呈金字塔型，数量和层级关系如下表所示：&lt;/p&gt;</description>
     </item>
     <item>
       <title>国内各地图API坐标系统比较</title>
-      <link>http://localhost:1313/posts/map/20120315-comparison-of-api-coordinate-systems-of-various-maps-in-china/</link>
+      <link>https://blog.rovertang.com/posts/map/20120315-comparison-of-api-coordinate-systems-of-various-maps-in-china/</link>
       <pubDate>Thu, 15 Mar 2012 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/map/20120315-comparison-of-api-coordinate-systems-of-various-maps-in-china/</guid>
-      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <guid>https://blog.rovertang.com/posts/map/20120315-comparison-of-api-coordinate-systems-of-various-maps-in-china/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
       <description>&lt;p&gt;在开始这个题目之前，先给大家再次扫扫盲，扫的不是坐标系统的盲，而是我们国家所使用的坐标系统。大家都知道，美国GPS使用的是WGS84的坐标系统，以经纬度的形式来表示地球平面上的某一个位置，这应该是国际共识。但在我国，出于国家安全考虑，国内所有导航电子地图必须使用国家测绘局制定的加密坐标系统，即将一个真实的经纬度坐标加密成一个不正确的经纬度坐标，我们在业内将前者称之为地球坐标，后者称之为火星坐标，具体的说明可以参看百度百科中关于&lt;a href=&#34;http://baike.baidu.com/view/3163334.html&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;火星坐标系统&lt;/a&gt;的解释(文中的两段还是对我原文的摘录)。&lt;/p&gt;</description>
     </item>
     <item>
       <title>分享一个WebMap引擎(MapBar)</title>
-      <link>http://localhost:1313/posts/map/20111102-share-a-webmap-engine-mapbar/</link>
+      <link>https://blog.rovertang.com/posts/map/20111102-share-a-webmap-engine-mapbar/</link>
       <pubDate>Wed, 02 Nov 2011 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/map/20111102-share-a-webmap-engine-mapbar/</guid>
-      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <guid>https://blog.rovertang.com/posts/map/20111102-share-a-webmap-engine-mapbar/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
       <description>&lt;p&gt;这个WebMap的引擎实则我早就(2006年初)&lt;a href=&#34;http://www.cnblogs.com/Tangf/archive/2006/01/22/321756.html&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;分享&lt;/a&gt;过了，只是当时也没有人注意。08年的时候，我还用这个引擎为别人做过项目，只是当时付了我八成的费用后一拖再拖就不了了之了，后来再回头找到我的时候我也不搭理他们了。时过境迁，又是三个年头(11年都快结束了)过去了，今天在移动硬盘里竟然无意看到了这个当年的项目，简单的看了一下代码，竟然还能用，加上文档比较健全，所以简单整理一下后打包分享给大家。&lt;/p&gt;</description>
     </item>
     <item>
       <title>制作一份简单的网络地图(世博地图的配准和切割)</title>
-      <link>http://localhost:1313/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/</link>
+      <link>https://blog.rovertang.com/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/</link>
       <pubDate>Sun, 28 Mar 2010 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/</guid>
-      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <guid>https://blog.rovertang.com/posts/map/20100328-make-a-simple-online-map-registration-and-cutting-of-expo-map/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
       <description>&lt;p&gt;其实我很早的时候就写过一篇“&lt;a href=&#34;http://www.cnblogs.com/Tangf/archive/2009/07/30/1534674.html&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;我的 2010世博地图1.0版发布&lt;/a&gt;”，但没有和大家做明确的说明和制作方法，今天就和大家一起来分享地图配准和地图切割并进行网络发布的问题，其实就是以世博为例制作一份简单的网络地图。网络地图是以Google Maps API为基础，在Google Maps上面叠加一份自制的世博地图，但有一点，这里的地图配准和切割很重要，不过使用本文介绍的工具后一切都将变的不困难了。&lt;/p&gt;</description>
     </item>
     <item>
       <title>手机导航软件和地图软件的易用性思考</title>
-      <link>http://localhost:1313/posts/map/20091225-considerations-on-the-usability-of-mobile-navigation-software-and-map-software/</link>
+      <link>https://blog.rovertang.com/posts/map/20091225-considerations-on-the-usability-of-mobile-navigation-software-and-map-software/</link>
       <pubDate>Fri, 25 Dec 2009 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/map/20091225-considerations-on-the-usability-of-mobile-navigation-software-and-map-software/</guid>
-      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
-      <description>&lt;p&gt;写这篇文字是由某大虾谈及Ophone屏蔽Google Map引起，文中谈到了Google Map和高德地图，讲到打开和放大地图速度，讲到定位和搜索速度，讲到导航和LBS，大部分观点我认同，但说Google Map用来导航高德地图用来LBS我是不认同的，我甚至认为高德地图的LBS功能都没有Google Map强大，Google Map为什么提供在线搜索更是LBS的必须。不认同归不认同，但同时引发了我对导航地图软件的易用性思考，作为一名GPS的从业者，什么样的导航地图软件算是好用的导航软件？以前写过一篇“&lt;a href=&#34;http://localhost:1313/posts/smallthink/20090316-mobile-navigation-service-not-software/&#34;&gt;手机导航：是服务，不是软件！&lt;/a&gt;”，阐述的似乎是道理，今天结合我自身的使用感受来说一下我认为的导航地图软件的易用性。这里需要说明的是，导航软件肯定是地图软件，但地图软件不一定是导航软件，至于手机上的软件，Google Map严格来说是足够用的了，只是也有很多我不满意的地方，但总体来说我是很满意的。&lt;/p&gt;</description>
+      <guid>https://blog.rovertang.com/posts/map/20091225-considerations-on-the-usability-of-mobile-navigation-software-and-map-software/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <description>&lt;p&gt;写这篇文字是由某大虾谈及Ophone屏蔽Google Map引起，文中谈到了Google Map和高德地图，讲到打开和放大地图速度，讲到定位和搜索速度，讲到导航和LBS，大部分观点我认同，但说Google Map用来导航高德地图用来LBS我是不认同的，我甚至认为高德地图的LBS功能都没有Google Map强大，Google Map为什么提供在线搜索更是LBS的必须。不认同归不认同，但同时引发了我对导航地图软件的易用性思考，作为一名GPS的从业者，什么样的导航地图软件算是好用的导航软件？以前写过一篇“&lt;a href=&#34;https://blog.rovertang.com/posts/smallthink/20090316-mobile-navigation-service-not-software/&#34;&gt;手机导航：是服务，不是软件！&lt;/a&gt;”，阐述的似乎是道理，今天结合我自身的使用感受来说一下我认为的导航地图软件的易用性。这里需要说明的是，导航软件肯定是地图软件，但地图软件不一定是导航软件，至于手机上的软件，Google Map严格来说是足够用的了，只是也有很多我不满意的地方，但总体来说我是很满意的。&lt;/p&gt;</description>
     </item>
     <item>
       <title>如何制作一份导航电子地图(上)</title>
-      <link>http://localhost:1313/posts/map/20090914-how-to-make-a-navigation-electronic-map/</link>
+      <link>https://blog.rovertang.com/posts/map/20090914-how-to-make-a-navigation-electronic-map/</link>
       <pubDate>Mon, 14 Sep 2009 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/map/20090914-how-to-make-a-navigation-electronic-map/</guid>
-      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <guid>https://blog.rovertang.com/posts/map/20090914-how-to-make-a-navigation-electronic-map/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
       <description>&lt;p&gt;自从上次发表“&lt;a href=&#34;https://rovertang.feishu.cn/docx/doxcnxTkd0PCsjjpllnXCqD6thh&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;导航电子地图的组成和制作流程&lt;/a&gt;”后，被骂的喷头，说文中有很多的错误言论，但我并没有认为有太多的错误(当然关于微软使用四维地图这一错误点还真的是一大疏忽，但这不是重要的，说不定Google哪一天也使用四维了)。我是听了四维公司产品经理的演讲后写的该文，其中许多的总结性的内容个人认为很对，我也该文也是基于对他PPT的理解，当然也有可能我的理解有误，毕竟我并没有在数据公司供职过。不过没有什么关系，错误还希望大家继续指正，我们今天继续谈“如何制作一份导航电子地图”，也算是我接触过三四家数据公司的数据后做的一些简单思考吧，当然，今天甚至会讲到数据中的字段，我要说的是一份最简单最基本的导航电子地图，如果说你写code的能力够好，也许能够根据我所提供的思路制作出一个导航软件，对此我深信不疑(世界第一的导航软件公司制作导航电子地图也用了如此简单的基本需求)。&lt;/p&gt;</description>
     </item>
     <item>
       <title>浅谈导航电子地图的组成和制作流程</title>
-      <link>http://localhost:1313/posts/map/20090822-on-the-composition-and-production-process-of-navigation-electronic-map/</link>
+      <link>https://blog.rovertang.com/posts/map/20090822-on-the-composition-and-production-process-of-navigation-electronic-map/</link>
       <pubDate>Sat, 22 Aug 2009 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/map/20090822-on-the-composition-and-production-process-of-navigation-electronic-map/</guid>
-      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <guid>https://blog.rovertang.com/posts/map/20090822-on-the-composition-and-production-process-of-navigation-electronic-map/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
       <description>&lt;p&gt;这是四维公司在周四的时候做的一个小小的活动(由于一直有点忙，所以今天才整理此篇文章)，主要是讨论行人导航地图的应用与发展。由于我们经理比较忙，所以就让我过去看看。这次活动在蓝色港湾酒吧一条街的全明星运动餐厅(All Star)举行，环境还非常不错。&lt;/p&gt;</description>
     </item>
     <item>
       <title>WebMap DIY(定制你自己的网络地图，GMapImageCutter工具推荐)</title>
-      <link>http://localhost:1313/posts/map/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool/</link>
+      <link>https://blog.rovertang.com/posts/map/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool/</link>
       <pubDate>Sun, 05 Apr 2009 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/map/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool/</guid>
-      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <guid>https://blog.rovertang.com/posts/map/20090405-webmap-diy-customizes-your-own-web-map-recommended-by-gmapimagecutter-tool/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
       <description>&lt;p&gt;自从上次发布了&lt;a href=&#34;https://www.cnblogs.com/Tangf/archive/2009/02/20/1394511.html&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;Google Maps API离线开发包&lt;/a&gt;以后，就有人来问我，为什么离线状态下不能显示地图，能否显示自己的DIY地图。严格来说，这是两个问题，为什么不能显示地图是因为Google的地图图片本身就不在本地，所以离线状态下是肯定不能显示地图的，不过能够标点画线等动作下有没有地图图片并不重要，而能否显示自己的DIY地图，其实Gmaps API本身就带了，GOverlay/GTileLayer等函数就是能够添加自己的图片，只是我不喜欢只添加一张图片到Gmap上，觉得意义不大，但又没有找到好的tile的切割工具，所以这个功能我一直没有尝试。今天，我向大家推荐GMapImageCutter工具，一个能够将图片切割成tile的工具，并且还帮你生成了HTML文件，直接就能够浏览，厉害。&lt;/p&gt;</description>
     </item>
     <item>
       <title>手机导航：是服务，不是软件！</title>
-      <link>http://localhost:1313/posts/map/20090316-mobile-navigation-service-not-software/</link>
+      <link>https://blog.rovertang.com/posts/map/20090316-mobile-navigation-service-not-software/</link>
       <pubDate>Mon, 16 Mar 2009 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/map/20090316-mobile-navigation-service-not-software/</guid>
-      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <guid>https://blog.rovertang.com/posts/map/20090316-mobile-navigation-service-not-software/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
       <description>&lt;h2 id=&#34;手机带导航功能硬件是一种趋势&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;手机带导航功能(硬件)是一种趋势&lt;/span&gt;&#xA;  &lt;a href=&#34;#%e6%89%8b%e6%9c%ba%e5%b8%a6%e5%af%bc%e8%88%aa%e5%8a%9f%e8%83%bd%e7%a1%ac%e4%bb%b6%e6%98%af%e4%b8%80%e7%a7%8d%e8%b6%8b%e5%8a%bf&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;个人认为，手机导航分为两个阶段。&lt;/p&gt;</description>
     </item>
     <item>
       <title>我来说说TMC(信息采集、系统展示、导航作用等杂谈)</title>
-      <link>http://localhost:1313/posts/map/20090310-let-me-talk-about-tmc-information-collection-system-display-navigation-function-and-other-topics/</link>
+      <link>https://blog.rovertang.com/posts/map/20090310-let-me-talk-about-tmc-information-collection-system-display-navigation-function-and-other-topics/</link>
       <pubDate>Tue, 10 Mar 2009 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/map/20090310-let-me-talk-about-tmc-information-collection-system-display-navigation-function-and-other-topics/</guid>
-      <category domain="http://localhost:1313/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
+      <guid>https://blog.rovertang.com/posts/map/20090310-let-me-talk-about-tmc-information-collection-system-display-navigation-function-and-other-topics/</guid>
+      <category domain="https://blog.rovertang.com/categories/%E5%9C%B0%E5%9B%BE/">地图</category>
       <description>&lt;h2 id=&#34;tmc介绍&#34; class=&#34;heading-element&#34;&gt;&lt;span&gt;TMC介绍&lt;/span&gt;&#xA;  &lt;a href=&#34;#tmc%e4%bb%8b%e7%bb%8d&#34; class=&#34;heading-mark&#34;&gt;&#xA;    &lt;svg class=&#34;octicon octicon-link&#34; viewBox=&#34;0 0 16 16&#34; version=&#34;1.1&#34; width=&#34;16&#34; height=&#34;16&#34; aria-hidden=&#34;true&#34;&gt;&lt;path d=&#34;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&#34;&gt;&lt;/path&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&lt;p&gt;TMC(Traffic Message Channel,交通信息频道)就是我们常说的实时交通路况，如果从狭义的来看，可能就是欧洲的RDS-TMC，一种基于FM广播的实时交通路况发送和接收系统，广义的理解已经完全超出了欧洲标准的限制，数据传输不仅仅可以使用FM发射，也可以使用GPRS或者DAB等方式进行传输，并且TMC已经不仅仅是交通路况信息，甚至可以传输天气信息，而最终的发展演变可能可以传送停车场车位、电影院入座、餐馆就餐等许多即时资讯，俨然是一个LBS的系统了。&lt;/p&gt;</description>
     </item>
   </channel>

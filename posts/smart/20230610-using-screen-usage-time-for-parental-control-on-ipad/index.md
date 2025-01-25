@@ -211,5 +211,5 @@ iMessage 收消息的机制挺让人无语的，算是为了安全吧。
 ---
 
 > 作者: [RoverTang](https://rovertang.com)  
-> URL: http://localhost:1313/posts/smart/20230610-using-screen-usage-time-for-parental-control-on-ipad/  
+> URL: https://blog.rovertang.com/posts/smart/20230610-using-screen-usage-time-for-parental-control-on-ipad/  
 
