@@ -6,8 +6,16 @@
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 02 Jun 2023 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 01 Feb 2025 00:00:00 +0800</lastBuildDate>
     <atom:link href="https://blog.rovertang.com/posts/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>百元P106显卡跑7B大模型，矿渣变AI神器，真香！</title>
+      <link>https://blog.rovertang.com/posts/ai/20250201-a-hundred-yuan-p106-graphics-card-runs-a-7b-large-model/</link>
+      <pubDate>Sat, 01 Feb 2025 00:00:00 +0800</pubDate>
+      <guid>https://blog.rovertang.com/posts/ai/20250201-a-hundred-yuan-p106-graphics-card-runs-a-7b-large-model/</guid>
+      <category domain="https://blog.rovertang.com/categories/ai/">AI</category>
+      <description>区区一百元，装块矿渣显卡就能让老电脑焕然一新，能玩黑神话，能跑大模型，不得不说P106显卡真香！</description>
+    </item>
     <item>
       <title>ChatGPT中token的理解</title>
       <link>https://blog.rovertang.com/posts/ai/20230602-understanding-token-in-chatgpt/</link>

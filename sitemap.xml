@@ -1,11 +1,63 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blog.rovertang.com/posts/grow/20250125-chapter-3-three-efficient-reading-methods/</loc>
-    <lastmod>2025-01-25T00:00:00+08:00</lastmod>
+    <loc>https://blog.rovertang.com/categories/ai/</loc>
+    <lastmod>2025-02-01T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/posts/ai/</loc>
+    <lastmod>2025-02-01T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/tags/deepseek/</loc>
+    <lastmod>2025-02-01T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/tags/ollama/</loc>
+    <lastmod>2025-02-01T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/tags/p106-100/</loc>
+    <lastmod>2025-02-01T00:00:00+08:00</lastmod>
   </url>
   <url>
     <loc>https://blog.rovertang.com/tags/</loc>
+    <lastmod>2025-02-01T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/posts/ai/20250201-a-hundred-yuan-p106-graphics-card-runs-a-7b-large-model/</loc>
+    <lastmod>2025-02-01T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/</loc>
+    <lastmod>2025-02-01T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/categories/</loc>
+    <lastmod>2025-02-01T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/tags/%E9%BB%91%E7%A5%9E%E8%AF%9D/</loc>
+    <lastmod>2025-02-01T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/</loc>
+    <lastmod>2025-02-01T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/posts/</loc>
+    <lastmod>2025-02-01T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/tags/%E6%98%BE%E5%8D%A1/</loc>
+    <lastmod>2025-02-01T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/tags/%E6%80%A7%E4%BB%B7%E6%AF%94/</loc>
+    <lastmod>2025-02-01T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/posts/grow/20250125-chapter-3-three-efficient-reading-methods/</loc>
     <lastmod>2025-01-25T00:00:00+08:00</lastmod>
   </url>
   <url>
@@ -13,19 +65,7 @@
     <lastmod>2025-01-25T00:00:00+08:00</lastmod>
   </url>
   <url>
-    <loc>https://blog.rovertang.com/categories/</loc>
-    <lastmod>2025-01-25T00:00:00+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.rovertang.com/</loc>
-    <lastmod>2025-01-25T00:00:00+08:00</lastmod>
-  </url>
-  <url>
     <loc>https://blog.rovertang.com/tags/%E7%BD%97%E5%AD%9A%E8%AF%BB%E4%B9%A6/</loc>
-    <lastmod>2025-01-25T00:00:00+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.rovertang.com/posts/</loc>
     <lastmod>2025-01-25T00:00:00+08:00</lastmod>
   </url>
   <url>
@@ -211,14 +251,6 @@
   <url>
     <loc>https://blog.rovertang.com/posts/smart/20230610-using-screen-usage-time-for-parental-control-on-ipad/</loc>
     <lastmod>2023-06-10T00:00:00+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.rovertang.com/categories/ai/</loc>
-    <lastmod>2023-06-02T00:00:00+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.rovertang.com/posts/ai/</loc>
-    <lastmod>2023-06-02T00:00:00+08:00</lastmod>
   </url>
   <url>
     <loc>https://blog.rovertang.com/tags/chatgpt/</loc>
