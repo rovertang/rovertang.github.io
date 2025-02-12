@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>Intel版MacBook用ollama跑大模型：显卡没用上，靠CPU硬扛。 - 罗孚</title><meta name="author" content="RoverTang">
+<meta name="description" content="Intel版MacBook用ollama跑大模型，显卡没用上，只能靠CPU硬扛。如果改用llama.cpp等程序来跑大模型，应该可以将独立显卡利用起来。而通过输出token速度测试，侧面证明“使用CPU硬扛大模型”的方式也完全可行。"><meta name="keywords" content='MacBook, Intel, ollama, CPU, 大模型部署'>
+  <meta itemprop="name" content="Intel版MacBook用ollama跑大模型：显卡没用上，靠CPU硬扛。">
+  <meta itemprop="description" content="Intel版MacBook用ollama跑大模型，显卡没用上，只能靠CPU硬扛。如果改用llama.cpp等程序来跑大模型，应该可以将独立显卡利用起来。而通过输出token速度测试，侧面证明“使用CPU硬扛大模型”的方式也完全可行。">
+  <meta itemprop="datePublished" content="2025-02-12T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2025-02-12T00:00:00+08:00">
+  <meta itemprop="wordCount" content="1803">
+  <meta itemprop="image" content="https://blog.rovertang.com/posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/cover.png">
+  <meta itemprop="keywords" content="MacBook,Intel,Ollama,CPU,大模型部署"><meta property="og:url" content="https://blog.rovertang.com/posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/">
+  <meta property="og:site_name" content="罗孚">
+  <meta property="og:title" content="Intel版MacBook用ollama跑大模型：显卡没用上，靠CPU硬扛。">
+  <meta property="og:description" content="Intel版MacBook用ollama跑大模型，显卡没用上，只能靠CPU硬扛。如果改用llama.cpp等程序来跑大模型，应该可以将独立显卡利用起来。而通过输出token速度测试，侧面证明“使用CPU硬扛大模型”的方式也完全可行。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-02-12T00:00:00+08:00">
+    <meta property="article:modified_time" content="2025-02-12T00:00:00+08:00">
+    <meta property="article:tag" content="MacBook">
+    <meta property="article:tag" content="Intel">
+    <meta property="article:tag" content="Ollama">
+    <meta property="article:tag" content="CPU">
+    <meta property="article:tag" content="大模型部署">
+    <meta property="og:image" content="https://blog.rovertang.com/posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/cover.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://blog.rovertang.com/posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/cover.png">
+  <meta name="twitter:title" content="Intel版MacBook用ollama跑大模型：显卡没用上，靠CPU硬扛。">
+  <meta name="twitter:description" content="Intel版MacBook用ollama跑大模型，显卡没用上，只能靠CPU硬扛。如果改用llama.cpp等程序来跑大模型，应该可以将独立显卡利用起来。而通过输出token速度测试，侧面证明“使用CPU硬扛大模型”的方式也完全可行。">
+<meta name="application-name" content="罗孚传说">
+<meta name="apple-mobile-web-app-title" content="罗孚传说"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://blog.rovertang.com/posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/" title="Intel版MacBook用ollama跑大模型：显卡没用上，靠CPU硬扛。 - 罗孚" /><link rel="prev" type="text/html" href="https://blog.rovertang.com/posts/ai/20250203-home-pc-broadband-low-cost-deployment-of-large-models/" title="手搓DeepSeek私服：家用PC&#43;宽带，低成本搞定大模型部署！" /><link rel="alternate" type="text/markdown" href="https://blog.rovertang.com/posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/index.md" title="Intel版MacBook用ollama跑大模型：显卡没用上，靠CPU硬扛。 - 罗孚"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="apxz4dWbUQ2bsnGFk6SmRK4gNZ7tlT21KgMZ1t9hqdk" /><meta name="msvalidate.01" content="5282002B82D61AD2D097F2F6419C1E4A" /><meta name="baidu-site-verification" content="codeva-RiIZqiHrvQ" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Intel版MacBook用ollama跑大模型：显卡没用上，靠CPU硬扛。",
+    "inLanguage": "zh-cn",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.rovertang.com\/posts\/ai\/20250212-intel-version-macbook-uses-ollama-to-run-large-models\/"
+    },"genre": "posts","keywords": "MacBook, Intel, ollama, CPU, 大模型部署","wordcount":  1803 ,
+    "url": "https:\/\/blog.rovertang.com\/posts\/ai\/20250212-intel-version-macbook-uses-ollama-to-run-large-models\/","datePublished": "2025-02-12T00:00:00+08:00","dateModified": "2025-02-12T00:00:00+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "RoverTang"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item has-children">
+              <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item">
+              <a class="menu-link" href="https://vip.rovertang.com" rel="noopener noreferrer" target="_blank"><i class="fa-solid fa-crown fa-fw fa-sm" aria-hidden="true"></i> 罗孚的宝藏</a></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item"><a class="menu-link" href="https://vip.rovertang.com" rel="noopener noreferrer" target="_blank"><i class="fa-solid fa-crown fa-fw fa-sm" aria-hidden="true"></i> 罗孚的宝藏</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/" title="文章">文章</a></li><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/ai/" title="AI">AI</a></li><li class="breadcrumb-item active" data-separator="&gt;" aria-current="page">Intel版MacBook用ollama跑大模型：显卡没用上，靠CPU硬扛。</li>
+    </ol>
+  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div style="width: 350px; margin: 0 auto; display: flex; justify-content: space-between; text-align: center;">
+  <img src="/images/wxmp-blog.jpg" alt="wxmp-blog" style="width: 115px; height: 153px;">
+  <img src="/images/wxmp-shanghai.jpg" alt="wxmp-shanghai" style="width: 115px; height: 153px;">
+  <img src="/images/zsxq-fromblog.jpg" alt="zsxq-fromblog" style="width: 115px; height: 153px;">
+</div></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Intel版MacBook用ollama跑大模型：显卡没用上，靠CPU硬扛。</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://rovertang.com" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    RoverTang</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/ai/" class="post-category" title="分类 - AI"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> AI</a></span></div><div class="post-meta-line"><span title="发布于 2025-02-12 00:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2025-02-12">2025-02-12</time></span>&nbsp;<span title="1803 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1900 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 4 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#2019-款-macbook-pro-介绍">2019 款 MacBook Pro 介绍</a></li>
+    <li><a href="#跑大模型竟然没用上显卡">跑大模型竟然没用上显卡</a></li>
+    <li><a href="#对比测试输出-token-速度">对比测试输出 token 速度</a></li>
+    <li><a href="#最后的话">最后的话</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p>自从用上了极致性价比的显卡(<a href="https://mp.weixin.qq.com/s/Y5JqGh_HCY2-LnyyZtvTBg"target="_blank" rel="external nofollow noopener noreferrer">百元 P106 显卡跑 7B 大模型，矿渣变 AI 神器，真香！</a>)跑大模型后，我就一直在想：MacBook 跑大模型是不是也可以呢？毕竟早年的 MacBook Pro 甚至配备了 4G 显存的显卡啊。于是，我翻出了家里吃灰的无头骑士(Intel 版 MacBook Pro)，尝试了一下大模型，个人的粗浅结论：<strong>使用 ollama 跑大模型，只能靠 CPU 硬扛，自带的两块显卡都没有用上，至于速度，7B 及以下模型比百元 P106 显卡效果略差。</strong></p>
+<h2 id="2019-款-macbook-pro-介绍" class="heading-element"><span>2019 款 MacBook Pro 介绍</span>
+  <a href="#2019-%e6%ac%be-macbook-pro-%e4%bb%8b%e7%bb%8d" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>先介绍一下我从海鲜市场以 600 元价格淘来的 2019 款 MacBook Pro：</p>
+<p><img loading="lazy" src="/posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/NSZJb4vkPoSf3MxJSk4cHVHjnkY.png" alt="/posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/NSZJb4vkPoSf3MxJSk4cHVHjnkY.png" srcset="/posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/NSZJb4vkPoSf3MxJSk4cHVHjnkY.png?size=small, /posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/NSZJb4vkPoSf3MxJSk4cHVHjnkY.png?size=medium 1.5x, /posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/NSZJb4vkPoSf3MxJSk4cHVHjnkY.png?size=large 2x" data-title="/posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/NSZJb4vkPoSf3MxJSk4cHVHjnkY.png" style="--width: 441px;--aspect-ratio: 441 / 630;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>这是一次无意的购买，当时对无头骑士挺有兴趣，想买一台可以更换 NVME SSD 的无头骑士装 Windows 玩玩，结果阴差阳错入手了这台 2019 款 MBP，型号应该是 A1990，配置如下：</p>
+<p><img loading="lazy" src="/posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/B22fbuc7GozQqlxxCSOcry16nOe.png" alt="/posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/B22fbuc7GozQqlxxCSOcry16nOe.png" srcset="/posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/B22fbuc7GozQqlxxCSOcry16nOe.png?size=small, /posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/B22fbuc7GozQqlxxCSOcry16nOe.png?size=medium 1.5x, /posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/B22fbuc7GozQqlxxCSOcry16nOe.png?size=large 2x" data-title="/posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/B22fbuc7GozQqlxxCSOcry16nOe.png" style="--width: 695px;--aspect-ratio: 695 / 826;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>当时最大的顾虑是硬盘太小了，而且无法更换，内心有点不满意，有点不想买。但看到它搭载 <strong>i7 的 CPU 以及 4G 显存的 AMD 显卡，以及 16GB 内存</strong>，心想：算了，说不定以后可以用来跑跑大模型，于是就收了。</p>
+<p>2019 款 MBP 自带两块显卡：独立显卡 Radeon Pro 555X 和集成显卡 Intel UHD Graphics 630，显存分别为 4GB 和 1.5GB，加起来能有 5.5GB，这和我那百元 P106 显卡的 6G 显存差不多啊，要是用来跑大模型，也许有得一拼吧。</p>
+<h2 id="跑大模型竟然没用上显卡" class="heading-element"><span>跑大模型竟然没用上显卡</span>
+  <a href="#%e8%b7%91%e5%a4%a7%e6%a8%a1%e5%9e%8b%e7%ab%9f%e7%84%b6%e6%b2%a1%e7%94%a8%e4%b8%8a%e6%98%be%e5%8d%a1" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>然而，我用 ollama 跑大模型时，惊讶地发现：<strong>显卡竟然没用上，全靠 CPU 在跑。</strong></p>
+<p><img loading="lazy" src="/posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/Xn9hbMYA5oLBHlxtzB8cOb6jnZc.png" alt="/posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/Xn9hbMYA5oLBHlxtzB8cOb6jnZc.png" srcset="/posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/Xn9hbMYA5oLBHlxtzB8cOb6jnZc.png?size=small, /posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/Xn9hbMYA5oLBHlxtzB8cOb6jnZc.png?size=medium 1.5x, /posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/Xn9hbMYA5oLBHlxtzB8cOb6jnZc.png?size=large 2x" data-title="/posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/Xn9hbMYA5oLBHlxtzB8cOb6jnZc.png" style="--width: 1672px;--aspect-ratio: 1672 / 937;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>使用 ollama ps 命令可以看到，它 100% 使用 CPU，而从图形界面来看，i7 的 12 个内核有一半的内核在 100% 负载，而那两块显卡的使用情况，基本没有任何使用。</p>
+<p>我心想：难道是我的使用方法不对？于是上网搜了一圈。</p>
+<p>在 ollama 官方支持文档中，确实没有提到对 Radeon Pro 555X 显卡的支持：</p>
+<p><img loading="lazy" src="/posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/QGPPbCqbEouMOmxR8BwctaKcnjf.png" alt="/posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/QGPPbCqbEouMOmxR8BwctaKcnjf.png" srcset="/posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/QGPPbCqbEouMOmxR8BwctaKcnjf.png?size=small, /posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/QGPPbCqbEouMOmxR8BwctaKcnjf.png?size=medium 1.5x, /posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/QGPPbCqbEouMOmxR8BwctaKcnjf.png?size=large 2x" data-title="/posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/QGPPbCqbEouMOmxR8BwctaKcnjf.png" style="--width: 1037px;--aspect-ratio: 1037 / 584;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>具体的表格见：<a href="https://github.com/ollama/ollama/blob/main/docs/gpu.md"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/ollama/ollama/blob/main/docs/gpu.md</a>，包含 nvidia 显卡的支持情况。</p>
+<p>在 ollama 官方 github 中，也有人遇到了类似的问题：Support AMD GPUs on Intel Macs · Issue #1016 · ollama/ollama - <a href="https://github.com/ollama/ollama/issues/1016"target="_blank" rel="external nofollow noopener noreferrer">https://github.com/ollama/ollama/issues/1016</a>。似乎最终也没有解决。</p>
+<p>国内也有类似的情况：【AIGC】Mac Intel 本地 LLM 部署经验汇总（CPU Only）_llm 部署 cpu 加载-CSDN 博客: <a href="https://blog.csdn.net/kida_yuan/article/details/138819976"target="_blank" rel="external nofollow noopener noreferrer">https://blog.csdn.net/kida_yuan/article/details/138819976</a></p>
+<p>最后，有人似乎解决了此问题：【AIGC】Mac Intel 本地 LLM 部署经验汇总（llama.cpp）: <a href="https://blog.mvui.cn/detail/66770.html"target="_blank" rel="external nofollow noopener noreferrer">https://blog.mvui.cn/detail/66770.html</a>。不过作者最终还是选择了纯 CPU 方案。</p>
+<p>解决方案看上去使用的是 metal+llama.cpp：MacOS Install with Metal GPU - llama-cpp-python: <a href="https://llama-cpp-python.readthedocs.io/en/latest/install/macos/"target="_blank" rel="external nofollow noopener noreferrer">https://llama-cpp-python.readthedocs.io/en/latest/install/macos/</a></p>
+<p>像我这样的菜鸟，估计没办法解决了，只能死心了：<strong>Intel 版 MacBook 用 ollama 跑大模型，显卡没用上，只能靠 CPU 硬扛。</strong></p>
+<h2 id="对比测试输出-token-速度" class="heading-element"><span>对比测试输出 token 速度</span>
+  <a href="#%e5%af%b9%e6%af%94%e6%b5%8b%e8%af%95%e8%be%93%e5%87%ba-token-%e9%80%9f%e5%ba%a6" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>虽然没用上 GPU 进行推理，但既然跑起来了，那就试试速度吧。</p>
+<p>先简单肉眼看了一下输出：</p>
+<p><img loading="lazy" src="/posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/CFNcbrsBLoM5q8xcsUKctUzanxc.gif" alt="/posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/CFNcbrsBLoM5q8xcsUKctUzanxc.gif" srcset="/posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/CFNcbrsBLoM5q8xcsUKctUzanxc.gif?size=small, /posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/CFNcbrsBLoM5q8xcsUKctUzanxc.gif?size=medium 1.5x, /posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/CFNcbrsBLoM5q8xcsUKctUzanxc.gif?size=large 2x" data-title="/posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/CFNcbrsBLoM5q8xcsUKctUzanxc.gif" style="--width: 640px;--aspect-ratio: 640 / 360;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>看上去不算太慢。但为了严谨起见，我还是用数据来做对比吧。</p>
+<p>测试方法很简单，通过 ollama 的 API 获取结果，从请求到输出完成，计算时间，同时获取 API 输出的 token 量，使用脚本来运行，获得类似如下信息：</p>
+<blockquote>
+<p>使用的模型: deepseek-r1</p>
+<p>输入的提示: 玄武门之变结束的当天，李世民在深夜写下一段独白，你觉得他会写什么？</p>
+<p>开始时间: 2025-02-10 21:56:55</p>
+<p>结束时间: 2025-02-10 21:58:49</p>
+<p>生成时间: 113.01 秒</p>
+<p>生成 token 数量: 636</p>
+<p>每秒生成 token 数量: 5.63</p>
+</blockquote>
+<p>汇总后，<strong>每秒生成 token 数量</strong>对比结果如下：</p>
+<p><img loading="lazy" src="/posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/TzC3b41nSozVDKxK319cDG4nn1b.png" alt="/posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/TzC3b41nSozVDKxK319cDG4nn1b.png" srcset="/posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/TzC3b41nSozVDKxK319cDG4nn1b.png?size=small, /posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/TzC3b41nSozVDKxK319cDG4nn1b.png?size=medium 1.5x, /posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/TzC3b41nSozVDKxK319cDG4nn1b.png?size=large 2x" data-title="/posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/TzC3b41nSozVDKxK319cDG4nn1b.png" style="--width: 644px;--aspect-ratio: 644 / 358;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>从 1.5B 模型来看，P106 显卡快于 i7 CPU，在 7B 模型下差距缩小，8B 模型下，i7 CPU 输出反而更快。由于 14B 模型在 P106 显卡下未测试，所以无法给出进一步结论。</p>
+<p>从表面上看，“参数更多的模型使用 CPU 推理输出 token 速度更快”似乎也不合理。所以，对于“使用大内存加使用 CPU 硬扛的方式跑 671B 大模型”的尝试，我有点犹豫了，虽然 2000 美金的配置看起来挺诱人的：</p>
+<p><img loading="lazy" src="/posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/OBmFb98XzobmcTxWk2gcSiySnLc.png" alt="/posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/OBmFb98XzobmcTxWk2gcSiySnLc.png" srcset="/posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/OBmFb98XzobmcTxWk2gcSiySnLc.png?size=small, /posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/OBmFb98XzobmcTxWk2gcSiySnLc.png?size=medium 1.5x, /posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/OBmFb98XzobmcTxWk2gcSiySnLc.png?size=large 2x" data-title="/posts/ai/20250212-intel-version-macbook-uses-ollama-to-run-large-models/static/OBmFb98XzobmcTxWk2gcSiySnLc.png" style="--width: 668px;--aspect-ratio: 668 / 588;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>根据上面放按干，如果改用洋垃圾(Xeon E5+R730 或 X99)来组装，应该可以省一半以上的钱，预计五六千就能搞定，不到一张 3090 显卡的钱就能跑满血 DeepSeek，想想就很激动啊。好吧，我得好好攒钱，争取早日组一台。</p>
+<p>另外考虑到 Apple 的 M4 芯片算力更强，加上统一内存加持，我心想，是不是用 M4 的 CPU 方案来跑大模型也是一种方案？但一看 64GB 内存版本的 mac mini 得价格接近 2 万，这钱应该也能至少组一个甚至两个 3090 显卡的 PC 了。</p>
+<h2 id="最后的话" class="heading-element"><span>最后的话</span>
+  <a href="#%e6%9c%80%e5%90%8e%e7%9a%84%e8%af%9d" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>Intel版MacBook用ollama跑大模型，显卡没用上，只能靠CPU硬扛。如果改用llama.cpp等程序来跑大模型，应该可以将独立显卡利用起来。而通过输出token速度测试，侧面证明“使用CPU硬扛大模型”的方式也完全可行。</p>
+<p>Intel版的mac测试到此为止，如果你有M芯片的Mac，也欢迎测试后和我同步数据。下次我分享一下测试脚本，下回见。</p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2025-02-12 00:00:00">更新于 2025-02-12&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/macbook/" class="post-tag" title="标签 - MacBook">MacBook</a><a href="/tags/intel/" class="post-tag" title="标签 - Intel">Intel</a><a href="/tags/ollama/" class="post-tag" title="标签 - Ollama">Ollama</a><a href="/tags/cpu/" class="post-tag" title="标签 - CPU">CPU</a><a href="/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%83%A8%E7%BD%B2/" class="post-tag" title="标签 - 大模型部署">大模型部署</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/ai/20250203-home-pc-broadband-low-cost-deployment-of-large-models/" class="post-nav-item" rel="prev" title="手搓DeepSeek私服：家用PC&#43;宽带，低成本搞定大模型部署！"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>手搓DeepSeek私服：家用PC&#43;宽带，低成本搞定大模型部署！</a></div>
+</div>
+<div class="post-reward">
+    <div class="comment"></div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward"><i class="fa-solid fa-qrcode fa-fw" aria-hidden="true"></i>赞赏</label>
+    <div class="reward-ways" data-mode="static"><div><img loading="lazy" src="/images/alipay.png" alt="RoverTang 支付宝" data-title="RoverTang 支付宝" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>支付宝</span>
+          </div><div><img loading="lazy" src="/images/wechatpay.png" alt="RoverTang 微信" data-title="RoverTang 微信" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>微信</span>
+          </div></div>
+  </div></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.139.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.16">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2005 - 2025</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://rovertang.com"target="_blank" rel="external nofollow noopener noreferrer">RoverTang</a></span></div><div class="footer-line beian"><span class="icp footer-divider"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">沪ICP备2020036772号-1</a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;bottom: 0;"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.16"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>
