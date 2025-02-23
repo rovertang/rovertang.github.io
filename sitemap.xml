@@ -1,12 +1,76 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.rovertang.com/tags/70b/</loc>
+    <lastmod>2025-02-23T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/</loc>
+    <lastmod>2025-02-23T00:00:00+08:00</lastmod>
+  </url>
+  <url>
     <loc>https://blog.rovertang.com/categories/ai/</loc>
-    <lastmod>2025-02-12T00:00:00+08:00</lastmod>
+    <lastmod>2025-02-23T00:00:00+08:00</lastmod>
   </url>
   <url>
     <loc>https://blog.rovertang.com/posts/ai/</loc>
-    <lastmod>2025-02-12T00:00:00+08:00</lastmod>
+    <lastmod>2025-02-23T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/tags/</loc>
+    <lastmod>2025-02-23T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/tags/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/</loc>
+    <lastmod>2025-02-23T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/tags/%E7%BA%AFcpu%E6%8E%A8%E7%90%86/</loc>
+    <lastmod>2025-02-23T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/categories/</loc>
+    <lastmod>2025-02-23T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <lastmod>2025-02-23T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/</loc>
+    <lastmod>2025-02-23T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/posts/</loc>
+    <lastmod>2025-02-23T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/tags/%E6%80%A7%E4%BB%B7%E6%AF%94/</loc>
+    <lastmod>2025-02-23T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/tags/token/</loc>
+    <lastmod>2025-02-16T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/tags/tps/</loc>
+    <lastmod>2025-02-16T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/tags/%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81/</loc>
+    <lastmod>2025-02-16T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/posts/ai/20250216-share-the-code-for-testing-the-output-speed-of-the-big-model-token/</loc>
+    <lastmod>2025-02-16T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%80%A7%E8%83%BD/</loc>
+    <lastmod>2025-02-16T00:00:00+08:00</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.rovertang.com/tags/%E8%BE%93%E5%87%BA%E9%80%9F%E5%BA%A6/</loc>
+    <lastmod>2025-02-16T00:00:00+08:00</lastmod>
   </url>
   <url>
     <loc>https://blog.rovertang.com/tags/cpu/</loc>
@@ -29,23 +93,7 @@
     <lastmod>2025-02-12T00:00:00+08:00</lastmod>
   </url>
   <url>
-    <loc>https://blog.rovertang.com/tags/</loc>
-    <lastmod>2025-02-12T00:00:00+08:00</lastmod>
-  </url>
-  <url>
     <loc>https://blog.rovertang.com/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%83%A8%E7%BD%B2/</loc>
-    <lastmod>2025-02-12T00:00:00+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.rovertang.com/categories/</loc>
-    <lastmod>2025-02-12T00:00:00+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.rovertang.com/</loc>
-    <lastmod>2025-02-12T00:00:00+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.rovertang.com/posts/</loc>
     <lastmod>2025-02-12T00:00:00+08:00</lastmod>
   </url>
   <url>
@@ -66,10 +114,6 @@
   </url>
   <url>
     <loc>https://blog.rovertang.com/tags/%E7%A7%81%E6%9C%8D/</loc>
-    <lastmod>2025-02-03T00:00:00+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.rovertang.com/tags/%E6%80%A7%E4%BB%B7%E6%AF%94/</loc>
     <lastmod>2025-02-03T00:00:00+08:00</lastmod>
   </url>
   <url>
@@ -294,10 +338,6 @@
   </url>
   <url>
     <loc>https://blog.rovertang.com/posts/ai/20230602-understanding-token-in-chatgpt/</loc>
-    <lastmod>2023-06-02T00:00:00+08:00</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.rovertang.com/tags/token/</loc>
     <lastmod>2023-06-02T00:00:00+08:00</lastmod>
   </url>
   <url>

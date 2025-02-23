@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>70B大模型本地部署的性价比探索：一两千组个纯CPU推理的服务器 - 罗孚</title><meta name="author" content="RoverTang">
+<meta name="description" content="通过对比服务器、小主机和工作站的优缺点，我发现一两千元搭建一台使用纯 CPU 推理 70B 大模型的服务器是完全可行的，性能不差，内存充足，总体很强大。"><meta name="keywords" content='服务器, 本地部署, 纯CPU推理, 70B, 性价比'>
+  <meta itemprop="name" content="70B大模型本地部署的性价比探索：一两千组个纯CPU推理的服务器">
+  <meta itemprop="description" content="通过对比服务器、小主机和工作站的优缺点，我发现一两千元搭建一台使用纯 CPU 推理 70B 大模型的服务器是完全可行的，性能不差，内存充足，总体很强大。">
+  <meta itemprop="datePublished" content="2025-02-23T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2025-02-23T00:00:00+08:00">
+  <meta itemprop="wordCount" content="2653">
+  <meta itemprop="image" content="https://blog.rovertang.com/posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/cover.png">
+  <meta itemprop="keywords" content="服务器,本地部署,纯CPU推理,70B,性价比"><meta property="og:url" content="https://blog.rovertang.com/posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/">
+  <meta property="og:site_name" content="罗孚">
+  <meta property="og:title" content="70B大模型本地部署的性价比探索：一两千组个纯CPU推理的服务器">
+  <meta property="og:description" content="通过对比服务器、小主机和工作站的优缺点，我发现一两千元搭建一台使用纯 CPU 推理 70B 大模型的服务器是完全可行的，性能不差，内存充足，总体很强大。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-02-23T00:00:00+08:00">
+    <meta property="article:modified_time" content="2025-02-23T00:00:00+08:00">
+    <meta property="article:tag" content="服务器">
+    <meta property="article:tag" content="本地部署">
+    <meta property="article:tag" content="纯CPU推理">
+    <meta property="article:tag" content="70B">
+    <meta property="article:tag" content="性价比">
+    <meta property="og:image" content="https://blog.rovertang.com/posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/cover.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://blog.rovertang.com/posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/cover.png">
+  <meta name="twitter:title" content="70B大模型本地部署的性价比探索：一两千组个纯CPU推理的服务器">
+  <meta name="twitter:description" content="通过对比服务器、小主机和工作站的优缺点，我发现一两千元搭建一台使用纯 CPU 推理 70B 大模型的服务器是完全可行的，性能不差，内存充足，总体很强大。">
+<meta name="application-name" content="罗孚传说">
+<meta name="apple-mobile-web-app-title" content="罗孚传说"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://blog.rovertang.com/posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/" title="70B大模型本地部署的性价比探索：一两千组个纯CPU推理的服务器 - 罗孚" /><link rel="prev" type="text/html" href="https://blog.rovertang.com/posts/ai/20250216-share-the-code-for-testing-the-output-speed-of-the-big-model-token/" title="大模型token输出速度测试代码分享，来评估一下你的大模型性能吧！" /><link rel="alternate" type="text/markdown" href="https://blog.rovertang.com/posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/index.md" title="70B大模型本地部署的性价比探索：一两千组个纯CPU推理的服务器 - 罗孚"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="apxz4dWbUQ2bsnGFk6SmRK4gNZ7tlT21KgMZ1t9hqdk" /><meta name="msvalidate.01" content="5282002B82D61AD2D097F2F6419C1E4A" /><meta name="baidu-site-verification" content="codeva-RiIZqiHrvQ" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "70B大模型本地部署的性价比探索：一两千组个纯CPU推理的服务器",
+    "inLanguage": "zh-cn",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.rovertang.com\/posts\/ai\/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model\/"
+    },"genre": "posts","keywords": "服务器, 本地部署, 纯CPU推理, 70B, 性价比","wordcount":  2653 ,
+    "url": "https:\/\/blog.rovertang.com\/posts\/ai\/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model\/","datePublished": "2025-02-23T00:00:00+08:00","dateModified": "2025-02-23T00:00:00+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "RoverTang"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item has-children">
+              <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item">
+              <a class="menu-link" href="https://vip.rovertang.com" rel="noopener noreferrer" target="_blank"><i class="fa-solid fa-crown fa-fw fa-sm" aria-hidden="true"></i> 罗孚的宝藏</a></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item"><a class="menu-link" href="https://vip.rovertang.com" rel="noopener noreferrer" target="_blank"><i class="fa-solid fa-crown fa-fw fa-sm" aria-hidden="true"></i> 罗孚的宝藏</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/" title="文章">文章</a></li><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/ai/" title="AI">AI</a></li><li class="breadcrumb-item active" data-separator="&gt;" aria-current="page">70B大模型本地部署的性价比探索：一两千组个纯CPU推理的服务器</li>
+    </ol>
+  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div style="width: 350px; margin: 0 auto; display: flex; justify-content: space-between; text-align: center;">
+  <img src="/images/wxmp-blog.jpg" alt="wxmp-blog" style="width: 115px; height: 153px;">
+  <img src="/images/wxmp-shanghai.jpg" alt="wxmp-shanghai" style="width: 115px; height: 153px;">
+  <img src="/images/zsxq-fromblog.jpg" alt="zsxq-fromblog" style="width: 115px; height: 153px;">
+</div></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>70B大模型本地部署的性价比探索：一两千组个纯CPU推理的服务器</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://rovertang.com" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    RoverTang</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/ai/" class="post-category" title="分类 - AI"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> AI</a></span></div><div class="post-meta-line"><span title="发布于 2025-02-23 00:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2025-02-23">2025-02-23</time></span>&nbsp;<span title="2653 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 2700 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 6 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#纯-cpu-推理部署满血-617b-大模型方案参考">纯 CPU 推理部署满血 617B 大模型方案参考</a></li>
+    <li><a href="#部署纯-cpu-推理-70b-大模型方案的思考">部署纯 CPU 推理 70B 大模型方案的思考</a></li>
+    <li><a href="#纯-cpu-推理-70b-大模型服务器选型参考">纯 CPU 推理 70B 大模型服务器选型参考</a></li>
+    <li><a href="#高性能小主机方案参考">高性能小主机方案参考</a></li>
+    <li><a href="#千元工作站方案参考">千元工作站方案参考</a></li>
+    <li><a href="#最后的话">最后的话</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p>大模型的昂贵部署成本一直是行业的痛点，尤其是高性能显卡的需求，让许多个人开发者望而却步。然而，随着像 DeepSeek-R1 这样的大模型的出现，纯 CPU 推理方案逐渐浮出水面，为低成本部署带来了新的希望。</p>
+<p>如果采用纯 CPU 方案来运行大模型，成本有望大幅降低。毕竟，CPU 和内存的价格远低于大显存显卡。对于个人开发者而言，运行较小的 7B 模型可能轻而易举，但其性能和智力水平相对有限。而直接运行满血版的 671B 模型，似乎又有些“杀鸡用牛刀”，使用 API 调用显然更为简单、高效且经济。</p>
+<p>因此，我提出了一个折中的方案：<strong>花费一两千元搭建一台服务器，采用纯 CPU 推理方案运行 70B 大模型。这样的配置既能满足智力水平的需求，速度也不会太慢，性价比相当不错。</strong></p>
+<h2 id="纯-cpu-推理部署满血-617b-大模型方案参考" class="heading-element"><span>纯 CPU 推理部署满血 617B 大模型方案参考</span>
+  <a href="#%e7%ba%af-cpu-%e6%8e%a8%e7%90%86%e9%83%a8%e7%bd%b2%e6%bb%a1%e8%a1%80-617b-%e5%a4%a7%e6%a8%a1%e5%9e%8b%e6%96%b9%e6%a1%88%e5%8f%82%e8%80%83" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>最早关于纯 CPU 运行满血版 DeepSeek 的方案，分别来自两篇报道：</p>
+<p>2000 刀跑满血 DeepSeek，3.5~4.25TPS：How To Run Deepseek R1 671b Fully Locally On a $2000 EPYC Server <a href="https://digitalspaceport.com/how-to-run-deepseek-r1-671b-fully-locally-on-2000-epyc-rig/"target="_blank" rel="external nofollow noopener noreferrer">https://digitalspaceport.com/how-to-run-deepseek-r1-671b-fully-locally-on-2000-epyc-rig/</a></p>
+<p>6000 刀跑满血 DeepSeek，6~8TPS：Way to run DeepSeek&rsquo;s 671B AI model without expensive GPUs discovered <a href="https://www.notebookcheck.net/Way-to-run-DeepSeek-s-671B-AI-model-without-expensive-GPUs-discovered.956421.0.html"target="_blank" rel="external nofollow noopener noreferrer">https://www.notebookcheck.net/Way-to-run-DeepSeek-s-671B-AI-model-without-expensive-GPUs-discovered.956421.0.html</a></p>
+<p>2000 美元方案：AMD EPYC 7702 + 512GB DDR4 2400。可选升级 7C13/7V13 + 1TB DDR4 2400，建议使用 3200 频率内存。</p>
+<p>6000 美元方案：2x AMD EPYC 9004/9005 + 768GB DDR5。建议使用 9115 或 9015 型号 CPU。</p>
+<p>这些方案虽然极具启发性，但高昂的 CPU 价格让我望而却步。例如，某些 CPU 价格高达八千元，显然超出了我的预算。不过，这些方案也激发了我寻找更经济实惠的替代方案。</p>
+<p>后来在知乎上看到改良的国内版本：盘点本地部署满血 deepseek-r1 的各种硬件配置方案 #1 - 知乎: <a href="https://zhuanlan.zhihu.com/p/23820116677"target="_blank" rel="external nofollow noopener noreferrer">https://zhuanlan.zhihu.com/p/23820116677</a>，但最终三万左右的价格，还是让人退缩了。</p>
+<p>我相信一定有更低成本的方案，毕竟如果仅考虑搞定 70B 大模型，那整体性能要求应该也可以适当降低一些。</p>
+<h2 id="部署纯-cpu-推理-70b-大模型方案的思考" class="heading-element"><span>部署纯 CPU 推理 70B 大模型方案的思考</span>
+  <a href="#%e9%83%a8%e7%bd%b2%e7%ba%af-cpu-%e6%8e%a8%e7%90%86-70b-%e5%a4%a7%e6%a8%a1%e5%9e%8b%e6%96%b9%e6%a1%88%e7%9a%84%e6%80%9d%e8%80%83" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>理论上，只要 CPU 性能强劲且内存充足，运行 70B 大模型并非难事。70B 模型的文件大小通常在 40~50GB 之间，虽然理论上 64GB 内存即可满足需求，但根据网络经验，需要 256GB 内存才能稳定运行。</p>
+<p>从内存角度来看，单条内存成本并不高，但总体积较大时，成本会显著上升。目前可选的内存类型包括 DDR5 和 DDR4。DDR5 64GB 内存价格约为 1300 元，256GB 总价需约 5 千元。相比之下，DDR4 64GB ECC 服务器内存价格不到 300 元，虽然频率低一些，但性价比极高。</p>
+<p>在 CPU 选择方面，如果选择普通 PC，AMD Ryzen 9950X 价格高达 4 千元，而 9700 也要 2 千元，且无法支持服务器内存。因此，我考虑了二手的 E5 系列或金牌系列服务器 CPU，这些“洋垃圾”在性能和价格上更具优势。</p>
+<p>为了更直观地比较，我从 PassMark 网站下载了 CPU Benchmark 数据，并根据性能价格比进行了筛选，部分结果如下：</p>
+<p><img loading="lazy" src="/posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/JQC6bSRKEodfq2xfVg5ci6UBnUd.png" alt="/posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/JQC6bSRKEodfq2xfVg5ci6UBnUd.png" srcset="/posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/JQC6bSRKEodfq2xfVg5ci6UBnUd.png?size=small, /posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/JQC6bSRKEodfq2xfVg5ci6UBnUd.png?size=medium 1.5x, /posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/JQC6bSRKEodfq2xfVg5ci6UBnUd.png?size=large 2x" data-title="/posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/JQC6bSRKEodfq2xfVg5ci6UBnUd.png" style="--width: 767px;--aspect-ratio: 767 / 388;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>如果抛开价格，选择家用 AMD 系列 CPU，性能出色，应该是不二之选。但如果细看价格，E5 和金牌系列的“洋垃圾”CPU 无疑是最佳选择。</p>
+<p>基于上述 CPU 和内存分析，我们尝试组一个洋垃圾服务器方案吧。</p>
+<h2 id="纯-cpu-推理-70b-大模型服务器选型参考" class="heading-element"><span>纯 CPU 推理 70B 大模型服务器选型参考</span>
+  <a href="#%e7%ba%af-cpu-%e6%8e%a8%e7%90%86-70b-%e5%a4%a7%e6%a8%a1%e5%9e%8b%e6%9c%8d%e5%8a%a1%e5%99%a8%e9%80%89%e5%9e%8b%e5%8f%82%e8%80%83" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>我一直以为服务器价格高昂，但当我看到戴尔 R630 和 R730 的二手价格时，才发现服务器准系统仅需数百元，自带 750W 电源。如果自行购买主板、风扇、机箱和电源，成本可能接近千元。</p>
+<p>基于此思路，我简单组了 3 个廉价服务器方案：</p>
+<p><img loading="lazy" src="/posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/PMjRb0sEMoXhKvx27Xnc4Bpqnhh.png" alt="/posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/PMjRb0sEMoXhKvx27Xnc4Bpqnhh.png" srcset="/posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/PMjRb0sEMoXhKvx27Xnc4Bpqnhh.png?size=small, /posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/PMjRb0sEMoXhKvx27Xnc4Bpqnhh.png?size=medium 1.5x, /posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/PMjRb0sEMoXhKvx27Xnc4Bpqnhh.png?size=large 2x" data-title="/posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/PMjRb0sEMoXhKvx27Xnc4Bpqnhh.png" style="--width: 958px;--aspect-ratio: 958 / 337;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>如果只用 64GB 内存，那这些方案均能符合“一两千元搭建服务器”的原则，即便是 256GB 内存也仅仅两三千元。</p>
+<p>然而，我最终没有选择这些方案，原因主要有两点：</p>
+<ol>
+<li><strong>噪音问题：</strong> 服务器的高转速风扇会产生较大噪音，不适合在家中使用，除非家里有足够的空间可以单独放置。</li>
+<li><strong>功耗问题：</strong> 服务器的功耗较高，每天消耗约 6 度电，一年电费超过千元，这几乎可以再购买一台服务器了。</li>
+</ol>
+<p>此外，1U 和 2U 机箱虽然可以靠墙放置，但体积仍然较大，摆放不便，这也是需要考虑的因素。</p>
+<p>如果这些设备用于公司，且有机房可以防止，那么这方案将是一个不错的选择。</p>
+<h2 id="高性能小主机方案参考" class="heading-element"><span>高性能小主机方案参考</span>
+  <a href="#%e9%ab%98%e6%80%a7%e8%83%bd%e5%b0%8f%e4%b8%bb%e6%9c%ba%e6%96%b9%e6%a1%88%e5%8f%82%e8%80%83" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>由于服务器在噪音、功耗和体积方面不适合家用，我转向了更小巧、低功耗的小主机。</p>
+<p>Mac mini 无疑是小主机的佼佼者，但将内存提升到 64GB 的成本过高，预计需花费两万元。</p>
+<p>因此，我将目光投向了国内品牌零刻。其 SER7 和 SER8 型号不带硬盘和内存的价格 2000 元出头，加上 64GB 内存和 1TB SSD，总价预计在 4000 元以内。</p>
+<p><img loading="lazy" src="/posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/JYsybVid5oJkYvxuc1WcdlC0nVg.png" alt="/posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/JYsybVid5oJkYvxuc1WcdlC0nVg.png" srcset="/posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/JYsybVid5oJkYvxuc1WcdlC0nVg.png?size=small, /posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/JYsybVid5oJkYvxuc1WcdlC0nVg.png?size=medium 1.5x, /posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/JYsybVid5oJkYvxuc1WcdlC0nVg.png?size=large 2x" data-title="/posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/JYsybVid5oJkYvxuc1WcdlC0nVg.png" style="--width: 843px;--aspect-ratio: 843 / 393;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>特别说明，零刻小主机的 CPU 性能并不逊色，具体性能对比如下：</p>
+<p><img loading="lazy" src="/posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/DnH3bIz4MoOqW8xnjOrcOmEknqc.png" alt="/posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/DnH3bIz4MoOqW8xnjOrcOmEknqc.png" srcset="/posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/DnH3bIz4MoOqW8xnjOrcOmEknqc.png?size=small, /posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/DnH3bIz4MoOqW8xnjOrcOmEknqc.png?size=medium 1.5x, /posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/DnH3bIz4MoOqW8xnjOrcOmEknqc.png?size=large 2x" data-title="/posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/DnH3bIz4MoOqW8xnjOrcOmEknqc.png" style="--width: 767px;--aspect-ratio: 767 / 388;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>当然，这是在单路 CPU 比较的情况下。如果服务器采用双路 CPU，性能确实会远超小主机。</p>
+<p>零刻小主机的性能更强，采用 DDR5 内存，带宽更高，功耗更低，且为全新设备，这些确实也是心动选择的理由，但其内存插槽和 M.2 硬盘接口数量有限，内存扩容受限，且使用 SATA 硬盘不太方便，似乎也有槽点。</p>
+<p>于是，我考虑更换为具有一定扩展性的 HP 800 GX SFF 小主机。虽然体积比零刻稍大，但支持更多内存插槽，而且自带 M.2 和 SATA 接口，看上去不错，但这样的小主机也不便宜，CPU、内存等因素叠加，实际比服务器方案要贵不少，这种高不成低不就的方案，还是算了吧。</p>
+<h2 id="千元工作站方案参考" class="heading-element"><span>千元工作站方案参考</span>
+  <a href="#%e5%8d%83%e5%85%83%e5%b7%a5%e4%bd%9c%e7%ab%99%e6%96%b9%e6%a1%88%e5%8f%82%e8%80%83" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>最终，我没有选择服务器，也没有选择小主机，而是选择了工作站，算是折中方案了。主要基于以下几点考虑：</p>
+<ol>
+<li>**价格优势 **</li>
+</ol>
+<p>工作站与服务器的硬件配置相似，价格也较为接近，相比小主机便宜很多。</p>
+<ol>
+<li><strong>性能依然出色</strong></li>
+</ol>
+<p>工作站也有支持双路 CPU 的主板，但我综合价格之后选择了单路，虽然连小主机都比不过，但比我老 PC 的 4690 CPU 性能要高 3 倍以上，也足够出色了。</p>
+<ol>
+<li><strong>可扩展性强</strong></li>
+</ol>
+<p>支持两块显卡插槽，自带 SATA 接口，8 根内存插槽，还有 PCIe 8x 和 4x 接口，可以通过转接使用 NVMe 硬盘。</p>
+<ol>
+<li><strong>功耗可以接受</strong></li>
+</ol>
+<p>据网络数据，工作站功耗约为 40~50 瓦，我预估为 60 瓦，每天消耗约 1.5 度电，相比服务器节省不少电费，一年也就两三百，不够开一个月的踢脚线取暖器。</p>
+<ol>
+<li><strong>噪音适中</strong></li>
+</ol>
+<p>相比服务器的高转速风扇，工作站的风扇转速较低，噪音水平与普通 PC 相当，不会对家庭环境造成太大影响。</p>
+<ol>
+<li><strong>体积合适</strong></li>
+</ol>
+<p>工作站体积虽大，但比 1U 和 2U 服务器小很多，如果没有合适的位置放置，可以考虑当作小板凳使用嘛。</p>
+<p>既然考虑已周全，那就果断下单一台吧：</p>
+<p><img loading="lazy" src="/posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/P6vhbaip8ocbfwxzI99ccJr0nJe.png" alt="/posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/P6vhbaip8ocbfwxzI99ccJr0nJe.png" srcset="/posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/P6vhbaip8ocbfwxzI99ccJr0nJe.png?size=small, /posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/P6vhbaip8ocbfwxzI99ccJr0nJe.png?size=medium 1.5x, /posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/P6vhbaip8ocbfwxzI99ccJr0nJe.png?size=large 2x" data-title="/posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/P6vhbaip8ocbfwxzI99ccJr0nJe.png" style="--width: 435px;--aspect-ratio: 435 / 566;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>家里本身有 PCIe 转接 NVMe 硬盘，剩下 300 多元 SSD 钱，内存先玩 64GB，后续考虑升级到 256GB。所以综合下来当前价格在 1200 元以内，即便我再给加一块 P106-100 显卡(<a href="https://mp.weixin.qq.com/s/Y5JqGh_HCY2-LnyyZtvTBg"target="_blank" rel="external nofollow noopener noreferrer">百元 P106 显卡跑 7B 大模型，矿渣变 AI 神器，真香！</a>)，也没超过 1500 元，感觉挺香的。</p>
+<h2 id="最后的话" class="heading-element"><span>最后的话</span>
+  <a href="#%e6%9c%80%e5%90%8e%e7%9a%84%e8%af%9d" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>汇总上述几种方案的对比：</p>
+<p><img loading="lazy" src="/posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/HTapb4SZQo23MbxPrn8clgyGnbg.png" alt="/posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/HTapb4SZQo23MbxPrn8clgyGnbg.png" srcset="/posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/HTapb4SZQo23MbxPrn8clgyGnbg.png?size=small, /posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/HTapb4SZQo23MbxPrn8clgyGnbg.png?size=medium 1.5x, /posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/HTapb4SZQo23MbxPrn8clgyGnbg.png?size=large 2x" data-title="/posts/ai/20250223-cost-effectiveness-exploration-of-local-deployment-of-70b-large-model/static/HTapb4SZQo23MbxPrn8clgyGnbg.png" style="--width: 958px;--aspect-ratio: 958 / 527;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><strong>通过对比服务器、小主机和工作站的优缺点，我发现一两千元搭建一台使用纯 CPU 推理 70B 大模型的服务器是完全可行的，性能不差，内存充足，总体很强大。这种方案适用于个人做大模型研究，也适合作为家庭多开服务器。总的来说，这是一个性价比极高的方案。</strong></p>
+<p>等我拿到设备后，我会测试 70B 大模型的运行速度，并与大家分享测试结果。</p>
+<p>个人对服务器、CPU 等了解不多，本文仅仅觉得低成本服务器方案挺香，所以同大家分享，你是否有更好的方案推荐呢？欢迎留言告诉我。</p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2025-02-23 00:00:00">更新于 2025-02-23&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="post-tag" title="标签 - 服务器">服务器</a><a href="/tags/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/" class="post-tag" title="标签 - 本地部署">本地部署</a><a href="/tags/%E7%BA%AFcpu%E6%8E%A8%E7%90%86/" class="post-tag" title="标签 - 纯CPU推理">纯CPU推理</a><a href="/tags/70b/" class="post-tag" title="标签 - 70B">70B</a><a href="/tags/%E6%80%A7%E4%BB%B7%E6%AF%94/" class="post-tag" title="标签 - 性价比">性价比</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/ai/20250216-share-the-code-for-testing-the-output-speed-of-the-big-model-token/" class="post-nav-item" rel="prev" title="大模型token输出速度测试代码分享，来评估一下你的大模型性能吧！"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>大模型token输出速度测试代码分享，来评估一下你的大模型性能吧！</a></div>
+</div>
+<div class="post-reward">
+    <div class="comment"></div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward"><i class="fa-solid fa-qrcode fa-fw" aria-hidden="true"></i>赞赏</label>
+    <div class="reward-ways" data-mode="static"><div><img loading="lazy" src="/images/alipay.png" alt="RoverTang 支付宝" data-title="RoverTang 支付宝" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>支付宝</span>
+          </div><div><img loading="lazy" src="/images/wechatpay.png" alt="RoverTang 微信" data-title="RoverTang 微信" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>微信</span>
+          </div></div>
+  </div></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.139.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.16">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2005 - 2025</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://rovertang.com"target="_blank" rel="external nofollow noopener noreferrer">RoverTang</a></span></div><div class="footer-line beian"><span class="icp footer-divider"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">沪ICP备2020036772号-1</a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;bottom: 0;"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.16"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>大模型性能 - 标签 - 罗孚</title>
+    <link>https://blog.rovertang.com/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%80%A7%E8%83%BD/</link>
+    <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
+    <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 16 Feb 2025 00:00:00 +0800</lastBuildDate>
+    <atom:link href="https://blog.rovertang.com/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%80%A7%E8%83%BD/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大模型token输出速度测试代码分享，来评估一下你的大模型性能吧！</title>
+      <link>https://blog.rovertang.com/posts/ai/20250216-share-the-code-for-testing-the-output-speed-of-the-big-model-token/</link>
+      <pubDate>Sun, 16 Feb 2025 00:00:00 +0800</pubDate>
+      <guid>https://blog.rovertang.com/posts/ai/20250216-share-the-code-for-testing-the-output-speed-of-the-big-model-token/</guid>
+      <category domain="https://blog.rovertang.com/categories/ai/">AI</category>
+      <description>大模型token输出速度通常用TPS(tokens per second)或tokens/s衡量。我分享了一段测试代码，并附上我的渣渣机跑出来的分数。你也来测试一下你的大模型性能，一起看看不同硬件下的速度表现吧！</description>
+    </item>
+  </channel>
+</rss>
