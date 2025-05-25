@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>两千元服务器跑671B大模型：能跑，看你想要什么。 - 罗孚</title><meta name="author" content="RoverTang">
+<meta name="description" content="两千元服务器，也能运行671B DeepSeek-R1！虽速度不快，但性价比极高，是理(无)想(奈)的本地部署纯CPU推理方案。本文探讨了部署目的，回顾了翻车原因，进行了速度测试，提供了质量参考，还提出了后续方案，并附上模型文件与测试代码下载链接，欢迎大家沟通交流。"><meta name="keywords" content='服务器, 本地部署, 纯CPU推理, DeepSeek-R1, 671B, ollama, LM Studio'>
+  <meta itemprop="name" content="两千元服务器跑671B大模型：能跑，看你想要什么。">
+  <meta itemprop="description" content="两千元服务器，也能运行671B DeepSeek-R1！虽速度不快，但性价比极高，是理(无)想(奈)的本地部署纯CPU推理方案。本文探讨了部署目的，回顾了翻车原因，进行了速度测试，提供了质量参考，还提出了后续方案，并附上模型文件与测试代码下载链接，欢迎大家沟通交流。">
+  <meta itemprop="datePublished" content="2025-04-05T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2025-04-05T00:00:00+08:00">
+  <meta itemprop="wordCount" content="6186">
+  <meta itemprop="image" content="https://blog.rovertang.com/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/cover.png">
+  <meta itemprop="keywords" content="服务器,本地部署,纯CPU推理,DeepSeek-R1,671B,Ollama,LM Studio"><meta property="og:url" content="https://blog.rovertang.com/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/">
+  <meta property="og:site_name" content="罗孚">
+  <meta property="og:title" content="两千元服务器跑671B大模型：能跑，看你想要什么。">
+  <meta property="og:description" content="两千元服务器，也能运行671B DeepSeek-R1！虽速度不快，但性价比极高，是理(无)想(奈)的本地部署纯CPU推理方案。本文探讨了部署目的，回顾了翻车原因，进行了速度测试，提供了质量参考，还提出了后续方案，并附上模型文件与测试代码下载链接，欢迎大家沟通交流。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-04-05T00:00:00+08:00">
+    <meta property="article:modified_time" content="2025-04-05T00:00:00+08:00">
+    <meta property="article:tag" content="服务器">
+    <meta property="article:tag" content="本地部署">
+    <meta property="article:tag" content="纯CPU推理">
+    <meta property="article:tag" content="DeepSeek-R1">
+    <meta property="article:tag" content="671B">
+    <meta property="article:tag" content="Ollama">
+    <meta property="og:image" content="https://blog.rovertang.com/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/cover.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://blog.rovertang.com/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/cover.png">
+  <meta name="twitter:title" content="两千元服务器跑671B大模型：能跑，看你想要什么。">
+  <meta name="twitter:description" content="两千元服务器，也能运行671B DeepSeek-R1！虽速度不快，但性价比极高，是理(无)想(奈)的本地部署纯CPU推理方案。本文探讨了部署目的，回顾了翻车原因，进行了速度测试，提供了质量参考，还提出了后续方案，并附上模型文件与测试代码下载链接，欢迎大家沟通交流。">
+<meta name="application-name" content="罗孚传说">
+<meta name="apple-mobile-web-app-title" content="罗孚传说"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://blog.rovertang.com/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/" title="两千元服务器跑671B大模型：能跑，看你想要什么。 - 罗孚" /><link rel="prev" type="text/html" href="https://blog.rovertang.com/posts/ai/20250308-the-pure-cpu-inference-large-model-server-crashed/" title="纯CPU推理大模型服务器翻车了" /><link rel="next" type="text/html" href="https://blog.rovertang.com/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/" title="大模型显卡推理和纯CPU推理对比测试" /><link rel="alternate" type="text/markdown" href="https://blog.rovertang.com/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/index.md" title="两千元服务器跑671B大模型：能跑，看你想要什么。 - 罗孚"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="apxz4dWbUQ2bsnGFk6SmRK4gNZ7tlT21KgMZ1t9hqdk" /><meta name="msvalidate.01" content="5282002B82D61AD2D097F2F6419C1E4A" /><meta name="baidu-site-verification" content="codeva-RiIZqiHrvQ" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "两千元服务器跑671B大模型：能跑，看你想要什么。",
+    "inLanguage": "zh-cn",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.rovertang.com\/posts\/ai\/20250405-two-thousand-yuan-server-running-671b-large-model\/"
+    },"genre": "posts","keywords": "服务器, 本地部署, 纯CPU推理, DeepSeek-R1, 671B, ollama, LM Studio","wordcount":  6186 ,
+    "url": "https:\/\/blog.rovertang.com\/posts\/ai\/20250405-two-thousand-yuan-server-running-671b-large-model\/","datePublished": "2025-04-05T00:00:00+08:00","dateModified": "2025-04-05T00:00:00+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "RoverTang"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item has-children">
+              <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item">
+              <a class="menu-link" href="https://vip.rovertang.com" rel="noopener noreferrer" target="_blank"><i class="fa-solid fa-crown fa-fw fa-sm" aria-hidden="true"></i> 罗孚的宝藏</a></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item"><a class="menu-link" href="https://vip.rovertang.com" rel="noopener noreferrer" target="_blank"><i class="fa-solid fa-crown fa-fw fa-sm" aria-hidden="true"></i> 罗孚的宝藏</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/" title="文章">文章</a></li><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/ai/" title="AI">AI</a></li><li class="breadcrumb-item active" data-separator="&gt;" aria-current="page">两千元服务器跑671B大模型：能跑，看你想要什么。</li>
+    </ol>
+  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div style="width: 350px; margin: 0 auto; display: flex; justify-content: space-between; text-align: center;">
+  <img src="/images/wxmp-blog.jpg" alt="wxmp-blog" style="width: 115px; height: 153px;">
+  <img src="/images/wxmp-shanghai.jpg" alt="wxmp-shanghai" style="width: 115px; height: 153px;">
+  <img src="/images/zsxq-fromblog.jpg" alt="zsxq-fromblog" style="width: 115px; height: 153px;">
+</div></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>两千元服务器跑671B大模型：能跑，看你想要什么。</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://rovertang.com" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    RoverTang</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/ai/" class="post-category" title="分类 - AI"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> AI</a></span></div><div class="post-meta-line"><span title="发布于 2025-04-05 00:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2025-04-05">2025-04-05</time></span>&nbsp;<span title="6186 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 6200 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 13 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#私有化部署大模型的目的">私有化部署大模型的目的</a></li>
+    <li><a href="#服务器翻车原因再追究">服务器翻车原因再追究</a></li>
+    <li><a href="#满血版大模型测试">满血版大模型测试</a>
+      <ul>
+        <li><a href="#下载模型">下载模型</a></li>
+        <li><a href="#选择跑大模型的程序">选择跑大模型的程序</a></li>
+        <li><a href="#最终测试数据">最终测试数据</a></li>
+        <li><a href="#测试结论">测试结论</a></li>
+      </ul>
+    </li>
+    <li><a href="#不同参数模型质量分析">不同参数模型质量分析</a></li>
+    <li><a href="#一些想尝试的方案">一些想尝试的方案</a></li>
+    <li><a href="#模型文件和测试代码">模型文件和测试代码</a>
+      <ul>
+        <li><a href="#本文所用到的模型文件">本文所用到的模型文件</a></li>
+        <li><a href="#本文所用到的测试代码">本文所用到的测试代码</a></li>
+        <li><a href="#模型文件和测试代码下载">模型文件和测试代码下载</a></li>
+      </ul>
+    </li>
+    <li><a href="#附录作诗比较">附录：作诗比较</a>
+      <ul>
+        <li><a href="#deepseek-r115b-回答">deepseek-r1:1.5b 回答</a></li>
+        <li><a href="#deepseek-r17b-回答">deepseek-r1:7b 回答</a></li>
+        <li><a href="#deepseek-r114b-回答">deepseek-r1:14b 回答</a></li>
+        <li><a href="#deepseek-r132b-回答">deepseek-r1:32b 回答</a></li>
+        <li><a href="#deepseek-r170b-回答">deepseek-r1:70b 回答</a></li>
+        <li><a href="#deepseek-r1671b_ud-iq2_xxs-回答">deepseek-r1:671B_UD-IQ2_XXS 回答</a></li>
+        <li><a href="#deepseek-r1671b_q2_k_l-回答">deepseek-r1:671B_Q2_K_L 回答</a></li>
+        <li><a href="#deepseek-chatv3回答">deepseek-chat(V3)回答</a></li>
+        <li><a href="#deepseek-reasonerr1回答">deepseek-reasoner(R1)回答</a></li>
+      </ul>
+    </li>
+    <li><a href="#下载链接">下载链接</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p>上次《<a href="https://mp.weixin.qq.com/s/K90n0hsZA2GJkSTVwsS-Ew"target="_blank" rel="external nofollow noopener noreferrer">纯 CPU 推理大模型服务器翻车了</a>》后，有点闷闷不乐，不是因为被键盘侠喷没脑子，而是有点不甘心，也在思考我们到底跑大模型是为了什么？</p>
+<p>今天，罗孚经过详细测试，可以告诉大家：<strong>两千元的洋垃圾服务器，也能跑 671B 大模型！速度确实不快，但关键看你需要什么，也许本文就是最具性价比的跑满血版大模型纯 CPU 推理方案！</strong></p>
+<h2 id="私有化部署大模型的目的" class="heading-element"><span>私有化部署大模型的目的</span>
+  <a href="#%e7%a7%81%e6%9c%89%e5%8c%96%e9%83%a8%e7%bd%b2%e5%a4%a7%e6%a8%a1%e5%9e%8b%e7%9a%84%e7%9b%ae%e7%9a%84" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>说实话，<strong>靠个人力量私有化部署大模型，特别是 671B 的满血大模型，确实有点装</strong>。因为：<strong>用不上，速度慢，够折腾</strong>。</p>
+<p>但可能确实存在那么一小撮需求，不管什么原因和目的，就是想要私有化部署，而且还想部署满血的。可能就是为了一点点<strong>自用和可控</strong>吧。</p>
+<p>那么，什么样的私有化部署是我们能接受的？实际无外乎<strong>两个因素影响：速度和质量</strong>。</p>
+<p><strong>先劝退一波人：私有化部署想要速度快的同学</strong>。当然，这里还是讲 671B 满血大模型，如果是 47GB 大小的 70B 大模型，那上两张 3090 就好，再不济两张 M40 也行，速度应该不会差的。所以，<strong>靠个人力量部署满血大模型，基本就不要想速度了</strong>，腾讯玄武实验室《<a href="https://mp.weixin.qq.com/s/vIrvbVJ6Nv00Ehre1zZwMw"target="_blank" rel="external nofollow noopener noreferrer">不到 4 万元的 DeepSeek-R1-671B-Q8 部署方案</a>》，峰值生成速度也就 7.17 tokens/s，注意，近 4 万元成本哦，当然，也要看到 Q8 量化。</p>
+<p>相比速度，<strong>私有化部署的质量就成了我们考虑的关键因素</strong>，这也是罗孚放弃 70B 模型转向尝试跑 671B 模型的关键因素。参数越大，原则上质量越高。</p>
+<p><strong>所以，放弃大模型输出速度，追求输出质量，是私有化部署满血大模型的重要目的，或者说是无奈选择吧。</strong></p>
+<h2 id="服务器翻车原因再追究" class="heading-element"><span>服务器翻车原因再追究</span>
+  <a href="#%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%bf%bb%e8%bd%a6%e5%8e%9f%e5%9b%a0%e5%86%8d%e8%bf%bd%e7%a9%b6" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>根据玄武实验室对于大模型输出速度影响的结论：<strong>“内存带宽” &gt; “CPU 核心数” &gt; “SSD 读写速度”&gt; “CPU 主频”</strong>，可见内存带宽第一关键，最好能直接上 DDR5。</p>
+<p>而根据原文网友的评论，也发现自身在内存通道上的疏忽：<strong>只插了一根 64G DDR4 2400 的内存条，也就意味着这颗 4 通道的 E5 CPU 仅使用了 1 根通道</strong>。当时看到 0.8 的速度时，我一点再继续的欲望都没有了。</p>
+<p>那么，上四根内存条是否速度翻四倍，能达到 3.2 的速度吗？虽然这样的速度还是不能接受，但相比之下，速度确实快了很多。</p>
+<p>当插了 4 根内存条后，内存总量达到了 256GB，我想跑满血大模型，是不是也可以在此极端情况测试呢？虽然没法跑默认版本的 Q4 量化(文件 404GB)，但 Unsloth 给我们做好了 Q2 甚至更低的量化(<a href="https://unsloth.ai/blog/deepseekr1-dynamic"target="_blank" rel="external nofollow noopener noreferrer">https://unsloth.ai/blog/deepseekr1-dynamic</a>)呀，看来跑 671B 大模型有希望。</p>
+<p><img loading="lazy" src="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/UzRIbmvbTo5v1Kx30XEcGOrxncf.png" alt="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/UzRIbmvbTo5v1Kx30XEcGOrxncf.png" srcset="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/UzRIbmvbTo5v1Kx30XEcGOrxncf.png?size=small, /posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/UzRIbmvbTo5v1Kx30XEcGOrxncf.png?size=medium 1.5x, /posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/UzRIbmvbTo5v1Kx30XEcGOrxncf.png?size=large 2x" data-title="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/UzRIbmvbTo5v1Kx30XEcGOrxncf.png" style="--width: 1224px;--aspect-ratio: 1224 / 699;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>说干就干，不就是再买三根内存条嘛，走起：</p>
+<p><img loading="lazy" src="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/QfELbyJ78o5mb7x2DfWcx7M9nvT.png" alt="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/QfELbyJ78o5mb7x2DfWcx7M9nvT.png" srcset="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/QfELbyJ78o5mb7x2DfWcx7M9nvT.png?size=small, /posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/QfELbyJ78o5mb7x2DfWcx7M9nvT.png?size=medium 1.5x, /posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/QfELbyJ78o5mb7x2DfWcx7M9nvT.png?size=large 2x" data-title="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/QfELbyJ78o5mb7x2DfWcx7M9nvT.png" style="--width: 434px;--aspect-ratio: 434 / 118;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>好了，万事俱备，那就进入测试环节吧。</p>
+<h2 id="满血版大模型测试" class="heading-element"><span>满血版大模型测试</span>
+  <a href="#%e6%bb%a1%e8%a1%80%e7%89%88%e5%a4%a7%e6%a8%a1%e5%9e%8b%e6%b5%8b%e8%af%95" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>开始测试前，我再次介绍一下我的两千元服务器，更具体的介绍可以回看我的翻车文章(<a href="https://mp.weixin.qq.com/s/K90n0hsZA2GJkSTVwsS-Ew"target="_blank" rel="external nofollow noopener noreferrer">纯 CPU 推理大模型服务器翻车了</a>)，具体配置如下：</p>
+<p><img loading="lazy" src="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/VKcZbhmd4ocEEtxI0Nbc95iBnIf.png" alt="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/VKcZbhmd4ocEEtxI0Nbc95iBnIf.png" srcset="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/VKcZbhmd4ocEEtxI0Nbc95iBnIf.png?size=small, /posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/VKcZbhmd4ocEEtxI0Nbc95iBnIf.png?size=medium 1.5x, /posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/VKcZbhmd4ocEEtxI0Nbc95iBnIf.png?size=large 2x" data-title="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/VKcZbhmd4ocEEtxI0Nbc95iBnIf.png" style="--width: 341px;--aspect-ratio: 341 / 380;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<h3 id="下载模型" class="heading-element"><span>下载模型</span>
+  <a href="#%e4%b8%8b%e8%bd%bd%e6%a8%a1%e5%9e%8b" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>从国内的魔塔社区下载应该会快一些：<a href="https://www.modelscope.cn/models/unsloth/DeepSeek-R1-GGUF/files"target="_blank" rel="external nofollow noopener noreferrer">https://www.modelscope.cn/models/unsloth/DeepSeek-R1-GGUF/files</a></p>
+<p>上面 Unsloth 提供的 4 个版本对应文件夹如下：</p>
+<blockquote>
+<p>DeepSeek-R1-UD-IQ1_S</p>
+<p>DeepSeek-R1-UD-IQ1_M</p>
+<p>DeepSeek-R1-UD-IQ2_XXS</p>
+<p>DeepSeek-R1-UD-Q2_K_XL</p>
+</blockquote>
+<p>同时我又下了直接 Q2 的版本：</p>
+<blockquote>
+<p>DeepSeek-R1-Q2_K</p>
+<p>DeepSeek-R1-Q2_K_L</p>
+<p>DeepSeek-R1-Q2_K_XS</p>
+</blockquote>
+<p>最开始我用的 Q2_K_L，228GB，但在 ollama 里加载似乎能到 288GB，有点问题，于是又下了 183GB 的 UD-IQ2_XXS 版本，相对稳定一些。</p>
+<p>注意：下载的 gguf 文件分块了，下载完成后需要 merge 一下。</p>
+<h3 id="选择跑大模型的程序" class="heading-element"><span>选择跑大模型的程序</span>
+  <a href="#%e9%80%89%e6%8b%a9%e8%b7%91%e5%a4%a7%e6%a8%a1%e5%9e%8b%e7%9a%84%e7%a8%8b%e5%ba%8f" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>跑大模型的程序，一般是 ollama，也可以是 LM Studio，我先用的 ollama，用代码做测试，不是很稳定，然后我改用 LM Studio 做测试，没跑代码，相对稳定。LM Studio 里加载完 gguf 模型后，就可以像 Cherry Studio 一样直接对话了，而且输出完成后还能直接给出速度。</p>
+<p><img loading="lazy" src="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/OiTTb1RmPo9qDSx16ARcB3x7nxL.png" alt="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/OiTTb1RmPo9qDSx16ARcB3x7nxL.png" srcset="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/OiTTb1RmPo9qDSx16ARcB3x7nxL.png?size=small, /posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/OiTTb1RmPo9qDSx16ARcB3x7nxL.png?size=medium 1.5x, /posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/OiTTb1RmPo9qDSx16ARcB3x7nxL.png?size=large 2x" data-title="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/OiTTb1RmPo9qDSx16ARcB3x7nxL.png" style="--width: 702px;--aspect-ratio: 702 / 728;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>上图是 UD-IQ2_XXS 量化下的模型，内存占用在 200GB 以上，速度为 1.83tok/sec。</p>
+<h3 id="最终测试数据" class="heading-element"><span>最终测试数据</span>
+  <a href="#%e6%9c%80%e7%bb%88%e6%b5%8b%e8%af%95%e6%95%b0%e6%8d%ae" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>基于 671B 的 Q2_K_L 量化和 UD-IQ2_XXS 量化模型，最终测试数据如下：</p>
+<p><img loading="lazy" src="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/IgUvbPV7lomqCdxcBJsciZDPnWd.png" alt="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/IgUvbPV7lomqCdxcBJsciZDPnWd.png" srcset="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/IgUvbPV7lomqCdxcBJsciZDPnWd.png?size=small, /posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/IgUvbPV7lomqCdxcBJsciZDPnWd.png?size=medium 1.5x, /posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/IgUvbPV7lomqCdxcBJsciZDPnWd.png?size=large 2x" data-title="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/IgUvbPV7lomqCdxcBJsciZDPnWd.png" style="--width: 581px;--aspect-ratio: 581 / 267;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>顺便测试了 1.5B、7B、14B、32B、70B 在不同环境下的表现：</p>
+<p><img loading="lazy" src="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/XUaWbtraZovwAVx353XcOWvZnqg.png" alt="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/XUaWbtraZovwAVx353XcOWvZnqg.png" srcset="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/XUaWbtraZovwAVx353XcOWvZnqg.png?size=small, /posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/XUaWbtraZovwAVx353XcOWvZnqg.png?size=medium 1.5x, /posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/XUaWbtraZovwAVx353XcOWvZnqg.png?size=large 2x" data-title="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/XUaWbtraZovwAVx353XcOWvZnqg.png" style="--width: 531px;--aspect-ratio: 531 / 708;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<h3 id="测试结论" class="heading-element"><span>测试结论</span>
+  <a href="#%e6%b5%8b%e8%af%95%e7%bb%93%e8%ae%ba" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>个人的粗浅结论：<strong>基于 DDR4 2400 的 256GB 内存纯 CPU 推理服务器，对于 671B Q2_K_L 和 UD-IQ2_XXS 量化的 DeepSeek-R1，大约为 1~2tokens/s，或者说 1.5tokens/s 左右。</strong></p>
+<p>同时，基于上述测试过程和数据，一些附带结论：</p>
+<ol>
+<li>LM Studio 的稳定性和速度似乎都好于 ollama。</li>
+<li>Linux 环境的稳定性和速度也要好于 WIN11 的环境。(30% 以上)</li>
+<li>连续提问情况下，纯 CPU 推理速度会降低。</li>
+<li>GPU 推理速度明显快于 CPU 推理速度。(基于 1.5B 和 7B 的推理数据比较)</li>
+</ol>
+<p>对于上述结论，特别是 671B 仅有 1.5tokens/s 左右的速度，您是否可以接受呢？罗孚已接受，毕竟也是 671B 呢。</p>
+<h2 id="不同参数模型质量分析" class="heading-element"><span>不同参数模型质量分析</span>
+  <a href="#%e4%b8%8d%e5%90%8c%e5%8f%82%e6%95%b0%e6%a8%a1%e5%9e%8b%e8%b4%a8%e9%87%8f%e5%88%86%e6%9e%90" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>由于看中质量，所以才追求跑 671B 大模型，但可能罗孚测试的 5 道题目都太过于简单了，所以个人没有看出太大质量差别，后续准备使用 SuperGLUE 测测看。</p>
+<p>罗孚测试的五道题目：</p>
+<blockquote>
+<p>题目 1：小学生开放命题作文&quot;那件事真让我——&quot;，请先补全标题，以明确主题，然后围绕题目写一篇 450 字的小学生作文。</p>
+<p>题目 2：比较以下两个数的大小：9.11 和 9.9，并解释比较逻辑。</p>
+<p>题目 3：以&quot;秋天&quot;为主题创作一首五言绝句，并分析其意象（如落叶、孤雁）的隐喻意义</p>
+<p>题目 4：天气预报说本周星期三会下雨，昨天果然下雨了，今天星期几?</p>
+<p>题目 5：以下物理常识题目，哪一个是错误的?A.在自然环境下，声音在固体中传播速度最快。B.牛顿第一定律:一个物体如果不受力作用，将保持静止或匀速直线运动的状态。C.牛顿第三定律:对于每个作用力，都有一个相等而反向的反作用力。D.声音在空气中的传播速度为 1000m/s。</p>
+</blockquote>
+<p>先说逻辑题，结果如下：</p>
+<p><img loading="lazy" src="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/QevcbdiKkoXGKrxFLeNcoH0bnof.png" alt="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/QevcbdiKkoXGKrxFLeNcoH0bnof.png" srcset="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/QevcbdiKkoXGKrxFLeNcoH0bnof.png?size=small, /posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/QevcbdiKkoXGKrxFLeNcoH0bnof.png?size=medium 1.5x, /posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/QevcbdiKkoXGKrxFLeNcoH0bnof.png?size=large 2x" data-title="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/QevcbdiKkoXGKrxFLeNcoH0bnof.png" style="--width: 741px;--aspect-ratio: 741 / 159;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>除了 1.5B 可能太过于弱智外，其余都对，1.5B 的比大小和物理常识问题也没做错，从这来看无法做出区分。</p>
+<p>而文学创作题，可能有差距，但罗孚语文太差，没法做出好的判断，在本文最后我将各模型关于撰写诗歌的回答作为附录展示出来，孰好孰坏就请君自行判断吧。</p>
+<h2 id="一些想尝试的方案" class="heading-element"><span>一些想尝试的方案</span>
+  <a href="#%e4%b8%80%e4%ba%9b%e6%83%b3%e5%b0%9d%e8%af%95%e7%9a%84%e6%96%b9%e6%a1%88" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>说实话：两千元服务器就能跑 671B 大模型，应该基本找不到第二种方案了吧？且当极致性价比方案吧。</p>
+<p>不过罗孚对于当前 1.5tokens/s 的速度不满意，对 Q2 量化也不满意，想跑 Q4 量化甚至 Q8 量化，速度如果能提高到 5tokens/s，那应该就比较满意了。</p>
+<p>当前在这两千元服务器上加内存，不是好的方案，达不到目标。所以必须换方案，首当其冲先加内存通道，E5 系列 CPU 就算了，还是只有 4 通道的 W21xx 系列也靠边吧，那至少是 6138 或者 8175M 起步，支持 6 通道，如果双路 CPU，那能合计成 12 通道，不过也可以尝试 AMD，8 通道起步。</p>
+<p>其次在内存选择上，DDR5 太贵，先不考虑了，预计当前 DDR4 2666 的性价比还行，DDR4 2933 还是贵不少。内存基本选定，那就是买几根的问题，8 根两千多，12 根三四千，内存确实是纯 CPU 推理方案最贵的部分。</p>
+<p>罗孚提两个想尝试的方案，一个称之为 Intel 服务器方案，另一个称之为 AMD 工作站方案，具体配置如下：</p>
+<p><img loading="lazy" src="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/YquLbgmOloDyYQxnH76c8qgqnQc.png" alt="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/YquLbgmOloDyYQxnH76c8qgqnQc.png" srcset="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/YquLbgmOloDyYQxnH76c8qgqnQc.png?size=small, /posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/YquLbgmOloDyYQxnH76c8qgqnQc.png?size=medium 1.5x, /posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/YquLbgmOloDyYQxnH76c8qgqnQc.png?size=large 2x" data-title="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/YquLbgmOloDyYQxnH76c8qgqnQc.png" style="--width: 657px;--aspect-ratio: 657 / 334;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>两个服务器方案价格在五六千元，理论目标速度：3～5tokens/s，能跑 Q4 量化。768GB 内存方案应该还能跑 Q8 量化。同时，也有两三个 PCIEx16 的扩展，后续加两张 24GB 显存的显卡，跑 70B 应该也能轻轻松松，可进可退。</p>
+<p>有没有想试试的同学？愿意下单让罗孚尝试的同学，欢迎联系我哦，给大家做测试的同时，我也顺便帮配好了环境，简直是多赢那:)</p>
+<h2 id="模型文件和测试代码" class="heading-element"><span>模型文件和测试代码</span>
+  <a href="#%e6%a8%a1%e5%9e%8b%e6%96%87%e4%bb%b6%e5%92%8c%e6%b5%8b%e8%af%95%e4%bb%a3%e7%a0%81" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="本文所用到的模型文件" class="heading-element"><span>本文所用到的模型文件</span>
+  <a href="#%e6%9c%ac%e6%96%87%e6%89%80%e7%94%a8%e5%88%b0%e7%9a%84%e6%a8%a1%e5%9e%8b%e6%96%87%e4%bb%b6" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><img loading="lazy" src="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/QETDbUnKpomrVHxpZfGcS67Hns6.png" alt="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/QETDbUnKpomrVHxpZfGcS67Hns6.png" srcset="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/QETDbUnKpomrVHxpZfGcS67Hns6.png?size=small, /posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/QETDbUnKpomrVHxpZfGcS67Hns6.png?size=medium 1.5x, /posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/QETDbUnKpomrVHxpZfGcS67Hns6.png?size=large 2x" data-title="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/QETDbUnKpomrVHxpZfGcS67Hns6.png" style="--width: 1011px;--aspect-ratio: 1011 / 518;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>虽然都是从魔塔社区下载的 gguf 文件，但都已经拼接好了，单个 gguf 文件可以直接在 LM Studio 里加载，而 ollama 文件我也已经导入完成了，直接覆盖到 ollama 的 modules 目录下就可以了，通过 ollama list 命令可以看到和我一样的目录列表了。</p>
+<h3 id="本文所用到的测试代码" class="heading-element"><span>本文所用到的测试代码</span>
+  <a href="#%e6%9c%ac%e6%96%87%e6%89%80%e7%94%a8%e5%88%b0%e7%9a%84%e6%b5%8b%e8%af%95%e4%bb%a3%e7%a0%81" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>我必须承认：测试代码是 AI 写的。以前分享过，见《<a href="https://mp.weixin.qq.com/s/9INIbrYNi4XOw4BM9oGsLA"target="_blank" rel="external nofollow noopener noreferrer">大模型 token 输出速度测试代码分享，来评估一下你的大模型性能吧！</a>》一文，不过这次让 AI 改进了一下，包含了我上面所用到的测试题目，只需要修改模型名称，就可以开跑了。</p>
+<p><img loading="lazy" src="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/DKgHbkMemoJODsxbAC6cy1lgnFd.png" alt="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/DKgHbkMemoJODsxbAC6cy1lgnFd.png" srcset="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/DKgHbkMemoJODsxbAC6cy1lgnFd.png?size=small, /posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/DKgHbkMemoJODsxbAC6cy1lgnFd.png?size=medium 1.5x, /posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/DKgHbkMemoJODsxbAC6cy1lgnFd.png?size=large 2x" data-title="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/DKgHbkMemoJODsxbAC6cy1lgnFd.png" style="--width: 1212px;--aspect-ratio: 1212 / 872;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<h3 id="模型文件和测试代码下载" class="heading-element"><span>模型文件和测试代码下载</span>
+  <a href="#%e6%a8%a1%e5%9e%8b%e6%96%87%e4%bb%b6%e5%92%8c%e6%b5%8b%e8%af%95%e4%bb%a3%e7%a0%81%e4%b8%8b%e8%bd%bd" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>模型文件和测试代码大家都可以自力更生，模型下载后自行拼接导入即可，代码请 cursor 写一下就行，但为了节省大家时间，我已经放到百度网盘了，地址在下述付费阅读部分，99 微信豆，请大家多多支持啦。也可以在罗孚的面包铺(<a href="https://mbd.pub/o/rovertang"target="_blank" rel="external nofollow noopener noreferrer">https://mbd.pub/o/rovertang</a> )里找到，面包铺分成了模型文件下载(<a href="https://mbd.pub/o/bread/aJacm5ts"target="_blank" rel="external nofollow noopener noreferrer">https://mbd.pub/o/bread/aJacm5ts</a>)和测试代码下载(<a href="https://mbd.pub/o/bread/aJacm5tu"target="_blank" rel="external nofollow noopener noreferrer">https://mbd.pub/o/bread/aJacm5tu</a>)两个作品，按需下载就好了。</p>
+<p>具体下载内容截图如下：</p>
+<p><img loading="lazy" src="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/ARsQbL6E4o78RaxwTkrcIwCZnEg.png" alt="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/ARsQbL6E4o78RaxwTkrcIwCZnEg.png" srcset="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/ARsQbL6E4o78RaxwTkrcIwCZnEg.png?size=small, /posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/ARsQbL6E4o78RaxwTkrcIwCZnEg.png?size=medium 1.5x, /posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/ARsQbL6E4o78RaxwTkrcIwCZnEg.png?size=large 2x" data-title="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/ARsQbL6E4o78RaxwTkrcIwCZnEg.png" style="--width: 508px;--aspect-ratio: 508 / 450;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>模型文件说明：主要是DeepSeek-R1-Q2_K_L和DeepSeek-R1-UD-IQ2_XXS两个模型文件下载，提供LM Studio所用的gguf格式文件和ollama使用的文件。仅仅是将gguf拼接好以及导入ollama，然后放到百度网盘，省去自己下载拼接导入的时间，百度网盘速度也方便。</p>
+<p><img loading="lazy" src="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/Obfhbo2jjoU6KqxdUB0c8s1Unic.png" alt="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/Obfhbo2jjoU6KqxdUB0c8s1Unic.png" srcset="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/Obfhbo2jjoU6KqxdUB0c8s1Unic.png?size=small, /posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/Obfhbo2jjoU6KqxdUB0c8s1Unic.png?size=medium 1.5x, /posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/Obfhbo2jjoU6KqxdUB0c8s1Unic.png?size=large 2x" data-title="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/static/Obfhbo2jjoU6KqxdUB0c8s1Unic.png" style="--width: 330px;--aspect-ratio: 330 / 306;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>测试代码说明：主要提供testtokenspped4ollama.py测试代码和testtokenspped4api.py测试代码，前者用于直接访问ollama API进行测试，后者只需符合OpenAI API格式即可测试，两者测试内容都是5道题目，最终输出一个结果文件，方便获得输出内容以及速度结果。</p>
+<h2 id="附录作诗比较" class="heading-element"><span>附录：作诗比较</span>
+  <a href="#%e9%99%84%e5%bd%95%e4%bd%9c%e8%af%97%e6%af%94%e8%be%83" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>题目 3：以&quot;秋天&quot;为主题创作一首五言绝句，并分析其意象（如落叶、孤雁）的隐喻意义</p>
+<h3 id="deepseek-r115b-回答" class="heading-element"><span>deepseek-r1:1.5b 回答</span>
+  <a href="#deepseek-r115b-%e5%9b%9e%e7%ad%94" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><blockquote>
+<p>《五言绝句·秋去秋来》</p>
+<p>落叶纷纷地铺在地，</p>
+<p>秋风起、落叶纷纷。</p>
+<p>孤雁高飞不为尘，</p>
+<p>秋去秋来常有病，</p>
+<p>何妨多难乐其心。</p>
+<p>赏析：这首作品描绘了秋天的景象，通过“落叶”、“秋风”等意象，隐喻秋天带来变化与新开始。其中，“孤雁高飞不为尘”形象地展现了秋天的纯净与高远，表达了面对困境时仍需坚持的精神，与主题相呼应。</p>
+</blockquote>
+<h3 id="deepseek-r17b-回答" class="heading-element"><span>deepseek-r1:7b 回答</span>
+  <a href="#deepseek-r17b-%e5%9b%9e%e7%ad%94" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><blockquote>
+<p>《秋思》</p>
+<p>落叶舞风飘远去，</p>
+<p>寒风吹叶上寒腰。</p>
+<p>孤雁影伴霜华谢，</p>
+<p>春去秋来影散心平。</p>
+<p>赏析：这首作品以秋日景象为背景，通过描绘落叶舞动、寒风凛冽等意象，营造出一种萧瑟的氛围。诗中“孤雁影”隐喻了秋日的凄凉与变换，而末句“春去秋来影散心平”则寓含着对生命无常和变迁的感慨。整首诗语言凝练，意境深远，表达了秋日带来的 both 感伤与释然。</p>
+</blockquote>
+<h3 id="deepseek-r114b-回答" class="heading-element"><span>deepseek-r1:14b 回答</span>
+  <a href="#deepseek-r114b-%e5%9b%9e%e7%ad%94" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><blockquote>
+<p>《秋吟》</p>
+<p>秋色染寒山，</p>
+<p>行人踏野径。</p>
+<p>孤鸿哀一声，</p>
+<p>天地共凄然。</p>
+<p>赏析：这首作品以“秋天”为主题，通过描绘“落叶”、“孤雁”等意象，隐喻了时光流逝与人生离别的哀愁。诗中，“落叶”象征着生命 cycle 的更替与无奈；“孤雁”则暗示着人在秋天里的孤独与思念。整首诗表达了对生命无常的感慨和对过往岁月的深深怀念，读来令人唏嘘不已。</p>
+</blockquote>
+<h3 id="deepseek-r132b-回答" class="heading-element"><span>deepseek-r1:32b 回答</span>
+  <a href="#deepseek-r132b-%e5%9b%9e%e7%ad%94" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><blockquote>
+<p>秋风扫落叶，</p>
+<p>一雁鸣天外。</p>
+<p>岁晚心犹壮，</p>
+<p>寒霜见本真。</p>
+<p><strong>分析：</strong></p>
+<p>这首五言绝句以“秋天”为主题，通过描绘“落叶”和“孤雁”的意象，隐喻了离别、漂泊以及对生命的感悟。“落叶”象征着时间的流逝与生命的无常，“孤雁”则隐喻着孤独或思念的情感。整体上，诗歌表达了在秋日景象中对人生变迁的深沉思考和情感体验。</p>
+</blockquote>
+<h3 id="deepseek-r170b-回答" class="heading-element"><span>deepseek-r1:70b 回答</span>
+  <a href="#deepseek-r170b-%e5%9b%9e%e7%ad%94" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><blockquote>
+<p>《五律·秋吟》</p>
+<p>落叶纷纷舞秋风，</p>
+<p>孤雁影天忆远方。</p>
+<p>秋色渐深寒意浓，</p>
+<p>心中何处寄清霜。</p>
+<p>赏析：这首作品以秋天为主题，通过描绘“落叶”、“孤雁”的意象来表达深沉的情感。落叶象征着时间的流逝和生命的无常，而孤雁则暗示了思念和孤独。秋色的渐深和寒意的浓增，都在强化这种萧瑟的氛围。最后，“心中何处寄清霜”一句，以“清霜”为隐喻，表达了内心对美好事物的向往和追求。</p>
+</blockquote>
+<h3 id="deepseek-r1671b_ud-iq2_xxs-回答" class="heading-element"><span>deepseek-r1:671B_UD-IQ2_XXS 回答</span>
+  <a href="#deepseek-r1671b_ud-iq2_xxs-%e5%9b%9e%e7%ad%94" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><blockquote>
+<p>《秋思》</p>
+<p>霜重千山染，</p>
+<p>寒江独雁鸣。</p>
+<p>枯枝托冷月，</p>
+<p>归客暮中行。</p>
+<p><strong>意象分析：</strong></p>
+<ol>
+<li>
+<p><strong>&ldquo;霜染群山&rdquo;</strong>——银白色冰晶覆盖连绵山脉，既暗示深秋时节的气候转变，亦隐喻岁月流逝在自然肌理上刻画的沧桑印记。观者可通过寒霜的吞噬速度感知时间流动具象化。</p>
+</li>
+<li>
+<p><strong>&ldquo;孤雁啸江&rdquo;</strong>——失群候鸟面对浩淼江水发出凄厉啼叫，禽影与波光的比例失衡构成视觉压迫，此处以生物本能迁徙对照人类在社会洪流中的孤独处境，喑哑鸣叫实为个体身份焦虑的声呐探测。</p>
+</li>
+<li>
+<p><strong>&ldquo;朽枝托月&rdquo;</strong>——纤维质解体的树木骨骼仍勉力承载浑圆天体，木质部细胞壁的崩裂声响与月光流淌形成物质衰亡/能量永恒的悖论式对话，揭示生命存在本质性的张力结构。</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="deepseek-r1671b_q2_k_l-回答" class="heading-element"><span>deepseek-r1:671B_Q2_K_L 回答</span>
+  <a href="#deepseek-r1671b_q2_k_l-%e5%9b%9e%e7%ad%94" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><blockquote>
+<p><strong>五言绝句：</strong></p>
+<p>西风凋木叶，寒露浸枯杨。</p>
+<p>孤雁穿云去，残荷立晚塘。</p>
+<p><strong>意象解析：</strong></p>
+<ol>
+<li>
+<p><strong>「枯杨」</strong>——秋季植物枯萎是典型的时序符号。此物象同时暗含对生命脆弱性的哲思（如《庄子·山木》中&quot;木叶落，长叹息&quot;的典故），形成自然规律与人生无常的双重隐喻。</p>
+</li>
+<li>
+<p><strong>「孤雁」</strong>——离群之鸟自唐代杜甫诗作已沉淀为漂泊意象的经典符号。此处既可指涉戍边征人的孤独（如王昌龄《从军行》中&quot;独有宦游人&quot;式的惆怅），亦可暗喻现代都市个体的疏离感。</p>
+</li>
+<li>
+<p><strong>「残荷」</strong>——化用李商隐「留得枯荷听雨声」之视觉符号，通过秋塘立荷的孤影，构建出时光凝固般的审美意境。此物象既是对传统文人精神的呼应，亦暗藏存在主义式的生命叩问。</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="deepseek-chatv3回答" class="heading-element"><span>deepseek-chat(V3)回答</span>
+  <a href="#deepseek-chatv3%e5%9b%9e%e7%ad%94" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><blockquote>
+<p>《五绝·秋吟》</p>
+<p>霜枫燃野径，</p>
+<p>孤雁破寒空。</p>
+<p>倦客临风立，</p>
+<p>千山共叶红。</p>
+<p><strong>意象分析：</strong></p>
+<ol>
+<li>
+<p><strong>霜枫/叶红</strong>（视觉意象）</p>
+<p>以&quot;燃&quot;字拟枫叶之艳，隐喻生命在凋零前的极致绚烂，暗合中年壮志未酬的炽烈。落叶的集体红色则强化了时代洪流中个体的渺小与壮美。</p>
+</li>
+<li>
+<p><strong>孤雁</strong>（动态意象）</p>
+<p>&ldquo;破&quot;字赋予迁徙的孤雁锐利感，既象征游子冲破生存困境的挣扎，又暗喻信息时代人际关系的疏离。寒空背景强化了孤独的现代性体验。</p>
+</li>
+<li>
+<p><strong>倦客/千山</strong>（空间意象）</p>
+<p>人物与自然形成微观-宏观对照，&ldquo;共&quot;字揭示个体命运与自然规律的永恒共鸣。临风而立的姿态，暗示现代人在物质丰裕时代的精神漂泊状态。</p>
+<p><strong>隐喻体系：</strong></p>
+<p>全诗通过秋日物候构建双重隐喻网络——表层是传统悲秋情怀，深层则指向现代性孤独。自然意象的强烈动感（燃/破/立）消解了古典秋诗的静态哀愁，转化为存在主义式的生命抗争。</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="deepseek-reasonerr1回答" class="heading-element"><span>deepseek-reasoner(R1)回答</span>
+  <a href="#deepseek-reasonerr1%e5%9b%9e%e7%ad%94" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><blockquote>
+<p>《秋望》</p>
+<p>木落千山瘦，云孤一雁残。</p>
+<p>西风凋客鬓，寒色满危栏。</p>
+<p>意象分析：</p>
+<ol>
+<li>
+<p>落叶（木落）：&ldquo;千山瘦&quot;以拟人笔法呈现万木凋零后的山峦，隐喻生命在时光流逝中的消耗。落叶既是季节更迭的见证，也是生命由盛转衰的象征，与&quot;瘦&quot;字共同构成触目惊心的视觉冲击。</p>
+</li>
+<li>
+<p>孤雁（一雁残）：云海中的孤雁将天地间的苍茫感推向极致。&ldquo;残&quot;字既指雁阵的残缺，更暗喻离群者精神世界的破损。孤雁意象对应&quot;客鬓&quot;的游子形象，形成人与自然的双重孤独。</p>
+</li>
+<li>
+<p>西风：萧瑟秋风在诗中具象为雕刻刀，将游子的双鬓&quot;凋&quot;出霜色。这个动态意象突破传统秋风意象的平面化，展现时间对人的具象侵蚀，使无形的岁月流逝获得可触摸的质感。</p>
+</li>
+<li>
+<p>寒山危栏：末句将视线收束于倚栏人，寒山与危栏构成垂直空间中的双重困境。寒色既是满目秋景的实写，更是渗透骨髓的孤寂体验，危栏的倾斜感强化了抒情主体在天地间的失衡状态。</p>
+<p>全诗通过物象的精心选择与空间建构，在 20 字的有限篇幅中完成从宏阔天地到细微鬓角的视角转换，使秋景成为承载生命沉思的容器。每个意象都在传统诗学符号体系内进行陌生化重构，形成物我交融的审美境界。</p>
+</li>
+</ol>
+</blockquote>
+<p>补充说明：上述共分为 3 部分回答，分别是 R1 蒸馏模型下的回答、671B 不同量化下的回答以及官方(API)的 V3 和 R1 的回答。这三部分确实存在差距，欢迎留言评论发表看法。</p>
+<h2 id="下载链接" class="heading-element"><span>下载链接</span>
+  <a href="#%e4%b8%8b%e8%bd%bd%e9%93%be%e6%8e%a5" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>罗孚公众号文章“两千元服务器跑671B大模型：能跑，看你想要什么。”：<a href="https://mp.weixin.qq.com/s/h7c9gZYZiHLT0V92T7st7w"target="_blank" rel="external nofollow noopener noreferrer">https://mp.weixin.qq.com/s/h7c9gZYZiHLT0V92T7st7w</a></p>
+<p>或者</p>
+<p>罗孚的<a href="https://mbd.pub/o/rovertang"target="_blank" rel="external nofollow noopener noreferrer">面包铺</a>：模型文件下载(<a href="https://mbd.pub/o/bread/aJacm5ts"target="_blank" rel="external nofollow noopener noreferrer">https://mbd.pub/o/bread/aJacm5ts</a>)和测试代码下载(<a href="https://mbd.pub/o/bread/aJacm5tu"target="_blank" rel="external nofollow noopener noreferrer">https://mbd.pub/o/bread/aJacm5tu</a>)两个作品。</p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2025-04-05 00:00:00">更新于 2025-04-05&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="post-tag" title="标签 - 服务器">服务器</a><a href="/tags/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/" class="post-tag" title="标签 - 本地部署">本地部署</a><a href="/tags/%E7%BA%AFcpu%E6%8E%A8%E7%90%86/" class="post-tag" title="标签 - 纯CPU推理">纯CPU推理</a><a href="/tags/deepseek-r1/" class="post-tag" title="标签 - DeepSeek-R1">DeepSeek-R1</a><a href="/tags/671b/" class="post-tag" title="标签 - 671B">671B</a><a href="/tags/ollama/" class="post-tag" title="标签 - Ollama">Ollama</a><a href="/tags/lm-studio/" class="post-tag" title="标签 - LM Studio">LM Studio</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/ai/20250308-the-pure-cpu-inference-large-model-server-crashed/" class="post-nav-item" rel="prev" title="纯CPU推理大模型服务器翻车了"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>纯CPU推理大模型服务器翻车了</a><a href="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/" class="post-nav-item" rel="next" title="大模型显卡推理和纯CPU推理对比测试">大模型显卡推理和纯CPU推理对比测试<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment"></div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward"><i class="fa-solid fa-qrcode fa-fw" aria-hidden="true"></i>赞赏</label>
+    <div class="reward-ways" data-mode="static"><div><img loading="lazy" src="/images/alipay.png" alt="RoverTang 支付宝" data-title="RoverTang 支付宝" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>支付宝</span>
+          </div><div><img loading="lazy" src="/images/wechatpay.png" alt="RoverTang 微信" data-title="RoverTang 微信" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>微信</span>
+          </div></div>
+  </div></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.139.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.16">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2005 - 2025</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://rovertang.com"target="_blank" rel="external nofollow noopener noreferrer">RoverTang</a></span></div><div class="footer-line beian"><span class="icp footer-divider"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">沪ICP备2020036772号-1</a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;bottom: 0;"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.16"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

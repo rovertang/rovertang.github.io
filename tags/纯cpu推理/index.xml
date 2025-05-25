@@ -6,8 +6,24 @@
     <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
     <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 08 Mar 2025 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 04 May 2025 00:00:00 +0800</lastBuildDate>
     <atom:link href="https://blog.rovertang.com/tags/%E7%BA%AFcpu%E6%8E%A8%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大模型显卡推理和纯CPU推理对比测试</title>
+      <link>https://blog.rovertang.com/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/</link>
+      <pubDate>Sun, 04 May 2025 00:00:00 +0800</pubDate>
+      <guid>https://blog.rovertang.com/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/</guid>
+      <category domain="https://blog.rovertang.com/categories/ai/">AI</category>
+      <description>通过256GB内存以及2张P106显卡下的多场景测试，证明了一个毋庸置疑的结论：显卡推理完胜纯CPU推理以及混合推理。虽然证明了一个寂寞，但也给低成本多显卡推理带来了一些希望。</description>
+    </item>
+    <item>
+      <title>两千元服务器跑671B大模型：能跑，看你想要什么。</title>
+      <link>https://blog.rovertang.com/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/</link>
+      <pubDate>Sat, 05 Apr 2025 00:00:00 +0800</pubDate>
+      <guid>https://blog.rovertang.com/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/</guid>
+      <category domain="https://blog.rovertang.com/categories/ai/">AI</category>
+      <description>两千元服务器，也能运行671B DeepSeek-R1！虽速度不快，但性价比极高，是理(无)想(奈)的本地部署纯CPU推理方案。本文探讨了部署目的，回顾了翻车原因，进行了速度测试，提供了质量参考，还提出了后续方案，并附上模型文件与测试代码下载链接，欢迎大家沟通交流。</description>
+    </item>
     <item>
       <title>纯CPU推理大模型服务器翻车了</title>
       <link>https://blog.rovertang.com/posts/ai/20250308-the-pure-cpu-inference-large-model-server-crashed/</link>

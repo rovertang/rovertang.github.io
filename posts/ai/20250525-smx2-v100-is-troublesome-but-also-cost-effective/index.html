@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>SXM2版V100显卡很麻烦但很香：14B大模型速度超50！附折腾攻略 - 罗孚</title><meta name="author" content="RoverTang">
+<meta name="description" content="SXM2版V100显卡非常具有性价比，适合AI大模型，单卡16GB版本一千出头，就能有不错的推理速度体验。但确实非常的折腾，转接卡、散热器、安装过程、系统兼容问题、驱动问题等都有不少的麻烦，坑有点多。只建议动手能力强的朋友入手。"><meta name="keywords" content='V100 SXM2, 性价比, 折腾'>
+  <meta itemprop="name" content="SXM2版V100显卡很麻烦但很香：14B大模型速度超50！附折腾攻略">
+  <meta itemprop="description" content="SXM2版V100显卡非常具有性价比，适合AI大模型，单卡16GB版本一千出头，就能有不错的推理速度体验。但确实非常的折腾，转接卡、散热器、安装过程、系统兼容问题、驱动问题等都有不少的麻烦，坑有点多。只建议动手能力强的朋友入手。">
+  <meta itemprop="datePublished" content="2025-05-25T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2025-05-25T00:00:00+08:00">
+  <meta itemprop="wordCount" content="4989">
+  <meta itemprop="image" content="https://blog.rovertang.com/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/cover.png">
+  <meta itemprop="keywords" content="V100 SXM2,性价比,折腾"><meta property="og:url" content="https://blog.rovertang.com/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/">
+  <meta property="og:site_name" content="罗孚">
+  <meta property="og:title" content="SXM2版V100显卡很麻烦但很香：14B大模型速度超50！附折腾攻略">
+  <meta property="og:description" content="SXM2版V100显卡非常具有性价比，适合AI大模型，单卡16GB版本一千出头，就能有不错的推理速度体验。但确实非常的折腾，转接卡、散热器、安装过程、系统兼容问题、驱动问题等都有不少的麻烦，坑有点多。只建议动手能力强的朋友入手。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-25T00:00:00+08:00">
+    <meta property="article:modified_time" content="2025-05-25T00:00:00+08:00">
+    <meta property="article:tag" content="V100 SXM2">
+    <meta property="article:tag" content="性价比">
+    <meta property="article:tag" content="折腾">
+    <meta property="og:image" content="https://blog.rovertang.com/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/cover.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://blog.rovertang.com/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/cover.png">
+  <meta name="twitter:title" content="SXM2版V100显卡很麻烦但很香：14B大模型速度超50！附折腾攻略">
+  <meta name="twitter:description" content="SXM2版V100显卡非常具有性价比，适合AI大模型，单卡16GB版本一千出头，就能有不错的推理速度体验。但确实非常的折腾，转接卡、散热器、安装过程、系统兼容问题、驱动问题等都有不少的麻烦，坑有点多。只建议动手能力强的朋友入手。">
+<meta name="application-name" content="罗孚传说">
+<meta name="apple-mobile-web-app-title" content="罗孚传说"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://blog.rovertang.com/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/" title="SXM2版V100显卡很麻烦但很香：14B大模型速度超50！附折腾攻略 - 罗孚" /><link rel="prev" type="text/html" href="https://blog.rovertang.com/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/" title="千元小主机和千元服务器使用大模型对决" /><link rel="alternate" type="text/markdown" href="https://blog.rovertang.com/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/index.md" title="SXM2版V100显卡很麻烦但很香：14B大模型速度超50！附折腾攻略 - 罗孚"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="apxz4dWbUQ2bsnGFk6SmRK4gNZ7tlT21KgMZ1t9hqdk" /><meta name="msvalidate.01" content="5282002B82D61AD2D097F2F6419C1E4A" /><meta name="baidu-site-verification" content="codeva-RiIZqiHrvQ" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "SXM2版V100显卡很麻烦但很香：14B大模型速度超50！附折腾攻略",
+    "inLanguage": "zh-cn",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.rovertang.com\/posts\/ai\/20250525-smx2-v100-is-troublesome-but-also-cost-effective\/"
+    },"genre": "posts","keywords": "V100 SXM2, 性价比, 折腾","wordcount":  4989 ,
+    "url": "https:\/\/blog.rovertang.com\/posts\/ai\/20250525-smx2-v100-is-troublesome-but-also-cost-effective\/","datePublished": "2025-05-25T00:00:00+08:00","dateModified": "2025-05-25T00:00:00+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "RoverTang"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item has-children">
+              <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item">
+              <a class="menu-link" href="https://vip.rovertang.com" rel="noopener noreferrer" target="_blank"><i class="fa-solid fa-crown fa-fw fa-sm" aria-hidden="true"></i> 罗孚的宝藏</a></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item"><a class="menu-link" href="https://vip.rovertang.com" rel="noopener noreferrer" target="_blank"><i class="fa-solid fa-crown fa-fw fa-sm" aria-hidden="true"></i> 罗孚的宝藏</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/" title="文章">文章</a></li><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/ai/" title="AI">AI</a></li><li class="breadcrumb-item active" data-separator="&gt;" aria-current="page">SXM2版V100显卡很麻烦但很香：14B大模型速度超50！附折腾攻略</li>
+    </ol>
+  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div style="width: 350px; margin: 0 auto; display: flex; justify-content: space-between; text-align: center;">
+  <img src="/images/wxmp-blog.jpg" alt="wxmp-blog" style="width: 115px; height: 153px;">
+  <img src="/images/wxmp-shanghai.jpg" alt="wxmp-shanghai" style="width: 115px; height: 153px;">
+  <img src="/images/zsxq-fromblog.jpg" alt="zsxq-fromblog" style="width: 115px; height: 153px;">
+</div></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>SXM2版V100显卡很麻烦但很香：14B大模型速度超50！附折腾攻略</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://rovertang.com" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    RoverTang</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/ai/" class="post-category" title="分类 - AI"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> AI</a></span></div><div class="post-meta-line"><span title="发布于 2025-05-25 00:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2025-05-25">2025-05-25</time></span>&nbsp;<span title="4989 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 5000 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 10 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#v100同其他显卡推理速度对比">V100同其他显卡推理速度对比</a></li>
+    <li><a href="#v100-sxm2-16gb显卡介绍">V100 SXM2 16GB显卡介绍</a></li>
+    <li><a href="#sxm2版v100显卡折腾攻略">SXM2版V100显卡折腾攻略</a>
+      <ul>
+        <li><a href="#sxm2转pcie">SXM2转PCIe</a></li>
+        <li><a href="#选择散热器">选择散热器</a></li>
+        <li><a href="#sxm2显卡安装">SXM2显卡安装</a></li>
+        <li><a href="#系统兼容性问题">系统兼容性问题</a></li>
+        <li><a href="#win下驱动以及掉驱动">WIN下驱动以及掉驱动</a></li>
+        <li><a href="#还是不完美">还是不完美</a></li>
+      </ul>
+    </li>
+    <li><a href="#三千买32g显存是否划算">三千买32G显存是否划算？</a>
+      <ul>
+        <li><a href="#显存的重要性">显存的重要性</a></li>
+        <li><a href="#32g显存方案">32G显存方案</a></li>
+        <li><a href="#v100之外的选择">V100之外的选择</a></li>
+      </ul>
+    </li>
+    <li><a href="#最后的话">最后的话</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p>我的NVIDIA Tesla V100 SXM2 16 GB显卡跑Qwen3-14B大模型速度超过了50token/s，先上图为证：</p>
+<p><img loading="lazy" src="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/QrTHbPEvSoRdD8xSFo5cBZu4nfd.png" alt="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/QrTHbPEvSoRdD8xSFo5cBZu4nfd.png" srcset="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/QrTHbPEvSoRdD8xSFo5cBZu4nfd.png?size=small, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/QrTHbPEvSoRdD8xSFo5cBZu4nfd.png?size=medium 1.5x, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/QrTHbPEvSoRdD8xSFo5cBZu4nfd.png?size=large 2x" data-title="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/QrTHbPEvSoRdD8xSFo5cBZu4nfd.png" style="--width: 1078px;--aspect-ratio: 1078 / 764;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<h2 id="v100同其他显卡推理速度对比" class="heading-element"><span>V100同其他显卡推理速度对比</span>
+  <a href="#v100%e5%90%8c%e5%85%b6%e4%bb%96%e6%98%be%e5%8d%a1%e6%8e%a8%e7%90%86%e9%80%9f%e5%ba%a6%e5%af%b9%e6%af%94" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>没有对比就没有伤害，SXM2版V100的香是对比后发现的，而不是尬吹的。</p>
+<p>先测试了我在“<a href="https://mp.weixin.qq.com/s/y5OTDjxptHY72JA2bCKVqQ"target="_blank" rel="external nofollow noopener noreferrer">大模型显卡推理和纯CPU推理对比测试</a>”一文中的两张 P106 显卡，共12GB显存：</p>
+<p><img loading="lazy" src="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/R5GJbUm2vo93QSxljNKcZCWHnFf.png" alt="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/R5GJbUm2vo93QSxljNKcZCWHnFf.png" srcset="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/R5GJbUm2vo93QSxljNKcZCWHnFf.png?size=small, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/R5GJbUm2vo93QSxljNKcZCWHnFf.png?size=medium 1.5x, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/R5GJbUm2vo93QSxljNKcZCWHnFf.png?size=large 2x" data-title="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/R5GJbUm2vo93QSxljNKcZCWHnFf.png" style="--width: 560px;--aspect-ratio: 560 / 818;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>然后又借了一张1080 Ti和一张2080 super组成双卡，共19GB显存：</p>
+<p><img loading="lazy" src="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/LqysbVaWPoD2ayxh6uyctsCDnOe.png" alt="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/LqysbVaWPoD2ayxh6uyctsCDnOe.png" srcset="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/LqysbVaWPoD2ayxh6uyctsCDnOe.png?size=small, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/LqysbVaWPoD2ayxh6uyctsCDnOe.png?size=medium 1.5x, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/LqysbVaWPoD2ayxh6uyctsCDnOe.png?size=large 2x" data-title="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/LqysbVaWPoD2ayxh6uyctsCDnOe.png" style="--width: 558px;--aspect-ratio: 558 / 754;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>最后，上线我的单张SXM2版V100显卡，16GB显存：</p>
+<p><img loading="lazy" src="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/V0iQbSqMtoIsZ4xcSjHcVsx5nNh.png" alt="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/V0iQbSqMtoIsZ4xcSjHcVsx5nNh.png" srcset="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/V0iQbSqMtoIsZ4xcSjHcVsx5nNh.png?size=small, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/V0iQbSqMtoIsZ4xcSjHcVsx5nNh.png?size=medium 1.5x, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/V0iQbSqMtoIsZ4xcSjHcVsx5nNh.png?size=large 2x" data-title="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/V0iQbSqMtoIsZ4xcSjHcVsx5nNh.png" style="--width: 985px;--aspect-ratio: 985 / 592;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>跑完了，数据整理好了：</p>
+<p><img loading="lazy" src="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/FDdWbTltDo9mcFxEaGccJ92HnDh.png" alt="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/FDdWbTltDo9mcFxEaGccJ92HnDh.png" srcset="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/FDdWbTltDo9mcFxEaGccJ92HnDh.png?size=small, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/FDdWbTltDo9mcFxEaGccJ92HnDh.png?size=medium 1.5x, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/FDdWbTltDo9mcFxEaGccJ92HnDh.png?size=large 2x" data-title="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/FDdWbTltDo9mcFxEaGccJ92HnDh.png" style="--width: 525px;--aspect-ratio: 525 / 272;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>对于这块NVIDIA Tesla V100 SXM2 16 GB显卡，可见：</p>
+<ol>
+<li>**14B模型速度超50，常规7B/8b模型速度超75，0.6B模型速度超 200。**速度很惊人(对于个人使用来说)。</li>
+<li>**Moe的30B模型以及Q8精度的14B模型，也能在25左右。**速度处于正常使用水平(大家用的互联网版大模型也基本这速度)。</li>
+<li><strong>32B模型速度仅为6+</strong>，速度欠佳，可能是显存不足的原因。(但比纯CPU推理要强太多：<a href="https://mp.weixin.qq.com/s/h7c9gZYZiHLT0V92T7st7w"target="_blank" rel="external nofollow noopener noreferrer">两千元服务器跑671B大模型：能跑，看你想要什么。</a>)</li>
+</ol>
+<p>我原本想买Mi50 32GB版本的，但看了网上的数据：</p>
+<p><img loading="lazy" src="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/YTQobRBwXosqVUxVKhick8VLnRg.png" alt="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/YTQobRBwXosqVUxVKhick8VLnRg.png" srcset="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/YTQobRBwXosqVUxVKhick8VLnRg.png?size=small, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/YTQobRBwXosqVUxVKhick8VLnRg.png?size=medium 1.5x, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/YTQobRBwXosqVUxVKhick8VLnRg.png?size=large 2x" data-title="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/YTQobRBwXosqVUxVKhick8VLnRg.png" style="--width: 234px;--aspect-ratio: 234 / 387;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>相比之下，我还是继续用V100 16GB吧。另外对比4070Ti super的速度，14B基本接近，32B速度差异较大，说明除了显存，实际也有显卡代际架构差异的原因，但价钱摆在那啊。</p>
+<h2 id="v100-sxm2-16gb显卡介绍" class="heading-element"><span>V100 SXM2 16GB显卡介绍</span>
+  <a href="#v100-sxm2-16gb%e6%98%be%e5%8d%a1%e4%bb%8b%e7%bb%8d" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>这也是一张来自远古的显卡，首发于2017年，关键在于这不是一张普通的PCIe显卡：</p>
+<p><img loading="lazy" src="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/JkzSbqdoyoeEzBx3Q0BcJpGNnmf.png" alt="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/JkzSbqdoyoeEzBx3Q0BcJpGNnmf.png" srcset="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/JkzSbqdoyoeEzBx3Q0BcJpGNnmf.png?size=small, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/JkzSbqdoyoeEzBx3Q0BcJpGNnmf.png?size=medium 1.5x, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/JkzSbqdoyoeEzBx3Q0BcJpGNnmf.png?size=large 2x" data-title="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/JkzSbqdoyoeEzBx3Q0BcJpGNnmf.png" style="--width: 770px;--aspect-ratio: 770 / 427;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>也就是 <strong>SXM 接口，这接口没法直接装到PCIe上去</strong>，需要转接。</p>
+<p>不过算力可喜：<strong>FP16：31.33 TFLOPS；FP32：15.67 TFLOPS；FP64：7.834 TFLOPS。算力远超 P40、P100、M40等显卡。</strong></p>
+<p>而得益于HBM2显存，其<strong>带宽速度也很惊人：897.0 GB/s</strong>。</p>
+<p>另外，<strong>V100开始有Tensor Cores</strong> 了。</p>
+<p>按techpowerup的性能排名来看：</p>
+<p><img loading="lazy" src="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/OjjcbIyv0ozSqoxpp8ScpuUBnKf.png" alt="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/OjjcbIyv0ozSqoxpp8ScpuUBnKf.png" srcset="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/OjjcbIyv0ozSqoxpp8ScpuUBnKf.png?size=small, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/OjjcbIyv0ozSqoxpp8ScpuUBnKf.png?size=medium 1.5x, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/OjjcbIyv0ozSqoxpp8ScpuUBnKf.png?size=large 2x" data-title="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/OjjcbIyv0ozSqoxpp8ScpuUBnKf.png" style="--width: 526px;--aspect-ratio: 526 / 330;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>约为<strong>3090的2/3、5070 Ti的一半、4090的四成，比2080 Ti略强</strong>。</p>
+<p>至于价格嘛，自然就成了真香的关键：</p>
+<p><img loading="lazy" src="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/FWxebCaM1oy99AxoleoclKronic.png" alt="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/FWxebCaM1oy99AxoleoclKronic.png" srcset="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/FWxebCaM1oy99AxoleoclKronic.png?size=small, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/FWxebCaM1oy99AxoleoclKronic.png?size=medium 1.5x, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/FWxebCaM1oy99AxoleoclKronic.png?size=large 2x" data-title="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/FWxebCaM1oy99AxoleoclKronic.png" style="--width: 355px;--aspect-ratio: 355 / 367;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>当前2025年5月<strong>显卡本体价格：649</strong>。(据说可能会因新显卡发布而V100将大幅降价)</p>
+<p>当然，也没那么便宜，因为：需要SMX2转PCIe的转接卡，以及散热系统。</p>
+<p>总体价格差不多翻倍。</p>
+<p>基于价格，基于速度，V100 SXM2 16GB显卡还是很具性价比，你觉得呢？</p>
+<h2 id="sxm2版v100显卡折腾攻略" class="heading-element"><span>SXM2版V100显卡折腾攻略</span>
+  <a href="#sxm2%e7%89%88v100%e6%98%be%e5%8d%a1%e6%8a%98%e8%85%be%e6%94%bb%e7%95%a5" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>特别特别强调：需要有较强的动手改装能力，而且电脑技能也不能太差，不然买回去真的很难用起来。</p>
+<p>我个人虽然动手能力不算强，但也绝对不算差，而这一次的折腾，差点为了一块SXM2版V100显卡配了好几台电脑，典型的为了一盘醋包了一顿饺子。而等我折腾到好用，又放到海鲜市场出手掉了，开始了下一阶段的折腾。</p>
+<h3 id="sxm2转pcie" class="heading-element"><span>SXM2转PCIe</span>
+  <a href="#sxm2%e8%bd%acpcie" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>如前文所述，除非你直接买SXM2底板的服务器(比如戴尔C4130/C4140等)，不然肯定是转接卡。</p>
+<p>当前 <strong>SXM2转PCIe的转接卡</strong>样式很多，基本都是自己打样小批量生产，也就意味着这玩意不是大厂家流水线生产的。当然，官方转接卡也有，但相对比较少，比较难淘到。</p>
+<p>这样的转接卡，当前在某宝等平台不多，而在海鲜市场比较活跃，这也侧面说明基本都是小批量生产，更需要擦亮眼睛甄别。</p>
+<p>转接板大概像这样：</p>
+<p><img loading="lazy" src="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/BsiCbzuKzoJpbxx1V1Lc7r6pnYd.png" alt="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/BsiCbzuKzoJpbxx1V1Lc7r6pnYd.png" srcset="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/BsiCbzuKzoJpbxx1V1Lc7r6pnYd.png?size=small, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/BsiCbzuKzoJpbxx1V1Lc7r6pnYd.png?size=medium 1.5x, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/BsiCbzuKzoJpbxx1V1Lc7r6pnYd.png?size=large 2x" data-title="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/BsiCbzuKzoJpbxx1V1Lc7r6pnYd.png" style="--width: 595px;--aspect-ratio: 595 / 370;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>也有别样的。我为了省心，买的是某知名UP主的，甚至连散热器也一起买的。</p>
+<p>注意：转接卡仅为图中黑色的板子，后面铁板是显卡散热背板，只是现在已经装一起了。</p>
+<p>另外这块板子已经装好了调速器，后续对于风扇风力可以自行调节，这个功能挺重要的，风扇转速决定了噪声。当然，也别想着能静音，毕竟需要大量散热的嘛。</p>
+<h3 id="选择散热器" class="heading-element"><span>选择散热器</span>
+  <a href="#%e9%80%89%e6%8b%a9%e6%95%a3%e7%83%ad%e5%99%a8" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>散热一般就是选择风冷还是水冷，我对水冷感冒，所以没有考虑，而风冷方案也有选择：</p>
+<p>使用<strong>其他显卡散热器改装</strong>：</p>
+<p><img loading="lazy" src="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/Xa5Ob6pwjoJ0FJxvCcDcya1knHg.png" alt="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/Xa5Ob6pwjoJ0FJxvCcDcya1knHg.png" srcset="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/Xa5Ob6pwjoJ0FJxvCcDcya1knHg.png?size=small, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/Xa5Ob6pwjoJ0FJxvCcDcya1knHg.png?size=medium 1.5x, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/Xa5Ob6pwjoJ0FJxvCcDcya1knHg.png?size=large 2x" data-title="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/Xa5Ob6pwjoJ0FJxvCcDcya1knHg.png" style="--width: 555px;--aspect-ratio: 555 / 454;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>使用<strong>原装大散热器</strong>：</p>
+<p><img loading="lazy" src="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/RcRXbX0AOo7ESQxhMaRcNeFVngf.png" alt="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/RcRXbX0AOo7ESQxhMaRcNeFVngf.png" srcset="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/RcRXbX0AOo7ESQxhMaRcNeFVngf.png?size=small, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/RcRXbX0AOo7ESQxhMaRcNeFVngf.png?size=medium 1.5x, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/RcRXbX0AOo7ESQxhMaRcNeFVngf.png?size=large 2x" data-title="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/RcRXbX0AOo7ESQxhMaRcNeFVngf.png" style="--width: 696px;--aspect-ratio: 696 / 285;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>我选择的是前者，图的是简单方便。当然，这个简单方便实际是建立在卖家帮我改好的基础上。而后者的官方散热器，直接拧好螺丝就行，只是砖块似乎又大又沉，放机箱预计不好处理，再加风扇散热，相对就麻烦一些了。</p>
+<h3 id="sxm2显卡安装" class="heading-element"><span>SXM2显卡安装</span>
+  <a href="#sxm2%e6%98%be%e5%8d%a1%e5%ae%89%e8%a3%85" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>将SXM2显卡安装到PCIe转接板上，说是简单，实际也不容易，看了视频装的，但也有不少注意的地方。</p>
+<p><strong>显卡外围需要拆掉</strong>。一般买回来的显卡在主芯片的外围有一圈散热的架子，这些都需要拆掉，不然高度过高，显卡散热片盖上去后，螺丝柱就腾空了，自然无法拧上螺丝固定了。</p>
+<p><img loading="lazy" src="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/Dlo7bQtmmoqAAZx7uD9cb4Dhnxb.png" alt="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/Dlo7bQtmmoqAAZx7uD9cb4Dhnxb.png" srcset="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/Dlo7bQtmmoqAAZx7uD9cb4Dhnxb.png?size=small, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/Dlo7bQtmmoqAAZx7uD9cb4Dhnxb.png?size=medium 1.5x, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/Dlo7bQtmmoqAAZx7uD9cb4Dhnxb.png?size=large 2x" data-title="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/Dlo7bQtmmoqAAZx7uD9cb4Dhnxb.png" style="--width: 597px;--aspect-ratio: 597 / 447;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><strong>显卡要扣上去而不是放上去</strong>。我最开始也没明白如何固定，又没有螺丝，直接将显卡放在了转接板上，我就很纳闷，翻转以后不会掉吗？最后细看视频，说是要有吧嗒一声，哦，应该就是这个接口卡住了的声音，所以需要用力按压完全锁扣起来，而不是直接往板子上一放。当扣住了以后，翻过来也就不会掉了。</p>
+<p><img loading="lazy" src="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/DMtQbXGUdovQAsxE6wBcVszCnFf.png" alt="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/DMtQbXGUdovQAsxE6wBcVszCnFf.png" srcset="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/DMtQbXGUdovQAsxE6wBcVszCnFf.png?size=small, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/DMtQbXGUdovQAsxE6wBcVszCnFf.png?size=medium 1.5x, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/DMtQbXGUdovQAsxE6wBcVszCnFf.png?size=large 2x" data-title="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/DMtQbXGUdovQAsxE6wBcVszCnFf.png" style="--width: 599px;--aspect-ratio: 599 / 355;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p><strong>孔位要对齐</strong>。前面步骤OK的情况下，螺丝孔位基本能对齐的，如图中六个圈所示，拧螺丝相对比较容易。而检查是否对齐的关键，是看图中两个框的位置，实际是显卡没法去掉的两个柱子正好成了同背板的定位柱，在背板孔位中，显卡的柱子基本能同背板齐平，这样的安装比较到位。</p>
+<p><img loading="lazy" src="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/UyeybiyE9ootd7xr5vKcG4XXniM.png" alt="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/UyeybiyE9ootd7xr5vKcG4XXniM.png" srcset="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/UyeybiyE9ootd7xr5vKcG4XXniM.png?size=small, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/UyeybiyE9ootd7xr5vKcG4XXniM.png?size=medium 1.5x, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/UyeybiyE9ootd7xr5vKcG4XXniM.png?size=large 2x" data-title="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/UyeybiyE9ootd7xr5vKcG4XXniM.png" style="--width: 607px;--aspect-ratio: 607 / 277;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>显卡安装会占用4个PCIe槽位，长度超过35厘米，高度超过13厘米，所以一般机箱还不容易装下。</p>
+<p><img loading="lazy" src="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/Og5IbXX58oHveQxnx4ScSj8fn8b.png" alt="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/Og5IbXX58oHveQxnx4ScSj8fn8b.png" srcset="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/Og5IbXX58oHveQxnx4ScSj8fn8b.png?size=small, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/Og5IbXX58oHveQxnx4ScSj8fn8b.png?size=medium 1.5x, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/Og5IbXX58oHveQxnx4ScSj8fn8b.png?size=large 2x" data-title="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/Og5IbXX58oHveQxnx4ScSj8fn8b.png" style="--width: 601px;--aspect-ratio: 601 / 266;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>总体来说，安装还算方便，装完以后可以同4090相媲美了(仅外观哈)。</p>
+<h3 id="系统兼容性问题" class="heading-element"><span>系统兼容性问题</span>
+  <a href="#%e7%b3%bb%e7%bb%9f%e5%85%bc%e5%ae%b9%e6%80%a7%e9%97%ae%e9%a2%98" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>由于不是一般的显卡，所以系统兼容性就成了大问题。一般来说，<strong>建议X99平台的主板和CPU，而普通i5系列台式机并不建议。</strong>(不绝对：也有人B250M+i5六代成功的)</p>
+<p>个人在B85M平台i5四代CPU下没有成功，找了个戴尔台式机(i5八代)也没能成功，前者表现在WIN下驱动一直是感叹号，而在Ubuntu下又nvidia-smi又没法连上显卡，后者直接表现为无法开机。</p>
+<p>我在HP Z440上也无法开机，开机就提示928严重错误：</p>
+<p><img loading="lazy" src="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/JNt8bkyZZoRaBcxbWDhcma6Cnx5.png" alt="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/JNt8bkyZZoRaBcxbWDhcma6Cnx5.png" srcset="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/JNt8bkyZZoRaBcxbWDhcma6Cnx5.png?size=small, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/JNt8bkyZZoRaBcxbWDhcma6Cnx5.png?size=medium 1.5x, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/JNt8bkyZZoRaBcxbWDhcma6Cnx5.png?size=large 2x" data-title="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/JNt8bkyZZoRaBcxbWDhcma6Cnx5.png" style="--width: 439px;--aspect-ratio: 439 / 273;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>检查above 4G、关CSM、刷最新BIOS等都折腾一遍还是不行，绝望之下试了试拆分，将PCIe拆分成x8x8：</p>
+<p><img loading="lazy" src="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/NIWnbH0kHoEKJYxkRSqcKQcsnHb.png" alt="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/NIWnbH0kHoEKJYxkRSqcKQcsnHb.png" srcset="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/NIWnbH0kHoEKJYxkRSqcKQcsnHb.png?size=small, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/NIWnbH0kHoEKJYxkRSqcKQcsnHb.png?size=medium 1.5x, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/NIWnbH0kHoEKJYxkRSqcKQcsnHb.png?size=large 2x" data-title="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/NIWnbH0kHoEKJYxkRSqcKQcsnHb.png" style="--width: 752px;--aspect-ratio: 752 / 438;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>竟然成功了，可以正常开机进入了，不卡在BIOS界面了，神奇。</p>
+<p>关于系统兼容性部分的折腾可以看这篇：老主板使用Tesla V100显卡的坎坷历程 <a href="https://jakho.net/old-motherboard-with-tesla-v100-graphics-card?locale=zh"target="_blank" rel="external nofollow noopener noreferrer">https://jakho.net/old-motherboard-with-tesla-v100-graphics-card?locale=zh</a></p>
+<h3 id="win下驱动以及掉驱动" class="heading-element"><span>WIN下驱动以及掉驱动</span>
+  <a href="#win%e4%b8%8b%e9%a9%b1%e5%8a%a8%e4%bb%a5%e5%8f%8a%e6%8e%89%e9%a9%b1%e5%8a%a8" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>据说Windows下掉驱动是比较正常的事情，我使用最新版本的驱动，除了刚安装完后查看显卡正常外，一旦重启显卡就又都显示感叹号，没法使用。</p>
+<p><img loading="lazy" src="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/Y4gKb5m66ogS1exbRTLcZVgknse.png" alt="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/Y4gKb5m66ogS1exbRTLcZVgknse.png" srcset="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/Y4gKb5m66ogS1exbRTLcZVgknse.png?size=small, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/Y4gKb5m66ogS1exbRTLcZVgknse.png?size=medium 1.5x, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/Y4gKb5m66ogS1exbRTLcZVgknse.png?size=large 2x" data-title="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/Y4gKb5m66ogS1exbRTLcZVgknse.png" style="--width: 677px;--aspect-ratio: 677 / 172;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>网上说在安装完成后打开NVIDIA控制面板软件关闭ECC校验就好，但我没有成功。</p>
+<p>最后放弃最新的572版本驱动，改用较旧的475驱动，竟然不掉驱动了。</p>
+<p><img loading="lazy" src="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/O8vqbLTnWoaRj2xICcbckcFunpe.png" alt="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/O8vqbLTnWoaRj2xICcbckcFunpe.png" srcset="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/O8vqbLTnWoaRj2xICcbckcFunpe.png?size=small, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/O8vqbLTnWoaRj2xICcbckcFunpe.png?size=medium 1.5x, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/O8vqbLTnWoaRj2xICcbckcFunpe.png?size=large 2x" data-title="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/O8vqbLTnWoaRj2xICcbckcFunpe.png" style="--width: 473px;--aspect-ratio: 473 / 360;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>最后ollama可以正常使用显存了，但SD由于驱动太老而无法使用，其他游戏类似乎也没法调用这块显卡，虽然不是很完美，但至少大模型推理可以用起来了，后续再折腾吧。</p>
+<p>当然，在Ubuntu下还算完美，直接使用570版本驱动即可。</p>
+<h3 id="还是不完美" class="heading-element"><span>还是不完美</span>
+  <a href="#%e8%bf%98%e6%98%af%e4%b8%8d%e5%ae%8c%e7%be%8e" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>SXM2版V100虽然性能不错，价格也美丽，但还是不完美。</p>
+<ol>
+<li><strong>16G 显存不够用</strong></li>
+</ol>
+<p>显存不够用，不满意，但我又不会买32G的SXM2版V100：</p>
+<p><img loading="lazy" src="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/T7NEb17GcoTwXOxBGiocNabVnVg.png" alt="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/T7NEb17GcoTwXOxBGiocNabVnVg.png" srcset="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/T7NEb17GcoTwXOxBGiocNabVnVg.png?size=small, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/T7NEb17GcoTwXOxBGiocNabVnVg.png?size=medium 1.5x, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/T7NEb17GcoTwXOxBGiocNabVnVg.png?size=large 2x" data-title="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/T7NEb17GcoTwXOxBGiocNabVnVg.png" style="--width: 714px;--aspect-ratio: 714 / 359;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>呃，好吧，承认，确实差钱差太多了一些。</p>
+<p>看着这显存比金子还贵的价格，虽然因为穷而退缩了，但两颗小金子的钱要比一颗大金子的钱便宜很多啊，不上单卡32G，我上双卡32G是不是可以考虑呢？后文我们继续讨论。</p>
+<ol start="2">
+<li><strong>太大了</strong></li>
+</ol>
+<p><strong>占用4个槽位</strong>，太恐怖了，直接让其他槽位不可用啊。我的主机还必须插亮机卡，好在PCIe x16的前面还有一个 PCIe x1，我把AMD显卡插这x1的PCIe槽上，竟然也能用，这才让我能继续折腾，不然无法亮机就更别谈折腾了。</p>
+<p><strong>长度35</strong>，不是一般机箱放的下的。所以对于已有机箱的朋友务必考虑好，不要太盲目。</p>
+<p><strong>电源设计在了顶上，所以高度远超13</strong>，而一般机箱也就17的宽度吧，这样就无法盖上机箱侧板了。</p>
+<ol start="3">
+<li><strong>吵和啸叫</strong></li>
+</ol>
+<p>首先由于风扇的原因，声音很吵是一定的，毕竟是4090的3个风扇嘛。当然，也正因为吵，所以散热效果一定是杠杠滴，甚至比涡轮和水冷还强。</p>
+<p>其次是啸叫，当大模型跑起来的时候，就有啸叫声，虽然声音不算特别大特别刺耳，但大模型一直跑着就一直啸叫，感觉自己身在生产车间啊。这个啸叫应该来自转接板，具体原因未明，不确定是否所有转接板都有这问题。</p>
+<h2 id="三千买32g显存是否划算" class="heading-element"><span>三千买32G显存是否划算？</span>
+  <a href="#%e4%b8%89%e5%8d%83%e4%b9%b032g%e6%98%be%e5%ad%98%e6%98%af%e5%90%a6%e5%88%92%e7%ae%97" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="显存的重要性" class="heading-element"><span>显存的重要性</span>
+  <a href="#%e6%98%be%e5%ad%98%e7%9a%84%e9%87%8d%e8%a6%81%e6%80%a7" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>跑大模型最为重要的一个点是什么？显存。是的，看看我走过的弯路：</p>
+<p><a href="https://mp.weixin.qq.com/s/UyW9eoHorOr55hQJSBICYQ"target="_blank" rel="external nofollow noopener noreferrer">70B大模型本地部署的性价比探索：一两千组个纯CPU推理的服务器</a></p>
+<p><a href="https://mp.weixin.qq.com/s/K90n0hsZA2GJkSTVwsS-Ew"target="_blank" rel="external nofollow noopener noreferrer">纯CPU推理大模型服务器翻车了</a></p>
+<p><a href="https://mp.weixin.qq.com/s/h7c9gZYZiHLT0V92T7st7w"target="_blank" rel="external nofollow noopener noreferrer">两千元服务器跑671B大模型：能跑，看你想要什么。</a></p>
+<p><a href="https://mp.weixin.qq.com/s/y5OTDjxptHY72JA2bCKVqQ"target="_blank" rel="external nofollow noopener noreferrer">大模型显卡推理和纯CPU推理对比测试</a></p>
+<p>以前想着CPU+大内存干翻GPU，虽然说着CPU也能跑671B大模型，但看到50+的速度，谁还能淡定呢？不得不承认，速度也真的真的很重要，而对于速度，最为关键的，除了需要显卡，同样也需要足够的显存啊。</p>
+<p>当前14B、14B-Q8以及Moe的30B速度看上去都在可接受的范围，但一旦到了32B，速度就上不去了，如果显存足够，速度应该还能上去。所以<strong>大显存显得尤为重要。</strong></p>
+<h3 id="32g显存方案" class="heading-element"><span>32G显存方案</span>
+  <a href="#32g%e6%98%be%e5%ad%98%e6%96%b9%e6%a1%88" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>上面对比过了，单张32G的SXM2版V100，要价4K，而PCIe版的32G V100直接要价15K，这不抢钱嘛，而我组的16G版SXM2 V100，全部组好都不超过1.5K，双卡组成32G也比单卡便宜，更是PCIe版的零头都不到。</p>
+<p>所以，如果有钱，前面图中4K以及15K的32G可以选择，但我还是想便宜一点，所以只能妥协为16G+16G=32G的方案，基本方案有二：</p>
+<p><strong>方案一：买两张卡直接插主板的PCIe槽</strong></p>
+<p><img loading="lazy" src="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/DUfobh1IUopRufxvMDbcl9Okn5b.png" alt="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/DUfobh1IUopRufxvMDbcl9Okn5b.png" srcset="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/DUfobh1IUopRufxvMDbcl9Okn5b.png?size=small, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/DUfobh1IUopRufxvMDbcl9Okn5b.png?size=medium 1.5x, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/DUfobh1IUopRufxvMDbcl9Okn5b.png?size=large 2x" data-title="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/DUfobh1IUopRufxvMDbcl9Okn5b.png" style="--width: 367px;--aspect-ratio: 367 / 300;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>比如我的主板，确实有两根PCIe x16，也就是插两张转接板可行。</p>
+<p>但是但是，这转接的显卡太大了，这才是不行的关键。四槽直接把第三根PCIe x16盖住了，即便不盖住，底部靠近机箱，也没有了插进去的空间了。</p>
+<p>当然，我若改用水冷方案，也许可行，但水冷价也高，而且我也不喜欢。</p>
+<p><strong>方案二：买双卡GPU底座然后通过8654线接回主板</strong></p>
+<p>也就是将双显卡放在GPU专用主板上，通过8654线连回主板，算显卡外置方案，大概是这样的：</p>
+<p><img loading="lazy" src="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/N5JIbfUDCogG2lxOHHtczPuunQc.png" alt="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/N5JIbfUDCogG2lxOHHtczPuunQc.png" srcset="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/N5JIbfUDCogG2lxOHHtczPuunQc.png?size=small, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/N5JIbfUDCogG2lxOHHtczPuunQc.png?size=medium 1.5x, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/N5JIbfUDCogG2lxOHHtczPuunQc.png?size=large 2x" data-title="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/N5JIbfUDCogG2lxOHHtczPuunQc.png" style="--width: 535px;--aspect-ratio: 535 / 254;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>当然，也有衍生方案：</p>
+<p><img loading="lazy" src="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/X5O0bhTXkoYJrRxetOMcBjDCnc4.png" alt="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/X5O0bhTXkoYJrRxetOMcBjDCnc4.png" srcset="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/X5O0bhTXkoYJrRxetOMcBjDCnc4.png?size=small, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/X5O0bhTXkoYJrRxetOMcBjDCnc4.png?size=medium 1.5x, /posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/X5O0bhTXkoYJrRxetOMcBjDCnc4.png?size=large 2x" data-title="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/static/X5O0bhTXkoYJrRxetOMcBjDCnc4.png" style="--width: 293px;--aspect-ratio: 293 / 317;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>看你如何选择了。</p>
+<p>总体来说，为了这32G显存，预计要花三千左右，直插方案省钱一些，外接方案外设更多，应该会超三千。</p>
+<p>至于方案的好坏，根据DeepSeek的回答：外接方案更好。当然，也不能全信，我问它16G显存V100跑14B大模型大概是多少的速度？先回答我4<sub>7，后来回答我14</sub>18，最后我告诉了它答案，它说如果Q4+稀疏量化是能达到50~60的，总体回答的也不算正确。不过它也承认，双V100方案对于AI开发和科研还是最优解，也承认了此方案的性价比。</p>
+<h3 id="v100之外的选择" class="heading-element"><span>V100之外的选择</span>
+  <a href="#v100%e4%b9%8b%e5%a4%96%e7%9a%84%e9%80%89%e6%8b%a9" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>由于到了3K的价位，所以显卡的选择似乎更具争议，相信评论区也会吵开花，那么，是否有其他选择呢？</p>
+<p>我个人不是很懂硬件，CPU、显卡等看的我眼花缭乱，我先随便说说我看到的。</p>
+<p><strong>三张P100共48G显存</strong></p>
+<p>三张也就三千，PCIe直插，只要主板有3个显卡插槽即可。</p>
+<p><strong>两张P40共48G显存</strong></p>
+<p>三千只能买一张半，要么少一千用单张24G，要么加一千直接变48G。</p>
+<p><strong>2080 22G魔改版</strong></p>
+<p>应该不到三千，显存略低，但通用性强，毕竟大家第一时间想到的就是这显卡了，也是公认的最具性价比显卡了。</p>
+<p><strong>5060Ti 16G</strong></p>
+<p>按买新不买旧的原则，加上文章开头中4070Ti super对于32B大模型能跑到27的速度，还是需要推一推50系列新平台。官宣三千出头，当然，这可能仅仅是官宣。</p>
+<p>除了这些，当然也有一些其他平台的，比如AMD的Mi50 32G不到1K，而AMD的RX 7800XT价格三千出头，而非主流的Intel Arc A770，三千多能上两张，直接也32G显存了。由于没有CUDA，这些就先不考虑了吧。</p>
+<p>屏幕前的你，有什么更好的推荐呢？</p>
+<p>说句题外话：最近几篇CPU推理文章，评论区有不少留言，通过大家你一言我一语的推荐，最后我真觉得7945HX是当前最具性价比的CPU，感谢berrybai网友推荐。</p>
+<p>另外，这年头显存贵，表示理解，结果连周边都变贵了，比如上文所述官方散热器(说的就是那大砖头)，要一两百一个了，要知道同样大小的CPU散热器也就十块钱一个，真是水涨船高的离谱。</p>
+<h2 id="最后的话" class="heading-element"><span>最后的话</span>
+  <a href="#%e6%9c%80%e5%90%8e%e7%9a%84%e8%af%9d" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>SXM2版V100显卡非常具有性价比，适合AI大模型，单卡16GB版本一千出头，就能有不错的推理速度体验。</p>
+<p>但确实非常的折腾，转接卡、散热器、安装过程、系统兼容问题、驱动问题等都有不少的麻烦，坑有点多。</p>
+<p>只是，为了极致性价比(其实是穷)，折腾并快乐着，这不，卖了16GB版本，继续开始折腾双卡32G版本了:)</p>
+<p>你还有什么更具性价比的显卡方案推荐？欢迎评论区留言。</p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2025-05-25 00:00:00">更新于 2025-05-25&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/v100-sxm2/" class="post-tag" title="标签 - V100 SXM2">V100 SXM2</a><a href="/tags/%E6%80%A7%E4%BB%B7%E6%AF%94/" class="post-tag" title="标签 - 性价比">性价比</a><a href="/tags/%E6%8A%98%E8%85%BE/" class="post-tag" title="标签 - 折腾">折腾</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/" class="post-nav-item" rel="prev" title="千元小主机和千元服务器使用大模型对决"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>千元小主机和千元服务器使用大模型对决</a></div>
+</div>
+<div class="post-reward">
+    <div class="comment"></div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward"><i class="fa-solid fa-qrcode fa-fw" aria-hidden="true"></i>赞赏</label>
+    <div class="reward-ways" data-mode="static"><div><img loading="lazy" src="/images/alipay.png" alt="RoverTang 支付宝" data-title="RoverTang 支付宝" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>支付宝</span>
+          </div><div><img loading="lazy" src="/images/wechatpay.png" alt="RoverTang 微信" data-title="RoverTang 微信" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>微信</span>
+          </div></div>
+  </div></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.139.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.16">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2005 - 2025</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://rovertang.com"target="_blank" rel="external nofollow noopener noreferrer">RoverTang</a></span></div><div class="footer-line beian"><span class="icp footer-divider"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">沪ICP备2020036772号-1</a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;bottom: 0;"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.16"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

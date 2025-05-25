@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>大模型显卡推理和纯CPU推理对比测试 - 罗孚</title><meta name="author" content="RoverTang">
+<meta name="description" content="通过256GB内存以及2张P106显卡下的多场景测试，证明了一个毋庸置疑的结论：显卡推理完胜纯CPU推理以及混合推理。虽然证明了一个寂寞，但也给低成本多显卡推理带来了一些希望。"><meta name="keywords" content='多显卡, 本地部署, 纯CPU推理, 显卡推理, 纯CPU推理, DeepSeek-R1, Qwen3, Gemma3, ollama, P106-100'>
+  <meta itemprop="name" content="大模型显卡推理和纯CPU推理对比测试">
+  <meta itemprop="description" content="通过256GB内存以及2张P106显卡下的多场景测试，证明了一个毋庸置疑的结论：显卡推理完胜纯CPU推理以及混合推理。虽然证明了一个寂寞，但也给低成本多显卡推理带来了一些希望。">
+  <meta itemprop="datePublished" content="2025-05-04T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2025-05-04T00:00:00+08:00">
+  <meta itemprop="wordCount" content="1605">
+  <meta itemprop="image" content="https://blog.rovertang.com/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/cover.png">
+  <meta itemprop="keywords" content="多显卡,本地部署,显卡推理,纯CPU推理,DeepSeek-R1,Qwen3,Gemma3,Ollama,P106-100"><meta property="og:url" content="https://blog.rovertang.com/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/">
+  <meta property="og:site_name" content="罗孚">
+  <meta property="og:title" content="大模型显卡推理和纯CPU推理对比测试">
+  <meta property="og:description" content="通过256GB内存以及2张P106显卡下的多场景测试，证明了一个毋庸置疑的结论：显卡推理完胜纯CPU推理以及混合推理。虽然证明了一个寂寞，但也给低成本多显卡推理带来了一些希望。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-04T00:00:00+08:00">
+    <meta property="article:modified_time" content="2025-05-04T00:00:00+08:00">
+    <meta property="article:tag" content="多显卡">
+    <meta property="article:tag" content="本地部署">
+    <meta property="article:tag" content="显卡推理">
+    <meta property="article:tag" content="纯CPU推理">
+    <meta property="article:tag" content="DeepSeek-R1">
+    <meta property="article:tag" content="Qwen3">
+    <meta property="og:image" content="https://blog.rovertang.com/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/cover.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://blog.rovertang.com/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/cover.png">
+  <meta name="twitter:title" content="大模型显卡推理和纯CPU推理对比测试">
+  <meta name="twitter:description" content="通过256GB内存以及2张P106显卡下的多场景测试，证明了一个毋庸置疑的结论：显卡推理完胜纯CPU推理以及混合推理。虽然证明了一个寂寞，但也给低成本多显卡推理带来了一些希望。">
+<meta name="application-name" content="罗孚传说">
+<meta name="apple-mobile-web-app-title" content="罗孚传说"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://blog.rovertang.com/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/" title="大模型显卡推理和纯CPU推理对比测试 - 罗孚" /><link rel="prev" type="text/html" href="https://blog.rovertang.com/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/" title="两千元服务器跑671B大模型：能跑，看你想要什么。" /><link rel="next" type="text/html" href="https://blog.rovertang.com/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/" title="千元小主机和千元服务器使用大模型对决" /><link rel="alternate" type="text/markdown" href="https://blog.rovertang.com/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/index.md" title="大模型显卡推理和纯CPU推理对比测试 - 罗孚"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="apxz4dWbUQ2bsnGFk6SmRK4gNZ7tlT21KgMZ1t9hqdk" /><meta name="msvalidate.01" content="5282002B82D61AD2D097F2F6419C1E4A" /><meta name="baidu-site-verification" content="codeva-RiIZqiHrvQ" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "大模型显卡推理和纯CPU推理对比测试",
+    "inLanguage": "zh-cn",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.rovertang.com\/posts\/ai\/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing\/"
+    },"genre": "posts","keywords": "多显卡, 本地部署, 纯CPU推理, 显卡推理, 纯CPU推理, DeepSeek-R1, Qwen3, Gemma3, ollama, P106-100","wordcount":  1605 ,
+    "url": "https:\/\/blog.rovertang.com\/posts\/ai\/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing\/","datePublished": "2025-05-04T00:00:00+08:00","dateModified": "2025-05-04T00:00:00+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "RoverTang"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item has-children">
+              <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item">
+              <a class="menu-link" href="https://vip.rovertang.com" rel="noopener noreferrer" target="_blank"><i class="fa-solid fa-crown fa-fw fa-sm" aria-hidden="true"></i> 罗孚的宝藏</a></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item"><a class="menu-link" href="https://vip.rovertang.com" rel="noopener noreferrer" target="_blank"><i class="fa-solid fa-crown fa-fw fa-sm" aria-hidden="true"></i> 罗孚的宝藏</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/" title="文章">文章</a></li><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/ai/" title="AI">AI</a></li><li class="breadcrumb-item active" data-separator="&gt;" aria-current="page">大模型显卡推理和纯CPU推理对比测试</li>
+    </ol>
+  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div style="width: 350px; margin: 0 auto; display: flex; justify-content: space-between; text-align: center;">
+  <img src="/images/wxmp-blog.jpg" alt="wxmp-blog" style="width: 115px; height: 153px;">
+  <img src="/images/wxmp-shanghai.jpg" alt="wxmp-shanghai" style="width: 115px; height: 153px;">
+  <img src="/images/zsxq-fromblog.jpg" alt="zsxq-fromblog" style="width: 115px; height: 153px;">
+</div></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>大模型显卡推理和纯CPU推理对比测试</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://rovertang.com" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    RoverTang</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/ai/" class="post-category" title="分类 - AI"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> AI</a></span></div><div class="post-meta-line"><span title="发布于 2025-05-04 00:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2025-05-04">2025-05-04</time></span>&nbsp;<span title="1605 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 1700 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 4 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#对比测试主要问题">对比测试主要问题</a></li>
+    <li><a href="#测试硬件和环境">测试硬件和环境</a></li>
+    <li><a href="#测试数据和分析">测试数据和分析</a>
+      <ul>
+        <li><a href="#显卡推理和纯-cpu-推理的速度对比">显卡推理和纯 CPU 推理的速度对比</a></li>
+        <li><a href="#超过显存容量情况混合推理速度对比">超过显存容量情况(混合)推理速度对比</a></li>
+        <li><a href="#q4q8fp16-不同精度推理速度对比">Q4、Q8、FP16 不同精度推理速度对比</a></li>
+        <li><a href="#其他235b-的-qwen3-也是-1x-tokenss">其他：235B 的 Qwen3 也是 1.x tokens/s</a></li>
+        <li><a href="#其他智能上别用中文为难-gemma3">其他：智能上别用中文为难 Gemma3</a></li>
+      </ul>
+    </li>
+    <li><a href="#最后的话">最后的话</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p><a href="https://mp.weixin.qq.com/s/K90n0hsZA2GJkSTVwsS-Ew"target="_blank" rel="external nofollow noopener noreferrer">纯CPU推理大模型服务器翻车了</a>以后，又尝试着256G内存<a href="https://mp.weixin.qq.com/s/h7c9gZYZiHLT0V92T7st7w"target="_blank" rel="external nofollow noopener noreferrer">跑671B大模型：能跑，看你想要什么</a>。最后还是弃坑了，工作站送进了小黄鱼，但还没有人抱走，看着家里闲置的 2 张 P106-100 显卡，想做点显存大小同模型文件大小关系的测试，主要是没有显卡(纯靠 CPU 和内存)、1 张 6GB 显存显卡以及 2 张 6GB 显存显卡共 3 种场景下的对比测试，于是有了本文。</p>
+<h2 id="对比测试主要问题" class="heading-element"><span>对比测试主要问题</span>
+  <a href="#%e5%af%b9%e6%af%94%e6%b5%8b%e8%af%95%e4%b8%bb%e8%a6%81%e9%97%ae%e9%a2%98" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ol>
+<li><strong>显卡推理和纯 CPU 推理的速度对比</strong></li>
+<li><strong>超过显存容量情况(混合)推理速度对比</strong></li>
+<li><strong>Q4、Q8、FP16 不同精度推理速度对比</strong></li>
+</ol>
+<p>这 3 个问题是我想要解开的谜题。</p>
+<h2 id="测试硬件和环境" class="heading-element"><span>测试硬件和环境</span>
+  <a href="#%e6%b5%8b%e8%af%95%e7%a1%ac%e4%bb%b6%e5%92%8c%e7%8e%af%e5%a2%83" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>个人工作站就不多介绍了，前面三篇的文字中已经详细介绍过了，简单的来说：X99 平台的 E5 2680 V4 CPU 结合 256GB DDR4 内存和两张 P106 显卡。</p>
+<p>4 条 64G DDR4 2400 内存：</p>
+<p><img loading="lazy" src="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/QxoAbnVFAo9Hdix8Harc2TLonvc.png" alt="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/QxoAbnVFAo9Hdix8Harc2TLonvc.png" srcset="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/QxoAbnVFAo9Hdix8Harc2TLonvc.png?size=small, /posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/QxoAbnVFAo9Hdix8Harc2TLonvc.png?size=medium 1.5x, /posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/QxoAbnVFAo9Hdix8Harc2TLonvc.png?size=large 2x" data-title="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/QxoAbnVFAo9Hdix8Harc2TLonvc.png" style="--width: 811px;--aspect-ratio: 811 / 599;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>2 张 P106 显卡：</p>
+<p><img loading="lazy" src="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/SAvJbOzNjodxVIxQYUhcdjOYnpX.png" alt="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/SAvJbOzNjodxVIxQYUhcdjOYnpX.png" srcset="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/SAvJbOzNjodxVIxQYUhcdjOYnpX.png?size=small, /posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/SAvJbOzNjodxVIxQYUhcdjOYnpX.png?size=medium 1.5x, /posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/SAvJbOzNjodxVIxQYUhcdjOYnpX.png?size=large 2x" data-title="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/SAvJbOzNjodxVIxQYUhcdjOYnpX.png" style="--width: 560px;--aspect-ratio: 560 / 818;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>系统启动后，也能自动在系统中识别出这两块显卡：</p>
+<p><img loading="lazy" src="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/YQfQbXW1joEywRxOSKGcQIFQnNd.png" alt="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/YQfQbXW1joEywRxOSKGcQIFQnNd.png" srcset="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/YQfQbXW1joEywRxOSKGcQIFQnNd.png?size=small, /posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/YQfQbXW1joEywRxOSKGcQIFQnNd.png?size=medium 1.5x, /posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/YQfQbXW1joEywRxOSKGcQIFQnNd.png?size=large 2x" data-title="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/YQfQbXW1joEywRxOSKGcQIFQnNd.png" style="--width: 629px;--aspect-ratio: 629 / 411;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>系统是 Ubuntu 24.04，历史上用过 Windows 11，后续数据表格中会做标注。</p>
+<p>ollama 是当前最新的 0.6.7 版本，模型也都是直接从 ollama pull 下来的。</p>
+<p>主要下载了这些模型：</p>
+<p><img loading="lazy" src="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/PORpbNvp1oFcrXxoV9bc52sfnxd.png" alt="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/PORpbNvp1oFcrXxoV9bc52sfnxd.png" srcset="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/PORpbNvp1oFcrXxoV9bc52sfnxd.png?size=small, /posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/PORpbNvp1oFcrXxoV9bc52sfnxd.png?size=medium 1.5x, /posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/PORpbNvp1oFcrXxoV9bc52sfnxd.png?size=large 2x" data-title="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/PORpbNvp1oFcrXxoV9bc52sfnxd.png" style="--width: 621px;--aspect-ratio: 621 / 630;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>顺便说一下 driver 版本和 CUDA 版本：</p>
+<p><img loading="lazy" src="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/V3sGbij2pozQBLxH8yDcPCdDnKg.png" alt="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/V3sGbij2pozQBLxH8yDcPCdDnKg.png" srcset="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/V3sGbij2pozQBLxH8yDcPCdDnKg.png?size=small, /posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/V3sGbij2pozQBLxH8yDcPCdDnKg.png?size=medium 1.5x, /posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/V3sGbij2pozQBLxH8yDcPCdDnKg.png?size=large 2x" data-title="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/V3sGbij2pozQBLxH8yDcPCdDnKg.png" style="--width: 920px;--aspect-ratio: 920 / 807;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>好了，可以开始测试了。</p>
+<h2 id="测试数据和分析" class="heading-element"><span>测试数据和分析</span>
+  <a href="#%e6%b5%8b%e8%af%95%e6%95%b0%e6%8d%ae%e5%92%8c%e5%88%86%e6%9e%90" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="显卡推理和纯-cpu-推理的速度对比" class="heading-element"><span>显卡推理和纯 CPU 推理的速度对比</span>
+  <a href="#%e6%98%be%e5%8d%a1%e6%8e%a8%e7%90%86%e5%92%8c%e7%ba%af-cpu-%e6%8e%a8%e7%90%86%e7%9a%84%e9%80%9f%e5%ba%a6%e5%af%b9%e6%af%94" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><img loading="lazy" src="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/JOwLb7KTmoSjwex0GHrc7Gvsneh.png" alt="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/JOwLb7KTmoSjwex0GHrc7Gvsneh.png" srcset="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/JOwLb7KTmoSjwex0GHrc7Gvsneh.png?size=small, /posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/JOwLb7KTmoSjwex0GHrc7Gvsneh.png?size=medium 1.5x, /posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/JOwLb7KTmoSjwex0GHrc7Gvsneh.png?size=large 2x" data-title="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/JOwLb7KTmoSjwex0GHrc7Gvsneh.png" style="--width: 1160px;--aspect-ratio: 1160 / 243;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>(上述 1P106 和 2P106 是指 P106 的数量，均在 Ubuntu 24.04 下，而 RAM+WIN 是纯 256GB 内存的 Win11 系统，下同)</p>
+<p>这里使用 DeepSeek-R1 的 1.5B、7B、14B 进行测试。</p>
+<p>这个问题确实应该无悬念：<strong>显卡推理速度明显优于纯 CPU 推理速度</strong>。</p>
+<p>速度上甚至有两倍以上的差距。洋垃圾对决矿渣，矿渣胜:)。</p>
+<h3 id="超过显存容量情况混合推理速度对比" class="heading-element"><span>超过显存容量情况(混合)推理速度对比</span>
+  <a href="#%e8%b6%85%e8%bf%87%e6%98%be%e5%ad%98%e5%ae%b9%e9%87%8f%e6%83%85%e5%86%b5%e6%b7%b7%e5%90%88%e6%8e%a8%e7%90%86%e9%80%9f%e5%ba%a6%e5%af%b9%e6%af%94" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><img loading="lazy" src="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/NbnSbQx0ooLLk5xObTDcwISWngb.png" alt="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/NbnSbQx0ooLLk5xObTDcwISWngb.png" srcset="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/NbnSbQx0ooLLk5xObTDcwISWngb.png?size=small, /posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/NbnSbQx0ooLLk5xObTDcwISWngb.png?size=medium 1.5x, /posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/NbnSbQx0ooLLk5xObTDcwISWngb.png?size=large 2x" data-title="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/NbnSbQx0ooLLk5xObTDcwISWngb.png" style="--width: 1209px;--aspect-ratio: 1209 / 243;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>这里使用了 3 个模型进行了测试：</p>
+<ul>
+<li>Gemma3:4B：3.3GB，小于 1 张 P106 的显存容量。</li>
+<li>Gemma3:12B/Qwen3:14B：8.1GB/9.3GB，超出 1 张 P106 的显存容量，但小于 2 张 P106 的显存容量。</li>
+<li>DeepSeek-R1:32B：19GB，完全超出了 2 张 P106 的显存容量。</li>
+</ul>
+<p>(注意：相同模型，在 ollama list 显示的容量，实际存在比 ollama ps 显示的容量小的情况，所以 list 数据仅仅是参考)</p>
+<p>对于 Gemma3:4B，1 张显卡显存容量够的情况下，2 张显卡的影响不会特别大，本次测试数据中速度有一定的提升，但也可能会降低，因为将数据分配到 2 张显卡的效率应该要低于 1 张显卡。</p>
+<p>对于 Gemma3:12B，1 张显卡显存不够，2 张显卡显存才够的情况，效果明显，速度翻倍。这也侧面说明显卡推理速度优于混合推理速度。</p>
+<p>对于 DeepSeek-R1:32B，显存完全不够的情况下，显存有一定的作用，混合推理也有一定的优势，相比纯 CPU 推理的情况。但此时显存的作用又似乎比较微小。</p>
+<h3 id="q4q8fp16-不同精度推理速度对比" class="heading-element"><span>Q4、Q8、FP16 不同精度推理速度对比</span>
+  <a href="#q4q8fp16-%e4%b8%8d%e5%90%8c%e7%b2%be%e5%ba%a6%e6%8e%a8%e7%90%86%e9%80%9f%e5%ba%a6%e5%af%b9%e6%af%94" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><img loading="lazy" src="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/YB5UbarjAoitXjxRMQzcjMn2nT0.png" alt="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/YB5UbarjAoitXjxRMQzcjMn2nT0.png" srcset="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/YB5UbarjAoitXjxRMQzcjMn2nT0.png?size=small, /posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/YB5UbarjAoitXjxRMQzcjMn2nT0.png?size=medium 1.5x, /posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/YB5UbarjAoitXjxRMQzcjMn2nT0.png?size=large 2x" data-title="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/YB5UbarjAoitXjxRMQzcjMn2nT0.png" style="--width: 1001px;--aspect-ratio: 1001 / 271;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>总的来说，随着精度提高，速度一定是越慢的，速度上 Q4&gt;Q8&gt;FP16。</p>
+<p>那么，在智能上是否也有较大的差距呢？此次主要对比速度，所以这方面并没有展开，不过在下文会稍稍附带一下。</p>
+<h3 id="其他235b-的-qwen3-也是-1x-tokenss" class="heading-element"><span>其他：235B 的 Qwen3 也是 1.x tokens/s</span>
+  <a href="#%e5%85%b6%e4%bb%96235b-%e7%9a%84-qwen3-%e4%b9%9f%e6%98%af-1x-tokenss" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><img loading="lazy" src="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/FQ3vbsJ2ko1JRhxlVSrcnmcMnrd.png" alt="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/FQ3vbsJ2ko1JRhxlVSrcnmcMnrd.png" srcset="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/FQ3vbsJ2ko1JRhxlVSrcnmcMnrd.png?size=small, /posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/FQ3vbsJ2ko1JRhxlVSrcnmcMnrd.png?size=medium 1.5x, /posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/FQ3vbsJ2ko1JRhxlVSrcnmcMnrd.png?size=large 2x" data-title="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/FQ3vbsJ2ko1JRhxlVSrcnmcMnrd.png" style="--width: 252px;--aspect-ratio: 252 / 243;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>在“<a href="https://mp.weixin.qq.com/s/h7c9gZYZiHLT0V92T7st7w"target="_blank" rel="external nofollow noopener noreferrer">两千元服务器跑 671B 大模型：能跑，看你想要什么。</a>”一文中的结论：对于 671B Q2_K_L 和 UD-IQ2_XXS 量化的 DeepSeek-R1，大约为 1~2tokens/s，或者说 1.5tokens/s 左右。那么对于最新的 235B 的 Qwen3 也是 1.x tokens/s，速度差不多，只是这次 256GB 内存可以直接跑默认的 Q4 精度模型，而不需要跑 Q2 的模型了。</p>
+<h3 id="其他智能上别用中文为难-gemma3" class="heading-element"><span>其他：智能上别用中文为难 Gemma3</span>
+  <a href="#%e5%85%b6%e4%bb%96%e6%99%ba%e8%83%bd%e4%b8%8a%e5%88%ab%e7%94%a8%e4%b8%ad%e6%96%87%e4%b8%ba%e9%9a%be-gemma3" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><img loading="lazy" src="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/PkRwbD5QhouDlQxYIMdcmSWKn3s.png" alt="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/PkRwbD5QhouDlQxYIMdcmSWKn3s.png" srcset="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/PkRwbD5QhouDlQxYIMdcmSWKn3s.png?size=small, /posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/PkRwbD5QhouDlQxYIMdcmSWKn3s.png?size=medium 1.5x, /posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/PkRwbD5QhouDlQxYIMdcmSWKn3s.png?size=large 2x" data-title="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/static/PkRwbD5QhouDlQxYIMdcmSWKn3s.png" style="--width: 680px;--aspect-ratio: 680 / 455;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>对于测试的 4 个问题，Qwen3 全对，从 0.5B 到 235B，而 DeepSeek-R1 的 7B 模型不知道何缘由出错，对于 Gemma3 表现的不稳定，也只能说英文下的产品我们还是别用中文为难 Gemma3 了，不过确实错的有点没有规律，有点看不懂。</p>
+<h2 id="最后的话" class="heading-element"><span>最后的话</span>
+  <a href="#%e6%9c%80%e5%90%8e%e7%9a%84%e8%af%9d" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p><strong>显卡推理完胜纯 CPU 推理以及混合推理</strong>，这是毋庸置疑的结论，本文也证明了一个寂寞，但本文也给低成本显卡推理带来了一定的希望:)。</p>
+<p>当前 DeepSeek-R1 和 Qwen3 的 32B 模型默认 20GB 大小，Gemma3 的 27B 模型为 17GB 大小，llama3.3 和 DeepSeek-R1 的 70B 模型为 43GB 大小，也就意味着 2 张 24GB 显存的显卡或者 3 张 16GB 显存的显卡就能组一个 48G 显存的电脑来跑这些模型了。2 张 4090 很贵，但 3 张 5070Ti 应该便宜不少了吧？而我准备上 3 张 P100 或者 V100，是不是省更多？一张 SXM2 版本的 V100 显卡已经在路上了，待我测试后再向大家汇报。</p>
+<p>对于低成本多显卡推理，屏幕前的您，是怎么考虑的呢？欢迎留言。</p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2025-05-04 00:00:00">更新于 2025-05-04&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/%E5%A4%9A%E6%98%BE%E5%8D%A1/" class="post-tag" title="标签 - 多显卡">多显卡</a><a href="/tags/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/" class="post-tag" title="标签 - 本地部署">本地部署</a><a href="/tags/%E6%98%BE%E5%8D%A1%E6%8E%A8%E7%90%86/" class="post-tag" title="标签 - 显卡推理">显卡推理</a><a href="/tags/%E7%BA%AFcpu%E6%8E%A8%E7%90%86/" class="post-tag" title="标签 - 纯CPU推理">纯CPU推理</a><a href="/tags/deepseek-r1/" class="post-tag" title="标签 - DeepSeek-R1">DeepSeek-R1</a><a href="/tags/qwen3/" class="post-tag" title="标签 - Qwen3">Qwen3</a><a href="/tags/gemma3/" class="post-tag" title="标签 - Gemma3">Gemma3</a><a href="/tags/ollama/" class="post-tag" title="标签 - Ollama">Ollama</a><a href="/tags/p106-100/" class="post-tag" title="标签 - P106-100">P106-100</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/ai/20250405-two-thousand-yuan-server-running-671b-large-model/" class="post-nav-item" rel="prev" title="两千元服务器跑671B大模型：能跑，看你想要什么。"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>两千元服务器跑671B大模型：能跑，看你想要什么。</a><a href="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/" class="post-nav-item" rel="next" title="千元小主机和千元服务器使用大模型对决">千元小主机和千元服务器使用大模型对决<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment"></div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward"><i class="fa-solid fa-qrcode fa-fw" aria-hidden="true"></i>赞赏</label>
+    <div class="reward-ways" data-mode="static"><div><img loading="lazy" src="/images/alipay.png" alt="RoverTang 支付宝" data-title="RoverTang 支付宝" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>支付宝</span>
+          </div><div><img loading="lazy" src="/images/wechatpay.png" alt="RoverTang 微信" data-title="RoverTang 微信" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>微信</span>
+          </div></div>
+  </div></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.139.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.16">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2005 - 2025</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://rovertang.com"target="_blank" rel="external nofollow noopener noreferrer">RoverTang</a></span></div><div class="footer-line beian"><span class="icp footer-divider"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">沪ICP备2020036772号-1</a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;bottom: 0;"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.16"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>

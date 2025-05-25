@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>折腾 - 标签 - 罗孚</title>
+    <link>https://blog.rovertang.com/tags/%E6%8A%98%E8%85%BE/</link>
+    <description>关注地图、汽车、AI、数字化办公，更关注学习成长、个人财富、家居家电、心理心灵、生活健康，希望能成为布道师和生活家。</description>
+    <generator>Hugo 0.139.4 &amp; FixIt v0.3.16</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 25 May 2025 00:00:00 +0800</lastBuildDate>
+    <atom:link href="https://blog.rovertang.com/tags/%E6%8A%98%E8%85%BE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SXM2版V100显卡很麻烦但很香：14B大模型速度超50！附折腾攻略</title>
+      <link>https://blog.rovertang.com/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/</link>
+      <pubDate>Sun, 25 May 2025 00:00:00 +0800</pubDate>
+      <guid>https://blog.rovertang.com/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/</guid>
+      <category domain="https://blog.rovertang.com/categories/ai/">AI</category>
+      <description>SXM2版V100显卡非常具有性价比，适合AI大模型，单卡16GB版本一千出头，就能有不错的推理速度体验。但确实非常的折腾，转接卡、散热器、安装过程、系统兼容问题、驱动问题等都有不少的麻烦，坑有点多。只建议动手能力强的朋友入手。</description>
+    </item>
+  </channel>
+</rss>

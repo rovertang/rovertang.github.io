@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>千元小主机和千元服务器使用大模型对决 - 罗孚</title><meta name="author" content="RoverTang">
+<meta name="description" content="不管是小主机还是服务器，一般都无法跑超出显存或内存容量的大模型，小主机的内存肯定小于服务器内存，所以小主机基本只剩使用大模型API这一条路，不过小主机外接显卡也是一种可探讨的方案。本文还详细介绍了小主机的优点，同时也认为没有真实性价比。"><meta name="keywords" content='小主机, 服务器, 外接显卡'>
+  <meta itemprop="name" content="千元小主机和千元服务器使用大模型对决">
+  <meta itemprop="description" content="不管是小主机还是服务器，一般都无法跑超出显存或内存容量的大模型，小主机的内存肯定小于服务器内存，所以小主机基本只剩使用大模型API这一条路，不过小主机外接显卡也是一种可探讨的方案。本文还详细介绍了小主机的优点，同时也认为没有真实性价比。">
+  <meta itemprop="datePublished" content="2025-05-05T00:00:00+08:00">
+  <meta itemprop="dateModified" content="2025-05-05T00:00:00+08:00">
+  <meta itemprop="wordCount" content="2566">
+  <meta itemprop="image" content="https://blog.rovertang.com/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/cover.jpg">
+  <meta itemprop="keywords" content="小主机,服务器,外接显卡"><meta property="og:url" content="https://blog.rovertang.com/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/">
+  <meta property="og:site_name" content="罗孚">
+  <meta property="og:title" content="千元小主机和千元服务器使用大模型对决">
+  <meta property="og:description" content="不管是小主机还是服务器，一般都无法跑超出显存或内存容量的大模型，小主机的内存肯定小于服务器内存，所以小主机基本只剩使用大模型API这一条路，不过小主机外接显卡也是一种可探讨的方案。本文还详细介绍了小主机的优点，同时也认为没有真实性价比。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-05T00:00:00+08:00">
+    <meta property="article:modified_time" content="2025-05-05T00:00:00+08:00">
+    <meta property="article:tag" content="小主机">
+    <meta property="article:tag" content="服务器">
+    <meta property="article:tag" content="外接显卡">
+    <meta property="og:image" content="https://blog.rovertang.com/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/cover.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://blog.rovertang.com/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/cover.jpg">
+  <meta name="twitter:title" content="千元小主机和千元服务器使用大模型对决">
+  <meta name="twitter:description" content="不管是小主机还是服务器，一般都无法跑超出显存或内存容量的大模型，小主机的内存肯定小于服务器内存，所以小主机基本只剩使用大模型API这一条路，不过小主机外接显卡也是一种可探讨的方案。本文还详细介绍了小主机的优点，同时也认为没有真实性价比。">
+<meta name="application-name" content="罗孚传说">
+<meta name="apple-mobile-web-app-title" content="罗孚传说"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" type="text/html" href="https://blog.rovertang.com/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/" title="千元小主机和千元服务器使用大模型对决 - 罗孚" /><link rel="prev" type="text/html" href="https://blog.rovertang.com/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/" title="大模型显卡推理和纯CPU推理对比测试" /><link rel="next" type="text/html" href="https://blog.rovertang.com/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/" title="SXM2版V100显卡很麻烦但很香：14B大模型速度超50！附折腾攻略" /><link rel="alternate" type="text/markdown" href="https://blog.rovertang.com/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/index.md" title="千元小主机和千元服务器使用大模型对决 - 罗孚"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><meta name="google-site-verification" content="apxz4dWbUQ2bsnGFk6SmRK4gNZ7tlT21KgMZ1t9hqdk" /><meta name="msvalidate.01" content="5282002B82D61AD2D097F2F6419C1E4A" /><meta name="baidu-site-verification" content="codeva-RiIZqiHrvQ" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "千元小主机和千元服务器使用大模型对决",
+    "inLanguage": "zh-cn",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/blog.rovertang.com\/posts\/ai\/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan\/"
+    },"genre": "posts","keywords": "小主机, 服务器, 外接显卡","wordcount":  2566 ,
+    "url": "https:\/\/blog.rovertang.com\/posts\/ai\/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan\/","datePublished": "2025-05-05T00:00:00+08:00","dateModified": "2025-05-05T00:00:00+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "RoverTang"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item has-children">
+              <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item has-children">
+              <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item">
+              <a class="menu-link" href="https://vip.rovertang.com" rel="noopener noreferrer" target="_blank"><i class="fa-solid fa-crown fa-fw fa-sm" aria-hidden="true"></i> 罗孚的宝藏</a></li><li class="menu-item delimiter"></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="罗孚"><img loading="lazy" src="/web-app-manifest-512x512.png" alt="罗孚" data-title="罗孚" width="26" height="26" class="logo" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span class="header-title-text">罗孚</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="/archives/"><i class="fa-solid fa-feather fa-fw fa-sm" aria-hidden="true"></i> 文章</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/categories/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 分类</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/collections/"><i class="fa-solid fa-layer-group fa-fw fa-sm" aria-hidden="true"></i> 合集</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/tags/"><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-blog fa-fw fa-sm" aria-hidden="true"></i> 罗孚传说</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/map/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 地图</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/car/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 汽车</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/ai/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> AI</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/eoffice/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 数字化办公</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/grow/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 学习成长</a>
+                      </li></ul></li><li class="menu-item"><span class="nested-item">
+                  <a class="menu-link" href="javascript:void(0);"><i class="fa-solid fa-person fa-fw fa-sm" aria-hidden="true"></i> 罗孚在上海</a>
+                  <i class="dropdown-icon fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </span>
+                <ul class="sub-menu"><li class="menu-item">
+                        <a class="menu-link" href="/posts/rich/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 个人财富</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/smart/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 家居家电</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/soul/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 心理心灵</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/life/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 生活健康</a>
+                      </li><li class="menu-item">
+                        <a class="menu-link" href="/posts/misc/"><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> 杂</a>
+                      </li></ul></li><li class="menu-item"><a class="menu-link" href="https://vip.rovertang.com" rel="noopener noreferrer" target="_blank"><i class="fa-solid fa-crown fa-fw fa-sm" aria-hidden="true"></i> 罗孚的宝藏</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="切换主题"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><nav aria-label="breadcrumb" class="breadcrumb-container">
+    <ol class="breadcrumb"><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/" title="文章">文章</a></li><li class="breadcrumb-item" data-separator="&gt;"><a href="/posts/ai/" title="AI">AI</a></li><li class="breadcrumb-item active" data-separator="&gt;" aria-current="page">千元小主机和千元服务器使用大模型对决</li>
+    </ol>
+  </nav><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="合集"><div style="width: 350px; margin: 0 auto; display: flex; justify-content: space-between; text-align: center;">
+  <img src="/images/wxmp-blog.jpg" alt="wxmp-blog" style="width: 115px; height: 153px;">
+  <img src="/images/wxmp-shanghai.jpg" alt="wxmp-shanghai" style="width: 115px; height: 153px;">
+  <img src="/images/zsxq-fromblog.jpg" alt="zsxq-fromblog" style="width: 115px; height: 153px;">
+</div></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>千元小主机和千元服务器使用大模型对决</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://rovertang.com" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+    RoverTang</a></span><span class="post-included-in">&nbsp;收录于 <a href="/categories/ai/" class="post-category" title="分类 - AI"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> AI</a></span></div><div class="post-meta-line"><span title="发布于 2025-05-05 00:00:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2025-05-05">2025-05-05</time></span>&nbsp;<span title="2566 字"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>约 2600 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>预计阅读 6 分钟</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#小主机配置介绍">小主机配置介绍</a></li>
+    <li><a href="#使用大模型速度对比">使用大模型速度对比</a></li>
+    <li><a href="#详细介绍一下小主机">详细介绍一下小主机</a>
+      <ul>
+        <li><a href="#低功耗">低功耗</a></li>
+        <li><a href="#性能够用">性能够用</a></li>
+        <li><a href="#体积够小">体积够小</a></li>
+        <li><a href="#m2-是刚需">M.2 是刚需</a></li>
+        <li><a href="#扩展还行">扩展还行</a></li>
+        <li><a href="#其他优点">其他优点</a></li>
+      </ul>
+    </li>
+    <li><a href="#对小主机的一些思考">对小主机的一些思考</a>
+      <ul>
+        <li><a href="#改装成可以外接显卡的小主机">改装成可以外接显卡的小主机</a></li>
+        <li><a href="#小主机的真实性价比不高">小主机的真实性价比不高</a></li>
+      </ul>
+    </li>
+    <li><a href="#小主机使用大模型的可选姿势">小主机使用大模型的可选姿势</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><p>最开始使用<a href="https://mp.weixin.qq.com/s/K90n0hsZA2GJkSTVwsS-Ew"target="_blank" rel="external nofollow noopener noreferrer">纯 CPU 推理大模型服务器翻车了</a>，后来不信邪的又买了 3 根 64GB 内存条直接使用 256GB 内存跑 671B 满血大模型(<a href="https://mp.weixin.qq.com/s/h7c9gZYZiHLT0V92T7st7w"target="_blank" rel="external nofollow noopener noreferrer">两千元服务器跑 671B 大模型：能跑，看你想要什么。</a>)，结果就是 1.5tokens/s 的速度，然后五一假期期间跑了跑“<a href="https://mp.weixin.qq.com/s/y5OTDjxptHY72JA2bCKVqQ"target="_blank" rel="external nofollow noopener noreferrer">大模型显卡推理和纯 CPU 推理对比测试</a>”，可以确认：显卡推理完胜纯 CPU 推理以及混合推理。</p>
+<p>上面说的是一两千服务器跑大模型的对比，这一次我要说说千元小主机和千元服务器使用大模型的对比，呃，好吧，取名确实有点标题党了，千元小主机预计也只能“使用”大模型了，而不是“跑”大模型。当然，要是三五千的小主机，甚至上万的 macmini M4 Pro，那确实也是可以 run 的，只是没在我的考虑范畴内，作为文末的展望吧。</p>
+<h2 id="小主机配置介绍" class="heading-element"><span>小主机配置介绍</span>
+  <a href="#%e5%b0%8f%e4%b8%bb%e6%9c%ba%e9%85%8d%e7%bd%ae%e4%bb%8b%e7%bb%8d" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>小主机大概配置如下：</p>
+<p><img loading="lazy" src="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/SM2kbLFzloSJDpxIPvbcdxPXnac.png" alt="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/SM2kbLFzloSJDpxIPvbcdxPXnac.png" srcset="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/SM2kbLFzloSJDpxIPvbcdxPXnac.png?size=small, /posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/SM2kbLFzloSJDpxIPvbcdxPXnac.png?size=medium 1.5x, /posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/SM2kbLFzloSJDpxIPvbcdxPXnac.png?size=large 2x" data-title="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/SM2kbLFzloSJDpxIPvbcdxPXnac.png" style="--width: 657px;--aspect-ratio: 657 / 403;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>总价预计一千出头。我没买电源，用老的戴尔 90 瓦电源加了个转接头，内存也没加到 2 条，而 M.2 的硬盘也是挪过来用的，加上一个多月前还没涨价(难道和关税有关？)，所以最终五百出头搞定了。</p>
+<p>详细的配置信息：</p>
+<p><img loading="lazy" src="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/Axx5bn0rNotUdGxUsZFcj1f5nze.png" alt="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/Axx5bn0rNotUdGxUsZFcj1f5nze.png" srcset="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/Axx5bn0rNotUdGxUsZFcj1f5nze.png?size=small, /posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/Axx5bn0rNotUdGxUsZFcj1f5nze.png?size=medium 1.5x, /posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/Axx5bn0rNotUdGxUsZFcj1f5nze.png?size=large 2x" data-title="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/Axx5bn0rNotUdGxUsZFcj1f5nze.png" style="--width: 980px;--aspect-ratio: 980 / 600;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>性能跑分：</p>
+<p><img loading="lazy" src="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/VTRmbE7Wuo6e5fxBDhIcrZ1nndb.png" alt="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/VTRmbE7Wuo6e5fxBDhIcrZ1nndb.png" srcset="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/VTRmbE7Wuo6e5fxBDhIcrZ1nndb.png?size=small, /posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/VTRmbE7Wuo6e5fxBDhIcrZ1nndb.png?size=medium 1.5x, /posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/VTRmbE7Wuo6e5fxBDhIcrZ1nndb.png?size=large 2x" data-title="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/VTRmbE7Wuo6e5fxBDhIcrZ1nndb.png" style="--width: 980px;--aspect-ratio: 980 / 600;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>这性能嘛，和我十年前 i5-4590 的老 PC 差不多。如果老 PC 加了矿渣 P106-100 显卡，这小主机还打不过。</p>
+<p>而和表格中的工作站相比，更是无法比了，再渣的 E5 CPU 也要比 i3 强好几倍，ECC 内存更是随随便便上 64GB，好吧，和工作站虽然价格可以相比，但性能真的没法比了。</p>
+<h2 id="使用大模型速度对比" class="heading-element"><span>使用大模型速度对比</span>
+  <a href="#%e4%bd%bf%e7%94%a8%e5%a4%a7%e6%a8%a1%e5%9e%8b%e9%80%9f%e5%ba%a6%e5%af%b9%e6%af%94" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>测试方法：服务器就用我在“<a href="https://mp.weixin.qq.com/s/h7c9gZYZiHLT0V92T7st7w"target="_blank" rel="external nofollow noopener noreferrer">两千元服务器跑 671B 大模型：能跑，看你想要什么。</a>”一文中的方法，至于小主机嘛，只能使用 online 的 API 了，在 DeepSeek 官方后台充值了 10 元钱，就可以发起 API 请求了。测试使用的都是相同的 5 道题目。最终结果数据如下：</p>
+<p><img loading="lazy" src="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/XSSObTWQeoNcroxWL0NcP664n7c.png" alt="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/XSSObTWQeoNcroxWL0NcP664n7c.png" srcset="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/XSSObTWQeoNcroxWL0NcP664n7c.png?size=small, /posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/XSSObTWQeoNcroxWL0NcP664n7c.png?size=medium 1.5x, /posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/XSSObTWQeoNcroxWL0NcP664n7c.png?size=large 2x" data-title="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/XSSObTWQeoNcroxWL0NcP664n7c.png" style="--width: 809px;--aspect-ratio: 809 / 298;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>在使用大模型上，小主机完胜工作站，速度差 10 倍以上。好吧，云上的和本地的确实不应该比。</p>
+<p>我也回看了“<a href="https://mp.weixin.qq.com/s/y5OTDjxptHY72JA2bCKVqQ"target="_blank" rel="external nofollow noopener noreferrer">大模型显卡推理和纯 CPU 推理对比测试</a>”中的数据，工作站也许跑 DeepSeek 7B 或者 Qwen3 8B 的速度才能和小主机相当，但大模型参数量可是和官方满血版差的不是一个数量级的问题哦，这种比较也似乎没有意义。</p>
+<h2 id="详细介绍一下小主机" class="heading-element"><span>详细介绍一下小主机</span>
+  <a href="#%e8%af%a6%e7%bb%86%e4%bb%8b%e7%bb%8d%e4%b8%80%e4%b8%8b%e5%b0%8f%e4%b8%bb%e6%9c%ba" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>前面几篇已经介绍过的千元服务器，现在已经涨价，本文的小主机还没介绍就已经涨价了，等我介绍完不知道会不会继续涨价一波。不过个人不是为了商家宣传，我也只是实实在在地说说我选择这小主机的原因。</p>
+<h3 id="低功耗" class="heading-element"><span>低功耗</span>
+  <a href="#%e4%bd%8e%e5%8a%9f%e8%80%97" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>作为常年不关机的小主机，低功耗是必须的。</p>
+<p>我原本有一个 Mac Mini 2012 款，也超低功耗，但性能不够用，而够用的十年前 i5-4590 的老 PC 又算不上低功耗，所以物色一个低功耗但性能又够用的 CPU，成为了必选题。</p>
+<p><img loading="lazy" src="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/YPR3bqG7JoifN7xBg1lcSV1Jnvb.png" alt="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/YPR3bqG7JoifN7xBg1lcSV1Jnvb.png" srcset="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/YPR3bqG7JoifN7xBg1lcSV1Jnvb.png?size=small, /posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/YPR3bqG7JoifN7xBg1lcSV1Jnvb.png?size=medium 1.5x, /posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/YPR3bqG7JoifN7xBg1lcSV1Jnvb.png?size=large 2x" data-title="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/YPR3bqG7JoifN7xBg1lcSV1Jnvb.png" style="--width: 840px;--aspect-ratio: 840 / 754;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>考虑到功耗，必须选带 T 的 CPU，而考虑到价钱，就只能选 8100T 了。这个功耗还是在较高场景下拍的，常规情况下在 20 以下，而平时不用的场景就更低了，预计最多 3 天 1 度电。</p>
+<p>当然，如果不考虑功耗，就可以直接上 9 系带 K 的 CPU，性能足够强进。</p>
+<h3 id="性能够用" class="heading-element"><span>性能够用</span>
+  <a href="#%e6%80%a7%e8%83%bd%e5%a4%9f%e7%94%a8" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p><img loading="lazy" src="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/YRifb63mToNoYqxTtQVcivgEnwe.jpg" alt="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/YRifb63mToNoYqxTtQVcivgEnwe.jpg" srcset="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/YRifb63mToNoYqxTtQVcivgEnwe.jpg?size=small, /posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/YRifb63mToNoYqxTtQVcivgEnwe.jpg?size=medium 1.5x, /posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/YRifb63mToNoYqxTtQVcivgEnwe.jpg?size=large 2x" data-title="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/YRifb63mToNoYqxTtQVcivgEnwe.jpg" style="--width: 600px;--aspect-ratio: 600 / 600;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>这颗 i3-8100T 的 CPU，性能和我老 PC 的 i5-4590 相当，由于仅仅常年开机用来办公，最多跑一下 python 代码，服务器的功能又由退役的 Mac mini 2012 来专职承担，所以对我来说是足够用的。实在不够，我不还有已经放在小黄鱼但还没被人抱走的 E5 CPU+256GB 内存的工作站嘛。</p>
+<h3 id="体积够小" class="heading-element"><span>体积够小</span>
+  <a href="#%e4%bd%93%e7%a7%af%e5%a4%9f%e5%b0%8f" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>以前买 MacBook 无头骑士，也是图体积小，而工作站挂小黄鱼的另一个原因也是体积太大，现在越来越不喜欢大机箱了，放家里太碍事。</p>
+<p>工作站和小主机的尺寸对比，实在是不忍直视：</p>
+<p><img loading="lazy" src="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/TbmLbbX57osPo1xoZAmcaQVFnZf.jpg" alt="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/TbmLbbX57osPo1xoZAmcaQVFnZf.jpg" srcset="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/TbmLbbX57osPo1xoZAmcaQVFnZf.jpg?size=small, /posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/TbmLbbX57osPo1xoZAmcaQVFnZf.jpg?size=medium 1.5x, /posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/TbmLbbX57osPo1xoZAmcaQVFnZf.jpg?size=large 2x" data-title="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/TbmLbbX57osPo1xoZAmcaQVFnZf.jpg" style="--width: 600px;--aspect-ratio: 600 / 450;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>但和 Mac Mini 的尺寸相当：</p>
+<p><img loading="lazy" src="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/JqUrbSALKonPQQx39EUc6XeanGe.jpg" alt="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/JqUrbSALKonPQQx39EUc6XeanGe.jpg" srcset="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/JqUrbSALKonPQQx39EUc6XeanGe.jpg?size=small, /posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/JqUrbSALKonPQQx39EUc6XeanGe.jpg?size=medium 1.5x, /posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/JqUrbSALKonPQQx39EUc6XeanGe.jpg?size=large 2x" data-title="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/JqUrbSALKonPQQx39EUc6XeanGe.jpg" style="--width: 597px;--aspect-ratio: 597 / 191;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>这样的尺寸还是比较让人喜欢的，我又可以把小主机藏起来了。</p>
+<h3 id="m2-是刚需" class="heading-element"><span>M.2 是刚需</span>
+  <a href="#m2-%e6%98%af%e5%88%9a%e9%9c%80" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>这里的 M.2 接口是用来接 NVME SSD 的，毕竟 NVME 协议的速度是 SATA 的两倍以上吧，这也是影响性能的重要因素之一。</p>
+<p><img loading="lazy" src="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/LduIbQ9WwoGg6oxpeATcpZnZntD.png" alt="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/LduIbQ9WwoGg6oxpeATcpZnZntD.png" srcset="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/LduIbQ9WwoGg6oxpeATcpZnZntD.png?size=small, /posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/LduIbQ9WwoGg6oxpeATcpZnZntD.png?size=medium 1.5x, /posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/LduIbQ9WwoGg6oxpeATcpZnZntD.png?size=large 2x" data-title="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/LduIbQ9WwoGg6oxpeATcpZnZntD.png" style="--width: 499px;--aspect-ratio: 499 / 464;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>当然，还有一个 M.2 接口，是用来接 M.2 的 WIFI 小板的，这种小板还集成了 BT，所以蓝牙和 WIFI 就全都解决了，接上天线，信号好的很。注意：这种 WIFI 小板的天线口是 1.13 的 4 代 IPEX，不要买错了。</p>
+<h3 id="扩展还行" class="heading-element"><span>扩展还行</span>
+  <a href="#%e6%89%a9%e5%b1%95%e8%bf%98%e8%a1%8c" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>虽然是小主机，但扩展真的还行：</p>
+<ol>
+<li>
+<p><strong>自带 DP 和 HDMI</strong>。(我没买前一代 NEC7，原因是没有 HDMI)</p>
+<p><img loading="lazy" src="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/NC93bq70FoaZ1HxG1yUcXZdHntd.jpg" alt="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/NC93bq70FoaZ1HxG1yUcXZdHntd.jpg" srcset="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/NC93bq70FoaZ1HxG1yUcXZdHntd.jpg?size=small, /posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/NC93bq70FoaZ1HxG1yUcXZdHntd.jpg?size=medium 1.5x, /posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/NC93bq70FoaZ1HxG1yUcXZdHntd.jpg?size=large 2x" data-title="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/NC93bq70FoaZ1HxG1yUcXZdHntd.jpg" style="--width: 600px;--aspect-ratio: 600 / 318;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+</li>
+<li>
+<p><strong>内置 SATA 口并附带硬盘架</strong></p>
+</li>
+</ol>
+<p><img loading="lazy" src="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/Mim1beSVFoDm3Kx9kQHcmWlVnSb.jpg" alt="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/Mim1beSVFoDm3Kx9kQHcmWlVnSb.jpg" srcset="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/Mim1beSVFoDm3Kx9kQHcmWlVnSb.jpg?size=small, /posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/Mim1beSVFoDm3Kx9kQHcmWlVnSb.jpg?size=medium 1.5x, /posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/Mim1beSVFoDm3Kx9kQHcmWlVnSb.jpg?size=large 2x" data-title="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/Mim1beSVFoDm3Kx9kQHcmWlVnSb.jpg" style="--width: 600px;--aspect-ratio: 600 / 470;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>只是这不是标准的 SATA，如果没给你线材和硬盘架，那就比较麻烦了。而且这个接口特别小，拿硬盘的时候务必小心，容易一拉就坏掉了。</p>
+<ol start="3">
+<li><strong>竟然还有 PCIE 插槽</strong></li>
+</ol>
+<p><img loading="lazy" src="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/Vgt1bSoRmoQB56xaRhmcSYl1nYd.jpg" alt="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/Vgt1bSoRmoQB56xaRhmcSYl1nYd.jpg" srcset="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/Vgt1bSoRmoQB56xaRhmcSYl1nYd.jpg?size=small, /posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/Vgt1bSoRmoQB56xaRhmcSYl1nYd.jpg?size=medium 1.5x, /posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/Vgt1bSoRmoQB56xaRhmcSYl1nYd.jpg?size=large 2x" data-title="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/Vgt1bSoRmoQB56xaRhmcSYl1nYd.jpg" style="--width: 600px;--aspect-ratio: 600 / 228;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>虽然不是标准的，但至少可以接出来，网上有人接了万兆 PCIE 网卡的，也有接个小显卡的。不过由于个人还需要用 SATA，所以暂时没考虑这个插槽了。</p>
+<h3 id="其他优点" class="heading-element"><span>其他优点</span>
+  <a href="#%e5%85%b6%e4%bb%96%e4%bc%98%e7%82%b9" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>上述这些基本就是这个小主机的全部优点了，一定要还要说，那也可以再说一些：</p>
+<ul>
+<li><strong>自带小喇叭</strong>，总比没有强。(可以改接 MacBook 的喇叭，效果好 N 倍，我买了一个还在路上)</li>
+<li><strong>前置 typec 口</strong>，有双 typec 线的特别有用。(我一般用 USB3 口就行，所以没太在意这个 typec)</li>
+<li>背板阉割的<strong>第二条 M.2 接口可以启用</strong>，不过需要很强的动手能力。(我用不上就不考虑了)</li>
+</ul>
+<p>如果你也在用这款，有我没说到的优点，也欢迎和我说说，后续再给补上。</p>
+<h2 id="对小主机的一些思考" class="heading-element"><span>对小主机的一些思考</span>
+  <a href="#%e5%af%b9%e5%b0%8f%e4%b8%bb%e6%9c%ba%e7%9a%84%e4%b8%80%e4%ba%9b%e6%80%9d%e8%80%83" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><h3 id="改装成可以外接显卡的小主机" class="heading-element"><span>改装成可以外接显卡的小主机</span>
+  <a href="#%e6%94%b9%e8%a3%85%e6%88%90%e5%8f%af%e4%bb%a5%e5%a4%96%e6%8e%a5%e6%98%be%e5%8d%a1%e7%9a%84%e5%b0%8f%e4%b8%bb%e6%9c%ba" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>理论上可行，方案有二：</p>
+<ol>
+<li><strong>将 M.2 接口转成 oculink 口</strong></li>
+</ol>
+<p>M.2 接口不装硬盘，改装 M.2 转 oculink 的转接版，再买一个显卡坞，连上就算是外接显卡方案了，走的是 M.2 接口。</p>
+<p><img loading="lazy" src="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/FsF9bRPq5obaqaxkdpKcdW8YnNd.jpg" alt="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/FsF9bRPq5obaqaxkdpKcdW8YnNd.jpg" srcset="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/FsF9bRPq5obaqaxkdpKcdW8YnNd.jpg?size=small, /posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/FsF9bRPq5obaqaxkdpKcdW8YnNd.jpg?size=medium 1.5x, /posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/FsF9bRPq5obaqaxkdpKcdW8YnNd.jpg?size=large 2x" data-title="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/FsF9bRPq5obaqaxkdpKcdW8YnNd.jpg" style="--width: 600px;--aspect-ratio: 600 / 600;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<ol start="2">
+<li><strong>PCIe 用 SFF8654 线外接</strong></li>
+</ol>
+<p>还是走 PCIe，但通过 SFF8654 线外接显卡坞，甚至可以支持 SXM2 接口的显卡。</p>
+<p><img loading="lazy" src="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/Svs9bpQyEoJAj6xO0cVcgVQonob.jpg" alt="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/Svs9bpQyEoJAj6xO0cVcgVQonob.jpg" srcset="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/Svs9bpQyEoJAj6xO0cVcgVQonob.jpg?size=small, /posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/Svs9bpQyEoJAj6xO0cVcgVQonob.jpg?size=medium 1.5x, /posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/Svs9bpQyEoJAj6xO0cVcgVQonob.jpg?size=large 2x" data-title="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/Svs9bpQyEoJAj6xO0cVcgVQonob.jpg" style="--width: 600px;--aspect-ratio: 600 / 360;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<ol start="3">
+<li><strong>PCIe 延长线直接接显卡</strong></li>
+</ol>
+<p>和显卡坞略有不同，应该是外置电源 + 显卡即可，因为 PCIe 已经延长到主机外面了，原来插主机 PCIe 的显卡现在插在了延长线上，电源还是用外置的，只是看起来可能还是要一个显卡支架，不然随便摆肯定不方便。暂时还没有看到这样的接法，属于个人开脑洞的想法，但理论上可行。</p>
+<h3 id="小主机的真实性价比不高" class="heading-element"><span>小主机的真实性价比不高</span>
+  <a href="#%e5%b0%8f%e4%b8%bb%e6%9c%ba%e7%9a%84%e7%9c%9f%e5%ae%9e%e6%80%a7%e4%bb%b7%e6%af%94%e4%b8%8d%e9%ab%98" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h3><p>虽然作为垃圾佬常年捡洋垃圾，但实际算算，真实的性价比并不高。</p>
+<p>全新的零刻或者铭凡小主机，32G 内存 +1T 硬盘，对 CPU 要求不高，那么加上国补，应该在两三千可以搞定。</p>
+<p><img loading="lazy" src="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/ZOhnbKjxGoeHewxrEKPcu6Qinmg.png" alt="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/ZOhnbKjxGoeHewxrEKPcu6Qinmg.png" srcset="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/ZOhnbKjxGoeHewxrEKPcu6Qinmg.png?size=small, /posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/ZOhnbKjxGoeHewxrEKPcu6Qinmg.png?size=medium 1.5x, /posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/ZOhnbKjxGoeHewxrEKPcu6Qinmg.png?size=large 2x" data-title="/posts/ai/20250505-compare-small-computer-and-server-in-the-price-of-thousands-yuan/static/ZOhnbKjxGoeHewxrEKPcu6Qinmg.png" style="--width: 750px;--aspect-ratio: 750 / 750;background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
+<p>注意哦，全新，而且还直接支持 OCuLink 接口，可以直接外接显卡的，CPU 的性能更是二手的好几倍。综合来看，二手小主机性价比甚至不如全新小主机。</p>
+<h2 id="小主机使用大模型的可选姿势" class="heading-element"><span>小主机使用大模型的可选姿势</span>
+  <a href="#%e5%b0%8f%e4%b8%bb%e6%9c%ba%e4%bd%bf%e7%94%a8%e5%a4%a7%e6%a8%a1%e5%9e%8b%e7%9a%84%e5%8f%af%e9%80%89%e5%a7%bf%e5%8a%bf" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>本文有点跑题，最后还是拉回小主机使用(或跑)大模型。</p>
+<p>如果真的从运行大模型角度来说，超出内存的大模型肯定没法跑起来，不管小主机还是服务器其实都是一样的，只是我把服务器内存加到了 256GB，而小主机预计最多支持 64GB 内存，所以小主机在不接外置显卡的情况下跑大模型更是渣渣。</p>
+<p>而小主机使用大模型可能有几种方案：</p>
+<ol>
+<li>最省事方案，肯定是用网上 API，比如本文的测试数据就是基于 API 方案。</li>
+<li>小主机本地跑大模型，直接用外接显卡方案，速度应该起得来，只是要看你外接了多大的显卡了。</li>
+<li>小主机大内存(96GB)跑大模型，共享显存方案，也可行，但速度就不好说了，有说 3tokens/s 的也有说 22 的。</li>
+</ol>
+<p>总的来说，小主机真不太适合跑大模型，使用在线大模型肯定没问题，而仅仅是办公用途，小主机真是一个不错的选择。你怎么看呢？</p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="更新于 2025-05-05 00:00:00">更新于 2025-05-05&nbsp;</span>
+      </div></div><div class="post-info-line">
+        <div class="post-info-md"></div>
+        <div class="post-info-share">
+          <span></span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/%E5%B0%8F%E4%B8%BB%E6%9C%BA/" class="post-tag" title="标签 - 小主机">小主机</a><a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="post-tag" title="标签 - 服务器">服务器</a><a href="/tags/%E5%A4%96%E6%8E%A5%E6%98%BE%E5%8D%A1/" class="post-tag" title="标签 - 外接显卡">外接显卡</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/posts/ai/20250504-compare-reasoning-speed-with-gpu-and-cpu-by-testing/" class="post-nav-item" rel="prev" title="大模型显卡推理和纯CPU推理对比测试"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>大模型显卡推理和纯CPU推理对比测试</a><a href="/posts/ai/20250525-smx2-v100-is-troublesome-but-also-cost-effective/" class="post-nav-item" rel="next" title="SXM2版V100显卡很麻烦但很香：14B大模型速度超50！附折腾攻略">SXM2版V100显卡很麻烦但很香：14B大模型速度超50！附折腾攻略<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div class="post-reward">
+    <div class="comment"></div>
+    <input type="checkbox" class="reward-input" name="reward" id="fi-reward" hidden />
+    <label class="reward-button" for="fi-reward"><i class="fa-solid fa-qrcode fa-fw" aria-hidden="true"></i>赞赏</label>
+    <div class="reward-ways" data-mode="static"><div><img loading="lazy" src="/images/alipay.png" alt="RoverTang 支付宝" data-title="RoverTang 支付宝" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>支付宝</span>
+          </div><div><img loading="lazy" src="/images/wechatpay.png" alt="RoverTang 微信" data-title="RoverTang 微信" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/><span data-animation>微信</span>
+          </div></div>
+  </div></article>
+
+  <aside class="toc" id="toc-auto" aria-label="目录"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.139.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.16">FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2005 - 2025</span><span class="author" itemprop="copyrightHolder">
+              <a href="https://rovertang.com"target="_blank" rel="external nofollow noopener noreferrer">RoverTang</a></span></div><div class="footer-line beian"><span class="icp footer-divider"><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">沪ICP备2020036772号-1</a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;bottom: 0;"></div><noscript>
+    <div class="noscript-warning">该网站在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":10},"comment":{"enable":false},"enablePWA":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"version":"v0.3.16"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>
